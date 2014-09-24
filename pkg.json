@@ -1,0 +1,17 @@
+{
+	"ns": "itertools",
+	"src": "js/src/",
+	"code": {
+		"test": [
+			"test",
+			"js"
+		],
+		"main": [
+			"js",
+			"dist",
+			"itertools.js"
+		]
+	},
+	"debug": false,
+	"out": "js/dist/"
+}

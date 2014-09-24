@@ -1,0 +1,19 @@
+{
+	"description": "iterator code bricks for JavaScript",
+	"license": "AGPL-3.0",
+	"homepage": "http://aureooms.github.io/js-itertools/",
+	"ignore": [
+		"js/index.js",
+		"js/src",
+		"test",
+		"pkg.json",
+		"package.json",
+		".groc.json",
+		".travis.yml",
+		".gitignore",
+		"README.md"
+	],
+	"version": "0.0.0",
+	"name": "aureooms-js-itertools",
+	"main": "js/dist/itertools.js"
+}
