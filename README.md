@@ -17,3 +17,4 @@ references:
   - http://itertoolsjs.com/
   - https://github.com/thegoleffect/node-itertools
   - http://rfw.name/sloth.js/
+  - https://github.com/lodash/lodash
