@@ -1,6 +1,15 @@
 
-var reversed = function ( iterable ) {
-	return iterable.slice( 0 ).reverse();
+var reversed = function ( iterable, out ) {
+
+	var i;
+
+	i = iterable.length;
+
+	while ( i-- ) {
+		out.push( iterable[i] );
+	}
+
+	return out;
 };
 
 exports.reversed = reversed;

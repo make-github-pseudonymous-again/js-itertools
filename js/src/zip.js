@@ -1,24 +1,22 @@
 
 
-var zip = function () {
+var zip = function ( iterables, out ) {
 
-	var i, j, n, len, tmp, out, tuple;
+	var i, j, n, len, tmp, tuple;
 
-	len = arguments.length - 1;
+	len = iterables.length;
 
 
-	if ( len < 1 ) {
-		return arguments[0];
+	if ( len === 0 ) {
+		return out;
 	}
 
 
-	out = arguments[len];
+	n = iterables[0].length;
 
-	n = arguments[0].length;
+	for ( i = 0 ; i < len ; ++i ) {
 
-	for ( i = 1 ; i < len ; ++i ) {
-
-		tmp = arguments[i].length;
+		tmp = iterables[i].length;
 
 		if ( tmp < n ) {
 			n = tmp;
@@ -31,7 +29,7 @@ var zip = function () {
 		tuple = []
 
 		for ( i = 0 ; i < len ; ++i ) {
-			tuple.push( arguments[i][j] );
+			tuple.push( iterables[i][j] );
 		}
 
 		out.push( tuple );

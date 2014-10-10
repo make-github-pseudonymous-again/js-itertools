@@ -3,11 +3,11 @@
  *
  * Maps a callable object over an array.
  *
- * /!\ currently only supports a (array, function) tuple as argument
+ * /!\ currently only supports a (function, array) tuple as argument
  *
  */
 
-var map = function ( iterable, callable, out ) {
+var map = function ( callable, iterable, out ) {
 
 	var i, len;
 

@@ -1,11 +1,11 @@
 
-var filter = function ( iterable, callable, out ) {
+var filter = function ( callable, iterable, out ) {
 
 	var i, len, item;
 
 	len = iterable.length;
 
-	for ( i = 0; i < len; ++i ) {
+	for ( i = 0 ; i < len ; ++i ) {
 
 		item = iterable[i];
 

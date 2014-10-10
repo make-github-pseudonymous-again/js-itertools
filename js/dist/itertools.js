@@ -47,29 +47,29 @@ exports.any = any;
 
 /* js/src/chain.js */
 
-var chain = function () {
+var chain = function ( iterables, out ) {
 
-	var i, j, n, len, it, out;
+	var i, j, n, len, it;
 
-	len = arguments.length - 1;
+	len = iterables.length;
 
 
-	if ( len < 1 ) {
-		return arguments[0];
+	if ( len === 0 ) {
+		return out;
 	}
 
 
-	out = arguments[len];
-
 	for ( i = 0 ; i < len ; ++i ) {
 
-		it = arguments[i];
+		it = iterables[i];
 		n = it.length;
 
 		for ( j = 0 ; j < n ; ++j ) {
 			out.push( it[j] );
 		}
 	}
+
+	return out;
 
 };
 
@@ -79,7 +79,7 @@ exports.chain = chain;
 
 var enumerate = function ( iterable, out ) {
 
-	zip( range( 0, iterable.length, 1, [] ), iterable, out );
+	zip( [range( 0, iterable.length, 1, [] ), iterable], out );
 
 	return out;
 };
@@ -88,13 +88,13 @@ exports.enumerate = enumerate;
 
 /* js/src/filter.js */
 
-var filter = function ( iterable, callable, out ) {
+var filter = function ( callable, iterable, out ) {
 
 	var i, len, item;
 
 	len = iterable.length;
 
-	for ( i = 0; i < len; ++i ) {
+	for ( i = 0 ; i < len ; ++i ) {
 
 		item = iterable[i];
 
@@ -115,11 +115,11 @@ exports.filter = filter;
  *
  * Maps a callable object over an array.
  *
- * /!\ currently only supports a (array, function) tuple as argument
+ * /!\ currently only supports a (function, array) tuple as argument
  *
  */
 
-var map = function ( iterable, callable, out ) {
+var map = function ( callable, iterable, out ) {
 
 	var i, len;
 
@@ -140,8 +140,16 @@ exports.map = map;
 
 var range = function ( begin, end, step, out ) {
 
-	for ( ; begin < end ; begin += step ) {
-		out.push(begin);
+	if ( step < 0 ) {
+		for ( ; begin > end ; begin += step ) {
+			out.push(begin);
+		}
+	}
+
+	else {
+		for ( ; begin < end ; begin += step ) {
+			out.push(begin);
+		}
 	}
 
 	return out;
@@ -159,11 +167,12 @@ exports.range = range;
  * value in the iterable. The initial value is the initializer
  * parameter.
  *
- * /!\ currently only works with an array iterable and a
+ * /!\ currently only works with an
  *     accumulator that is a function object
+ *     and an array iterable
  */
 
-var reduce = function ( iterable, accumulator, initializer ) {
+var reduce = function ( accumulator, iterable, initializer ) {
 
 	var i, len;
 
@@ -187,8 +196,17 @@ exports.reduce = reduce;
 
 /* js/src/reversed.js */
 
-var reversed = function ( iterable ) {
-	return iterable.slice( 0 ).reverse();
+var reversed = function ( iterable, out ) {
+
+	var i;
+
+	i = iterable.length;
+
+	while ( i-- ) {
+		out.push( iterable[i] );
+	}
+
+	return out;
 };
 
 exports.reversed = reversed;
@@ -196,25 +214,23 @@ exports.reversed = reversed;
 /* js/src/zip.js */
 
 
-var zip = function () {
+var zip = function ( iterables, out ) {
 
-	var i, j, n, len, tmp, out, tuple;
+	var i, j, n, len, tmp, tuple;
 
-	len = arguments.length - 1;
+	len = iterables.length;
 
 
-	if ( len < 1 ) {
-		return arguments[0];
+	if ( len === 0 ) {
+		return out;
 	}
 
 
-	out = arguments[len];
+	n = iterables[0].length;
 
-	n = arguments[0].length;
+	for ( i = 0 ; i < len ; ++i ) {
 
-	for ( i = 1 ; i < len ; ++i ) {
-
-		tmp = arguments[i].length;
+		tmp = iterables[i].length;
 
 		if ( tmp < n ) {
 			n = tmp;
@@ -227,7 +243,7 @@ var zip = function () {
 		tuple = []
 
 		for ( i = 0 ; i < len ; ++i ) {
-			tuple.push( arguments[i][j] );
+			tuple.push( iterables[i][j] );
 		}
 
 		out.push( tuple );

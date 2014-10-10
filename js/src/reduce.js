@@ -6,11 +6,12 @@
  * value in the iterable. The initial value is the initializer
  * parameter.
  *
- * /!\ currently only works with an array iterable and a
+ * /!\ currently only works with an
  *     accumulator that is a function object
+ *     and an array iterable
  */
 
-var reduce = function ( iterable, accumulator, initializer ) {
+var reduce = function ( accumulator, iterable, initializer ) {
 
 	var i, len;
 
