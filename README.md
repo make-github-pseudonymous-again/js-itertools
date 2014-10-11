@@ -14,7 +14,7 @@ iterator code bricks for JavaScript
 [![NPM downloads per month](http://img.shields.io/npm/dm/aureooms-js-itertools.svg)](https://www.npmjs.org/package/aureooms-js-itertools)
 [![GitHub issues](http://img.shields.io/github/issues/aureooms/js-itertools.svg)](https://github.com/aureooms/js-itertools/issues)
 
-references:
+reference:
 
   - http://mochi.github.io/mochikit/doc/html/MochiKit/Iter.html
   - https://docs.python.org/3/library/itertools.html
