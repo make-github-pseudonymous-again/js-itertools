@@ -60,3 +60,5 @@ var product = function ( iterables, repeat, out ) {
 
 	return out;
 };
+
+exports.product = product;
