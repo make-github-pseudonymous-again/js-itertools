@@ -75,6 +75,103 @@ var chain = function ( iterables, out ) {
 
 exports.chain = chain;
 
+/* js/src/combinations.js */
+var combinations = function ( iterable, repeat, out ) {
+
+	// combinations('ABCD', 2) --> AB AC AD BC BD CD
+	// combinations(range(4), 3) --> 012 013 023 123
+
+	var pool, len, indices, i, j;
+
+	pool = iterable;
+	len = pool.length;
+
+	if ( repeat > len ) {
+		return out;
+	}
+
+	indices = range( 0, repeat, 1, [] );
+
+	out.push( pick( pool, indices, [] ) );
+
+	if ( repeat === 0 || len === 0 ) {
+		return out;
+	}
+
+	for ( ; ; ) {
+
+		for ( i = repeat - 1 ; i >= 0 ; --i ) {
+			if ( indices[i] !== i + len - repeat ) {
+				break;
+			}
+		}
+
+		if ( i < 0 ) {
+			return out;
+		}
+
+		++indices[i];
+
+		for ( j = i + 1 ; j < repeat ; ++j ) {
+			indices[j] = indices[j - 1] + 1;
+		}
+
+		out.push( pick( pool, indices, [] ) );
+
+	}
+
+	return out;
+
+};
+
+exports.combinations = combinations;
+
+/* js/src/combinationswithrepetition.js */
+
+
+var combinationswithrepetition = function ( iterable, r, out ) {
+
+	// combinations_with_replacement('ABC', 2) --> AA AB AC BB BC CC
+
+	var pool, len, indices, i, next;
+
+	pool = iterable;
+	len = pool.length;
+
+	if ( len === 0 && r > 0) {
+		return out;
+	}
+
+	indices = repeat( 0, r );
+
+	out.push( pick( pool, indices, [] ) );
+
+	for ( ; ; ) {
+
+		for ( i = r - 1 ; i >= 0 ; --i ) {
+			if ( indices[i] !== len - 1 ) {
+				next = indices[i] + 1;
+				break;
+			}
+		}
+
+		if ( i < 0 ) {
+			return out;
+		}
+
+		for ( ; i < r ; ++i ) {
+			indices[i] = next;
+		}
+
+		out.push( pick( pool, indices, [] ) );
+	}
+
+	return out;
+
+};
+
+exports.combinationswithrepetition = combinationswithrepetition;
+
 /* js/src/compress.js */
 
 
@@ -302,30 +399,34 @@ exports.map = map;
 
 /* js/src/permutations.js */
 
-var permutations = function( iterable, width, out ) {
+var permutations = function( iterable, repeat, out ) {
 
 	// permutations('ABCD', 2) --> AB AC AD BA BC BD CA CB CD DA DB DC
 	// permutations(range(3)) --> 012 021 102 120 201 210
 
-	var pool, i, j, w, n, indices, cycles, x, tmp;
+	var pool, i, j, w, len, indices, cycles, x, tmp;
 
 	pool = iterable;
-	n = pool.length;
+	len = pool.length;
 
 
-	if ( width > n || n === 0 || width === 0 ) {
+	if ( repeat > len ) {
 		return out;
 	}
 
 
-	indices = range( 0, n, 1, [] );
-	cycles = range( n, n - width, -1, [] );
+	indices = range( 0, len, 1, [] );
+	cycles = range( len, len - repeat, -1, [] );
 
-	out.push( pick(pool, indices) );
+	out.push( pick( pool, indices.slice( 0, repeat ), [] ) );
+
+	if ( repeat === 0 || len === 0 ) {
+		return out;
+	}
 
 	for ( ; ; ) {
 
-		i = width;
+		i = repeat;
 
 		while ( i-- ) {
 
@@ -338,7 +439,7 @@ var permutations = function( iterable, width, out ) {
 				indices.splice(i, 1);
 				indices.push(x);
 
-				cycles[i] = n - i
+				cycles[i] = len - i
 			}
 
 			else {
@@ -346,16 +447,18 @@ var permutations = function( iterable, width, out ) {
 				j = cycles[i];
 
 				tmp = indices[i];
-				indices[i] = indices[n - j];
-				indices[n - j] = tmp;
+				indices[i] = indices[len - j];
+				indices[len - j] = tmp;
 
-				out.push( pick(pool, indices) );
+				out.push( pick( pool, indices.slice( 0, repeat ), [] ) );
 				break;
 			}
 
 		}
 
 	}
+
+	return out;
 
 };
 
