@@ -1,16 +1,16 @@
 
 
-var range = function ( begin, end, step, out ) {
+var range = function ( start, stop, step, out ) {
 
 	if ( step < 0 ) {
-		for ( ; begin > end ; begin += step ) {
-			out.push(begin);
+		for ( ; start > stop ; start += step ) {
+			out.push( start );
 		}
 	}
 
 	else {
-		for ( ; begin < end ; begin += step ) {
-			out.push(begin);
+		for ( ; start < stop ; start += step ) {
+			out.push( start );
 		}
 	}
 
