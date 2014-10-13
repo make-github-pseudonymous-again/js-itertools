@@ -1,28 +1,32 @@
 
-var permutations = function( iterable, width, out ) {
+var permutations = function( iterable, repeat, out ) {
 
 	// permutations('ABCD', 2) --> AB AC AD BA BC BD CA CB CD DA DB DC
 	// permutations(range(3)) --> 012 021 102 120 201 210
 
-	var pool, i, j, w, n, indices, cycles, x, tmp;
+	var pool, i, j, w, len, indices, cycles, x, tmp;
 
 	pool = iterable;
-	n = pool.length;
+	len = pool.length;
 
 
-	if ( width > n || n === 0 || width === 0 ) {
+	if ( repeat > len ) {
 		return out;
 	}
 
 
-	indices = range( 0, n, 1, [] );
-	cycles = range( n, n - width, -1, [] );
+	indices = range( 0, len, 1, [] );
+	cycles = range( len, len - repeat, -1, [] );
 
-	out.push( pick(pool, indices) );
+	out.push( pick( pool, indices.slice( 0, repeat ), [] ) );
+
+	if ( repeat === 0 || len === 0 ) {
+		return out;
+	}
 
 	for ( ; ; ) {
 
-		i = width;
+		i = repeat;
 
 		while ( i-- ) {
 
@@ -35,7 +39,7 @@ var permutations = function( iterable, width, out ) {
 				indices.splice(i, 1);
 				indices.push(x);
 
-				cycles[i] = n - i
+				cycles[i] = len - i
 			}
 
 			else {
@@ -43,16 +47,18 @@ var permutations = function( iterable, width, out ) {
 				j = cycles[i];
 
 				tmp = indices[i];
-				indices[i] = indices[n - j];
-				indices[n - j] = tmp;
+				indices[i] = indices[len - j];
+				indices[len - j] = tmp;
 
-				out.push( pick(pool, indices) );
+				out.push( pick( pool, indices.slice( 0, repeat ), [] ) );
 				break;
 			}
 
 		}
 
 	}
+
+	return out;
 
 };
 
