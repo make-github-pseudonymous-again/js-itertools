@@ -11,3 +11,5 @@ var repeat = function ( element, times, out ) {
 	return out;
 
 };
+
+exports.repeat = repeat;
