@@ -1,7 +1,7 @@
 
 var takewhile = function ( predicate, iterable, out ) {
 
-	var i, n;
+	var i, n, e;
 
 	n = iterable.length;
 
