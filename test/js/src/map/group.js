@@ -18,6 +18,8 @@ one = function ( key, iterable, expected ) {
 
 test( "group", function () {
 
+	one( operator.identity, "", [] );
+
 	one(
 		operator.identity,
 		"AAAAAABBBBCCCCAABBCC",
