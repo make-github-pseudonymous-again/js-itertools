@@ -39,7 +39,7 @@ var permutations = function( iterable, repeat, out ) {
 				indices.splice(i, 1);
 				indices.push(x);
 
-				cycles[i] = len - i
+				cycles[i] = len - i;
 			}
 
 			else {
@@ -56,9 +56,11 @@ var permutations = function( iterable, repeat, out ) {
 
 		}
 
-	}
+		if ( i === -1 ) {
+			return out;
+		}
 
-	return out;
+	}
 
 };
 
