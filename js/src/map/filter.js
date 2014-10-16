@@ -1,5 +1,5 @@
 
-var filter = function ( callable, iterable, out ) {
+var filter = function ( predicate, iterable, out ) {
 
 	var i, len, item;
 
@@ -9,7 +9,7 @@ var filter = function ( callable, iterable, out ) {
 
 		item = iterable[i];
 
-		if ( callable( item ) ) {
+		if ( predicate( item ) ) {
 			out.push( item );
 		}
 
