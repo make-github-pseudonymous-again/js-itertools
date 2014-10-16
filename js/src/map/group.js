@@ -1,5 +1,5 @@
 
-var group = function ( iterable, key, out ) {
+var group = function ( key, iterable, out ) {
 
 	var i, len, curr, next, tuple, item, items;
 
