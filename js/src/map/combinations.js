@@ -42,8 +42,6 @@ var combinations = function ( iterable, repeat, out ) {
 
 	}
 
-	return out;
-
 };
 
 exports.combinations = combinations;
