@@ -37,8 +37,6 @@ var combinationswithrepetition = function ( iterable, r, out ) {
 		out.push( pick( pool, indices, [] ) );
 	}
 
-	return out;
-
 };
 
 exports.combinationswithrepetition = combinationswithrepetition;
