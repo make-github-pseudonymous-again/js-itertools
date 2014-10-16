@@ -43,3 +43,4 @@ var group = function ( key, iterable, out ) {
 };
 
 exports.group = group;
+exports.groupby = group;
