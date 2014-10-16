@@ -1,16 +1,16 @@
 
 var filterfalse = function ( predicate, iterable, out ) {
 
-	var i, e, n;
+	var i, len, item;
 
-	n = iterable.length;
+	len = iterable.length;
 
-	for ( i = 0 ; i < n ; ++i ) {
+	for ( i = 0 ; i < len ; ++i ) {
 
-		e = iterable[i];
+		item = iterable[i];
 
-		if ( ! predicate( e ) ) {
-			out.push( e )
+		if ( ! predicate( item ) ) {
+			out.push( item )
 		}
 
 	}

@@ -16,6 +16,8 @@ var filter = function ( predicate, iterable, out ) {
 	}
 
 	return out;
+
 };
 
 exports.filter = filter;
+exports.filtertrue = filter;
