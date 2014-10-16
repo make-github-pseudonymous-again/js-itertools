@@ -1,4 +1,9 @@
 
+/**
+ * Returns the *last* element of an iterable according
+ * to some comparison function f.
+ */
+
 var max = function ( iterable, f ) {
 
 	var a, b, i, len;

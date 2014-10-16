@@ -1,4 +1,9 @@
 
+/**
+ * Returns the *first* element of an iterable according
+ * to some comparison function f.
+ */
+
 var min = function ( iterable, f ) {
 
 	var a, b, i, len;
