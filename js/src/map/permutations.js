@@ -2,7 +2,7 @@
 var permutations = function( iterable, repeat, out ) {
 
 	// permutations('ABCD', 2) --> AB AC AD BA BC BD CA CB CD DA DB DC
-	// permutations(range(3)) --> 012 021 102 120 201 210
+	// permutations(range(3), 3) --> 012 021 102 120 201 210
 
 	var pool, i, j, w, len, indices, cycles, x, tmp;
 

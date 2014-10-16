@@ -2,7 +2,7 @@
 
 var product = function ( iterables, repeat, out ) {
 
-	// product(['ABCD', 'xy']) --> Ax Ay Bx By Cx Cy Dx Dy
+	// product(['ABCD', 'xy'], 1) --> Ax Ay Bx By Cx Cy Dx Dy
 	// product([range(0, 2, 1)], 3) --> 000 001 010 011 100 101 110 111
 
 	var a, b, i, j, k, m, n, iterable, c, len;
