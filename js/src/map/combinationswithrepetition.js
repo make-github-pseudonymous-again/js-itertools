@@ -2,7 +2,7 @@
 
 var combinationswithrepetition = function ( iterable, r, out ) {
 
-	// combinations_with_replacement('ABC', 2) --> AA AB AC BB BC CC
+	// combinationswithrepetition('ABC', 2) --> AA AB AC BB BC CC
 
 	var pool, len, indices, i, next;
 
@@ -13,7 +13,7 @@ var combinationswithrepetition = function ( iterable, r, out ) {
 		return out;
 	}
 
-	indices = repeat( 0, r );
+	indices = repeat( 0, r, [] );
 
 	out.push( pick( pool, indices, [] ) );
 

@@ -3,49 +3,8 @@
 	'use strict';
 
 
-/* js/src/all.js */
-
-var all = function ( iterable ) {
-
-	var i, len;
-
-	len = iterable.length;
-
-	for ( i = 0 ; i < len ; ++i ) {
-
-		if ( ! iterable[i] ) {
-			return false;
-		}
-
-	}
-
-	return true;
-};
-
-exports.all = all;
-
-/* js/src/any.js */
-
-var any = function ( iterable ) {
-
-	var i, len;
-
-	len = iterable.length;
-
-	for ( i = 0 ; i < len ; ++i ) {
-
-		if ( iterable[i] ) {
-			return true;
-		}
-
-	}
-
-	return false;
-};
-
-exports.any = any;
-
-/* js/src/chain.js */
+/* js/src/map */
+/* js/src/map/chain.js */
 
 var chain = function ( iterables, out ) {
 
@@ -75,7 +34,7 @@ var chain = function ( iterables, out ) {
 
 exports.chain = chain;
 
-/* js/src/combinations.js */
+/* js/src/map/combinations.js */
 var combinations = function ( iterable, repeat, out ) {
 
 	// combinations('ABCD', 2) --> AB AC AD BC BD CD
@@ -126,12 +85,12 @@ var combinations = function ( iterable, repeat, out ) {
 
 exports.combinations = combinations;
 
-/* js/src/combinationswithrepetition.js */
+/* js/src/map/combinationswithrepetition.js */
 
 
 var combinationswithrepetition = function ( iterable, r, out ) {
 
-	// combinations_with_replacement('ABC', 2) --> AA AB AC BB BC CC
+	// combinationswithrepetition('ABC', 2) --> AA AB AC BB BC CC
 
 	var pool, len, indices, i, next;
 
@@ -142,7 +101,7 @@ var combinationswithrepetition = function ( iterable, r, out ) {
 		return out;
 	}
 
-	indices = repeat( 0, r );
+	indices = repeat( 0, r, [] );
 
 	out.push( pick( pool, indices, [] ) );
 
@@ -172,7 +131,7 @@ var combinationswithrepetition = function ( iterable, r, out ) {
 
 exports.combinationswithrepetition = combinationswithrepetition;
 
-/* js/src/compress.js */
+/* js/src/map/compress.js */
 
 
 var compress = function ( iterable, selector, out ) {
@@ -193,7 +152,7 @@ var compress = function ( iterable, selector, out ) {
 
 exports.compress = compress;
 
-/* js/src/dropwhile.js */
+/* js/src/map/dropwhile.js */
 
 var dropwhile = function ( predicate, iterable, out ) {
 
@@ -230,7 +189,7 @@ var dropwhile = function ( predicate, iterable, out ) {
 
 exports.dropwhile = dropwhile;
 
-/* js/src/enumerate.js */
+/* js/src/map/enumerate.js */
 
 var enumerate = function ( iterable, out ) {
 
@@ -241,7 +200,7 @@ var enumerate = function ( iterable, out ) {
 
 exports.enumerate = enumerate;
 
-/* js/src/filter.js */
+/* js/src/map/filter.js */
 
 var filter = function ( callable, iterable, out ) {
 
@@ -264,7 +223,7 @@ var filter = function ( callable, iterable, out ) {
 
 exports.filter = filter;
 
-/* js/src/filterfalse.js */
+/* js/src/map/filterfalse.js */
 
 var filterfalse = function ( predicate, iterable, out ) {
 
@@ -288,7 +247,7 @@ var filterfalse = function ( predicate, iterable, out ) {
 
 exports.filterfalse = filterfalse;
 
-/* js/src/filtertrue.js */
+/* js/src/map/filtertrue.js */
 
 var filtertrue = function ( predicate, iterable, out ) {
 
@@ -312,7 +271,7 @@ var filtertrue = function ( predicate, iterable, out ) {
 
 exports.filtertrue = filtertrue;
 
-/* js/src/group.js */
+/* js/src/map/group.js */
 
 var group = function ( iterable, key, out ) {
 
@@ -359,19 +318,7 @@ var group = function ( iterable, key, out ) {
 
 exports.group = group;
 
-/* js/src/iter.js */
-
-
-var iter = function ( tuple ) {
-
-	return tuple;
-
-};
-
-
-exports.iter = iter;
-
-/* js/src/map.js */
+/* js/src/map/map.js */
 
 /**
  *
@@ -397,7 +344,7 @@ var map = function ( callable, iterable, out ) {
 
 exports.map = map;
 
-/* js/src/permutations.js */
+/* js/src/map/permutations.js */
 
 var permutations = function( iterable, repeat, out ) {
 
@@ -464,25 +411,7 @@ var permutations = function( iterable, repeat, out ) {
 
 exports.permutations = permutations;
 
-/* js/src/pick.js */
-
-var pick = function( array, indices, out ) {
-
-	var i, k, len;
-
-	len = indices.length;
-
-	for ( i = 0 ; i < len ; ++i ) {
-		k = indices[i];
-		out.push( array[k] );
-	}
-
-	return out;
-};
-
-exports.pick = pick;
-
-/* js/src/product.js */
+/* js/src/map/product.js */
 
 
 var product = function ( iterables, repeat, out ) {
@@ -548,30 +477,7 @@ var product = function ( iterables, repeat, out ) {
 
 exports.product = product;
 
-/* js/src/range.js */
-
-
-var range = function ( start, stop, step, out ) {
-
-	if ( step < 0 ) {
-		for ( ; start > stop ; start += step ) {
-			out.push( start );
-		}
-	}
-
-	else {
-		for ( ; start < stop ; start += step ) {
-			out.push( start );
-		}
-	}
-
-	return out;
-
-};
-
-exports.range = range;
-
-/* js/src/reduce.js */
+/* js/src/map/reduce.js */
 
 
 /**
@@ -607,7 +513,7 @@ var reduce = function ( accumulator, iterable, initializer ) {
 
 exports.reduce = reduce;
 
-/* js/src/repeat.js */
+/* js/src/map/repeat.js */
 
 
 var repeat = function ( element, times, out ) {
@@ -624,7 +530,7 @@ var repeat = function ( element, times, out ) {
 
 exports.repeat = repeat;
 
-/* js/src/reversed.js */
+/* js/src/map/reversed.js */
 
 var reversed = function ( iterable, out ) {
 
@@ -641,7 +547,7 @@ var reversed = function ( iterable, out ) {
 
 exports.reversed = reversed;
 
-/* js/src/slice.js */
+/* js/src/map/slice.js */
 
 var slice = function ( iterable, start, stop, step, out ) {
 
@@ -651,7 +557,7 @@ var slice = function ( iterable, start, stop, step, out ) {
 
 exports.slice = slice;
 
-/* js/src/sorted.js */
+/* js/src/map/sorted.js */
 
 
 var sorted = function ( iterable, delta ) {
@@ -662,7 +568,7 @@ var sorted = function ( iterable, delta ) {
 
 exports.sorted = sorted;
 
-/* js/src/starmap.js */
+/* js/src/map/starmap.js */
 
 /**
  *
@@ -688,7 +594,7 @@ var starmap = function ( callable, iterable, out ) {
 
 exports.starmap = starmap;
 
-/* js/src/takewhile.js */
+/* js/src/map/takewhile.js */
 
 var takewhile = function ( predicate, iterable, out ) {
 
@@ -722,46 +628,7 @@ var takewhile = function ( predicate, iterable, out ) {
 
 exports.takewhile = takewhile;
 
-/* js/src/tee.js */
-
-
-var tee = function ( iterable, n, out ) {
-
-	var i, m, deque;
-
-	m = iterable.length;
-
-	while ( n-- ) {
-
-		deque = [];
-
-		for ( i = 0 ; i < m ; ++i ) {
-			deque.push( iterable[i] );
-		}
-
-		out.push(deque);
-
-	}
-
-	return out;
-
-};
-
-exports.tee = tee;
-
-/* js/src/tuple.js */
-
-
-var tuple = function ( iterable ) {
-
-	return iterable;
-
-};
-
-
-exports.tuple = tuple;
-
-/* js/src/zip.js */
+/* js/src/map/zip.js */
 
 
 var zip = function ( iterables, out ) {
@@ -803,5 +670,232 @@ var zip = function ( iterables, out ) {
 };
 
 exports.zip = zip;
+
+/* js/src/reduce */
+/* js/src/reduce/all.js */
+
+var all = function ( iterable ) {
+
+	var i, len;
+
+	len = iterable.length;
+
+	for ( i = 0 ; i < len ; ++i ) {
+
+		if ( ! iterable[i] ) {
+			return false;
+		}
+
+	}
+
+	return true;
+};
+
+exports.all = all;
+
+/* js/src/reduce/any.js */
+
+var any = function ( iterable ) {
+
+	var i, len;
+
+	len = iterable.length;
+
+	for ( i = 0 ; i < len ; ++i ) {
+
+		if ( iterable[i] ) {
+			return true;
+		}
+
+	}
+
+	return false;
+};
+
+exports.any = any;
+
+/* js/src/reduce/max.js */
+
+/**
+ * Returns the *last* element of an iterable according
+ * to some comparison function f.
+ */
+
+var max = function ( iterable, f ) {
+
+	var a, b, i, len;
+
+	len = iterable.length;
+
+	if ( len === 0 ) {
+		return undefined;
+	}
+
+	a = iterable[0];
+
+	for ( i = 1 ; i < len ; ++i ) {
+
+		b = iterable[i];
+
+		if ( f( b, a ) > 0 ) {
+			a = b;
+		}
+
+	}
+
+	return a;
+
+};
+
+exports.max = max;
+
+/* js/src/reduce/min.js */
+
+/**
+ * Returns the *first* element of an iterable according
+ * to some comparison function f.
+ */
+
+var min = function ( iterable, f ) {
+
+	var a, b, i, len;
+
+	len = iterable.length;
+
+	if ( len === 0 ) {
+		return undefined;
+	}
+
+	a = iterable[0];
+
+	for ( i = 1 ; i < len ; ++i ) {
+
+		b = iterable[i];
+
+		if ( f( b, a ) < 0 ) {
+			a = b;
+		}
+
+	}
+
+	return a;
+
+};
+
+exports.min = min;
+
+/* js/src/reduce/sum.js */
+
+
+var sum = function ( iterable ) {
+
+	var i, len, total;
+
+	total = 0;
+
+	len = iterable.length;
+
+	for ( i = 0 ; i < len ; ++i ) {
+		total += iterable[i];
+	}
+
+	return total;
+
+};
+
+exports.sum = sum;
+
+/* js/src/utils */
+/* js/src/utils/iter.js */
+
+
+var iter = function ( tuple ) {
+
+	return tuple;
+
+};
+
+
+exports.iter = iter;
+
+/* js/src/utils/pick.js */
+
+var pick = function( array, indices, out ) {
+
+	var i, k, len;
+
+	len = indices.length;
+
+	for ( i = 0 ; i < len ; ++i ) {
+		k = indices[i];
+		out.push( array[k] );
+	}
+
+	return out;
+};
+
+exports.pick = pick;
+
+/* js/src/utils/range.js */
+
+
+var range = function ( start, stop, step, out ) {
+
+	if ( step < 0 ) {
+		for ( ; start > stop ; start += step ) {
+			out.push( start );
+		}
+	}
+
+	else {
+		for ( ; start < stop ; start += step ) {
+			out.push( start );
+		}
+	}
+
+	return out;
+
+};
+
+exports.range = range;
+
+/* js/src/utils/tee.js */
+
+
+var tee = function ( iterable, n, out ) {
+
+	var i, m, deque;
+
+	m = iterable.length;
+
+	while ( n-- ) {
+
+		deque = [];
+
+		for ( i = 0 ; i < m ; ++i ) {
+			deque.push( iterable[i] );
+		}
+
+		out.push(deque);
+
+	}
+
+	return out;
+
+};
+
+exports.tee = tee;
+
+/* js/src/utils/tuple.js */
+
+
+var tuple = function ( iterable ) {
+
+	return iterable;
+
+};
+
+
+exports.tuple = tuple;
 
 })(typeof exports === 'undefined' ? this['itertools'] = {} : exports);
