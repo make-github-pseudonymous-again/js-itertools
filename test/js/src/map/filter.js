@@ -1,11 +1,11 @@
 
-var one = function ( callable, iterable, out ) {
+var one = function ( predicate, iterable, out ) {
 
 	var msg;
 
 	msg = "filter " + JSON.stringify( iterable );
 
-	deepEqual( itertools.filter( callable, iterable, [] ), out, msg );
+	deepEqual( itertools.filter( predicate, iterable, [] ), out, msg );
 };
 
 
