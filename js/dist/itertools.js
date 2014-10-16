@@ -79,8 +79,6 @@ var combinations = function ( iterable, repeat, out ) {
 
 	}
 
-	return out;
-
 };
 
 exports.combinations = combinations;
@@ -124,8 +122,6 @@ var combinationswithrepetition = function ( iterable, r, out ) {
 
 		out.push( pick( pool, indices, [] ) );
 	}
-
-	return out;
 
 };
 
@@ -295,6 +291,7 @@ var group = function ( key, iterable, out ) {
 };
 
 exports.group = group;
+exports.groupby = group;
 
 /* js/src/map/map.js */
 
@@ -457,42 +454,6 @@ var product = function ( iterables, repeat, out ) {
 
 exports.product = product;
 
-/* js/src/map/reduce.js */
-
-
-/**
- * Applies the accumulator function iteratively on the
- * last return value of the accumulator and the next
- * value in the iterable. The initial value is the initializer
- * parameter.
- *
- * /!\ currently only works with an
- *     accumulator that is a function object
- *     and an array iterable
- */
-
-var reduce = function ( accumulator, iterable, initializer ) {
-
-	var i, len;
-
-	i = 0;
-
-	len = iterable.length;
-
-	if ( len === 0 ) {
-		return initializer;
-	}
-
-	for ( ; i < len ; ++i ) {
-		initializer = accumulator( initializer, iterable[i] );
-	}
-
-	return initializer;
-
-};
-
-exports.reduce = reduce;
-
 /* js/src/map/repeat.js */
 
 
@@ -540,9 +501,9 @@ exports.slice = slice;
 /* js/src/map/sorted.js */
 
 
-var sorted = function ( iterable, delta ) {
+var sorted = function ( f, iterable ) {
 
-	return iterable.slice( 0 ).sort( delta );
+	return iterable.slice( 0 ).sort( f );
 
 };
 
@@ -578,7 +539,7 @@ exports.starmap = starmap;
 
 var takewhile = function ( predicate, iterable, out ) {
 
-	var i, n;
+	var i, n, e;
 
 	n = iterable.length;
 
@@ -764,6 +725,42 @@ var min = function ( iterable, f ) {
 
 exports.min = min;
 
+/* js/src/reduce/reduce.js */
+
+
+/**
+ * Applies the accumulator function iteratively on the
+ * last return value of the accumulator and the next
+ * value in the iterable. The initial value is the initializer
+ * parameter.
+ *
+ * /!\ currently only works with an
+ *     accumulator that is a function object
+ *     and an array iterable
+ */
+
+var reduce = function ( accumulator, iterable, initializer ) {
+
+	var i, len;
+
+	i = 0;
+
+	len = iterable.length;
+
+	if ( len === 0 ) {
+		return initializer;
+	}
+
+	for ( ; i < len ; ++i ) {
+		initializer = accumulator( initializer, iterable[i] );
+	}
+
+	return initializer;
+
+};
+
+exports.reduce = reduce;
+
 /* js/src/reduce/sum.js */
 
 
@@ -786,18 +783,6 @@ var sum = function ( iterable ) {
 exports.sum = sum;
 
 /* js/src/utils */
-/* js/src/utils/iter.js */
-
-
-var iter = function ( tuple ) {
-
-	return tuple;
-
-};
-
-
-exports.iter = iter;
-
 /* js/src/utils/pick.js */
 
 var pick = function( array, indices, out ) {
@@ -865,17 +850,5 @@ var tee = function ( iterable, n, out ) {
 };
 
 exports.tee = tee;
-
-/* js/src/utils/tuple.js */
-
-
-var tuple = function ( iterable ) {
-
-	return iterable;
-
-};
-
-
-exports.tuple = tuple;
 
 })(typeof exports === 'undefined' ? this['itertools'] = {} : exports);
