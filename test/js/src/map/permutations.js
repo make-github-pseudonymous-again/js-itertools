@@ -18,6 +18,11 @@ one = function ( iterable, repeat, expected ) {
 
 test( "permutations", function () {
 
+	one( [], 1, [] );
+	one( [], 0, [[]] );
+	one( [1, 2, 3], 0, [[]] );
+	one( [1, 2, 3], 4, [] );
+
 	one(
 		"ABCD",
 		2,
