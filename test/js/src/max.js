@@ -6,7 +6,11 @@ sort = require ( "aureooms-js-sort" );
 
 one = function ( iterable, f, expected ) {
 
-	deepEqual( itertools.max( iterable, f ), expected, JSON.stringify( iterable ) );
+	deepEqual(
+		itertools.max( iterable, f ),
+		expected,
+		JSON.stringify( [iterable, f] )
+	);
 
 };
 
