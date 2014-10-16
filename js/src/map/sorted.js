@@ -1,8 +1,8 @@
 
 
-var sorted = function ( iterable, delta ) {
+var sorted = function ( f, iterable ) {
 
-	return iterable.slice( 0 ).sort( delta );
+	return iterable.slice( 0 ).sort( f );
 
 };
 
