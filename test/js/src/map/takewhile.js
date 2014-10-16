@@ -25,5 +25,17 @@ test( "takewhile", function () {
 		itertools.range( 0, 50, 1, [] )
 	);
 
+	one(
+		itertools.range( 0, 100, 1, [] ),
+		functools.rpartial( operator.lt, null, [100] ),
+		itertools.range( 0, 100, 1, [] )
+	);
+
+	one(
+		itertools.range( 0, 0, 1, [] ),
+		functools.rpartial( operator.lt, null, [1] ),
+		itertools.range( 0, 0, 1, [] )
+	);
+
 });
 
