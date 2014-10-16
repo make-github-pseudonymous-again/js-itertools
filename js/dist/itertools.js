@@ -156,7 +156,7 @@ exports.compress = compress;
 
 var dropwhile = function ( predicate, iterable, out ) {
 
-	var i, n;
+	var i, n, e;
 
 	n = iterable.length;
 
@@ -202,7 +202,7 @@ exports.enumerate = enumerate;
 
 /* js/src/map/filter.js */
 
-var filter = function ( callable, iterable, out ) {
+var filter = function ( predicate, iterable, out ) {
 
 	var i, len, item;
 
@@ -212,31 +212,33 @@ var filter = function ( callable, iterable, out ) {
 
 		item = iterable[i];
 
-		if ( callable( item ) ) {
+		if ( predicate( item ) ) {
 			out.push( item );
 		}
 
 	}
 
 	return out;
+
 };
 
 exports.filter = filter;
+exports.filtertrue = filter;
 
 /* js/src/map/filterfalse.js */
 
 var filterfalse = function ( predicate, iterable, out ) {
 
-	var i, e, n;
+	var i, len, item;
 
-	n = iterable.length;
+	len = iterable.length;
 
-	for ( i = 0 ; i < n ; ++i ) {
+	for ( i = 0 ; i < len ; ++i ) {
 
-		e = iterable[i];
+		item = iterable[i];
 
-		if ( ! predicate( e ) ) {
-			out.push( e )
+		if ( ! predicate( item ) ) {
+			out.push( item )
 		}
 
 	}
@@ -247,33 +249,9 @@ var filterfalse = function ( predicate, iterable, out ) {
 
 exports.filterfalse = filterfalse;
 
-/* js/src/map/filtertrue.js */
-
-var filtertrue = function ( predicate, iterable, out ) {
-
-	var i, e, n;
-
-	n = iterable.length;
-
-	for ( i = 0 ; i < n ; ++i ) {
-
-		e = iterable[i];
-
-		if ( predicate( e ) ) {
-			out.push( e )
-		}
-
-	}
-
-	return out;
-
-};
-
-exports.filtertrue = filtertrue;
-
 /* js/src/map/group.js */
 
-var group = function ( iterable, key, out ) {
+var group = function ( key, iterable, out ) {
 
 	var i, len, curr, next, tuple, item, items;
 
@@ -349,7 +327,7 @@ exports.map = map;
 var permutations = function( iterable, repeat, out ) {
 
 	// permutations('ABCD', 2) --> AB AC AD BA BC BD CA CB CD DA DB DC
-	// permutations(range(3)) --> 012 021 102 120 201 210
+	// permutations(range(3), 3) --> 012 021 102 120 201 210
 
 	var pool, i, j, w, len, indices, cycles, x, tmp;
 
@@ -386,7 +364,7 @@ var permutations = function( iterable, repeat, out ) {
 				indices.splice(i, 1);
 				indices.push(x);
 
-				cycles[i] = len - i
+				cycles[i] = len - i;
 			}
 
 			else {
@@ -403,9 +381,11 @@ var permutations = function( iterable, repeat, out ) {
 
 		}
 
-	}
+		if ( i === -1 ) {
+			return out;
+		}
 
-	return out;
+	}
 
 };
 
@@ -416,7 +396,7 @@ exports.permutations = permutations;
 
 var product = function ( iterables, repeat, out ) {
 
-	// product(['ABCD', 'xy']) --> Ax Ay Bx By Cx Cy Dx Dy
+	// product(['ABCD', 'xy'], 1) --> Ax Ay Bx By Cx Cy Dx Dy
 	// product([range(0, 2, 1)], 3) --> 000 001 010 011 100 101 110 111
 
 	var a, b, i, j, k, m, n, iterable, c, len;
