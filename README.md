@@ -3,7 +3,7 @@
 
 Iterator code bricks for JavaScript.
 
-**The API will be changed to support es6 generators as soon as es6 is widely supported, see http://kangax.github.io/compat-table/es6.**
+**The API will be changed to support es6 generators as soon as es6 is widely supported, see http://kangax.github.io/compat-table/es6. The current implementation will then move to https://github.com/aureooms/js-array.**
 
 [![NPM license](http://img.shields.io/npm/l/aureooms-js-itertools.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-itertools/master/LICENSE)
 [![NPM version](http://img.shields.io/npm/v/aureooms-js-itertools.svg?style=flat)](https://www.npmjs.org/package/aureooms-js-itertools)
