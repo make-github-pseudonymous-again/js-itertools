@@ -1,9 +1,9 @@
 [js-itertools](http://aureooms.github.io/js-itertools)
 ==
 
-iterator code bricks for JavaScript
+Iterator code bricks for JavaScript.
 
-/!\ The API will be changed to support es6 generators as soon as es6 is widely supported ( see http://kangax.github.io/compat-table/es6/ )
+**The API will be changed to support es6 generators as soon as es6 is widely supported, see http://kangax.github.io/compat-table/es6.**
 
 [![NPM license](http://img.shields.io/npm/l/aureooms-js-itertools.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-itertools/master/LICENSE)
 [![NPM version](http://img.shields.io/npm/v/aureooms-js-itertools.svg?style=flat)](https://www.npmjs.org/package/aureooms-js-itertools)
@@ -17,7 +17,7 @@ iterator code bricks for JavaScript
 [![GitHub issues](http://img.shields.io/github/issues/aureooms/js-itertools.svg?style=flat)](https://github.com/aureooms/js-itertools/issues)
 
 
-reference:
+Reference in Python and JavaScript,
 
   - http://mochi.github.io/mochikit/doc/html/MochiKit/Iter.html
   - https://docs.python.org/3/library/itertools.html
@@ -26,3 +26,4 @@ reference:
   - https://github.com/thegoleffect/node-itertools
   - http://rfw.name/sloth.js/
   - https://github.com/lodash/lodash
+  - https://github.com/erikrose/more-itertools
