@@ -1,0 +1,11 @@
+{
+	"description": "iterator code bricks for JavaScript",
+	"version": "0.2.0",
+	"repo": "aureooms/js-itertools",
+	"scripts": [
+		"js/dist/itertools.js"
+	],
+	"name": "aureooms-js-itertools",
+	"license": "AGPL-3.0",
+	"main": "js/dist/itertools.js"
+}
