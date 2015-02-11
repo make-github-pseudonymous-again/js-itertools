@@ -1,6 +1,6 @@
 {
 	"description": "iterator code bricks for JavaScript",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"repo": "aureooms/js-itertools",
 	"scripts": [
 		"js/dist/itertools.js"
