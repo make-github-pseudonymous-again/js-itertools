@@ -733,6 +733,36 @@
 	exports.sum = sum;
 
 	/* js/src/utils */
+	/* js/src/utils/count.js */
+
+	var count = regeneratorRuntime.mark(function count(start, step) {
+		return regeneratorRuntime.wrap(function count$(context$2$0) {
+			while (1) switch (context$2$0.prev = context$2$0.next) {
+				case 0:
+					if (!true) {
+						context$2$0.next = 6;
+						break;
+					}
+
+					context$2$0.next = 3;
+					return start;
+
+				case 3:
+
+					start += step;
+
+					context$2$0.next = 0;
+					break;
+
+				case 6:
+				case 'end':
+					return context$2$0.stop();
+			}
+		}, count, this);
+	});
+
+	exports.count = count;
+
 	/* js/src/utils/pick.js */
 
 	var pick = function pick(array, indices, out) {
