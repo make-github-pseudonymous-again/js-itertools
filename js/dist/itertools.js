@@ -1,854 +1,796 @@
-(function(exports, undefined){
+'use strict';
+
+(function (exports, undefined) {
 
 	'use strict';
 
+	/* js/src/map */
+	/* js/src/map/chain.js */
 
-/* js/src/map */
-/* js/src/map/chain.js */
+	var chain = function chain(iterables, out) {
 
-var chain = function ( iterables, out ) {
+		var i, j, n, len, it;
 
-	var i, j, n, len, it;
+		len = iterables.length;
 
-	len = iterables.length;
-
-
-	if ( len === 0 ) {
-		return out;
-	}
-
-
-	for ( i = 0 ; i < len ; ++i ) {
-
-		it = iterables[i];
-		n = it.length;
-
-		for ( j = 0 ; j < n ; ++j ) {
-			out.push( it[j] );
+		if (len === 0) {
+			return out;
 		}
-	}
 
-	return out;
+		for (i = 0; i < len; ++i) {
 
-};
+			it = iterables[i];
+			n = it.length;
 
-exports.chain = chain;
-
-/* js/src/map/combinations.js */
-var combinations = function ( iterable, repeat, out ) {
-
-	// combinations('ABCD', 2) --> AB AC AD BC BD CD
-	// combinations(range(4), 3) --> 012 013 023 123
-
-	var pool, len, indices, i, j;
-
-	pool = iterable;
-	len = pool.length;
-
-	if ( repeat > len ) {
-		return out;
-	}
-
-	indices = range( 0, repeat, 1, [] );
-
-	out.push( pick( pool, indices, [] ) );
-
-	if ( repeat === 0 || len === 0 ) {
-		return out;
-	}
-
-	for ( ; ; ) {
-
-		for ( i = repeat - 1 ; i >= 0 ; --i ) {
-			if ( indices[i] !== i + len - repeat ) {
-				break;
+			for (j = 0; j < n; ++j) {
+				out.push(it[j]);
 			}
 		}
 
-		if ( i < 0 ) {
+		return out;
+	};
+
+	exports.chain = chain;
+
+	/* js/src/map/combinations.js */
+	var combinations = function combinations(iterable, repeat, out) {
+
+		// combinations('ABCD', 2) --> AB AC AD BC BD CD
+		// combinations(range(4), 3) --> 012 013 023 123
+
+		var pool, len, indices, i, j;
+
+		pool = iterable;
+		len = pool.length;
+
+		if (repeat > len) {
 			return out;
 		}
 
-		++indices[i];
+		indices = range(0, repeat, 1, []);
 
-		for ( j = i + 1 ; j < repeat ; ++j ) {
-			indices[j] = indices[j - 1] + 1;
+		out.push(pick(pool, indices, []));
+
+		if (repeat === 0 || len === 0) {
+			return out;
 		}
 
-		out.push( pick( pool, indices, [] ) );
+		for (;;) {
 
-	}
+			for (i = repeat - 1; i >= 0; --i) {
+				if (indices[i] !== i + len - repeat) {
+					break;
+				}
+			}
 
-};
+			if (i < 0) {
+				return out;
+			}
 
-exports.combinations = combinations;
+			++indices[i];
 
-/* js/src/map/combinationswithrepetition.js */
+			for (j = i + 1; j < repeat; ++j) {
+				indices[j] = indices[j - 1] + 1;
+			}
 
+			out.push(pick(pool, indices, []));
+		}
+	};
 
-var combinationswithrepetition = function ( iterable, r, out ) {
+	exports.combinations = combinations;
 
-	// combinationswithrepetition('ABC', 2) --> AA AB AC BB BC CC
+	/* js/src/map/combinationswithrepetition.js */
 
-	var pool, len, indices, i, next;
+	var combinationswithrepetition = function combinationswithrepetition(iterable, r, out) {
 
-	pool = iterable;
-	len = pool.length;
+		// combinationswithrepetition('ABC', 2) --> AA AB AC BB BC CC
 
-	if ( len === 0 && r > 0) {
-		return out;
-	}
+		var pool, len, indices, i, next;
 
-	indices = repeat( 0, r, [] );
+		pool = iterable;
+		len = pool.length;
 
-	out.push( pick( pool, indices, [] ) );
+		if (len === 0 && r > 0) {
+			return out;
+		}
 
-	for ( ; ; ) {
+		indices = repeat(0, r, []);
 
-		for ( i = r - 1 ; i >= 0 ; --i ) {
-			if ( indices[i] !== len - 1 ) {
-				next = indices[i] + 1;
-				break;
+		out.push(pick(pool, indices, []));
+
+		for (;;) {
+
+			for (i = r - 1; i >= 0; --i) {
+				if (indices[i] !== len - 1) {
+					next = indices[i] + 1;
+					break;
+				}
+			}
+
+			if (i < 0) {
+				return out;
+			}
+
+			for (; i < r; ++i) {
+				indices[i] = next;
+			}
+
+			out.push(pick(pool, indices, []));
+		}
+	};
+
+	exports.combinationswithrepetition = combinationswithrepetition;
+
+	/* js/src/map/compress.js */
+
+	var compress = function compress(iterable, selector, out) {
+
+		var i, j;
+
+		j = Math.min(iterable.length, selector.length);
+
+		for (i = 0; i < j; ++i) {
+			if (selector[i]) {
+				out.push(iterable[i]);
 			}
 		}
 
-		if ( i < 0 ) {
-			return out;
-		}
-
-		for ( ; i < r ; ++i ) {
-			indices[i] = next;
-		}
-
-		out.push( pick( pool, indices, [] ) );
-	}
-
-};
-
-exports.combinationswithrepetition = combinationswithrepetition;
-
-/* js/src/map/compress.js */
-
-
-var compress = function ( iterable, selector, out ) {
-
-	var i, j;
-
-	j = Math.min( iterable.length, selector.length );
-
-	for ( i = 0 ; i < j ; ++i ) {
-		if ( selector[i] ) {
-			out.push( iterable[i] );
-		}
-	}
-
-	return out;
-
-};
-
-exports.compress = compress;
-
-/* js/src/map/dropwhile.js */
-
-var dropwhile = function ( predicate, iterable, out ) {
-
-	var i, n, e;
-
-	n = iterable.length;
-
-	if ( n === 0 ) {
 		return out;
-	}
+	};
 
-	i = 0;
-	e = iterable[i];
+	exports.compress = compress;
 
-	while ( predicate( e ) ) {
-		++i;
+	/* js/src/map/dropwhile.js */
 
-		if ( i === n ) {
+	var dropwhile = function dropwhile(predicate, iterable, out) {
+
+		var i, n, e;
+
+		n = iterable.length;
+
+		if (n === 0) {
 			return out;
 		}
 
+		i = 0;
 		e = iterable[i];
-	}
 
-	out.push( e );
+		while (predicate(e)) {
+			++i;
 
-	for ( ++i ; i < n ; ++i ) {
-		out.push( iterable[i] );
-	}
+			if (i === n) {
+				return out;
+			}
 
-	return out;
-
-};
-
-exports.dropwhile = dropwhile;
-
-/* js/src/map/enumerate.js */
-
-var enumerate = function ( iterable, out ) {
-
-	zip( [range( 0, iterable.length, 1, [] ), iterable], out );
-
-	return out;
-};
-
-exports.enumerate = enumerate;
-
-/* js/src/map/filter.js */
-
-var filter = function ( predicate, iterable, out ) {
-
-	var i, len, item;
-
-	len = iterable.length;
-
-	for ( i = 0 ; i < len ; ++i ) {
-
-		item = iterable[i];
-
-		if ( predicate( item ) ) {
-			out.push( item );
+			e = iterable[i];
 		}
 
-	}
+		out.push(e);
 
-	return out;
-
-};
-
-exports.filter = filter;
-exports.filtertrue = filter;
-
-/* js/src/map/filterfalse.js */
-
-var filterfalse = function ( predicate, iterable, out ) {
-
-	var i, len, item;
-
-	len = iterable.length;
-
-	for ( i = 0 ; i < len ; ++i ) {
-
-		item = iterable[i];
-
-		if ( ! predicate( item ) ) {
-			out.push( item )
+		for (++i; i < n; ++i) {
+			out.push(iterable[i]);
 		}
 
-	}
-
-	return out;
-
-};
-
-exports.filterfalse = filterfalse;
-
-/* js/src/map/group.js */
-
-var group = function ( key, iterable, out ) {
-
-	var i, len, curr, next, tuple, item, items;
-
-	len = iterable.length;
-
-	if ( len === 0 ) {
 		return out;
-	}
+	};
 
-	i = 0;
-	item = iterable[i];
-	next = key( item );
+	exports.dropwhile = dropwhile;
 
-	do {
-		curr = next;
-		items = [item];
-		tuple = [curr, items];
+	/* js/src/map/enumerate.js */
 
-		++i;
+	var enumerate = function enumerate(iterable, out) {
 
-		while ( i < len ) {
+		zip([range(0, iterable.length, 1, []), iterable], out);
+
+		return out;
+	};
+
+	exports.enumerate = enumerate;
+
+	/* js/src/map/filter.js */
+
+	var filter = function filter(predicate, iterable, out) {
+
+		var i, len, item;
+
+		len = iterable.length;
+
+		for (i = 0; i < len; ++i) {
 
 			item = iterable[i];
-			next = key( item );
 
-			if ( next !== curr ) {
-				break;
+			if (predicate(item)) {
+				out.push(item);
 			}
-
-			items.push( item );
-			++i;
 		}
 
-		out.push( tuple );
-
-	} while ( i < len );
-
-
-	return out;
-
-};
-
-exports.group = group;
-exports.groupby = group;
-
-/* js/src/map/map.js */
-
-/**
- *
- * Maps a callable object over an array.
- *
- * /!\ currently only supports a (function, array) tuple as argument
- *
- */
-
-var map = function ( callable, iterable, out ) {
-
-	var i, len;
-
-	len = iterable.length;
-
-	for ( i = 0 ; i < len ; ++i ) {
-		out.push( callable( iterable[i] ) );
-	}
-
-	return out;
-
-};
-
-exports.map = map;
-
-/* js/src/map/permutations.js */
-
-var permutations = function( iterable, repeat, out ) {
-
-	// permutations('ABCD', 2) --> AB AC AD BA BC BD CA CB CD DA DB DC
-	// permutations(range(3), 3) --> 012 021 102 120 201 210
-
-	var pool, i, j, w, len, indices, cycles, x, tmp;
-
-	pool = iterable;
-	len = pool.length;
-
-
-	if ( repeat > len ) {
 		return out;
-	}
+	};
 
+	exports.filter = filter;
+	exports.filtertrue = filter;
 
-	indices = range( 0, len, 1, [] );
-	cycles = range( len, len - repeat, -1, [] );
+	/* js/src/map/filterfalse.js */
 
-	out.push( pick( pool, indices.slice( 0, repeat ), [] ) );
+	var filterfalse = function filterfalse(predicate, iterable, out) {
 
-	if ( repeat === 0 || len === 0 ) {
-		return out;
-	}
+		var i, len, item;
 
-	for ( ; ; ) {
+		len = iterable.length;
 
-		i = repeat;
+		for (i = 0; i < len; ++i) {
 
-		while ( i-- ) {
+			item = iterable[i];
 
-			--cycles[i];
-
-			if ( cycles[i] === 0 ) {
-
-				x = indices[i];
-
-				indices.splice(i, 1);
-				indices.push(x);
-
-				cycles[i] = len - i;
+			if (!predicate(item)) {
+				out.push(item);
 			}
-
-			else {
-
-				j = cycles[i];
-
-				tmp = indices[i];
-				indices[i] = indices[len - j];
-				indices[len - j] = tmp;
-
-				out.push( pick( pool, indices.slice( 0, repeat ), [] ) );
-				break;
-			}
-
 		}
 
-		if ( i === -1 ) {
+		return out;
+	};
+
+	exports.filterfalse = filterfalse;
+
+	/* js/src/map/group.js */
+
+	var group = function group(key, iterable, out) {
+
+		var i, len, curr, next, tuple, item, items;
+
+		len = iterable.length;
+
+		if (len === 0) {
 			return out;
 		}
 
-	}
+		i = 0;
+		item = iterable[i];
+		next = key(item);
 
-};
+		do {
+			curr = next;
+			items = [item];
+			tuple = [curr, items];
 
-exports.permutations = permutations;
+			++i;
 
-/* js/src/map/product.js */
+			while (i < len) {
 
+				item = iterable[i];
+				next = key(item);
 
-var product = function ( iterables, repeat, out ) {
-
-	// product(['ABCD', 'xy'], 1) --> Ax Ay Bx By Cx Cy Dx Dy
-	// product([range(0, 2, 1)], 3) --> 000 001 010 011 100 101 110 111
-
-	var a, b, i, j, k, m, n, iterable, c, len;
-
-	a = [[]];
-
-	// repeat k times
-
-	for ( k = 0 ; k < repeat ; ++k ) {
-
-		// for each iterable
-		// concatenate existing combinaisons
-		// with every element of this iterable
-
-		for ( i = 0, m = iterables.length ; i < m ; ++i ) {
-
-			// b will contain the newly created combinaisons
-
-			b = [];
-
-			// cache the current iterable
-
-			iterable = iterables[i];
-
-
-			// for each existing combinaison
-
-			for ( j = 0, n = a.length ; j < n ; ++j ) {
-
-				// for each element of the current iterable
-
-				for ( c = 0, len = iterable.length ; c < len ; ++c ) {
-
-					// concatenate existing combinaison with
-					// current element of the iterable
-
-					b.push( a[j].concat( iterable[c] ) );
-
+				if (next !== curr) {
+					break;
 				}
 
+				items.push(item);
+				++i;
 			}
 
-			// update a for next round
+			out.push(tuple);
+		} while (i < len);
 
-			a = b;
+		return out;
+	};
+
+	exports.group = group;
+	exports.groupby = group;
+
+	/* js/src/map/map.js */
+
+	/**
+  *
+  * Maps a callable object over an array.
+  *
+  * /!\ currently only supports a (function, array) tuple as argument
+  *
+  */
+
+	var map = function map(callable, iterable, out) {
+
+		var i, len;
+
+		len = iterable.length;
+
+		for (i = 0; i < len; ++i) {
+			out.push(callable(iterable[i]));
 		}
 
-	}
-
-	// report output
-
-	for ( j = 0, n = a.length ; j < n ; ++j ) {
-		out.push(a[j]);
-	}
-
-	return out;
-};
-
-exports.product = product;
-
-/* js/src/map/repeat.js */
-
-
-var repeat = function ( element, times, out ) {
-
-	var i;
-
-	for ( i = 0 ; i < times ; ++i ) {
-		out.push( element );
-	}
-
-	return out;
-
-};
-
-exports.repeat = repeat;
-
-/* js/src/map/reversed.js */
-
-var reversed = function ( iterable, out ) {
-
-	var i;
-
-	i = iterable.length;
-
-	while ( i-- ) {
-		out.push( iterable[i] );
-	}
-
-	return out;
-};
-
-exports.reversed = reversed;
-
-/* js/src/map/slice.js */
-
-var slice = function ( iterable, start, stop, step, out ) {
-
-	return pick( iterable, range( start, stop, step, [] ), out );
-
-};
-
-exports.slice = slice;
-
-/* js/src/map/sorted.js */
-
-
-var sorted = function ( f, iterable ) {
-
-	return iterable.slice( 0 ).sort( f );
-
-};
-
-exports.sorted = sorted;
-
-/* js/src/map/starmap.js */
-
-/**
- *
- * Maps a callable object over an array.
- *
- * /!\ currently only supports a (function, array) tuple as argument
- *
- */
-
-var starmap = function ( callable, iterable, out ) {
-
-	var i, len;
-
-	len = iterable.length;
-
-	for ( i = 0 ; i < len ; ++i ) {
-		out.push( callable.apply( null, iterable[i] ) );
-	}
-
-	return out;
-
-};
-
-exports.starmap = starmap;
-
-/* js/src/map/takewhile.js */
-
-var takewhile = function ( predicate, iterable, out ) {
-
-	var i, n, e;
-
-	n = iterable.length;
-
-	if ( n === 0 ) {
 		return out;
-	}
+	};
 
-	i = 0;
-	e = iterable[i];
+	exports.map = map;
 
-	while ( predicate( e ) ) {
+	/* js/src/map/permutations.js */
 
-		out.push( e );
+	var permutations = function permutations(iterable, repeat, out) {
 
-		++i;
+		// permutations('ABCD', 2) --> AB AC AD BA BC BD CA CB CD DA DB DC
+		// permutations(range(3), 3) --> 012 021 102 120 201 210
 
-		if ( i === n ) {
+		var pool, i, j, w, len, indices, cycles, x, tmp;
+
+		pool = iterable;
+		len = pool.length;
+
+		if (repeat > len) {
 			return out;
 		}
 
-		e = iterable[i];
-	}
+		indices = range(0, len, 1, []);
+		cycles = range(len, len - repeat, -1, []);
 
-	return out;
+		out.push(pick(pool, indices.slice(0, repeat), []));
 
-};
+		if (repeat === 0 || len === 0) {
+			return out;
+		}
 
-exports.takewhile = takewhile;
+		for (;;) {
 
-/* js/src/map/zip.js */
+			i = repeat;
 
+			while (i--) {
 
-var zip = function ( iterables, out ) {
+				--cycles[i];
 
-	var i, j, n, len, tmp, tuple;
+				if (cycles[i] === 0) {
 
-	len = iterables.length;
+					x = indices[i];
 
+					indices.splice(i, 1);
+					indices.push(x);
 
-	if ( len === 0 ) {
+					cycles[i] = len - i;
+				} else {
+
+					j = cycles[i];
+
+					tmp = indices[i];
+					indices[i] = indices[len - j];
+					indices[len - j] = tmp;
+
+					out.push(pick(pool, indices.slice(0, repeat), []));
+					break;
+				}
+			}
+
+			if (i === -1) {
+				return out;
+			}
+		}
+	};
+
+	exports.permutations = permutations;
+
+	/* js/src/map/product.js */
+
+	var product = function product(iterables, repeat, out) {
+
+		// product(['ABCD', 'xy'], 1) --> Ax Ay Bx By Cx Cy Dx Dy
+		// product([range(0, 2, 1)], 3) --> 000 001 010 011 100 101 110 111
+
+		var a, b, i, j, k, m, n, iterable, c, len;
+
+		a = [[]];
+
+		// repeat k times
+
+		for (k = 0; k < repeat; ++k) {
+
+			// for each iterable
+			// concatenate existing combinaisons
+			// with every element of this iterable
+
+			for (i = 0, m = iterables.length; i < m; ++i) {
+
+				// b will contain the newly created combinaisons
+
+				b = [];
+
+				// cache the current iterable
+
+				iterable = iterables[i];
+
+				// for each existing combinaison
+
+				for (j = 0, n = a.length; j < n; ++j) {
+
+					// for each element of the current iterable
+
+					for (c = 0, len = iterable.length; c < len; ++c) {
+
+						// concatenate existing combinaison with
+						// current element of the iterable
+
+						b.push(a[j].concat(iterable[c]));
+					}
+				}
+
+				// update a for next round
+
+				a = b;
+			}
+		}
+
+		// report output
+
+		for (j = 0, n = a.length; j < n; ++j) {
+			out.push(a[j]);
+		}
+
 		return out;
-	}
+	};
 
+	exports.product = product;
 
-	n = iterables[0].length;
+	/* js/src/map/repeat.js */
 
-	for ( i = 0 ; i < len ; ++i ) {
+	var repeat = function repeat(element, times, out) {
 
-		tmp = iterables[i].length;
+		var i;
 
-		if ( tmp < n ) {
-			n = tmp;
+		for (i = 0; i < times; ++i) {
+			out.push(element);
 		}
 
-	}
+		return out;
+	};
 
-	for ( j = 0 ; j < n ; ++j ) {
+	exports.repeat = repeat;
 
-		tuple = []
+	/* js/src/map/reversed.js */
 
-		for ( i = 0 ; i < len ; ++i ) {
-			tuple.push( iterables[i][j] );
+	var reversed = function reversed(iterable, out) {
+
+		var i;
+
+		i = iterable.length;
+
+		while (i--) {
+			out.push(iterable[i]);
 		}
 
-		out.push( tuple );
-	}
+		return out;
+	};
 
-	return out;
-};
+	exports.reversed = reversed;
 
-exports.zip = zip;
+	/* js/src/map/slice.js */
 
-/* js/src/reduce */
-/* js/src/reduce/all.js */
+	var slice = function slice(iterable, start, stop, step, out) {
 
-var all = function ( iterable ) {
+		return pick(iterable, range(start, stop, step, []), out);
+	};
 
-	var i, len;
+	exports.slice = slice;
 
-	len = iterable.length;
+	/* js/src/map/sorted.js */
 
-	for ( i = 0 ; i < len ; ++i ) {
+	var sorted = function sorted(f, iterable) {
 
-		if ( ! iterable[i] ) {
-			return false;
+		return iterable.slice(0).sort(f);
+	};
+
+	exports.sorted = sorted;
+
+	/* js/src/map/starmap.js */
+
+	/**
+  *
+  * Maps a callable object over an array.
+  *
+  * /!\ currently only supports a (function, array) tuple as argument
+  *
+  */
+
+	var starmap = function starmap(callable, iterable, out) {
+
+		var i, len;
+
+		len = iterable.length;
+
+		for (i = 0; i < len; ++i) {
+			out.push(callable.apply(null, iterable[i]));
 		}
 
-	}
+		return out;
+	};
 
-	return true;
-};
+	exports.starmap = starmap;
 
-exports.all = all;
+	/* js/src/map/takewhile.js */
 
-/* js/src/reduce/any.js */
+	var takewhile = function takewhile(predicate, iterable, out) {
 
-var any = function ( iterable ) {
+		var i, n, e;
 
-	var i, len;
+		n = iterable.length;
 
-	len = iterable.length;
-
-	for ( i = 0 ; i < len ; ++i ) {
-
-		if ( iterable[i] ) {
-			return true;
+		if (n === 0) {
+			return out;
 		}
 
-	}
+		i = 0;
+		e = iterable[i];
 
-	return false;
-};
+		while (predicate(e)) {
 
-exports.any = any;
+			out.push(e);
 
-/* js/src/reduce/max.js */
+			++i;
 
-/**
- * Returns the *last* element of an iterable according
- * to some comparison function f.
- */
+			if (i === n) {
+				return out;
+			}
 
-var max = function ( iterable, f ) {
-
-	var a, b, i, len;
-
-	len = iterable.length;
-
-	if ( len === 0 ) {
-		return undefined;
-	}
-
-	a = iterable[0];
-
-	for ( i = 1 ; i < len ; ++i ) {
-
-		b = iterable[i];
-
-		if ( f( b, a ) > 0 ) {
-			a = b;
+			e = iterable[i];
 		}
 
-	}
+		return out;
+	};
 
-	return a;
+	exports.takewhile = takewhile;
 
-};
+	/* js/src/map/zip.js */
 
-exports.max = max;
+	var zip = function zip(iterables, out) {
 
-/* js/src/reduce/min.js */
+		var i, j, n, len, tmp, tuple;
 
-/**
- * Returns the *first* element of an iterable according
- * to some comparison function f.
- */
+		len = iterables.length;
 
-var min = function ( iterable, f ) {
-
-	var a, b, i, len;
-
-	len = iterable.length;
-
-	if ( len === 0 ) {
-		return undefined;
-	}
-
-	a = iterable[0];
-
-	for ( i = 1 ; i < len ; ++i ) {
-
-		b = iterable[i];
-
-		if ( f( b, a ) < 0 ) {
-			a = b;
+		if (len === 0) {
+			return out;
 		}
 
-	}
+		n = iterables[0].length;
 
-	return a;
+		for (i = 0; i < len; ++i) {
 
-};
+			tmp = iterables[i].length;
 
-exports.min = min;
+			if (tmp < n) {
+				n = tmp;
+			}
+		}
 
-/* js/src/reduce/reduce.js */
+		for (j = 0; j < n; ++j) {
 
+			tuple = [];
 
-/**
- * Applies the accumulator function iteratively on the
- * last return value of the accumulator and the next
- * value in the iterable. The initial value is the initializer
- * parameter.
- *
- * /!\ currently only works with an
- *     accumulator that is a function object
- *     and an array iterable
- */
+			for (i = 0; i < len; ++i) {
+				tuple.push(iterables[i][j]);
+			}
 
-var reduce = function ( accumulator, iterable, initializer ) {
+			out.push(tuple);
+		}
 
-	var i, len;
+		return out;
+	};
 
-	i = 0;
+	exports.zip = zip;
 
-	len = iterable.length;
+	/* js/src/reduce */
+	/* js/src/reduce/all.js */
 
-	if ( len === 0 ) {
+	var all = function all(iterable) {
+
+		var i, len;
+
+		len = iterable.length;
+
+		for (i = 0; i < len; ++i) {
+
+			if (!iterable[i]) {
+				return false;
+			}
+		}
+
+		return true;
+	};
+
+	exports.all = all;
+
+	/* js/src/reduce/any.js */
+
+	var any = function any(iterable) {
+
+		var i, len;
+
+		len = iterable.length;
+
+		for (i = 0; i < len; ++i) {
+
+			if (iterable[i]) {
+				return true;
+			}
+		}
+
+		return false;
+	};
+
+	exports.any = any;
+
+	/* js/src/reduce/max.js */
+
+	/**
+  * Returns the *last* element of an iterable according
+  * to some comparison function f.
+  */
+
+	var max = function max(iterable, f) {
+
+		var a, b, i, len;
+
+		len = iterable.length;
+
+		if (len === 0) {
+			return undefined;
+		}
+
+		a = iterable[0];
+
+		for (i = 1; i < len; ++i) {
+
+			b = iterable[i];
+
+			if (f(b, a) > 0) {
+				a = b;
+			}
+		}
+
+		return a;
+	};
+
+	exports.max = max;
+
+	/* js/src/reduce/min.js */
+
+	/**
+  * Returns the *first* element of an iterable according
+  * to some comparison function f.
+  */
+
+	var min = function min(iterable, f) {
+
+		var a, b, i, len;
+
+		len = iterable.length;
+
+		if (len === 0) {
+			return undefined;
+		}
+
+		a = iterable[0];
+
+		for (i = 1; i < len; ++i) {
+
+			b = iterable[i];
+
+			if (f(b, a) < 0) {
+				a = b;
+			}
+		}
+
+		return a;
+	};
+
+	exports.min = min;
+
+	/* js/src/reduce/reduce.js */
+
+	/**
+  * Applies the accumulator function iteratively on the
+  * last return value of the accumulator and the next
+  * value in the iterable. The initial value is the initializer
+  * parameter.
+  *
+  * /!\ currently only works with an
+  *     accumulator that is a function object
+  *     and an array iterable
+  */
+
+	var reduce = function reduce(accumulator, iterable, initializer) {
+
+		var i, len;
+
+		i = 0;
+
+		len = iterable.length;
+
+		if (len === 0) {
+			return initializer;
+		}
+
+		for (; i < len; ++i) {
+			initializer = accumulator(initializer, iterable[i]);
+		}
+
 		return initializer;
-	}
+	};
 
-	for ( ; i < len ; ++i ) {
-		initializer = accumulator( initializer, iterable[i] );
-	}
+	exports.reduce = reduce;
 
-	return initializer;
+	/* js/src/reduce/sum.js */
 
-};
+	var sum = function sum(iterable) {
 
-exports.reduce = reduce;
+		var i, len, total;
 
-/* js/src/reduce/sum.js */
+		total = 0;
 
+		len = iterable.length;
 
-var sum = function ( iterable ) {
-
-	var i, len, total;
-
-	total = 0;
-
-	len = iterable.length;
-
-	for ( i = 0 ; i < len ; ++i ) {
-		total += iterable[i];
-	}
-
-	return total;
-
-};
-
-exports.sum = sum;
-
-/* js/src/utils */
-/* js/src/utils/pick.js */
-
-var pick = function( array, indices, out ) {
-
-	var i, k, len;
-
-	len = indices.length;
-
-	for ( i = 0 ; i < len ; ++i ) {
-		k = indices[i];
-		out.push( array[k] );
-	}
-
-	return out;
-};
-
-exports.pick = pick;
-
-/* js/src/utils/range.js */
-
-
-var range = function ( start, stop, step, out ) {
-
-	if ( step < 0 ) {
-		for ( ; start > stop ; start += step ) {
-			out.push( start );
-		}
-	}
-
-	else {
-		for ( ; start < stop ; start += step ) {
-			out.push( start );
-		}
-	}
-
-	return out;
-
-};
-
-exports.range = range;
-
-/* js/src/utils/tee.js */
-
-
-var tee = function ( iterable, n, out ) {
-
-	var i, m, deque;
-
-	m = iterable.length;
-
-	while ( n-- ) {
-
-		deque = [];
-
-		for ( i = 0 ; i < m ; ++i ) {
-			deque.push( iterable[i] );
+		for (i = 0; i < len; ++i) {
+			total += iterable[i];
 		}
 
-		out.push(deque);
+		return total;
+	};
 
-	}
+	exports.sum = sum;
 
-	return out;
+	/* js/src/utils */
+	/* js/src/utils/pick.js */
 
-};
+	var pick = function pick(array, indices, out) {
 
-exports.tee = tee;
+		var i, k, len;
 
-})(typeof exports === 'undefined' ? this['itertools'] = {} : exports);
+		len = indices.length;
+
+		for (i = 0; i < len; ++i) {
+			k = indices[i];
+			out.push(array[k]);
+		}
+
+		return out;
+	};
+
+	exports.pick = pick;
+
+	/* js/src/utils/range.js */
+
+	var range = function range(start, stop, step, out) {
+
+		if (step < 0) {
+			for (; start > stop; start += step) {
+				out.push(start);
+			}
+		} else {
+			for (; start < stop; start += step) {
+				out.push(start);
+			}
+		}
+
+		return out;
+	};
+
+	exports.range = range;
+
+	/* js/src/utils/tee.js */
+
+	var tee = function tee(iterable, n, out) {
+
+		var i, m, deque;
+
+		m = iterable.length;
+
+		while (n--) {
+
+			deque = [];
+
+			for (i = 0; i < m; ++i) {
+				deque.push(iterable[i]);
+			}
+
+			out.push(deque);
+		}
+
+		return out;
+	};
+
+	exports.tee = tee;
+})(typeof exports === 'undefined' ? undefined.itertools = {} : exports);
