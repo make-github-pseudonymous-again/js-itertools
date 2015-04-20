@@ -24,6 +24,8 @@
     "bricks",
     "functional",
     "iterator",
+	"generator",
+	"iterable",
     "javascript",
     "js"
   ],
