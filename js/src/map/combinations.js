@@ -1,47 +1,43 @@
-var combinations = function ( iterable, repeat, out ) {
+var combinations = function* ( iterable , r ) {
 
 	// combinations('ABCD', 2) --> AB AC AD BC BD CD
 	// combinations(range(4), 3) --> 012 013 023 123
 
-	var pool, len, indices, i, j;
+	let pool = list( iterable ) ;
+	let len = pool.length ;
 
-	pool = iterable;
-	len = pool.length;
+	if ( r > len ) return ;
 
-	if ( repeat > len ) {
-		return out;
-	}
+	let indices = list( range( 0 , r , 1  ) ) ;
 
-	indices = range( 0, repeat, 1, [] );
+	yield list( pick( pool , indices ) ) ;
 
-	out.push( pick( pool, indices, [] ) );
+	while ( true ) {
 
-	if ( repeat === 0 || len === 0 ) {
-		return out;
-	}
+		let i = r - 1 ;
 
-	for ( ; ; ) {
+		while ( true ) {
 
-		for ( i = repeat - 1 ; i >= 0 ; --i ) {
-			if ( indices[i] !== i + len - repeat ) {
-				break;
+			if ( i < 0 ) return ;
+
+			if ( indices[i] !== i + len - r ) {
+
+				let pivot = ++indices[i] ;
+
+				for ( ++i ; i < r ; ++i ) indices[i] = ++pivot ;
+
+				break ;
+
 			}
+
+			--i ;
+
 		}
 
-		if ( i < 0 ) {
-			return out;
-		}
-
-		++indices[i];
-
-		for ( j = i + 1 ; j < repeat ; ++j ) {
-			indices[j] = indices[j - 1] + 1;
-		}
-
-		out.push( pick( pool, indices, [] ) );
+		yield list( pick( pool , indices ) ) ;
 
 	}
 
-};
+} ;
 
-exports.combinations = combinations;
+exports.combinations = combinations ;
