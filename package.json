@@ -1,38 +1,38 @@
 {
-  "license": "AGPL-3.0",
-  "homepage": "http://aureooms.github.io/js-itertools/",
-  "version": "0.2.1",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/aureooms/js-itertools.git"
-  },
-  "main": "js/dist/itertools.js",
-  "author": "aureooms",
-  "description": "iterator code bricks for JavaScript",
-  "bugs": {
-    "url": "https://github.com/aureooms/js-itertools/issues"
-  },
-  "devDependencies": {
-    "aureooms-js-compare": "^1.4.3",
-    "aureooms-js-functools": "^1.2.1",
-    "aureooms-js-operator": "^1.0.1",
-    "aureooms-js-sort": "^5.0.2",
-    "aureooms-node-package": "^4.1.0"
-  },
-  "dependencies": {},
-  "keywords": [
-    "bricks",
-    "functional",
-    "iterator",
-	"generator",
-	"iterable",
-    "javascript",
-    "js"
-  ],
-  "name": "aureooms-js-itertools",
-  "scripts": {
-    "test": "./node_modules/.bin/aureooms-node-package-test",
-    "doc": "./node_modules/.bin/groc",
-    "build": "./node_modules/.bin/aureooms-node-package-build"
-  }
+	"license": "AGPL-3.0",
+	"homepage": "http://aureooms.github.io/js-itertools/",
+	"version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/aureooms/js-itertools.git"
+	},
+	"main": "js/dist/itertools.js",
+	"author": "aureooms",
+	"description": "iterator code bricks for JavaScript",
+	"bugs": {
+		"url": "https://github.com/aureooms/js-itertools/issues"
+	},
+	"devDependencies": {
+		"aureooms-js-compare": "^1.4.3",
+		"aureooms-js-functools": "^1.2.1",
+		"aureooms-js-operator": "^1.0.1",
+		"aureooms-js-sort": "^5.0.2",
+		"aureooms-node-package": "^4.1.0"
+	},
+	"dependencies": {},
+	"keywords": [
+		"bricks",
+		"functional",
+		"iterator",
+		"generator",
+		"iterable",
+		"javascript",
+		"js"
+	],
+	"name": "aureooms-js-itertools",
+	"scripts": {
+		"test": "./node_modules/.bin/aureooms-node-package-test",
+		"doc": "./node_modules/.bin/groc",
+		"build": "./node_modules/.bin/aureooms-node-package-build"
+	}
 }
