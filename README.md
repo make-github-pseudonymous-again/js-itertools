@@ -1,4 +1,5 @@
-#[js-itertools](http://aureooms.github.io/js-itertools)
+[js-itertools](http://aureooms.github.io/js-itertools)
+==
 
 Iterator code bricks for JavaScript.
 
@@ -122,7 +123,6 @@ itertools.reversed( "ABC" ) ; // C B A
 itertools.sorted( compare.increasing , [ 3 , 1 , 2 ] ) ; // 1 2 3
 ```
 
-
 References in Python and JavaScript:
 
   - http://mochi.github.io/mochikit/doc/html/MochiKit/Iter.html
@@ -133,3 +133,4 @@ References in Python and JavaScript:
   - http://rfw.name/sloth.js/
   - https://github.com/lodash/lodash
   - https://github.com/erikrose/more-itertools
+  - https://github.com/StreetStrider/aux.js
