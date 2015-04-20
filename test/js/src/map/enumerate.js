@@ -4,7 +4,7 @@ var one = function ( iterable, out ) {
 
 	msg = "enumerate " + JSON.stringify( iterable );
 
-	deepEqual( itertools.enumerate( iterable, [] ), out, msg )
+	deepEqual( itertools.list( itertools.enumerate( iterable ) ) , out, msg ) ;
 
 };
 

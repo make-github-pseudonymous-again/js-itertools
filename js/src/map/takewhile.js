@@ -11,4 +11,4 @@ let takewhile = function* ( predicate , iterable ) {
 
 } ;
 
-exports.takewhile = takewhile;
+exports.takewhile = takewhile ;

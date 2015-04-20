@@ -9,7 +9,7 @@ let combinations = function* ( iterable , r ) {
 
 	if ( r > len ) return ;
 
-	let indices = list( range( 0 , r , 1  ) ) ;
+	let indices = list( range( 0 , r , 1 ) ) ;
 
 	yield list( pick( pool , indices ) ) ;
 

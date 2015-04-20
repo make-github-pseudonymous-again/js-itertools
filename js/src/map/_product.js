@@ -5,13 +5,13 @@
 
 let _product = function* ( pools , i , n ) {
 
-	if ( i === n ) return [ [ ] ] ;
+	if ( i === n ) { yield [ ] ; return ; }
 
 	let iterable = pools[i] ;
 
-	for ( let buffer in _product( pools , i + 1 , n ) ) {
+	for ( let buffer of _product( pools , i + 1 , n ) ) {
 
-		for ( let item in iterable ) {
+		for ( let item of iterable ) {
 
 			buffer.push( item ) ;
 

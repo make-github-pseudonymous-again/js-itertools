@@ -5,7 +5,7 @@ var one = function ( predicate, iterable, out ) {
 
 	msg = "filter " + JSON.stringify( iterable );
 
-	deepEqual( itertools.filter( predicate, iterable, [] ), out, msg );
+	deepEqual( itertools.list( itertools.filter( predicate, iterable ) ), out, msg );
 };
 
 

@@ -9,7 +9,7 @@ let combinationswithrepetition = function* ( iterable , r ) {
 
 	if ( len === 0 && r > 0 ) return ;
 
-	let indices = list( repeat( 0 , r ) ) ;
+	let indices = list( nrepeat( 0 , r ) ) ;
 
 	yield list( pick( pool , indices ) ) ;
 

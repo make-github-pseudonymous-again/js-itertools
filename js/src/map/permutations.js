@@ -13,7 +13,7 @@ let permutations = function* ( iterable , r ) {
 	let indices = list( range( 0 , len , 1 ) ) ;
 	let cycles = list( range( len , len - r , -1 ) ) ;
 
-	yield pick( pool , head( indices , r ) ) ;
+	yield list( pick( pool , head( indices , r ) ) ) ;
 
 	if ( r === 0 || len === 0 ) return ;
 
@@ -39,7 +39,7 @@ let permutations = function* ( iterable , r ) {
 
 				[ indices[i] , indices[len - j] ] = [ indices[len - j] , indices[i] ] ;
 
-				yield pick( pool , head( indices , r ) ) ;
+				yield list( pick( pool , head( indices , r ) ) ) ;
 				break ;
 
 			}

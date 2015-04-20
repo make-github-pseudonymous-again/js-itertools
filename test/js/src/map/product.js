@@ -4,13 +4,13 @@
 
 var one;
 
-one = function ( iterables, repeat, expected ) {
+one = function ( iterables, r, expected ) {
 
 
 	deepEqual(
-		itertools.product( iterables, repeat, [] ),
+		itertools.list( itertools.product( iterables, r ) ),
 		expected,
-		JSON.stringify( [iterables, repeat] )
+		JSON.stringify( [iterables, r] )
 	);
 
 };

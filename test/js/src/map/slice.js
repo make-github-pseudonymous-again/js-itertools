@@ -1,15 +1,11 @@
 
-var one;
+let one = function ( start, stop, step ) {
 
-one = function ( start, stop, step ) {
-
-	var iterable;
-
-	iterable = itertools.range( 0, stop, 1, [] );
+	let iterable = itertools.range( 0, stop, 1 );
 
 	deepEqual(
-		itertools.slice( iterable, start, stop, step, [] ),
-		itertools.range( start, stop, step, [] ),
+		itertools.list( itertools.slice( iterable, start, stop, step ) ),
+		itertools.list( itertools.range( start, stop, step ) ),
 		JSON.stringify( [start, stop, step] )
 	);
 

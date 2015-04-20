@@ -1,8 +1,8 @@
 
 
-var one, sort;
+var one, compare;
 
-sort = require ( "aureooms-js-sort" );
+compare = require ( "aureooms-js-compare" );
 
 one = function ( iterable, comp, expected ) {
 
@@ -16,22 +16,22 @@ one = function ( iterable, comp, expected ) {
 
 test( "min", function () {
 
-	one( [], sort.increasing, undefined );
-	one( [1], sort.increasing, 1 );
-	one( [1, 2, 3], sort.increasing, 1 );
-	one( [3, 2, 1], sort.increasing, 1 );
-	one( [2, 3, 1], sort.increasing, 1 );
-	one( [1, 3, 2], sort.increasing, 1 );
-	one( [2, 1, 3], sort.increasing, 1 );
-	one( [3, 1, 2], sort.increasing, 1 );
+	one( [], compare.increasing, undefined );
+	one( [1], compare.increasing, 1 );
+	one( [1, 2, 3], compare.increasing, 1 );
+	one( [3, 2, 1], compare.increasing, 1 );
+	one( [2, 3, 1], compare.increasing, 1 );
+	one( [1, 3, 2], compare.increasing, 1 );
+	one( [2, 1, 3], compare.increasing, 1 );
+	one( [3, 1, 2], compare.increasing, 1 );
 
-	one( [], sort.decreasing, undefined );
-	one( [1], sort.decreasing, 1 );
-	one( [1, 2, 3], sort.decreasing, 3 );
-	one( [3, 2, 1], sort.decreasing, 3 );
-	one( [2, 3, 1], sort.decreasing, 3 );
-	one( [1, 3, 2], sort.decreasing, 3 );
-	one( [2, 1, 3], sort.decreasing, 3 );
-	one( [3, 1, 2], sort.decreasing, 3 );
+	one( [], compare.decreasing, undefined );
+	one( [1], compare.decreasing, 1 );
+	one( [1, 2, 3], compare.decreasing, 3 );
+	one( [3, 2, 1], compare.decreasing, 3 );
+	one( [2, 3, 1], compare.decreasing, 3 );
+	one( [1, 3, 2], compare.decreasing, 3 );
+	one( [2, 1, 3], compare.decreasing, 3 );
+	one( [3, 1, 2], compare.decreasing, 3 );
 
 });

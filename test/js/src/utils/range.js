@@ -5,7 +5,7 @@ var one = function ( begin, end, step, out ) {
 
 	msg = "range " + JSON.stringify( [begin, end, step] );
 
-	deepEqual( itertools.range( begin, end, step, [] ), out, msg );
+	deepEqual( itertools.list( itertools.range( begin, end, step ) ), out, msg );
 
 };
 

@@ -7,7 +7,7 @@ one = function ( iterable, repeat, expected ) {
 
 
 	deepEqual(
-		itertools.permutations( iterable, repeat, [] ),
+		itertools.list( itertools.permutations( iterable , repeat ) ) ,
 		expected,
 		JSON.stringify( [iterable, repeat] )
 	);

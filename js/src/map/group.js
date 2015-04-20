@@ -10,29 +10,39 @@ let group = function* ( key , iterable ) {
 	let item = first.value ;
 	let nextkey = key( item ) ;
 
+	let currkey , buffer ;
+
 	grouping : while ( true ) {
 
-		let currkey = nextkey ;
-		let items = [ item ] ;
+		currkey = nextkey ;
+		buffer = [ item ] ;
 
-		for ( item of iterator ) {
+		while ( true ) {
+
+			let current = next( iterator ) ;
+
+			if ( current.done ) break grouping ;
+
+			item = current.value ;
 
 			nextkey = key( item ) ;
 
 			if ( nextkey !== currkey ) {
 
-				yield [ curr , items ] ;
+				yield [ currkey , buffer ] ;
 				continue grouping ;
 
 			}
 
-			items.push( item ) ;
+			buffer.push( item ) ;
 
 		}
 
-		return ;
+		break grouping ;
 
 	}
+
+	yield [ currkey , buffer ] ;
 
 } ;
 

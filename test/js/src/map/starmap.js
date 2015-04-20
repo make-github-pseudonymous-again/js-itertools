@@ -8,7 +8,7 @@ one = function ( callable, iterable, out ) {
 
 	msg = "starmap " + JSON.stringify( iterable );
 
-	deepEqual( itertools.starmap( callable, iterable, [] ), out, msg )
+	deepEqual( itertools.list( itertools.starmap( callable , iterable ) ) , out, msg ) ;
 
 };
 

@@ -1,9 +1,11 @@
 
-let one = function ( item, times, expected ) {
+var one;
+
+one = function ( item, times, expected ) {
 
 
 	deepEqual(
-		itertools.list( itertools.head( itertools.repeat( item ) , times ) ) ,
+		itertools.list( itertools.nrepeat( item , times ) ),
 		expected,
 		JSON.stringify( [item, times] )
 	);
@@ -12,7 +14,7 @@ let one = function ( item, times, expected ) {
 
 
 
-test( "repeat", function () {
+test( "nrepeat", function () {
 
 	[0, 1, -1, [], "A", "ABC", ["A"], [0, 1, -1], ["A", "B", "C"]]
 	.forEach( function ( item ) {

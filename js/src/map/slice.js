@@ -14,6 +14,14 @@ let slice = function* ( iterable , start , stop , step ) {
 
 	while ( stop > 0 ) {
 
+		let current = next( iterator ) ;
+
+		if ( current.done ) return ;
+
+		yield current.value ;
+
+		--stop ;
+
 		let n = step ;
 
 		while ( n > 1 ) {
@@ -23,14 +31,6 @@ let slice = function* ( iterable , start , stop , step ) {
 			--n ;
 
 		}
-
-		let current = next( iterator ) ;
-
-		if ( current.done ) return ;
-
-		yield current.value ;
-
-		--stop ;
 
 	}
 

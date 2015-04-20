@@ -1,10 +1,10 @@
-var one = function ( iterable, n, out ) {
+var one = function ( iterable , n , out ) {
 
 	var msg;
 
 	msg = "tee " + JSON.stringify( [iterable, n] );
 
-	deepEqual( itertools.tee( iterable, n, [] ), out, msg )
+	deepEqual( itertools.list( itertools.map( itertools.list , itertools.tee( iterable , n ) ) ) , out , msg ) ;
 
 };
 

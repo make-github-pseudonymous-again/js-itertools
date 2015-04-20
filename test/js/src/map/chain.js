@@ -5,7 +5,7 @@ var one = function ( iterables, out ) {
 
 	msg = "chain " + JSON.stringify( iterables );
 
-	deepEqual( itertools.chain( iterables, [] ), out, msg );
+	deepEqual( itertools.list( itertools.chain( iterables ) ), out, msg );
 
 };
 

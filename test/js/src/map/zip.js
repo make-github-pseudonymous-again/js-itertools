@@ -1,13 +1,18 @@
 
+let compare = require( "aureooms-js-compare" ) ;
+
 var one = function ( iterables, out ) {
 
 	var msg, unzipped, strip;
 
 	msg = "zip " + JSON.stringify( iterables );
 
-	deepEqual( itertools.zip( iterables, [] ), out, msg );
+	deepEqual( itertools.list( itertools.zip( iterables ) ) , out, msg );
 
 	strip = function ( iterables, out ) {
+
+		// makes all the inputs have the same length
+		// (min length among all iterables)
 
 		var i, n, len, tmp;
 
@@ -17,17 +22,7 @@ var one = function ( iterables, out ) {
 			return out;
 		}
 
-		n = iterables[0].length;
-
-		for ( i = 1 ; i < len ; ++i ) {
-
-			tmp = iterables[i].length;
-
-			if ( tmp < n ) {
-				n = tmp;
-			}
-
-		}
+		n = itertools.min( compare.len( compare.increasing ) , iterables ).length ;
 
 		for ( i = 0 ; i < len ; ++i ) {
 			out.push( iterables[i].slice( 0, n ) );
@@ -40,7 +35,7 @@ var one = function ( iterables, out ) {
 
 	unzipped = strip( iterables, [] );
 
-	deepEqual( itertools.zip( out, [] ), unzipped, "un" + msg );
+	deepEqual( itertools.list( itertools.zip( out ) ), unzipped, "un" + msg );
 
 };
 

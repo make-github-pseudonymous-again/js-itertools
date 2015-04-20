@@ -1,15 +1,17 @@
 
 let dropwhile = function* ( predicate , iterable ) {
 
-	for ( let item of iterable ) {
+	let iterator = iter( iterable ) ;
+
+	for ( let item of iterator ) {
 
 		if ( predicate( item ) ) continue ;
 
-		// equivalent to return chain( [ [ item ] , iterable ] ) ;
+		// equivalent to return chain( [ [ item ] , iterator ] ) ;
 
 		yield item ;
 
-		yield* iterable ;
+		yield* iterator ;
 
 		return ;
 

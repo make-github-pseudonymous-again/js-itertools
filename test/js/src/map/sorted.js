@@ -1,9 +1,9 @@
 
-var one, sort, util, operator;
+var one, compare, util, operator;
 
 util = require( "util" );
 
-sort = require( "aureooms-js-sort" );
+compare = require( "aureooms-js-compare" );
 
 operator = require( "aureooms-js-operator" );
 
@@ -35,7 +35,7 @@ one = function ( f, a ) {
 
 test( "sorted", function () {
 
-	[sort.increasing, sort.decreasing].forEach( function (f) {
+	[compare.increasing, compare.decreasing].forEach( function (f) {
 
 		var a, i, n;
 

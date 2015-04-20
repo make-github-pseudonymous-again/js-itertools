@@ -5,9 +5,8 @@ operator = require( "aureooms-js-operator" );
 
 one = function ( key, iterable, expected ) {
 
-
 	deepEqual(
-		itertools.group( key, iterable, [] ),
+		itertools.list( itertools.group( key , iterable ) ),
 		expected,
 		JSON.stringify( [iterable, key] )
 	);
