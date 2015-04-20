@@ -814,18 +814,26 @@
 					return context$2$0.finish(12);
 
 				case 20:
-					if (!true) {
-						context$2$0.next = 24;
+					if (!(buffer.length === 0)) {
+						context$2$0.next = 22;
 						break;
 					}
 
-					return context$2$0.delegateYield(buffer, 't1', 22);
+					return context$2$0.abrupt('return');
 
 				case 22:
-					context$2$0.next = 20;
-					break;
+					if (!true) {
+						context$2$0.next = 26;
+						break;
+					}
+
+					return context$2$0.delegateYield(buffer, 't1', 24);
 
 				case 24:
+					context$2$0.next = 22;
+					break;
+
+				case 26:
 				case 'end':
 					return context$2$0.stop();
 			}
