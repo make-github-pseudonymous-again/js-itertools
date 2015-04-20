@@ -1,33 +1,32 @@
 
 /**
- * Returns the *first* element of an iterable according
- * to some comparison function f.
+ * Returns the smallest element of an iterable according
+ * to some comparison function.
  */
 
-var min = function ( iterable, f ) {
+var min = function ( compare , iterable ) {
 
-	var a, b, i, len;
+	let iterator = iter( iterable ) ;
 
-	len = iterable.length;
+	let first = next( iterator ) ;
 
-	if ( len === 0 ) {
-		return undefined;
-	}
+	if ( first.done ) return undefined ;
 
-	a = iterable[0];
+	let smallest = first.value ;
 
-	for ( i = 1 ; i < len ; ++i ) {
+	for ( let candidate of iterator ) {
 
-		b = iterable[i];
+		if ( compare( candidate , smallest ) < 0 ) {
 
-		if ( f( b, a ) < 0 ) {
-			a = b;
+			smallest = candidate ;
+
 		}
 
 	}
 
-	return a;
+	return smallest ;
 
-};
+} ;
 
-exports.min = min;
+exports.min = min ;
+

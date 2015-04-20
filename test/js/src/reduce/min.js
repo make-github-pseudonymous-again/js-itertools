@@ -4,12 +4,12 @@ var one, sort;
 
 sort = require ( "aureooms-js-sort" );
 
-one = function ( iterable, f, expected ) {
+one = function ( iterable, comp, expected ) {
 
 	deepEqual(
-		itertools.min( iterable, f ),
+		itertools.min( comp , iterable ),
 		expected,
-		JSON.stringify( [iterable, f] )
+		JSON.stringify( [iterable, comp] )
 	);
 
 };

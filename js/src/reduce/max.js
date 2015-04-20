@@ -1,33 +1,31 @@
 
 /**
- * Returns the *last* element of an iterable according
- * to some comparison function f.
+ * Returns the largest element of an iterable according
+ * to some comparison function.
  */
 
-var max = function ( iterable, f ) {
+var max = function ( compare , iterable ) {
 
-	var a, b, i, len;
+	let iterator = iter( iterable ) ;
 
-	len = iterable.length;
+	let first = next( iterator ) ;
 
-	if ( len === 0 ) {
-		return undefined;
-	}
+	if ( first.done ) return undefined ;
 
-	a = iterable[0];
+	let largest = first.value ;
 
-	for ( i = 1 ; i < len ; ++i ) {
+	for ( let candidate of iterator ) {
 
-		b = iterable[i];
+		if ( compare( candidate , largest ) > 0 ) {
 
-		if ( f( b, a ) > 0 ) {
-			a = b;
+			largest = candidate ;
+
 		}
 
 	}
 
-	return a;
+	return largest ;
 
-};
+} ;
 
-exports.max = max;
+exports.max = max ;

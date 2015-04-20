@@ -616,32 +616,49 @@
 	/* js/src/reduce/max.js */
 
 	/**
-  * Returns the *last* element of an iterable according
-  * to some comparison function f.
+  * Returns the largest element of an iterable according
+  * to some comparison function.
   */
 
-	var max = function max(iterable, f) {
+	var max = function max(compare, iterable) {
 
-		var a, b, i, len;
+		var iterator = iter(iterable);
 
-		len = iterable.length;
+		var first = next(iterator);
 
-		if (len === 0) {
+		if (first.done) {
 			return undefined;
-		}
+		}var largest = first.value;
 
-		a = iterable[0];
+		var _iteratorNormalCompletion = true;
+		var _didIteratorError = false;
+		var _iteratorError = undefined;
 
-		for (i = 1; i < len; ++i) {
+		try {
+			for (var _iterator = iterator[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+				var candidate = _step.value;
 
-			b = iterable[i];
+				if (compare(candidate, largest) > 0) {
 
-			if (f(b, a) > 0) {
-				a = b;
+					largest = candidate;
+				}
+			}
+		} catch (err) {
+			_didIteratorError = true;
+			_iteratorError = err;
+		} finally {
+			try {
+				if (!_iteratorNormalCompletion && _iterator['return']) {
+					_iterator['return']();
+				}
+			} finally {
+				if (_didIteratorError) {
+					throw _iteratorError;
+				}
 			}
 		}
 
-		return a;
+		return largest;
 	};
 
 	exports.max = max;
@@ -649,32 +666,49 @@
 	/* js/src/reduce/min.js */
 
 	/**
-  * Returns the *first* element of an iterable according
-  * to some comparison function f.
+  * Returns the smallest element of an iterable according
+  * to some comparison function.
   */
 
-	var min = function min(iterable, f) {
+	var min = function min(compare, iterable) {
 
-		var a, b, i, len;
+		var iterator = iter(iterable);
 
-		len = iterable.length;
+		var first = next(iterator);
 
-		if (len === 0) {
+		if (first.done) {
 			return undefined;
-		}
+		}var smallest = first.value;
 
-		a = iterable[0];
+		var _iteratorNormalCompletion2 = true;
+		var _didIteratorError2 = false;
+		var _iteratorError2 = undefined;
 
-		for (i = 1; i < len; ++i) {
+		try {
+			for (var _iterator2 = iterator[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+				var candidate = _step2.value;
 
-			b = iterable[i];
+				if (compare(candidate, smallest) < 0) {
 
-			if (f(b, a) < 0) {
-				a = b;
+					smallest = candidate;
+				}
+			}
+		} catch (err) {
+			_didIteratorError2 = true;
+			_iteratorError2 = err;
+		} finally {
+			try {
+				if (!_iteratorNormalCompletion2 && _iterator2['return']) {
+					_iterator2['return']();
+				}
+			} finally {
+				if (_didIteratorError2) {
+					throw _iteratorError2;
+				}
 			}
 		}
 
-		return a;
+		return smallest;
 	};
 
 	exports.min = min;
@@ -766,19 +800,19 @@
 	/* js/src/utils/cycle.js */
 
 	var cycle = regeneratorRuntime.mark(function cycle(iterable) {
-		var buffer, _iteratorNormalCompletion, _didIteratorError, _iteratorError, _iterator, _step, item;
+		var buffer, _iteratorNormalCompletion3, _didIteratorError3, _iteratorError3, _iterator3, _step3, item;
 
 		return regeneratorRuntime.wrap(function cycle$(context$2$0) {
 			while (1) switch (context$2$0.prev = context$2$0.next) {
 				case 0:
 					buffer = [];
-					_iteratorNormalCompletion = true;
-					_didIteratorError = false;
-					_iteratorError = undefined;
+					_iteratorNormalCompletion3 = true;
+					_didIteratorError3 = false;
+					_iteratorError3 = undefined;
 					context$2$0.prev = 4;
 
-					for (_iterator = iterable[Symbol.iterator](); !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-						item = _step.value;
+					for (_iterator3 = iterable[Symbol.iterator](); !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+						item = _step3.value;
 						buffer.push(item);
 					}context$2$0.next = 12;
 					break;
@@ -786,26 +820,26 @@
 				case 8:
 					context$2$0.prev = 8;
 					context$2$0.t0 = context$2$0['catch'](4);
-					_didIteratorError = true;
-					_iteratorError = context$2$0.t0;
+					_didIteratorError3 = true;
+					_iteratorError3 = context$2$0.t0;
 
 				case 12:
 					context$2$0.prev = 12;
 					context$2$0.prev = 13;
 
-					if (!_iteratorNormalCompletion && _iterator['return']) {
-						_iterator['return']();
+					if (!_iteratorNormalCompletion3 && _iterator3['return']) {
+						_iterator3['return']();
 					}
 
 				case 15:
 					context$2$0.prev = 15;
 
-					if (!_didIteratorError) {
+					if (!_didIteratorError3) {
 						context$2$0.next = 18;
 						break;
 					}
 
-					throw _iteratorError;
+					throw _iteratorError3;
 
 				case 18:
 					return context$2$0.finish(15);
@@ -841,6 +875,59 @@
 	});
 
 	exports.cycle = cycle;
+
+	/* js/src/utils/iter.js */
+
+	var iter = function iter(iterable) {
+
+		return iterable[Symbol.iterator]();
+	};
+
+	exports.iter = iter;
+
+	/* js/src/utils/list.js */
+
+	var list = function list(iterable) {
+
+		var buffer = [];
+
+		var _iteratorNormalCompletion4 = true;
+		var _didIteratorError4 = false;
+		var _iteratorError4 = undefined;
+
+		try {
+			for (var _iterator4 = iterable[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+				var item = _step4.value;
+				buffer.push(item);
+			}
+		} catch (err) {
+			_didIteratorError4 = true;
+			_iteratorError4 = err;
+		} finally {
+			try {
+				if (!_iteratorNormalCompletion4 && _iterator4['return']) {
+					_iterator4['return']();
+				}
+			} finally {
+				if (_didIteratorError4) {
+					throw _iteratorError4;
+				}
+			}
+		}
+
+		return buffer;
+	};
+
+	exports.list = list;
+
+	/* js/src/utils/next.js */
+
+	var next = function next(iterator) {
+
+		return iterator.next();
+	};
+
+	exports.next = next;
 
 	/* js/src/utils/pick.js */
 
