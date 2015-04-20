@@ -13,7 +13,7 @@
 		".gitignore",
 		"README.md"
 	],
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"name": "aureooms-js-itertools",
 	"main": "js/dist/itertools.js"
 }
