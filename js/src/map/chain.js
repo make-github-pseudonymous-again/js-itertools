@@ -1,5 +1,5 @@
 
-var chain = function* ( iterables ) {
+let chain = function* ( iterables ) {
 
 	for ( let iterable of iterables ) yield* iterable ;
 

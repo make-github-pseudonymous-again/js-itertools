@@ -1,4 +1,5 @@
-var combinations = function* ( iterable , r ) {
+
+let combinations = function* ( iterable , r ) {
 
 	// combinations('ABCD', 2) --> AB AC AD BC BD CD
 	// combinations(range(4), 3) --> 012 013 023 123

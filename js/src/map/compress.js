@@ -1,19 +1,12 @@
 
+let compress = function* ( iterable , selector ) {
 
-var compress = function ( iterable, selector, out ) {
+	for ( let [ take , item ] of zip( [ selector , iterable ] ) ) {
 
-	var i, j;
+		if ( take ) yield item ;
 
-	j = Math.min( iterable.length, selector.length );
-
-	for ( i = 0 ; i < j ; ++i ) {
-		if ( selector[i] ) {
-			out.push( iterable[i] );
-		}
 	}
 
-	return out;
+} ;
 
-};
-
-exports.compress = compress;
+exports.compress = compress ;

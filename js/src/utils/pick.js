@@ -1,16 +1,8 @@
 
-var pick = function( array, indices, out ) {
+let pick = function* ( object , iterable ) {
 
-	var i, k, len;
+	for ( let key of iterable ) yield object[key] ;
 
-	len = indices.length;
+} ;
 
-	for ( i = 0 ; i < len ; ++i ) {
-		k = indices[i];
-		out.push( array[k] );
-	}
-
-	return out;
-};
-
-exports.pick = pick;
+exports.pick = pick ;

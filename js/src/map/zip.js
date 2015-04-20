@@ -1,41 +1,24 @@
 
+let zip = function* ( iterables ) {
 
-var zip = function ( iterables, out ) {
+	let iterators = list( map( iter , iterables ) ) ;
 
-	var i, j, n, len, tmp, tuple;
+	while ( true ) {
 
-	len = iterables.length;
+		let buffer = [ ] ;
 
+		for ( let result of map( next , iterators ) ) {
 
-	if ( len === 0 ) {
-		return out;
-	}
+			if ( result.done ) return ;
 
+			buffer.push( result.value ) ;
 
-	n = iterables[0].length;
-
-	for ( i = 0 ; i < len ; ++i ) {
-
-		tmp = iterables[i].length;
-
-		if ( tmp < n ) {
-			n = tmp;
 		}
 
+		yield buffer ;
+
 	}
 
-	for ( j = 0 ; j < n ; ++j ) {
+} ;
 
-		tuple = []
-
-		for ( i = 0 ; i < len ; ++i ) {
-			tuple.push( iterables[i][j] );
-		}
-
-		out.push( tuple );
-	}
-
-	return out;
-};
-
-exports.zip = zip;
+exports.zip = zip ;

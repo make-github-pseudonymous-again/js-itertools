@@ -1,9 +1,8 @@
 
+let sorted = function ( compare , iterable ) {
 
-var sorted = function ( f, iterable ) {
+	return list( iterable ).sort( compare ) ;
 
-	return iterable.slice( 0 ).sort( f );
+} ;
 
-};
-
-exports.sorted = sorted;
+exports.sorted = sorted ;

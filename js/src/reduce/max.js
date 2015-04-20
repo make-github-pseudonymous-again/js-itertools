@@ -4,7 +4,7 @@
  * to some comparison function.
  */
 
-var max = function ( compare , iterable ) {
+let max = function ( compare , iterable ) {
 
 	let iterator = iter( iterable ) ;
 

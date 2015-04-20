@@ -1,19 +1,14 @@
 
-var any = function ( iterable ) {
+let any = function ( iterable ) {
 
-	var i, len;
+	for ( let item of iterable ) {
 
-	len = iterable.length;
-
-	for ( i = 0 ; i < len ; ++i ) {
-
-		if ( iterable[i] ) {
-			return true;
-		}
+		if ( item ) return true ;
 
 	}
 
-	return false;
-};
+	return false ;
 
-exports.any = any;
+} ;
+
+exports.any = any ;

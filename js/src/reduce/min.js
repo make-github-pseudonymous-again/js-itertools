@@ -4,7 +4,7 @@
  * to some comparison function.
  */
 
-var min = function ( compare , iterable ) {
+let min = function ( compare , iterable ) {
 
 	let iterator = iter( iterable ) ;
 

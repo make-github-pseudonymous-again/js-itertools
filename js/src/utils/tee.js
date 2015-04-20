@@ -1,25 +1,34 @@
 
+let tee = function ( iterable , n ) {
 
-var tee = function ( iterable, n, out ) {
+	let iterator = iter( iterable ) ;
 
-	var i, m, deque;
+	let deques = [ ] ;
 
-	m = iterable.length;
+	while ( n --> 0 ) deques.push( [ ] ) ;
 
-	while ( n-- ) {
+	let gen = function* ( mydeque ) {
 
-		deque = [];
+		while ( true ) {
 
-		for ( i = 0 ; i < m ; ++i ) {
-			deque.push( iterable[i] );
+			if ( mydeque.length === 0 ) {
+
+				let current = next( iterator ) ;
+
+				if ( current.done ) return ;
+
+				for ( let deque of deques ) deque.push( current.value ) ;
+
+			}
+
+			yield mydeque.shift( ) ;
+
 		}
 
-		out.push(deque);
+	} ;
 
-	}
+	return list( map( gen , deques ) ) ;
 
-	return out;
+} ;
 
-};
-
-exports.tee = tee;
+exports.tee = tee ;

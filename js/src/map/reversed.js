@@ -1,15 +1,12 @@
 
-var reversed = function ( iterable, out ) {
+let reversed = function* ( iterable ) {
 
-	var i;
+	let buffer = [ ] ;
 
-	i = iterable.length;
+	for ( let item of iterable ) buffer.push( item ) ;
 
-	while ( i-- ) {
-		out.push( iterable[i] );
-	}
+	while ( buffer.length ) yield buffer.pop( ) ;
 
-	return out;
-};
+} ;
 
-exports.reversed = reversed;
+exports.reversed = reversed ;

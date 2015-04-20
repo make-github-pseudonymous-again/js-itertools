@@ -1,22 +1,12 @@
 
-var filterfalse = function ( predicate, iterable, out ) {
+let filterfalse = function* ( predicate , iterable ) {
 
-	var i, len, item;
+	for ( let item of iterable ) {
 
-	len = iterable.length;
-
-	for ( i = 0 ; i < len ; ++i ) {
-
-		item = iterable[i];
-
-		if ( ! predicate( item ) ) {
-			out.push( item )
-		}
+		if ( ! predicate( item ) ) yield item ;
 
 	}
 
-	return out;
+} ;
 
-};
-
-exports.filterfalse = filterfalse;
+exports.filterfalse = filterfalse ;

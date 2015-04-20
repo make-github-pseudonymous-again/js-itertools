@@ -1,46 +1,40 @@
 
-var group = function ( key, iterable, out ) {
+let group = function* ( key , iterable ) {
 
-	var i, len, curr, next, tuple, item, items;
+	let iterator = iter( iterable ) ;
 
-	len = iterable.length;
+	let first = next( iterator ) ;
 
-	if ( len === 0 ) {
-		return out;
-	}
+	if ( first.done ) return ;
 
-	i = 0;
-	item = iterable[i];
-	next = key( item );
+	let item = first.value ;
+	let nextkey = key( item ) ;
 
-	do {
-		curr = next;
-		items = [item];
-		tuple = [curr, items];
+	grouping : while ( true ) {
 
-		++i;
+		let currkey = nextkey ;
+		let items = [ item ] ;
 
-		while ( i < len ) {
+		for ( item of iterator ) {
 
-			item = iterable[i];
-			next = key( item );
+			nextkey = key( item ) ;
 
-			if ( next !== curr ) {
-				break;
+			if ( nextkey !== currkey ) {
+
+				yield [ curr , items ] ;
+				continue grouping ;
+
 			}
 
-			items.push( item );
-			++i;
+			items.push( item ) ;
+
 		}
 
-		out.push( tuple );
+		return ;
 
-	} while ( i < len );
+	}
 
+} ;
 
-	return out;
-
-};
-
-exports.group = group;
-exports.groupby = group;
+exports.group = group ;
+exports.groupby = group ;

@@ -1,19 +1,13 @@
 
 
-var sum = function ( iterable ) {
+let sum = function ( iterable ) {
 
-	var i, len, total;
+	let result = 0 ;
 
-	total = 0;
+	for ( let item of iterable ) result += item ;
 
-	len = iterable.length;
+	return result ;
 
-	for ( i = 0 ; i < len ; ++i ) {
-		total += iterable[i];
-	}
+} ;
 
-	return total;
-
-};
-
-exports.sum = sum;
+exports.sum = sum ;

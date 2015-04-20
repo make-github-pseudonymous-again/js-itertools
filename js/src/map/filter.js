@@ -1,23 +1,13 @@
 
-var filter = function ( predicate, iterable, out ) {
+let filter = function* ( predicate , iterable ) {
 
-	var i, len, item;
+	for ( let item of iterable ) {
 
-	len = iterable.length;
-
-	for ( i = 0 ; i < len ; ++i ) {
-
-		item = iterable[i];
-
-		if ( predicate( item ) ) {
-			out.push( item );
-		}
+		if ( predicate( item ) ) yield item ;
 
 	}
 
-	return out;
+} ;
 
-};
-
-exports.filter = filter;
-exports.filtertrue = filter;
+exports.filter = filter ;
+exports.filtertrue = filter ;

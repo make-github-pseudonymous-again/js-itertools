@@ -1,15 +1,8 @@
 
+let repeat = function* ( item ) {
 
-var repeat = function ( element, times, out ) {
+	while ( true ) yield item ;
 
-	var i;
+} ;
 
-	for ( i = 0 ; i < times ; ++i ) {
-		out.push( element );
-	}
-
-	return out;
-
-};
-
-exports.repeat = repeat;
+exports.repeat = repeat ;

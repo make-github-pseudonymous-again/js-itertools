@@ -1,67 +1,55 @@
 
-var permutations = function( iterable, repeat, out ) {
+let permutations = function* ( iterable , r ) {
 
 	// permutations('ABCD', 2) --> AB AC AD BA BC BD CA CB CD DA DB DC
 	// permutations(range(3), 3) --> 012 021 102 120 201 210
 
-	var pool, i, j, w, len, indices, cycles, x, tmp;
+	let pool = list( iterable ) ;
 
-	pool = iterable;
-	len = pool.length;
+	let len = pool.length ;
 
+	if ( r > len ) return ;
 
-	if ( repeat > len ) {
-		return out;
-	}
+	let indices = list( range( 0 , len , 1 ) ) ;
+	let cycles = list( range( len , len - r , -1 ) ) ;
 
+	yield pick( pool , head( indices , r ) ) ;
 
-	indices = range( 0, len, 1, [] );
-	cycles = range( len, len - repeat, -1, [] );
+	if ( r === 0 || len === 0 ) return ;
 
-	out.push( pick( pool, indices.slice( 0, repeat ), [] ) );
+	while ( true ) {
 
-	if ( repeat === 0 || len === 0 ) {
-		return out;
-	}
-
-	for ( ; ; ) {
-
-		i = repeat;
+		let i = r ;
 
 		while ( i-- ) {
 
-			--cycles[i];
+			--cycles[i] ;
 
 			if ( cycles[i] === 0 ) {
 
-				x = indices[i];
+				indices.push( indices.splice( i , 1 )[0] ) ;
 
-				indices.splice(i, 1);
-				indices.push(x);
+				cycles[i] = len - i ;
 
-				cycles[i] = len - i;
 			}
 
 			else {
 
-				j = cycles[i];
+				let j = cycles[i] ;
 
-				tmp = indices[i];
-				indices[i] = indices[len - j];
-				indices[len - j] = tmp;
+				[ indices[i] , indices[len - j] ] = [ indices[len - j] , indices[i] ] ;
 
-				out.push( pick( pool, indices.slice( 0, repeat ), [] ) );
-				break;
+				yield pick( pool , head( indices , r ) ) ;
+				break ;
+
 			}
 
 		}
 
-		if ( i === -1 ) {
-			return out;
-		}
+		if ( i === -1 ) return ;
 
 	}
 
-};
+} ;
 
-exports.permutations = permutations;
+exports.permutations = permutations ;

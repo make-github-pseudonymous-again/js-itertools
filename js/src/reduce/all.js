@@ -1,19 +1,14 @@
 
-var all = function ( iterable ) {
+let all = function ( iterable ) {
 
-	var i, len;
+	for ( let item of iterable ) {
 
-	len = iterable.length;
-
-	for ( i = 0 ; i < len ; ++i ) {
-
-		if ( ! iterable[i] ) {
-			return false;
-		}
+		if ( !item ) return false ;
 
 	}
 
-	return true;
-};
+	return true ;
 
-exports.all = all;
+} ;
+
+exports.all = all ;

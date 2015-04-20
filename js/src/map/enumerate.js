@@ -1,9 +1,8 @@
 
-var enumerate = function ( iterable, out ) {
+let enumerate = function ( iterable , out ) {
 
-	zip( [range( 0, iterable.length, 1, [] ), iterable], out );
+	return zip( [ count( 0 , 1 ) , iterable ] ) ;
 
-	return out;
-};
+} ;
 
-exports.enumerate = enumerate;
+exports.enumerate = enumerate ;

@@ -1,32 +1,14 @@
 
-var takewhile = function ( predicate, iterable, out ) {
+let takewhile = function* ( predicate , iterable ) {
 
-	var i, n, e;
+	for ( let item of iterable ) {
 
-	n = iterable.length;
+		if ( !predicate( item ) ) return ;
 
-	if ( n === 0 ) {
-		return out;
+		yield item ;
+
 	}
 
-	i = 0;
-	e = iterable[i];
-
-	while ( predicate( e ) ) {
-
-		out.push( e );
-
-		++i;
-
-		if ( i === n ) {
-			return out;
-		}
-
-		e = iterable[i];
-	}
-
-	return out;
-
-};
+} ;
 
 exports.takewhile = takewhile;

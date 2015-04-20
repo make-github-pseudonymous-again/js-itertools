@@ -1,35 +1,20 @@
 
-var dropwhile = function ( predicate, iterable, out ) {
+let dropwhile = function* ( predicate , iterable ) {
 
-	var i, n, e;
+	for ( let item of iterable ) {
 
-	n = iterable.length;
+		if ( predicate( item ) ) continue ;
 
-	if ( n === 0 ) {
-		return out;
+		// equivalent to return chain( [ [ item ] , iterable ] ) ;
+
+		yield item ;
+
+		yield* iterable ;
+
+		return ;
+
 	}
 
-	i = 0;
-	e = iterable[i];
+} ;
 
-	while ( predicate( e ) ) {
-		++i;
-
-		if ( i === n ) {
-			return out;
-		}
-
-		e = iterable[i];
-	}
-
-	out.push( e );
-
-	for ( ++i ; i < n ; ++i ) {
-		out.push( iterable[i] );
-	}
-
-	return out;
-
-};
-
-exports.dropwhile = dropwhile;
+exports.dropwhile = dropwhile ;
