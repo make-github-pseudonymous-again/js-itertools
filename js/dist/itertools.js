@@ -763,6 +763,77 @@
 
 	exports.count = count;
 
+	/* js/src/utils/cycle.js */
+
+	var cycle = regeneratorRuntime.mark(function cycle(iterable) {
+		var buffer, _iteratorNormalCompletion, _didIteratorError, _iteratorError, _iterator, _step, item;
+
+		return regeneratorRuntime.wrap(function cycle$(context$2$0) {
+			while (1) switch (context$2$0.prev = context$2$0.next) {
+				case 0:
+					buffer = [];
+					_iteratorNormalCompletion = true;
+					_didIteratorError = false;
+					_iteratorError = undefined;
+					context$2$0.prev = 4;
+
+					for (_iterator = iterable[Symbol.iterator](); !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+						item = _step.value;
+						buffer.push(item);
+					}context$2$0.next = 12;
+					break;
+
+				case 8:
+					context$2$0.prev = 8;
+					context$2$0.t0 = context$2$0['catch'](4);
+					_didIteratorError = true;
+					_iteratorError = context$2$0.t0;
+
+				case 12:
+					context$2$0.prev = 12;
+					context$2$0.prev = 13;
+
+					if (!_iteratorNormalCompletion && _iterator['return']) {
+						_iterator['return']();
+					}
+
+				case 15:
+					context$2$0.prev = 15;
+
+					if (!_didIteratorError) {
+						context$2$0.next = 18;
+						break;
+					}
+
+					throw _iteratorError;
+
+				case 18:
+					return context$2$0.finish(15);
+
+				case 19:
+					return context$2$0.finish(12);
+
+				case 20:
+					if (!true) {
+						context$2$0.next = 24;
+						break;
+					}
+
+					return context$2$0.delegateYield(buffer, 't1', 22);
+
+				case 22:
+					context$2$0.next = 20;
+					break;
+
+				case 24:
+				case 'end':
+					return context$2$0.stop();
+			}
+		}, cycle, this, [[4, 8, 12, 20], [13,, 15, 19]]);
+	});
+
+	exports.cycle = cycle;
+
 	/* js/src/utils/pick.js */
 
 	var pick = function pick(array, indices, out) {
