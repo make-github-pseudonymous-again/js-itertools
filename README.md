@@ -75,7 +75,7 @@ itertools.sum( itertools.range( 1 , 6 , 1 ) ) ; // 15
 
 itertools.chain( [ "ABC" , "XY" ] ) ; // A B C X Y
 
-itertools.zip( [ "ABC , "XY" ] ) ; // AX BY
+itertools.zip( [ "ABC" , "XY" ] ) ; // AX BY
 
 itertools.compress( itertools.count( 0 , 1 ) , itertools.cycle( [ true , false ] ) ) ; // 0 2 4 6 ...
 
