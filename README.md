@@ -1,9 +1,6 @@
-[js-itertools](http://aureooms.github.io/js-itertools)
-==
+#[js-itertools](http://aureooms.github.io/js-itertools)
 
 Iterator code bricks for JavaScript.
-
-**The API will be changed to support es6 generators as soon as es6 is widely supported, see http://kangax.github.io/compat-table/es6. The current implementation will then move to https://github.com/aureooms/js-array.**
 
 [![NPM license](http://img.shields.io/npm/l/aureooms-js-itertools.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-itertools/master/LICENSE)
 [![NPM version](http://img.shields.io/npm/v/aureooms-js-itertools.svg?style=flat)](https://www.npmjs.org/package/aureooms-js-itertools)
@@ -16,8 +13,117 @@ Iterator code bricks for JavaScript.
 [![NPM downloads per month](http://img.shields.io/npm/dm/aureooms-js-itertools.svg?style=flat)](https://www.npmjs.org/package/aureooms-js-itertools)
 [![GitHub issues](http://img.shields.io/github/issues/aureooms/js-itertools.svg?style=flat)](https://github.com/aureooms/js-itertools/issues)
 
+Can be managed through [duo](https://github.com/duojs/duo),
+[component](https://github.com/componentjs/component),
+[bower](https://github.com/bower/bower), or
+[npm](https://github.com/npm/npm).
 
-Reference in Python and JavaScript,
+```js
+let itertools = require( "aureooms-js-itertools" ) ;
+```
+
+Example usage:
+
+```js
+itertools.range( 2 , 5 , 1 ) ; // 2 3 4
+
+itertools.range( 5 , 2 , -1 ) ; // 5 4 3
+
+itertools.count( 2 , 3 ) ; // 2 5 8 11 14 ...
+
+itertools.repeat( "A" ) ; // A A A ...
+
+itertools.nrepeat( "A" , 3 ) ; // A A A
+
+itertools.cycle( "AB" ) ; // A B A B A B ...
+
+itertools.ncycle( "AB" , 3 ) ; // A B A B A B
+
+itertools.head( itertools.repeat( "A" ) , 3 ) : // A A A
+
+itertools.list( itertools.nrepeat( "A" , 3 ) ) ; // AAA
+
+itertools.pick( "ABCD" , itertools.range( 0 , 2 , 1 ) ) ; // A C
+
+itertools.tee( "ABC" , 2 ) ; // [ A B C , A B C ]
+
+itertools.any( [ false* , true , ... ] ) ; // T
+
+itertools.any( [ false* ] ) ; // F
+
+itertools.all( [ true* , false , ... ] ) ; // F
+
+itertools.all( [ true* ] ) ; // T
+
+itertools.some( [ true , true , false , true , ... ] , 3 ) ; // T
+
+itertools.some( [ true , false , true , false* ] , 3 ) ; // F
+
+let compare = require( "aureooms-js-compare" ) ;
+
+itertools.min( compare.increasing , [ 2 , 1 , 3 ] ) ; // 1
+
+itertools.max( compare.increasing , [ 2 , 1 , 3 ] ) ; // 3
+
+let operator = require( "aureooms-js-operator" ) ;
+
+itertools.reduce( operator.mul , itertools.range( 2 , 6 , 1 ) , 1 ) ; // 120
+
+itertools.reduce( operator.add , itertools.range( 2 , 6 , 1 ) , 1 ) ; // 15
+
+itertools.sum( itertools.range( 1 , 6 , 1 ) ) ; // 15
+
+itertools.chain( [ "ABC" , "XY" ] ) ; // A B C X Y
+
+itertools.zip( [ "ABC , "XY" ] ) ; // AX BY
+
+itertools.compress( itertools.count( 0 , 1 ) , itertools.cycle( [ true , false ] ) ) ; // 0 2 4 6 ...
+
+let predicate = require( "aureooms-js-predicate" ) ;
+
+itertools.takewhile( predicate.le( 5 ) , itertools.count( 0 , 1 ) ) ; // 0 1 2 3 4 5
+
+itertools.dropwhile( predicate.le( 5 ) , itertools.count( 0 , 1 ) ) ; // 6 7 8 ...
+
+itertools.zip( [ itertools.count( 0 , 1 ) , "ABC" ] ) ; // 0A 1B 2C
+
+itertools.enumerate( "ABC" ) ; // 0A 1B 2C
+
+itertools.filter( predicate.divisible( 2 ) , itertools.count( 0 , 1 ) ) ; // 0 2 4 8 ...
+
+itertools.filterfalse( predicate.divisible( 2 ) , itertools.count( 0 , 1 ) ) ; // 1 3 5 7 ...
+
+itertools.group( operator.identity , "AAAABBBCCAABB" ) ; // [ A AAAA ] [ B BBB ] [ C CC ] [ A AA ] [ B BB ]
+
+itertools.slice( itertools.count( 0 , 1 ) , 40 , 50 , 3 ) ; // 40 43 46 49
+
+itertools.map( operator.truth , [ 0 , 1 , null , undefined , "A" ] ) ; // F T F F T
+
+itertools.starmap( operator.mul , itertools.zip( itertools.count( 0 , 1 ) , itertools.count( 0 , 1 ) ) ) ; // 0 1 4 9 16 25 36 ...
+
+itertools.product( [ "ABCD" , "xy" ] , 1 ) ; // Ax Ay Bx By Cx Cy Dx Dy
+
+itertools.product( [ itertools.range( 0 , 2 , 1 ) ] , 3 ) ; // 000 001 010 011 100 101 110 111
+
+itertools.permutations( "ABCD" , 2 ) ; // AB AC AD BA BC BD CA CB CD DA DB DC
+
+itertools.permutations( itertools.range( 0 , 3 , 1 ) , 3 ) ; // 012 021 102 120 201 210
+
+itertools.combinations( "ABCD" , 2 ) ; // AB AC AD BC BD CD
+
+itertools.combinations( itertools.range( 0 , 4 , 1 ) , 3 ) ; // 012 013 023 123
+
+itertools.combinationswithrepetition( "ABC" , 1 ) ; // A B C
+
+itertools.combinationswithrepetition( itertools.range( 0 , 3 , 1 ) , 2 ) ; // 00 01 02 11 12 22
+
+itertools.reversed( "ABC" ) ; // C B A
+
+itertools.sorted( compare.increasing , [ 3 , 1 , 2 ] ) ; // 1 2 3
+```
+
+
+References in Python and JavaScript:
 
   - http://mochi.github.io/mochikit/doc/html/MochiKit/Iter.html
   - https://docs.python.org/3/library/itertools.html
