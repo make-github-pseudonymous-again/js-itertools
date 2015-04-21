@@ -579,7 +579,7 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 	/* js/src/map/enumerate.js */
 
-	var enumerate = function enumerate(iterable, out) {
+	var enumerate = function enumerate(iterable) {
 
 		return zip([count(0, 1), iterable]);
 	};
@@ -1823,68 +1823,85 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 					_didIteratorError20 = false;
 					_iteratorError20 = undefined;
 					context$2$0.prev = 4;
+					_iterator20 = iterable[Symbol.iterator]();
 
-					for (_iterator20 = iterable[Symbol.iterator](); !(_iteratorNormalCompletion20 = (_step20 = _iterator20.next()).done); _iteratorNormalCompletion20 = true) {
-						item = _step20.value;
-						buffer.push(item);
-					}context$2$0.next = 12;
+				case 6:
+					if (_iteratorNormalCompletion20 = (_step20 = _iterator20.next()).done) {
+						context$2$0.next = 14;
+						break;
+					}
+
+					item = _step20.value;
+					context$2$0.next = 10;
+					return item;
+
+				case 10:
+					buffer.push(item);
+
+				case 11:
+					_iteratorNormalCompletion20 = true;
+					context$2$0.next = 6;
 					break;
 
-				case 8:
-					context$2$0.prev = 8;
+				case 14:
+					context$2$0.next = 20;
+					break;
+
+				case 16:
+					context$2$0.prev = 16;
 					context$2$0.t16 = context$2$0['catch'](4);
 					_didIteratorError20 = true;
 					_iteratorError20 = context$2$0.t16;
 
-				case 12:
-					context$2$0.prev = 12;
-					context$2$0.prev = 13;
+				case 20:
+					context$2$0.prev = 20;
+					context$2$0.prev = 21;
 
 					if (!_iteratorNormalCompletion20 && _iterator20['return']) {
 						_iterator20['return']();
 					}
 
-				case 15:
-					context$2$0.prev = 15;
+				case 23:
+					context$2$0.prev = 23;
 
 					if (!_didIteratorError20) {
-						context$2$0.next = 18;
+						context$2$0.next = 26;
 						break;
 					}
 
 					throw _iteratorError20;
 
-				case 18:
-					return context$2$0.finish(15);
+				case 26:
+					return context$2$0.finish(23);
 
-				case 19:
-					return context$2$0.finish(12);
+				case 27:
+					return context$2$0.finish(20);
 
-				case 20:
+				case 28:
 					if (!(buffer.length === 0)) {
-						context$2$0.next = 22;
+						context$2$0.next = 30;
 						break;
 					}
 
 					return context$2$0.abrupt('return');
 
-				case 22:
+				case 30:
 					if (!true) {
-						context$2$0.next = 26;
+						context$2$0.next = 34;
 						break;
 					}
 
-					return context$2$0.delegateYield(buffer, 't17', 24);
+					return context$2$0.delegateYield(buffer, 't17', 32);
 
-				case 24:
-					context$2$0.next = 22;
+				case 32:
+					context$2$0.next = 30;
 					break;
 
-				case 26:
+				case 34:
 				case 'end':
 					return context$2$0.stop();
 			}
-		}, cycle, this, [[4, 8, 12, 20], [13,, 15, 19]]);
+		}, cycle, this, [[4, 16, 20, 28], [21,, 23, 27]]);
 	});
 
 	exports.cycle = cycle;
