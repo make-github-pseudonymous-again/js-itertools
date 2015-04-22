@@ -13,6 +13,7 @@ Iterator code bricks for JavaScript.
 [![Code Climate](http://img.shields.io/codeclimate/github/aureooms/js-itertools.svg?style=flat)](https://codeclimate.com/github/aureooms/js-itertools)
 [![NPM downloads per month](http://img.shields.io/npm/dm/aureooms-js-itertools.svg?style=flat)](https://www.npmjs.org/package/aureooms-js-itertools)
 [![GitHub issues](http://img.shields.io/github/issues/aureooms/js-itertools.svg?style=flat)](https://github.com/aureooms/js-itertools/issues)
+[![Inline docs](http://inch-ci.org/github/aureooms/js-itertools.svg?branch=master&style=shields)](http://inch-ci.org/github/aureooms/js-itertools)
 
 Can be managed through [duo](https://github.com/duojs/duo),
 [component](https://github.com/componentjs/component),
