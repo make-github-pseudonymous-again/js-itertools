@@ -22,10 +22,11 @@
 	"dependencies": {},
 	"keywords": [
 		"bricks",
+		"ender",
 		"functional",
-		"iterator",
 		"generator",
 		"iterable",
+		"iterator",
 		"javascript",
 		"js"
 	],
