@@ -1,7 +1,11 @@
 [js-itertools](http://aureooms.github.io/js-itertools)
 ==
 
-Iterator code bricks for JavaScript.
+Iterator and iterable code bricks for JavaScript.
+
+```js
+cycle( chain( [ [ 0 , 1 , 2 ] , [ 3 , 4 , 5 ] ] ) ) ; // 0 1 2 3 4 5 0 1 ...
+```
 
 [![NPM license](http://img.shields.io/npm/l/aureooms-js-itertools.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-itertools/master/LICENSE)
 [![NPM version](http://img.shields.io/npm/v/aureooms-js-itertools.svg?style=flat)](https://www.npmjs.org/package/aureooms-js-itertools)
@@ -15,16 +19,91 @@ Iterator code bricks for JavaScript.
 [![GitHub issues](http://img.shields.io/github/issues/aureooms/js-itertools.svg?style=flat)](https://github.com/aureooms/js-itertools/issues)
 [![Inline docs](http://inch-ci.org/github/aureooms/js-itertools.svg?branch=master&style=shields)](http://inch-ci.org/github/aureooms/js-itertools)
 
-Can be managed through [duo](https://github.com/duojs/duo),
+Can be managed through [jspm](https://github.com/jspm/jspm-cli),
+[duo](https://github.com/duojs/duo),
 [component](https://github.com/componentjs/component),
-[bower](https://github.com/bower/bower), or
-[npm](https://github.com/npm/npm).
+[bower](https://github.com/bower/bower),
+[ender](https://github.com/ender-js/Ender),
+[jam](https://github.com/caolan/jam),
+[spm](https://github.com/spmjs/spm),
+and [npm](https://github.com/npm/npm).
 
+## Caveat
+
+Requires `regeneratorRuntime` to be defined, see
+[babel docs](http://babeljs.io/docs/usage/polyfill/).
+
+## Install
+
+### jspm
+```terminal
+jspm install github:aureooms/js-itertools
+# or
+jspm install npm:aureooms-js-itertools
+```
+### duo
+No install step needed for duo!
+
+### component
+```terminal
+component install aureooms/js-itertools
+```
+
+### bower
+```terminal
+bower install aureooms-js-itertools
+```
+
+### ender
+```terminal
+ender add aureooms-js-itertools
+```
+
+### jam
+```terminal
+jam install aureooms-js-itertools
+```
+
+### spm
+```terminal
+spm install aureooms-js-itertools --save
+```
+
+### npm
+```terminal
+npm install aureooms-js-itertools --save
+```
+
+## Require
+### jspm
+```js
+let itertools = require( "github:aureooms/js-itertools" ) ;
+// or
+import itertools from 'aureooms-js-itertools' ;
+```
+### duo
+```js
+let itertools = require( "aureooms/js-itertools" ) ;
+```
+
+### component, ender, spm, npm
 ```js
 let itertools = require( "aureooms-js-itertools" ) ;
 ```
 
-Example usage:
+### bower
+The script tag exposes the global variable `itertools`.
+```html
+<script src="bower_components/aureooms-js-itertools/js/dist/itertools.min.js"></script>
+```
+Alternatively, you can use any tool mentioned [here](http://bower.io/docs/tools/).
+
+### jam
+```js
+require( [ "aureooms-js-itertools" ] , function ( itertools ) { ... } ) ;
+```
+
+## Use
 
 ```js
 itertools.range( 2 , 5 , 1 ) ; // 2 3 4
@@ -124,10 +203,10 @@ itertools.reversed( "ABC" ) ; // C B A
 itertools.sorted( compare.increasing , [ 3 , 1 , 2 ] ) ; // 1 2 3
 ```
 
-References in Python and JavaScript:
+## References in Python and JavaScript
 
-  - http://mochi.github.io/mochikit/doc/html/MochiKit/Iter.html
   - https://docs.python.org/3/library/itertools.html
+  - http://mochi.github.io/mochikit/doc/html/MochiKit/Iter.html
   - https://github.com/cweider/js-itertools
   - http://itertoolsjs.com/
   - https://github.com/thegoleffect/node-itertools
