@@ -178,6 +178,8 @@ itertools.group( operator.identity , "AAAABBBCCAABB" ) ; // [ A AAAA ] [ B BBB ]
 
 itertools.slice( itertools.count( 0 , 1 ) , 40 , 50 , 3 ) ; // 40 43 46 49
 
+itertools.roundrobin( [ "ABC" , "D" , "EF" ] ) ; // A D E B F C
+
 itertools.map( operator.truth , [ 0 , 1 , null , undefined , "A" ] ) ; // F T F F T
 
 itertools.starmap( operator.mul , itertools.zip( itertools.count( 0 , 1 ) , itertools.count( 0 , 1 ) ) ) ; // 0 1 4 9 16 25 36 ...

@@ -1,6 +1,6 @@
 "use strict";
 
-var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } };
+function _slicedToArray(arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }
 
 (function () {
 
@@ -15,35 +15,10 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
    * @param {lists} pools reverse ordered
    */
 
-		var _product = (function (_product2) {
-			var marked3$0 = [_product].map(regeneratorRuntime.mark);
-
-			function _product(_x, _x2, _x3) {
-				var args$4$0 = arguments;
-				return regeneratorRuntime.wrap(function _product$(context$4$0) {
-					while (1) switch (context$4$0.prev = context$4$0.next) {
-						case 0:
-							return context$4$0.delegateYield(_product2.apply(this, args$4$0), "t0", 1);
-
-						case 1:
-							return context$4$0.abrupt("return", context$4$0.t0);
-
-						case 2:
-						case "end":
-							return context$4$0.stop();
-					}
-				}, marked3$0[0], this);
-			}
-
-			_product.toString = function () {
-				return _product2.toString();
-			};
-
-			return _product;
-		})(regeneratorRuntime.mark(function callee$2$0(pools, i, n) {
+		var _product = regeneratorRuntime.mark(function _product(pools, i, n) {
 			var iterable, _iteratorNormalCompletion, _didIteratorError, _iteratorError, _iterator, _step, buffer, _iteratorNormalCompletion2, _didIteratorError2, _iteratorError2, _iterator2, _step2, item;
 
-			return regeneratorRuntime.wrap(function callee$2$0$(context$3$0) {
+			return regeneratorRuntime.wrap(function _product$(context$3$0) {
 				while (1) switch (context$3$0.prev = context$3$0.next) {
 					case 0:
 						if (!(i === n)) {
@@ -106,9 +81,9 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 					case 28:
 						context$3$0.prev = 28;
-						context$3$0.t1 = context$3$0["catch"](15);
+						context$3$0.t0 = context$3$0["catch"](15);
 						_didIteratorError2 = true;
-						_iteratorError2 = context$3$0.t1;
+						_iteratorError2 = context$3$0.t0;
 
 					case 32:
 						context$3$0.prev = 32;
@@ -145,9 +120,9 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 					case 45:
 						context$3$0.prev = 45;
-						context$3$0.t2 = context$3$0["catch"](8);
+						context$3$0.t1 = context$3$0["catch"](8);
 						_didIteratorError = true;
-						_iteratorError = context$3$0.t2;
+						_iteratorError = context$3$0.t1;
 
 					case 49:
 						context$3$0.prev = 49;
@@ -177,8 +152,8 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 					case "end":
 						return context$3$0.stop();
 				}
-			}, callee$2$0, this, [[8, 45, 49, 57], [15, 28, 32, 40], [33,, 35, 39], [50,, 52, 56]]);
-		}));
+			}, _product, this, [[8, 45, 49, 57], [15, 28, 32, 40], [33,, 35, 39], [50,, 52, 56]]);
+		});
 
 		exports._product = _product;
 
@@ -203,7 +178,7 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 						}
 
 						iterable = _step3.value;
-						return context$3$0.delegateYield(iterable, "t3", 8);
+						return context$3$0.delegateYield(iterable, "t0", 8);
 
 					case 8:
 						_iteratorNormalCompletion3 = true;
@@ -216,9 +191,9 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 					case 13:
 						context$3$0.prev = 13;
-						context$3$0.t4 = context$3$0["catch"](3);
+						context$3$0.t1 = context$3$0["catch"](3);
 						_didIteratorError3 = true;
-						_iteratorError3 = context$3$0.t4;
+						_iteratorError3 = context$3$0.t1;
 
 					case 17:
 						context$3$0.prev = 17;
@@ -454,9 +429,9 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 					case 17:
 						context$3$0.prev = 17;
-						context$3$0.t5 = context$3$0["catch"](3);
+						context$3$0.t0 = context$3$0["catch"](3);
 						_didIteratorError4 = true;
-						_iteratorError4 = context$3$0.t5;
+						_iteratorError4 = context$3$0.t0;
 
 					case 21:
 						context$3$0.prev = 21;
@@ -526,7 +501,7 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 						return item;
 
 					case 12:
-						return context$3$0.delegateYield(iterator, "t6", 13);
+						return context$3$0.delegateYield(iterator, "t0", 13);
 
 					case 13:
 						return context$3$0.abrupt("return");
@@ -542,9 +517,9 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 					case 19:
 						context$3$0.prev = 19;
-						context$3$0.t7 = context$3$0["catch"](4);
+						context$3$0.t1 = context$3$0["catch"](4);
 						_didIteratorError5 = true;
-						_iteratorError5 = context$3$0.t7;
+						_iteratorError5 = context$3$0.t1;
 
 					case 23:
 						context$3$0.prev = 23;
@@ -629,9 +604,9 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 					case 15:
 						context$3$0.prev = 15;
-						context$3$0.t8 = context$3$0["catch"](3);
+						context$3$0.t0 = context$3$0["catch"](3);
 						_didIteratorError6 = true;
-						_iteratorError6 = context$3$0.t8;
+						_iteratorError6 = context$3$0.t0;
 
 					case 19:
 						context$3$0.prev = 19;
@@ -708,9 +683,9 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 					case 15:
 						context$3$0.prev = 15;
-						context$3$0.t9 = context$3$0["catch"](3);
+						context$3$0.t0 = context$3$0["catch"](3);
 						_didIteratorError7 = true;
-						_iteratorError7 = context$3$0.t9;
+						_iteratorError7 = context$3$0.t0;
 
 					case 19:
 						context$3$0.prev = 19;
@@ -867,9 +842,9 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 					case 14:
 						context$3$0.prev = 14;
-						context$3$0.t10 = context$3$0["catch"](3);
+						context$3$0.t0 = context$3$0["catch"](3);
 						_didIteratorError8 = true;
-						_iteratorError8 = context$3$0.t10;
+						_iteratorError8 = context$3$0.t0;
 
 					case 18:
 						context$3$0.prev = 18;
@@ -1035,7 +1010,7 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 				while (1) switch (context$3$0.prev = context$3$0.next) {
 					case 0:
 						pools = list(ncycle(reversed(map(list, iterables)), r));
-						return context$3$0.delegateYield(map(list, _product(pools, 0, pools.length)), "t11", 2);
+						return context$3$0.delegateYield(map(list, _product(pools, 0, pools.length)), "t0", 2);
 
 					case 2:
 					case "end":
@@ -1095,9 +1070,9 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 					case 8:
 						context$3$0.prev = 8;
-						context$3$0.t12 = context$3$0["catch"](4);
+						context$3$0.t0 = context$3$0["catch"](4);
 						_didIteratorError9 = true;
-						_iteratorError9 = context$3$0.t12;
+						_iteratorError9 = context$3$0.t0;
 
 					case 12:
 						context$3$0.prev = 12;
@@ -1144,6 +1119,64 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 		});
 
 		exports.reversed = reversed;
+
+		/* js/src/map/roundrobin.js */
+
+		var roundrobin = regeneratorRuntime.mark(function roundrobin(iterables) {
+			var pending, iterators, iterator, it;
+			return regeneratorRuntime.wrap(function roundrobin$(context$3$0) {
+				while (1) switch (context$3$0.prev = context$3$0.next) {
+					case 0:
+						pending = len(iterables);
+						iterators = cycle(map(iter, iterables));
+
+					case 2:
+						if (!pending) {
+							context$3$0.next = 16;
+							break;
+						}
+
+					case 3:
+						if (!true) {
+							context$3$0.next = 12;
+							break;
+						}
+
+						iterator = next(iterators).value;
+						it = next(iterator);
+
+						if (!it.done) {
+							context$3$0.next = 8;
+							break;
+						}
+
+						return context$3$0.abrupt("break", 12);
+
+					case 8:
+						context$3$0.next = 10;
+						return it.value;
+
+					case 10:
+						context$3$0.next = 3;
+						break;
+
+					case 12:
+
+						--pending;
+
+						iterators = cycle(slice(iterators, 0, pending, 1));
+
+						context$3$0.next = 2;
+						break;
+
+					case 16:
+					case "end":
+						return context$3$0.stop();
+				}
+			}, roundrobin, this);
+		});
+
+		exports.roundrobin = roundrobin;
 
 		/* js/src/map/slice.js */
 
@@ -1277,9 +1310,9 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 					case 14:
 						context$3$0.prev = 14;
-						context$3$0.t13 = context$3$0["catch"](3);
+						context$3$0.t0 = context$3$0["catch"](3);
 						_didIteratorError10 = true;
-						_iteratorError10 = context$3$0.t13;
+						_iteratorError10 = context$3$0.t0;
 
 					case 18:
 						context$3$0.prev = 18;
@@ -1358,9 +1391,9 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 					case 16:
 						context$3$0.prev = 16;
-						context$3$0.t14 = context$3$0["catch"](3);
+						context$3$0.t0 = context$3$0["catch"](3);
 						_didIteratorError11 = true;
-						_iteratorError11 = context$3$0.t14;
+						_iteratorError11 = context$3$0.t0;
 
 					case 20:
 						context$3$0.prev = 20;
@@ -1455,9 +1488,9 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 					case 20:
 						context$3$0.prev = 20;
-						context$3$0.t15 = context$3$0["catch"](8);
+						context$3$0.t0 = context$3$0["catch"](8);
 						_didIteratorError12 = true;
-						_iteratorError12 = context$3$0.t15;
+						_iteratorError12 = context$3$0.t0;
 
 					case 24:
 						context$3$0.prev = 24;
@@ -1582,9 +1615,9 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 			var first = next(iterator);
 
-			if (first.done) {
-				return undefined;
-			}var largest = first.value;
+			if (first.done) return undefined;
+
+			var largest = first.value;
 
 			var _iteratorNormalCompletion15 = true;
 			var _didIteratorError15 = false;
@@ -1632,9 +1665,9 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 			var first = next(iterator);
 
-			if (first.done) {
-				return undefined;
-			}var smallest = first.value;
+			if (first.done) return undefined;
+
+			var smallest = first.value;
 
 			var _iteratorNormalCompletion16 = true;
 			var _didIteratorError16 = false;
@@ -1714,9 +1747,9 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 		var some = function some(iterable, n) {
 
-			if (n <= 0) {
-				return true;
-			}var _iteratorNormalCompletion18 = true;
+			if (n <= 0) return true;
+
+			var _iteratorNormalCompletion18 = true;
 			var _didIteratorError18 = false;
 			var _iteratorError18 = undefined;
 
@@ -1860,9 +1893,9 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 					case 16:
 						context$3$0.prev = 16;
-						context$3$0.t16 = context$3$0["catch"](4);
+						context$3$0.t0 = context$3$0["catch"](4);
 						_didIteratorError20 = true;
-						_iteratorError20 = context$3$0.t16;
+						_iteratorError20 = context$3$0.t0;
 
 					case 20:
 						context$3$0.prev = 20;
@@ -1902,7 +1935,7 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 							break;
 						}
 
-						return context$3$0.delegateYield(buffer, "t17", 32);
+						return context$3$0.delegateYield(buffer, "t1", 32);
 
 					case 32:
 						context$3$0.next = 30;
@@ -1997,6 +2030,15 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 		exports.iter = iter;
 
+		/* js/src/utils/len.js */
+
+		var len = function len(list) {
+
+			return list.length;
+		};
+
+		exports.len = len;
+
 		/* js/src/utils/list.js */
 
 		var list = function list(iterable) {
@@ -2071,9 +2113,9 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 					case 16:
 						context$3$0.prev = 16;
-						context$3$0.t18 = context$3$0["catch"](4);
+						context$3$0.t0 = context$3$0["catch"](4);
 						_didIteratorError23 = true;
-						_iteratorError23 = context$3$0.t18;
+						_iteratorError23 = context$3$0.t0;
 
 					case 20:
 						context$3$0.prev = 20;
@@ -2113,7 +2155,7 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 							break;
 						}
 
-						return context$3$0.delegateYield(buffer, "t19", 32);
+						return context$3$0.delegateYield(buffer, "t1", 32);
 
 					case 32:
 						context$3$0.next = 30;
@@ -2172,9 +2214,9 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 					case 14:
 						context$3$0.prev = 14;
-						context$3$0.t20 = context$3$0["catch"](3);
+						context$3$0.t0 = context$3$0["catch"](3);
 						_didIteratorError24 = true;
-						_iteratorError24 = context$3$0.t20;
+						_iteratorError24 = context$3$0.t0;
 
 					case 18:
 						context$3$0.prev = 18;
@@ -2310,9 +2352,9 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 						case 12:
 							context$4$0.prev = 12;
-							context$4$0.t21 = context$4$0["catch"](8);
+							context$4$0.t0 = context$4$0["catch"](8);
 							_didIteratorError25 = true;
-							_iteratorError25 = context$4$0.t21;
+							_iteratorError25 = context$4$0.t0;
 
 						case 16:
 							context$4$0.prev = 16;
@@ -2367,7 +2409,7 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 			return definition({});
 		});
 	} else if (typeof window === "object" && typeof window.document === "object") {
-		definition(window.itertools = {});
+		definition(window["itertools"] = {});
 	} else console.error("unable to detect type of module to define for aureooms-js-itertools");
 })();
 
@@ -2384,3 +2426,6 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 // product(['ABCD', 'xy'], 1) --> Ax Ay Bx By Cx Cy Dx Dy
 // product([range(0, 2, 1)], 3) --> 000 001 010 011 100 101 110 111
+
+// roundrobin('ABC', 'D', 'EF') --> A D E B F C
+// Recipe credited to George Sakkis
