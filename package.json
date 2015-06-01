@@ -14,10 +14,10 @@
 	},
 	"devDependencies": {
 		"aureooms-js-compare": "^1.4.3",
-		"aureooms-js-functools": "^1.2.2",
+		"aureooms-js-functools": "^2.0.3",
 		"aureooms-js-operator": "^1.0.2",
-		"aureooms-js-sort": "^5.0.3",
-		"aureooms-node-package": "^4.2.3"
+		"aureooms-js-sort": "^5.0.4",
+		"aureooms-node-package": "^4.2.5"
 	},
 	"dependencies": {},
 	"keywords": [
