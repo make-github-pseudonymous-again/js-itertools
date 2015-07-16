@@ -1,7 +1,7 @@
 [js-itertools](http://aureooms.github.io/js-itertools)
 ==
 
-Iterator and iterable code bricks for JavaScript.
+Iterator and iterable code bricks for JavaScript. Parent is [aureooms/js-library](https://github.com/aureooms/js-library).
 
 ```js
 cycle( chain( [ [ 0 , 1 , 2 ] , [ 3 , 4 , 5 ] ] ) ) ; // 0 1 2 3 4 5 0 1 ...
