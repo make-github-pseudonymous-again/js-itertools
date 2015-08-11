@@ -13,11 +13,11 @@
 		"url": "https://github.com/aureooms/js-itertools/issues"
 	},
 	"devDependencies": {
-		"aureooms-js-compare": "^1.4.3",
+		"aureooms-js-compare": "^1.4.4",
 		"aureooms-js-functools": "^2.0.3",
 		"aureooms-js-operator": "^1.0.2",
-		"aureooms-js-sort": "^5.0.4",
-		"aureooms-node-package": "^4.2.5"
+		"aureooms-js-sort": "^6.0.0",
+		"aureooms-node-package": "^5.0.2"
 	},
 	"dependencies": {},
 	"keywords": [

@@ -1,13 +1,11 @@
 
-let range = function* ( start , stop , step ) {
+let range = function ( start , stop , step ) {
 
-	if ( step < 0 ) {
-		for ( ; start > stop ; start += step ) yield start ;
-	}
+	if ( stop === undefined ) return _range( 0 , start , 1 ) ;
 
-	else {
-		for ( ; start < stop ; start += step ) yield start ;
-	}
+	if ( step === undefined ) return _range( start , stop , 1 ) ;
+
+	return _range( start , stop , step ) ;
 
 } ;
 

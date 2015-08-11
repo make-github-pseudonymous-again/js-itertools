@@ -1,10 +1,10 @@
 "use strict";
 
-function _slicedToArray(arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }
+var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; })();
 
 (function () {
 
-	"use strict";
+	'use strict';
 
 	var definition = function definition(exports, undefined) {
 
@@ -1815,6 +1815,58 @@ function _slicedToArray(arr, i) { if (Array.isArray(arr)) { return arr; } else i
 		exports.sum = sum;
 
 		/* js/src/utils */
+		/* js/src/utils/_range.js */
+
+		var _range = regeneratorRuntime.mark(function _range(start, stop, step) {
+			return regeneratorRuntime.wrap(function _range$(context$3$0) {
+				while (1) switch (context$3$0.prev = context$3$0.next) {
+					case 0:
+						if (!(step < 0)) {
+							context$3$0.next = 9;
+							break;
+						}
+
+					case 1:
+						if (!(start > stop)) {
+							context$3$0.next = 7;
+							break;
+						}
+
+						context$3$0.next = 4;
+						return start;
+
+					case 4:
+						start += step;
+						context$3$0.next = 1;
+						break;
+
+					case 7:
+						context$3$0.next = 15;
+						break;
+
+					case 9:
+						if (!(start < stop)) {
+							context$3$0.next = 15;
+							break;
+						}
+
+						context$3$0.next = 12;
+						return start;
+
+					case 12:
+						start += step;
+						context$3$0.next = 9;
+						break;
+
+					case 15:
+					case "end":
+						return context$3$0.stop();
+				}
+			}, _range, this);
+		});
+
+		exports._range = _range;
+
 		/* js/src/utils/consume.js */
 
 		var consume = function consume(iterator, n) {
@@ -2253,53 +2305,14 @@ function _slicedToArray(arr, i) { if (Array.isArray(arr)) { return arr; } else i
 
 		/* js/src/utils/range.js */
 
-		var range = regeneratorRuntime.mark(function range(start, stop, step) {
-			return regeneratorRuntime.wrap(function range$(context$3$0) {
-				while (1) switch (context$3$0.prev = context$3$0.next) {
-					case 0:
-						if (!(step < 0)) {
-							context$3$0.next = 9;
-							break;
-						}
+		var range = function range(start, stop, step) {
 
-					case 1:
-						if (!(start > stop)) {
-							context$3$0.next = 7;
-							break;
-						}
+			if (stop === undefined) return _range(0, start, 1);
 
-						context$3$0.next = 4;
-						return start;
+			if (step === undefined) return _range(start, stop, 1);
 
-					case 4:
-						start += step;
-						context$3$0.next = 1;
-						break;
-
-					case 7:
-						context$3$0.next = 15;
-						break;
-
-					case 9:
-						if (!(start < stop)) {
-							context$3$0.next = 15;
-							break;
-						}
-
-						context$3$0.next = 12;
-						return start;
-
-					case 12:
-						start += step;
-						context$3$0.next = 9;
-						break;
-
-					case 15:
-					case "end":
-						return context$3$0.stop();
-				}
-			}, range, this);
-		});
+			return _range(start, stop, step);
+		};
 
 		exports.range = range;
 

@@ -12,6 +12,9 @@ var one = function ( begin, end, step, out ) {
 
 test( "range", function () {
 
+	one( 3 , undefined , undefined , [ 0 , 1 , 2 ] ) ;
+	one( 3 , 6 , undefined , [ 3 , 4 , 5 ] ) ;
+
 	one( 0, 0, 1, [] );
 	one( 1, 1, 1, [] );
 	one( 0, 1, 1, [0] );

@@ -106,7 +106,9 @@ require( [ "aureooms-js-itertools" ] , function ( itertools ) { ... } ) ;
 ## Use
 
 ```js
-itertools.range( 2 , 5 , 1 ) ; // 2 3 4
+itertools.range( 3 ) ; // 0 1 2
+
+itertools.range( 2 , 5 ) ; // 2 3 4
 
 itertools.range( 5 , 2 , -1 ) ; // 5 4 3
 
@@ -124,7 +126,7 @@ itertools.head( itertools.repeat( "A" ) , 3 ) : // A A A
 
 itertools.list( itertools.nrepeat( "A" , 3 ) ) ; // AAA
 
-itertools.pick( "ABCD" , itertools.range( 0 , 2 , 1 ) ) ; // A C
+itertools.pick( "ABCD" , itertools.range( 2 ) ) ; // A C
 
 itertools.tee( "ABC" , 2 ) ; // [ A B C , A B C ]
 
@@ -148,11 +150,11 @@ itertools.max( compare.increasing , [ 2 , 1 , 3 ] ) ; // 3
 
 let operator = require( "aureooms-js-operator" ) ;
 
-itertools.reduce( operator.mul , itertools.range( 2 , 6 , 1 ) , 1 ) ; // 120
+itertools.reduce( operator.mul , itertools.range( 2 , 6 ) , 1 ) ; // 120
 
-itertools.reduce( operator.add , itertools.range( 2 , 6 , 1 ) , 1 ) ; // 15
+itertools.reduce( operator.add , itertools.range( 2 , 6 ) , 1 ) ; // 15
 
-itertools.sum( itertools.range( 1 , 6 , 1 ) ) ; // 15
+itertools.sum( itertools.range( 1 , 6 ) ) ; // 15
 
 itertools.chain( [ "ABC" , "XY" ] ) ; // A B C X Y
 
@@ -186,19 +188,19 @@ itertools.starmap( operator.mul , itertools.zip( itertools.count( 0 , 1 ) , iter
 
 itertools.product( [ "ABCD" , "xy" ] , 1 ) ; // Ax Ay Bx By Cx Cy Dx Dy
 
-itertools.product( [ itertools.range( 0 , 2 , 1 ) ] , 3 ) ; // 000 001 010 011 100 101 110 111
+itertools.product( [ itertools.range( 2 ) ] , 3 ) ; // 000 001 010 011 100 101 110 111
 
 itertools.permutations( "ABCD" , 2 ) ; // AB AC AD BA BC BD CA CB CD DA DB DC
 
-itertools.permutations( itertools.range( 0 , 3 , 1 ) , 3 ) ; // 012 021 102 120 201 210
+itertools.permutations( itertools.range( 3 ) , 3 ) ; // 012 021 102 120 201 210
 
 itertools.combinations( "ABCD" , 2 ) ; // AB AC AD BC BD CD
 
-itertools.combinations( itertools.range( 0 , 4 , 1 ) , 3 ) ; // 012 013 023 123
+itertools.combinations( itertools.range( 4 ) , 3 ) ; // 012 013 023 123
 
 itertools.combinationswithrepetition( "ABC" , 1 ) ; // A B C
 
-itertools.combinationswithrepetition( itertools.range( 0 , 3 , 1 ) , 2 ) ; // 00 01 02 11 12 22
+itertools.combinationswithrepetition( itertools.range( 3 ) , 2 ) ; // 00 01 02 11 12 22
 
 itertools.reversed( "ABC" ) ; // C B A
 
