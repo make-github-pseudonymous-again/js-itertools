@@ -15,7 +15,7 @@
 		"inch.json",
 		".codeclimate.yml"
 	],
-	"version": "1.1.2",
+	"version": "1.2.0",
 	"name": "aureooms-js-itertools",
 	"main": "js/dist/itertools.js"
 }
