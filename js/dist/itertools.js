@@ -1867,6 +1867,159 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 
 		exports._range = _range;
 
+		/* js/src/utils/by.js */
+
+		var by = regeneratorRuntime.mark(function by(iterable, n) {
+			var iterator, tuple, _iteratorNormalCompletion20, _didIteratorError20, _iteratorError20, _iterator20, _step20, i, current, _iteratorNormalCompletion21, _didIteratorError21, _iteratorError21, _iterator21, _step21, j;
+
+			return regeneratorRuntime.wrap(function by$(context$3$0) {
+				while (1) switch (context$3$0.prev = context$3$0.next) {
+					case 0:
+						iterator = iter(iterable);
+
+					case 1:
+						if (!true) {
+							context$3$0.next = 58;
+							break;
+						}
+
+						tuple = [];
+						_iteratorNormalCompletion20 = true;
+						_didIteratorError20 = false;
+						_iteratorError20 = undefined;
+						context$3$0.prev = 6;
+						_iterator20 = range(n)[Symbol.iterator]();
+
+					case 8:
+						if (_iteratorNormalCompletion20 = (_step20 = _iterator20.next()).done) {
+							context$3$0.next = 40;
+							break;
+						}
+
+						i = _step20.value;
+						current = next(iterator);
+
+						if (!current.done) {
+							context$3$0.next = 36;
+							break;
+						}
+
+						if (!(i === 0)) {
+							context$3$0.next = 14;
+							break;
+						}
+
+						return context$3$0.abrupt("return");
+
+					case 14:
+						_iteratorNormalCompletion21 = true;
+						_didIteratorError21 = false;
+						_iteratorError21 = undefined;
+						context$3$0.prev = 17;
+
+						for (_iterator21 = range(n - i)[Symbol.iterator](); !(_iteratorNormalCompletion21 = (_step21 = _iterator21.next()).done); _iteratorNormalCompletion21 = true) {
+							j = _step21.value;
+							tuple.push(undefined);
+						}context$3$0.next = 25;
+						break;
+
+					case 21:
+						context$3$0.prev = 21;
+						context$3$0.t0 = context$3$0["catch"](17);
+						_didIteratorError21 = true;
+						_iteratorError21 = context$3$0.t0;
+
+					case 25:
+						context$3$0.prev = 25;
+						context$3$0.prev = 26;
+
+						if (!_iteratorNormalCompletion21 && _iterator21["return"]) {
+							_iterator21["return"]();
+						}
+
+					case 28:
+						context$3$0.prev = 28;
+
+						if (!_didIteratorError21) {
+							context$3$0.next = 31;
+							break;
+						}
+
+						throw _iteratorError21;
+
+					case 31:
+						return context$3$0.finish(28);
+
+					case 32:
+						return context$3$0.finish(25);
+
+					case 33:
+						context$3$0.next = 35;
+						return tuple;
+
+					case 35:
+						return context$3$0.abrupt("return");
+
+					case 36:
+
+						tuple.push(current.value);
+
+					case 37:
+						_iteratorNormalCompletion20 = true;
+						context$3$0.next = 8;
+						break;
+
+					case 40:
+						context$3$0.next = 46;
+						break;
+
+					case 42:
+						context$3$0.prev = 42;
+						context$3$0.t1 = context$3$0["catch"](6);
+						_didIteratorError20 = true;
+						_iteratorError20 = context$3$0.t1;
+
+					case 46:
+						context$3$0.prev = 46;
+						context$3$0.prev = 47;
+
+						if (!_iteratorNormalCompletion20 && _iterator20["return"]) {
+							_iterator20["return"]();
+						}
+
+					case 49:
+						context$3$0.prev = 49;
+
+						if (!_didIteratorError20) {
+							context$3$0.next = 52;
+							break;
+						}
+
+						throw _iteratorError20;
+
+					case 52:
+						return context$3$0.finish(49);
+
+					case 53:
+						return context$3$0.finish(46);
+
+					case 54:
+						context$3$0.next = 56;
+						return tuple;
+
+					case 56:
+						context$3$0.next = 1;
+						break;
+
+					case 58:
+					case "end":
+						return context$3$0.stop();
+				}
+			}, by, this, [[6, 42, 46, 54], [17, 21, 25, 33], [26,, 28, 32], [47,, 49, 53]]);
+		});
+
+		exports.by = by;
+
 		/* js/src/utils/consume.js */
 
 		var consume = function consume(iterator, n) {
@@ -1909,25 +2062,25 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 		/* js/src/utils/cycle.js */
 
 		var cycle = regeneratorRuntime.mark(function cycle(iterable) {
-			var buffer, _iteratorNormalCompletion20, _didIteratorError20, _iteratorError20, _iterator20, _step20, item;
+			var buffer, _iteratorNormalCompletion22, _didIteratorError22, _iteratorError22, _iterator22, _step22, item;
 
 			return regeneratorRuntime.wrap(function cycle$(context$3$0) {
 				while (1) switch (context$3$0.prev = context$3$0.next) {
 					case 0:
 						buffer = [];
-						_iteratorNormalCompletion20 = true;
-						_didIteratorError20 = false;
-						_iteratorError20 = undefined;
+						_iteratorNormalCompletion22 = true;
+						_didIteratorError22 = false;
+						_iteratorError22 = undefined;
 						context$3$0.prev = 4;
-						_iterator20 = iterable[Symbol.iterator]();
+						_iterator22 = iterable[Symbol.iterator]();
 
 					case 6:
-						if (_iteratorNormalCompletion20 = (_step20 = _iterator20.next()).done) {
+						if (_iteratorNormalCompletion22 = (_step22 = _iterator22.next()).done) {
 							context$3$0.next = 14;
 							break;
 						}
 
-						item = _step20.value;
+						item = _step22.value;
 						context$3$0.next = 10;
 						return item;
 
@@ -1935,7 +2088,7 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 						buffer.push(item);
 
 					case 11:
-						_iteratorNormalCompletion20 = true;
+						_iteratorNormalCompletion22 = true;
 						context$3$0.next = 6;
 						break;
 
@@ -1946,26 +2099,26 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 					case 16:
 						context$3$0.prev = 16;
 						context$3$0.t0 = context$3$0["catch"](4);
-						_didIteratorError20 = true;
-						_iteratorError20 = context$3$0.t0;
+						_didIteratorError22 = true;
+						_iteratorError22 = context$3$0.t0;
 
 					case 20:
 						context$3$0.prev = 20;
 						context$3$0.prev = 21;
 
-						if (!_iteratorNormalCompletion20 && _iterator20["return"]) {
-							_iterator20["return"]();
+						if (!_iteratorNormalCompletion22 && _iterator22["return"]) {
+							_iterator22["return"]();
 						}
 
 					case 23:
 						context$3$0.prev = 23;
 
-						if (!_didIteratorError20) {
+						if (!_didIteratorError22) {
 							context$3$0.next = 26;
 							break;
 						}
 
-						throw _iteratorError20;
+						throw _iteratorError22;
 
 					case 26:
 						return context$3$0.finish(23);
@@ -2005,32 +2158,179 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 		/* js/src/utils/exhaust.js */
 
 		var exhaust = function exhaust(iterator) {
-			var _iteratorNormalCompletion21 = true;
-			var _didIteratorError21 = false;
-			var _iteratorError21 = undefined;
+			var _iteratorNormalCompletion23 = true;
+			var _didIteratorError23 = false;
+			var _iteratorError23 = undefined;
 
 			try {
 
-				for (var _iterator21 = iterator[Symbol.iterator](), _step21; !(_iteratorNormalCompletion21 = (_step21 = _iterator21.next()).done); _iteratorNormalCompletion21 = true) {
-					var item = _step21.value;
+				for (var _iterator23 = iterator[Symbol.iterator](), _step23; !(_iteratorNormalCompletion23 = (_step23 = _iterator23.next()).done); _iteratorNormalCompletion23 = true) {
+					var item = _step23.value;
 				}
 			} catch (err) {
-				_didIteratorError21 = true;
-				_iteratorError21 = err;
+				_didIteratorError23 = true;
+				_iteratorError23 = err;
 			} finally {
 				try {
-					if (!_iteratorNormalCompletion21 && _iterator21["return"]) {
-						_iterator21["return"]();
+					if (!_iteratorNormalCompletion23 && _iterator23["return"]) {
+						_iterator23["return"]();
 					}
 				} finally {
-					if (_didIteratorError21) {
-						throw _iteratorError21;
+					if (_didIteratorError23) {
+						throw _iteratorError23;
 					}
 				}
 			}
 		};
 
 		exports.exhaust = exhaust;
+
+		/* js/src/utils/frame.js */
+
+		var frame = regeneratorRuntime.mark(function frame(iterable, n) {
+			var iterator, tuple, _iteratorNormalCompletion24, _didIteratorError24, _iteratorError24, _iterator24, _step24, i, current, _iteratorNormalCompletion25, _didIteratorError25, _iteratorError25, _iterator25, _step25, value;
+
+			return regeneratorRuntime.wrap(function frame$(context$3$0) {
+				while (1) switch (context$3$0.prev = context$3$0.next) {
+					case 0:
+						iterator = iter(iterable);
+						tuple = [];
+						_iteratorNormalCompletion24 = true;
+						_didIteratorError24 = false;
+						_iteratorError24 = undefined;
+						context$3$0.prev = 5;
+						_iterator24 = range(n)[Symbol.iterator]();
+
+					case 7:
+						if (_iteratorNormalCompletion24 = (_step24 = _iterator24.next()).done) {
+							context$3$0.next = 16;
+							break;
+						}
+
+						i = _step24.value;
+						current = next(iterator);
+
+						if (!current.done) {
+							context$3$0.next = 12;
+							break;
+						}
+
+						return context$3$0.abrupt("return");
+
+					case 12:
+
+						tuple.push(current.value);
+
+					case 13:
+						_iteratorNormalCompletion24 = true;
+						context$3$0.next = 7;
+						break;
+
+					case 16:
+						context$3$0.next = 22;
+						break;
+
+					case 18:
+						context$3$0.prev = 18;
+						context$3$0.t0 = context$3$0["catch"](5);
+						_didIteratorError24 = true;
+						_iteratorError24 = context$3$0.t0;
+
+					case 22:
+						context$3$0.prev = 22;
+						context$3$0.prev = 23;
+
+						if (!_iteratorNormalCompletion24 && _iterator24["return"]) {
+							_iterator24["return"]();
+						}
+
+					case 25:
+						context$3$0.prev = 25;
+
+						if (!_didIteratorError24) {
+							context$3$0.next = 28;
+							break;
+						}
+
+						throw _iteratorError24;
+
+					case 28:
+						return context$3$0.finish(25);
+
+					case 29:
+						return context$3$0.finish(22);
+
+					case 30:
+						context$3$0.next = 32;
+						return tuple;
+
+					case 32:
+						_iteratorNormalCompletion25 = true;
+						_didIteratorError25 = false;
+						_iteratorError25 = undefined;
+						context$3$0.prev = 35;
+						_iterator25 = iterator[Symbol.iterator]();
+
+					case 37:
+						if (_iteratorNormalCompletion25 = (_step25 = _iterator25.next()).done) {
+							context$3$0.next = 46;
+							break;
+						}
+
+						value = _step25.value;
+
+						tuple = tuple.slice(1);
+						tuple.push(value);
+						context$3$0.next = 43;
+						return tuple;
+
+					case 43:
+						_iteratorNormalCompletion25 = true;
+						context$3$0.next = 37;
+						break;
+
+					case 46:
+						context$3$0.next = 52;
+						break;
+
+					case 48:
+						context$3$0.prev = 48;
+						context$3$0.t1 = context$3$0["catch"](35);
+						_didIteratorError25 = true;
+						_iteratorError25 = context$3$0.t1;
+
+					case 52:
+						context$3$0.prev = 52;
+						context$3$0.prev = 53;
+
+						if (!_iteratorNormalCompletion25 && _iterator25["return"]) {
+							_iterator25["return"]();
+						}
+
+					case 55:
+						context$3$0.prev = 55;
+
+						if (!_didIteratorError25) {
+							context$3$0.next = 58;
+							break;
+						}
+
+						throw _iteratorError25;
+
+					case 58:
+						return context$3$0.finish(55);
+
+					case 59:
+						return context$3$0.finish(52);
+
+					case 60:
+					case "end":
+						return context$3$0.stop();
+				}
+			}, frame, this, [[5, 18, 22, 30], [23,, 25, 29], [35, 48, 52, 60], [53,, 55, 59]]);
+		});
+
+		exports.frame = frame;
 
 		/* js/src/utils/head.js */
 
@@ -2097,26 +2397,26 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 
 			var buffer = [];
 
-			var _iteratorNormalCompletion22 = true;
-			var _didIteratorError22 = false;
-			var _iteratorError22 = undefined;
+			var _iteratorNormalCompletion26 = true;
+			var _didIteratorError26 = false;
+			var _iteratorError26 = undefined;
 
 			try {
-				for (var _iterator22 = iterable[Symbol.iterator](), _step22; !(_iteratorNormalCompletion22 = (_step22 = _iterator22.next()).done); _iteratorNormalCompletion22 = true) {
-					var item = _step22.value;
+				for (var _iterator26 = iterable[Symbol.iterator](), _step26; !(_iteratorNormalCompletion26 = (_step26 = _iterator26.next()).done); _iteratorNormalCompletion26 = true) {
+					var item = _step26.value;
 					buffer.push(item);
 				}
 			} catch (err) {
-				_didIteratorError22 = true;
-				_iteratorError22 = err;
+				_didIteratorError26 = true;
+				_iteratorError26 = err;
 			} finally {
 				try {
-					if (!_iteratorNormalCompletion22 && _iterator22["return"]) {
-						_iterator22["return"]();
+					if (!_iteratorNormalCompletion26 && _iterator26["return"]) {
+						_iterator26["return"]();
 					}
 				} finally {
-					if (_didIteratorError22) {
-						throw _iteratorError22;
+					if (_didIteratorError26) {
+						throw _iteratorError26;
 					}
 				}
 			}
@@ -2129,25 +2429,25 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 		/* js/src/utils/ncycle.js */
 
 		var ncycle = regeneratorRuntime.mark(function ncycle(iterable, n) {
-			var buffer, _iteratorNormalCompletion23, _didIteratorError23, _iteratorError23, _iterator23, _step23, item;
+			var buffer, _iteratorNormalCompletion27, _didIteratorError27, _iteratorError27, _iterator27, _step27, item;
 
 			return regeneratorRuntime.wrap(function ncycle$(context$3$0) {
 				while (1) switch (context$3$0.prev = context$3$0.next) {
 					case 0:
 						buffer = [];
-						_iteratorNormalCompletion23 = true;
-						_didIteratorError23 = false;
-						_iteratorError23 = undefined;
+						_iteratorNormalCompletion27 = true;
+						_didIteratorError27 = false;
+						_iteratorError27 = undefined;
 						context$3$0.prev = 4;
-						_iterator23 = iterable[Symbol.iterator]();
+						_iterator27 = iterable[Symbol.iterator]();
 
 					case 6:
-						if (_iteratorNormalCompletion23 = (_step23 = _iterator23.next()).done) {
+						if (_iteratorNormalCompletion27 = (_step27 = _iterator27.next()).done) {
 							context$3$0.next = 14;
 							break;
 						}
 
-						item = _step23.value;
+						item = _step27.value;
 						context$3$0.next = 10;
 						return item;
 
@@ -2155,7 +2455,7 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 						buffer.push(item);
 
 					case 11:
-						_iteratorNormalCompletion23 = true;
+						_iteratorNormalCompletion27 = true;
 						context$3$0.next = 6;
 						break;
 
@@ -2166,26 +2466,26 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 					case 16:
 						context$3$0.prev = 16;
 						context$3$0.t0 = context$3$0["catch"](4);
-						_didIteratorError23 = true;
-						_iteratorError23 = context$3$0.t0;
+						_didIteratorError27 = true;
+						_iteratorError27 = context$3$0.t0;
 
 					case 20:
 						context$3$0.prev = 20;
 						context$3$0.prev = 21;
 
-						if (!_iteratorNormalCompletion23 && _iterator23["return"]) {
-							_iterator23["return"]();
+						if (!_iteratorNormalCompletion27 && _iterator27["return"]) {
+							_iterator27["return"]();
 						}
 
 					case 23:
 						context$3$0.prev = 23;
 
-						if (!_didIteratorError23) {
+						if (!_didIteratorError27) {
 							context$3$0.next = 26;
 							break;
 						}
 
-						throw _iteratorError23;
+						throw _iteratorError27;
 
 					case 26:
 						return context$3$0.finish(23);
@@ -2234,29 +2534,29 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 		/* js/src/utils/pick.js */
 
 		var pick = regeneratorRuntime.mark(function pick(object, iterable) {
-			var _iteratorNormalCompletion24, _didIteratorError24, _iteratorError24, _iterator24, _step24, key;
+			var _iteratorNormalCompletion28, _didIteratorError28, _iteratorError28, _iterator28, _step28, key;
 
 			return regeneratorRuntime.wrap(function pick$(context$3$0) {
 				while (1) switch (context$3$0.prev = context$3$0.next) {
 					case 0:
-						_iteratorNormalCompletion24 = true;
-						_didIteratorError24 = false;
-						_iteratorError24 = undefined;
+						_iteratorNormalCompletion28 = true;
+						_didIteratorError28 = false;
+						_iteratorError28 = undefined;
 						context$3$0.prev = 3;
-						_iterator24 = iterable[Symbol.iterator]();
+						_iterator28 = iterable[Symbol.iterator]();
 
 					case 5:
-						if (_iteratorNormalCompletion24 = (_step24 = _iterator24.next()).done) {
+						if (_iteratorNormalCompletion28 = (_step28 = _iterator28.next()).done) {
 							context$3$0.next = 12;
 							break;
 						}
 
-						key = _step24.value;
+						key = _step28.value;
 						context$3$0.next = 9;
 						return object[key];
 
 					case 9:
-						_iteratorNormalCompletion24 = true;
+						_iteratorNormalCompletion28 = true;
 						context$3$0.next = 5;
 						break;
 
@@ -2267,26 +2567,26 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 					case 14:
 						context$3$0.prev = 14;
 						context$3$0.t0 = context$3$0["catch"](3);
-						_didIteratorError24 = true;
-						_iteratorError24 = context$3$0.t0;
+						_didIteratorError28 = true;
+						_iteratorError28 = context$3$0.t0;
 
 					case 18:
 						context$3$0.prev = 18;
 						context$3$0.prev = 19;
 
-						if (!_iteratorNormalCompletion24 && _iterator24["return"]) {
-							_iterator24["return"]();
+						if (!_iteratorNormalCompletion28 && _iterator28["return"]) {
+							_iterator28["return"]();
 						}
 
 					case 21:
 						context$3$0.prev = 21;
 
-						if (!_didIteratorError24) {
+						if (!_didIteratorError28) {
 							context$3$0.next = 24;
 							break;
 						}
 
-						throw _iteratorError24;
+						throw _iteratorError28;
 
 					case 24:
 						return context$3$0.finish(21);
@@ -2327,7 +2627,7 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 			while (n-- > 0) deques.push([]);
 
 			var gen = regeneratorRuntime.mark(function gen(mydeque) {
-				var current, _iteratorNormalCompletion25, _didIteratorError25, _iteratorError25, _iterator25, _step25, deque;
+				var current, _iteratorNormalCompletion29, _didIteratorError29, _iteratorError29, _iterator29, _step29, deque;
 
 				return regeneratorRuntime.wrap(function gen$(context$4$0) {
 					while (1) switch (context$4$0.prev = context$4$0.next) {
@@ -2352,13 +2652,13 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 							return context$4$0.abrupt("return");
 
 						case 5:
-							_iteratorNormalCompletion25 = true;
-							_didIteratorError25 = false;
-							_iteratorError25 = undefined;
+							_iteratorNormalCompletion29 = true;
+							_didIteratorError29 = false;
+							_iteratorError29 = undefined;
 							context$4$0.prev = 8;
 
-							for (_iterator25 = deques[Symbol.iterator](); !(_iteratorNormalCompletion25 = (_step25 = _iterator25.next()).done); _iteratorNormalCompletion25 = true) {
-								deque = _step25.value;
+							for (_iterator29 = deques[Symbol.iterator](); !(_iteratorNormalCompletion29 = (_step29 = _iterator29.next()).done); _iteratorNormalCompletion29 = true) {
+								deque = _step29.value;
 								deque.push(current.value);
 							}context$4$0.next = 16;
 							break;
@@ -2366,26 +2666,26 @@ var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = 
 						case 12:
 							context$4$0.prev = 12;
 							context$4$0.t0 = context$4$0["catch"](8);
-							_didIteratorError25 = true;
-							_iteratorError25 = context$4$0.t0;
+							_didIteratorError29 = true;
+							_iteratorError29 = context$4$0.t0;
 
 						case 16:
 							context$4$0.prev = 16;
 							context$4$0.prev = 17;
 
-							if (!_iteratorNormalCompletion25 && _iterator25["return"]) {
-								_iterator25["return"]();
+							if (!_iteratorNormalCompletion29 && _iterator29["return"]) {
+								_iterator29["return"]();
 							}
 
 						case 19:
 							context$4$0.prev = 19;
 
-							if (!_didIteratorError25) {
+							if (!_didIteratorError29) {
 								context$4$0.next = 22;
 								break;
 							}
 
-							throw _iteratorError25;
+							throw _iteratorError29;
 
 						case 22:
 							return context$4$0.finish(19);
