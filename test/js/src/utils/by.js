@@ -11,9 +11,13 @@ test( "by" , function ( ) {
 
 	deepEqual( list( A ) , list( B ) , "compare to zip output" ) ;
 
-	var A = by( range( 4 ) , 3 ) ;
+	var C = by( range( 4 ) , 3 ) ;
 
-	deepEqual( list( A ) , [ [ 0 , 1 , 2 ] , [ 3 , undefined , undefined ] ] , "n !| N" ) ;
+	deepEqual( list( C ) , [ [ 0 , 1 , 2 ] , [ 3 , undefined , undefined ] ] , "n !| N" ) ;
+
+	var D = by( "" , 3 ) ;
+
+	deepEqual( list( D ) , [ ] , "empty" ) ;
 
 } ) ;
 
