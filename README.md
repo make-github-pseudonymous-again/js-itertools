@@ -1,3 +1,22 @@
+[aureooms/es-itertools](https://aureooms.github.io/es-itertools)
+==
+
+Iterable and iterator library for JavaScript. See [documentation](https://aureooms.github.io/es-itertools/index.html).
+
+[![NPM license](http://img.shields.io/npm/l/aureooms-es-itertools.svg?style=flat)](https://raw.githubusercontent.com/aureooms/es-itertools/master/LICENSE)
+[![NPM version](http://img.shields.io/npm/v/aureooms-es-itertools.svg?style=flat)](https://www.npmjs.org/package/aureooms-es-itertools)
+[![Build status](http://img.shields.io/travis/aureooms/es-itertools.svg?style=flat)](https://travis-ci.org/aureooms/es-itertools)
+[![Coverage status](http://img.shields.io/coveralls/aureooms/es-itertools.svg?style=flat)](https://coveralls.io/r/aureooms/es-itertools)
+[![Dependencies status](http://img.shields.io/david/aureooms/es-itertools.svg?style=flat)](https://david-dm.org/aureooms/es-itertools#info=dependencies)
+[![Dev dependencies status](http://img.shields.io/david/dev/aureooms/es-itertools.svg?style=flat)](https://david-dm.org/aureooms/es-itertools#info=devDependencies)
+[![Code Climate](http://img.shields.io/codeclimate/github/aureooms/es-itertools.svg?style=flat)](https://codeclimate.com/github/aureooms/es-itertools)
+[![NPM downloads per month](http://img.shields.io/npm/dm/aureooms-es-itertools.svg?style=flat)](https://www.npmjs.org/package/aureooms-es-itertools)
+[![GitHub issues](http://img.shields.io/github/issues/aureooms/es-itertools.svg?style=flat)](https://github.com/aureooms/es-itertools/issues)
+[![Documentation](https://aureooms.github.io/es-itertools/badge.svg)](https://aureooms.github.io/es-itertools/source.html)
+
+
+# OLD README BELOW
+
 [js-itertools](http://aureooms.github.io/js-itertools)
 ==
 
