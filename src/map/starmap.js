@@ -1,8 +1,7 @@
 
-let starmap = function* ( callable , iterable ) {
+export function* starmap ( callable , iterable ) {
 
 	for ( let item of iterable ) yield callable.apply( null , item ) ;
+	//for ( let args of iterable ) yield callable( ...args ) ;
 
-} ;
-
-exports.starmap = starmap ;
+}

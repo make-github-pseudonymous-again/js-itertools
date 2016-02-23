@@ -1,5 +1,5 @@
 
-let takewhile = function* ( predicate , iterable ) {
+export function* takewhile ( predicate , iterable ) {
 
 	for ( let item of iterable ) {
 
@@ -9,6 +9,4 @@ let takewhile = function* ( predicate , iterable ) {
 
 	}
 
-} ;
-
-exports.takewhile = takewhile ;
+}

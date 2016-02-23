@@ -1,12 +1,14 @@
 
-let reversed = function* ( iterable ) {
+export function* reversed ( iterable ) {
 
 	let buffer = [ ] ;
 
 	for ( let item of iterable ) buffer.push( item ) ;
 
-	while ( buffer.length ) yield buffer.pop( ) ;
+	// caching length is believed to be faster
 
-} ;
+	let jz = buffer.length ;
 
-exports.reversed = reversed ;
+	for ( ; jz ; --jz ) yield buffer.pop( ) ;
+
+}

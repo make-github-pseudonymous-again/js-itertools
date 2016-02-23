@@ -1,5 +1,5 @@
 
-let dropwhile = function* ( predicate , iterable ) {
+export function* dropwhile ( predicate , iterable ) {
 
 	let iterator = iter( iterable ) ;
 
@@ -17,6 +17,4 @@ let dropwhile = function* ( predicate , iterable ) {
 
 	}
 
-} ;
-
-exports.dropwhile = dropwhile ;
+}

@@ -1,5 +1,5 @@
 
-let filter = function* ( predicate , iterable ) {
+export function* filter ( predicate , iterable ) {
 
 	for ( let item of iterable ) {
 
@@ -7,7 +7,6 @@ let filter = function* ( predicate , iterable ) {
 
 	}
 
-} ;
+}
 
-exports.filter = filter ;
-exports.filtertrue = filter ;
+export const filtertrue = filter ;

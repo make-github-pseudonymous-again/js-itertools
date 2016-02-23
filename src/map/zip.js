@@ -1,26 +1,8 @@
 
-let zip = function* ( iterables ) {
+import { _zip } from './_zip' ;
 
-	let iterators = list( map( iter , iterables ) ) ;
+export function zip ( ...iterables ) {
 
-	if ( iterators.length === 0 ) return ;
+	return _zip( iterables ) ;
 
-	while ( true ) {
-
-		let buffer = [ ] ;
-
-		for ( let result of map( next , iterators ) ) {
-
-			if ( result.done ) return ;
-
-			buffer.push( result.value ) ;
-
-		}
-
-		yield buffer ;
-
-	}
-
-} ;
-
-exports.zip = zip ;
+}

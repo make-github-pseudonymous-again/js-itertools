@@ -1,5 +1,6 @@
+import { _range } from '.' ;
 
-let range = function ( start , stop , step ) {
+export function range ( start , stop , step ) {
 
 	if ( stop === undefined ) return _range( 0 , start , 1 ) ;
 
@@ -7,6 +8,4 @@ let range = function ( start , stop , step ) {
 
 	return _range( start , stop , step ) ;
 
-} ;
-
-exports.range = range ;
+}

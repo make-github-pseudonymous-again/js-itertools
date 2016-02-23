@@ -1,8 +1,11 @@
 
-let combinationswithrepetition = function* ( iterable , r ) {
 
-	// combinationswithrepetition('ABC', 1) --> A B C
-	// combinationswithrepetition(range(3), 2) --> 00 01 02 11 12 22
+/**
+ * @example combinationswithrepetition('ABC', 1) // A B C
+ * @example combinationswithrepetition(range(3), 2) // 00 01 02 11 12 22
+ */
+
+export function* combinationswithrepetition ( iterable , r ) {
 
 	let pool = list( iterable ) ;
 	let len = pool.length ;
@@ -39,6 +42,4 @@ let combinationswithrepetition = function* ( iterable , r ) {
 
 	}
 
-} ;
-
-exports.combinationswithrepetition = combinationswithrepetition ;
+}

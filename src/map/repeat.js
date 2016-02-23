@@ -1,8 +1,6 @@
 
-let repeat = function* ( item ) {
+export function* repeat ( item ) {
 
 	while ( true ) yield item ;
 
-} ;
-
-exports.repeat = repeat ;
+}

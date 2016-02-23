@@ -1,8 +1,11 @@
+import { iter , next , list } from '.' ;
+import { map } from '../map' ;
 
-let tee = function ( iterable , n ) {
+export function tee ( iterable , n ) {
 
 	let iterator = iter( iterable ) ;
 
+	// use real deque here
 	let deques = [ ] ;
 
 	while ( n --> 0 ) deques.push( [ ] ) ;
@@ -29,6 +32,4 @@ let tee = function ( iterable , n ) {
 
 	return list( map( gen , deques ) ) ;
 
-} ;
-
-exports.tee = tee ;
+}

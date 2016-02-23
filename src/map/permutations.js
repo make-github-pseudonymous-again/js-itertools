@@ -1,8 +1,10 @@
 
-let permutations = function* ( iterable , r ) {
+/**
+ * @example permutations('ABCD', 2) // AB AC AD BA BC BD CA CB CD DA DB DC
+ * @example permutations(range(3), 3) // 012 021 102 120 201 210
+ */
 
-	// permutations('ABCD', 2) --> AB AC AD BA BC BD CA CB CD DA DB DC
-	// permutations(range(3), 3) --> 012 021 102 120 201 210
+export function* permutations ( iterable , r ) {
 
 	let pool = list( iterable ) ;
 
@@ -50,6 +52,4 @@ let permutations = function* ( iterable , r ) {
 
 	}
 
-} ;
-
-exports.permutations = permutations ;
+}

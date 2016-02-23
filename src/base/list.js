@@ -1,5 +1,6 @@
+export function list ( iterable ) {
 
-let list = function ( iterable ) {
+	// replace by return [ ...iterable ] ;
 
 	let buffer = [ ] ;
 
@@ -7,6 +8,4 @@ let list = function ( iterable ) {
 
 	return buffer ;
 
-} ;
-
-exports.list = list ;
+}

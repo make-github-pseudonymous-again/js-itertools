@@ -1,8 +1,6 @@
 
-let map = function* ( callable , iterable ) {
+export function* map ( callable , iterable ) {
 
 	for ( let item of iterable ) yield callable( item ) ;
 
-} ;
-
-exports.map = map ;
+}

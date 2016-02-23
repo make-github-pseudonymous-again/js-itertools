@@ -1,8 +1,10 @@
 
-let combinations = function* ( iterable , r ) {
+/**
+ * @example combinations('ABCD', 2) // AB AC AD BC BD CD
+ * @example combinations(range(4), 3) // 012 013 023 123
+ */
 
-	// combinations('ABCD', 2) --> AB AC AD BC BD CD
-	// combinations(range(4), 3) --> 012 013 023 123
+export function* combinations ( iterable , r ) {
 
 	let pool = list( iterable ) ;
 	let len = pool.length ;
@@ -39,6 +41,4 @@ let combinations = function* ( iterable , r ) {
 
 	}
 
-} ;
-
-exports.combinations = combinations ;
+}

@@ -1,8 +1,8 @@
 
-let sorted = function ( compare , iterable ) {
+import { list } from './list' ;
+
+export function sorted ( compare , iterable ) {
 
 	return list( iterable ).sort( compare ) ;
 
-} ;
-
-exports.sorted = sorted ;
+}

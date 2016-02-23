@@ -1,13 +1,7 @@
+import { _sum } from './_sum' ;
 
+export function sum ( iterable , initializer = 0 ) {
 
-let sum = function ( iterable ) {
+	return _sum( iterable , initializer ) ;
 
-	let result = 0 ;
-
-	for ( let item of iterable ) result += item ;
-
-	return result ;
-
-} ;
-
-exports.sum = sum ;
+}

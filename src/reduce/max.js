@@ -1,10 +1,12 @@
+import { iter } from '../base/iter' ;
+import { next } from '../base/next' ;
 
 /**
  * Returns the largest element of an iterable according
  * to some comparison function.
  */
 
-let max = function ( compare , iterable ) {
+export function max ( compare , iterable ) {
 
 	let iterator = iter( iterable ) ;
 
@@ -26,6 +28,4 @@ let max = function ( compare , iterable ) {
 
 	return largest ;
 
-} ;
-
-exports.max = max ;
+}

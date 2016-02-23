@@ -1,4 +1,5 @@
-
+import { _reduce } from './_reduce' ;
+import { iter , next } from '../base' ;
 
 /**
  * Applies the accumulator function iteratively on the
@@ -7,14 +8,19 @@
  * parameter.
  */
 
-let reduce = function ( accumulator , iterable , initializer ) {
+export function reduce ( accumulator , iterable , initializer = undefined ) {
 
-	for ( let item of iterable ) {
-		initializer = accumulator( initializer , item ) ;
+	if ( initializer === undefined ) {
+		const iterator = iter( iterable ) ;
+		const first = next( iterator ) ;
+
+		if ( first.done ) {
+			return undefined ;
+		}
+
+		return _reduce( accumulator , iterator , first.value ) ;
 	}
 
-	return initializer ;
+	return _reduce( accumulator , iterable , initializer ) ;
 
-} ;
-
-exports.reduce = reduce ;
+}

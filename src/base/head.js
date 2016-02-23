@@ -1,5 +1,6 @@
+import { iter , next } from '.' ;
 
-let head = function* ( iterable , n ) {
+export function* head ( iterable , n ) {
 
 	let iterator = iter( iterable ) ;
 
@@ -13,6 +14,4 @@ let head = function* ( iterable , n ) {
 
 	}
 
-} ;
-
-exports.head = head ;
+}

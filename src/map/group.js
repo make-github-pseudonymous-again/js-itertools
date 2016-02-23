@@ -1,5 +1,5 @@
 
-let group = function* ( key , iterable ) {
+export function* group ( key , iterable ) {
 
 	let iterator = iter( iterable ) ;
 
@@ -44,7 +44,6 @@ let group = function* ( key , iterable ) {
 
 	yield [ currkey , buffer ] ;
 
-} ;
+}
 
-exports.group = group ;
-exports.groupby = group ;
+export const groupby = group ;

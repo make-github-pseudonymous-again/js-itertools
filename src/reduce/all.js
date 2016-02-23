@@ -1,5 +1,4 @@
-
-let all = function ( iterable ) {
+export function all ( iterable ) {
 
 	for ( let item of iterable ) {
 
@@ -9,6 +8,4 @@ let all = function ( iterable ) {
 
 	return true ;
 
-} ;
-
-exports.all = all ;
+}

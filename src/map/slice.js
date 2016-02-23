@@ -1,5 +1,5 @@
 
-let slice = function* ( iterable , start , stop , step ) {
+export function* slice ( iterable , start , stop , step ) {
 
 	let iterator = iter( iterable ) ;
 
@@ -34,6 +34,4 @@ let slice = function* ( iterable , start , stop , step ) {
 
 	}
 
-} ;
-
-exports.slice = slice ;
+}

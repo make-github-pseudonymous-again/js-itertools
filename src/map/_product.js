@@ -3,7 +3,7 @@
  * @param {lists} pools reverse ordered
  */
 
-let _product = function* ( pools , i , n ) {
+export function* _product ( pools , i , n ) {
 
 	if ( i === n ) { yield [ ] ; return ; }
 
@@ -23,7 +23,4 @@ let _product = function* ( pools , i , n ) {
 
 	}
 
-} ;
-
-exports._product = _product ;
-
+}

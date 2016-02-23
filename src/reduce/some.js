@@ -1,5 +1,4 @@
-
-let some = function ( iterable , n ) {
+export function some ( iterable , n ) {
 
 	if ( n <= 0 ) return true ;
 
@@ -11,6 +10,4 @@ let some = function ( iterable , n ) {
 
 	return false ;
 
-} ;
-
-exports.some = some ;
+}

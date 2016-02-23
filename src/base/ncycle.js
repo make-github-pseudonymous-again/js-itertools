@@ -1,5 +1,4 @@
-
-let cycle = function* ( iterable ) {
+export function* ncycle ( iterable , n ) {
 
 	let buffer = [ ] ;
 
@@ -12,8 +11,6 @@ let cycle = function* ( iterable ) {
 
 	if ( buffer.length === 0 ) return ;
 
-	while ( true ) yield* buffer ;
+	while ( --n > 0 ) yield* buffer ;
 
-} ;
-
-exports.cycle = cycle ;
+}

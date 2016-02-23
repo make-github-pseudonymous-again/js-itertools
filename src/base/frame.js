@@ -1,5 +1,11 @@
+import { iter , next , range } from '.' ;
 
-const frame = function* ( iterable , n ) {
+export function* frame ( iterable , n ) {
+
+	// Could have an implementation using a deque
+	// that doesn't slice (and thus allocate a new
+	// vector everytime). Though the yieded object
+	// cannot be modified by the caller in this case.
 
 	const iterator = iter( iterable ) ;
 
@@ -25,6 +31,4 @@ const frame = function* ( iterable , n ) {
 
 	}
 
-} ;
-
-exports.frame = frame ;
+}

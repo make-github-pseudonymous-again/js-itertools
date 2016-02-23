@@ -1,8 +1,6 @@
 
-let nrepeat = function* ( item , times ) {
+export function* nrepeat ( item , times ) {
 
 	while ( times --> 0 ) yield item ;
 
-} ;
-
-exports.nrepeat = nrepeat ;
+}

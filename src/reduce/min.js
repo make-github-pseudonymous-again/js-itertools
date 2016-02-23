@@ -1,10 +1,12 @@
+import { iter } from '../base/iter' ;
+import { next } from '../base/next' ;
 
 /**
  * Returns the smallest element of an iterable according
  * to some comparison function.
  */
 
-let min = function ( compare , iterable ) {
+export function min ( compare , iterable ) {
 
 	let iterator = iter( iterable ) ;
 
@@ -26,7 +28,4 @@ let min = function ( compare , iterable ) {
 
 	return smallest ;
 
-} ;
-
-exports.min = min ;
-
+}

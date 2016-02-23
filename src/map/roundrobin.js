@@ -1,8 +1,12 @@
 
-let roundrobin = function* ( iterables ) {
+/**
+ * Recipe credited to George Sakkis
+ *
+ * @example roundrobin('ABC', 'D', 'EF') // A D E B F C
+ *
+ */
 
-	// roundrobin('ABC', 'D', 'EF') --> A D E B F C
-	// Recipe credited to George Sakkis
+export function* roundrobin ( iterables ) {
 
 	let pending = len( iterables ) ;
 
@@ -28,6 +32,4 @@ let roundrobin = function* ( iterables ) {
 
 	}
 
-} ;
-
-exports.roundrobin = roundrobin ;
+}
