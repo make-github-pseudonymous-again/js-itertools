@@ -1,25 +1,24 @@
+import { all } from '../../../src' ;
 
-var one = function ( obj, val ) {
-	deepEqual( itertools.all( obj ), val, "all " + JSON.stringify( obj ) );
-};
+test( 'all' , t => {
 
+	const x = ( obj, val ) => t.same( all( obj ) , val ) ;
 
-test("all", function () {
+	x( [], true );
+	x( [true], true );
+	x( [false], false );
 
-	one( [], true );
-	one( [true], true );
-	one( [false], false );
+	x( [true, true, true, true], true );
+	x( [false, false, false, false], false );
 
-	one( [true, true, true, true], true );
-	one( [false, false, false, false], false );
+	x( [false, true, true, true], false );
+	x( [true, false, true, true], false );
+	x( [true, true, false, true], false );
+	x( [true, true, true, false], false );
 
-	one( [false, true, true, true], false );
-	one( [true, false, true, true], false );
-	one( [true, true, false, true], false );
-	one( [true, true, true, false], false );
+	x( [true, false, false, false], false );
+	x( [false, true, false, false], false );
+	x( [false, false, true, false], false );
+	x( [false, false, false, true], false );
 
-	one( [true, false, false, false], false );
-	one( [false, true, false, false], false );
-	one( [false, false, true, false], false );
-	one( [false, false, false, true], false );
-});
+} ) ;

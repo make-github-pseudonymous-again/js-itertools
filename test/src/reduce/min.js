@@ -1,37 +1,29 @@
 
+import { increasing , decreasing } from 'aureooms-js-compare' ;
 
-var one, compare;
+import { min } from 'aureooms-es-itertools' ;
 
-compare = require ( "aureooms-js-compare" );
+test( 'min' , t => {
 
-one = function ( iterable, comp, expected ) {
+	const x = ( iterable , compare , expected ) => t.same( min( compare , iterable ) , expected ) ;
 
-	deepEqual(
-		itertools.min( comp , iterable ),
-		expected,
-		JSON.stringify( [iterable, comp] )
-	);
+	x( [], increasing, undefined );
+	x( [1], increasing, 1 );
+	x( [1, 2, 3], increasing, 1 );
+	x( [3, 2, 1], increasing, 1 );
+	x( [2, 3, 1], increasing, 1 );
+	x( [1, 3, 2], increasing, 1 );
+	x( [2, 1, 3], increasing, 1 );
+	x( [3, 1, 2], increasing, 1 );
 
-};
-
-test( "min", function () {
-
-	one( [], compare.increasing, undefined );
-	one( [1], compare.increasing, 1 );
-	one( [1, 2, 3], compare.increasing, 1 );
-	one( [3, 2, 1], compare.increasing, 1 );
-	one( [2, 3, 1], compare.increasing, 1 );
-	one( [1, 3, 2], compare.increasing, 1 );
-	one( [2, 1, 3], compare.increasing, 1 );
-	one( [3, 1, 2], compare.increasing, 1 );
-
-	one( [], compare.decreasing, undefined );
-	one( [1], compare.decreasing, 1 );
-	one( [1, 2, 3], compare.decreasing, 3 );
-	one( [3, 2, 1], compare.decreasing, 3 );
-	one( [2, 3, 1], compare.decreasing, 3 );
-	one( [1, 3, 2], compare.decreasing, 3 );
-	one( [2, 1, 3], compare.decreasing, 3 );
-	one( [3, 1, 2], compare.decreasing, 3 );
+	x( [], decreasing, undefined );
+	x( [1], decreasing, 1 );
+	x( [1, 2, 3], decreasing, 3 );
+	x( [3, 2, 1], decreasing, 3 );
+	x( [2, 3, 1], decreasing, 3 );
+	x( [1, 3, 2], decreasing, 3 );
+	x( [2, 1, 3], decreasing, 3 );
+	x( [3, 1, 2], decreasing, 3 );
 
 });
+
