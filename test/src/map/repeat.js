@@ -1,7 +1,8 @@
-import { test } from 'ava' ;
+import test from 'ava' ;
 
-	import { list , head , repeat } from '../../..' ;
-test( "repeat", function () {
+import { list , head , repeat } from '../../..' ;
+
+test( "repeat", t => {
 
 	const x = function ( item, times, expected ) {
 		t.same( list( head( repeat( item ) , times ) ) , expected );

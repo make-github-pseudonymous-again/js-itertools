@@ -1,10 +1,11 @@
-import { test } from 'ava' ;
+import test from 'ava' ;
 
-	import { list , group } from '../../..' ;
-	import { identity } from 'aureooms-js-operator' ;
-test( "group", function () {
+import { list , group } from '../../..' ;
+import { identity } from 'aureooms-js-operator' ;
 
-	const x = function ( key, iterable, expected ) {
+test( "group", t => {
+
+	const x = ( key, iterable, expected ) => {
 
 		t.same( list( group( key , iterable ) ), expected );
 

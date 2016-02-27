@@ -1,4 +1,4 @@
-import { test } from 'ava' ;
+import test from 'ava' ;
 
 	import { range , head , exhaust , list } from '../../..' ;
 test( "exhaust" , t => {

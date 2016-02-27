@@ -1,8 +1,9 @@
+import { iter , len , cycle , map , slice } from '..' ;
 
 /**
  * Recipe credited to George Sakkis
  *
- * @example roundrobin('ABC', 'D', 'EF') // A D E B F C
+ * @example roundrobin(['ABC', 'D', 'EF']) // A D E B F C
  *
  */
 
@@ -16,9 +17,9 @@ export function* roundrobin ( iterables ) {
 
 		while ( true ) {
 
-			let iterator = next( iterators ).value ;
+			let iterator = iterators.next().value ;
 
-			let it = next( iterator ) ;
+			let it = iterator.next() ;
 
 			if ( it.done ) break ;
 

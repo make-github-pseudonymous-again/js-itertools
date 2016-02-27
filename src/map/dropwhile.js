@@ -1,4 +1,6 @@
 
+import { iter } from '..' ;
+
 export function* dropwhile ( predicate , iterable ) {
 
 	let iterator = iter( iterable ) ;

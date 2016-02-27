@@ -1,9 +1,10 @@
-import { test } from 'ava' ;
+import test from 'ava' ;
 
-	import { list , range , permutations } from '../../..' ;
+import { list , range , permutations } from '../../..' ;
+
 test( "permutations", t => {
 
-	x = ( iterable, repeat, expected ) => {
+	const x = ( iterable, repeat, expected ) => {
 		t.same( list( permutations( iterable , repeat ) ) , expected);
 	};
 

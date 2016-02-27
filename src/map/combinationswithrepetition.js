@@ -1,4 +1,4 @@
-
+import { list , nrepeat , pick } from '..' ;
 
 /**
  * @example combinationswithrepetition('ABC', 1) // A B C

@@ -1,4 +1,4 @@
-import { test } from 'ava' ;
+import test from 'ava' ;
 
 
 	import { range , consume , list } from '../../..' ;

@@ -1,4 +1,4 @@
-import { test } from 'ava' ;
+import test from 'ava' ;
 
 	import { cycle , next } from '../../..' ;
 test( 'cycle (empty)' , t => {

@@ -1,3 +1,4 @@
+import { list , range , pick } from '..' ;
 
 /**
  * @example combinations('ABCD', 2) // AB AC AD BC BD CD

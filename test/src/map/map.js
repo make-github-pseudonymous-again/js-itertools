@@ -1,8 +1,7 @@
-import { test } from 'ava' ;
+import test from 'ava' ;
 
+import { list , map } from '../../..' ;
 
-
-	import { list , map } from '../../..' ;
 test( "map", t => {
 
 	const x = function ( callable, iterable, out ) {

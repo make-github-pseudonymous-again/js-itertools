@@ -1,6 +1,7 @@
-import { test } from 'ava' ;
+import test from 'ava' ;
 
-	import { count , next } from '../../..' ;
+import { count , next } from '../../..' ;
+
 test( 'count( 0 , 1 )' , t => {
 
 
@@ -20,7 +21,7 @@ test( 'count( 2 , 3 )' , t => {
 
 	for ( let i = 2 ; i < 1000 ; i += 3 ) {
 
-		t.same( next( value ) , i ) ;
+		t.same( next( it ) , i ) ;
 
 	}
 

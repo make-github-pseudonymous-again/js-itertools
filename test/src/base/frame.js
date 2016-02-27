@@ -1,11 +1,12 @@
-import { test } from 'ava' ;
+import test from 'ava' ;
 
-	import { range , frame , zip , list } from '../../..' ;
-test( "frame" , function ( ) {
+import { range , frame , zip , list } from '../../..' ;
+
+test( "frame" , t => {
 
 
 	const A = frame( range( 100 ) , 2 ) ;
-	const B = zip( [ range( 100 ) , range( 1 , 100 ) ] ) ;
+	const B = zip( range( 100 ) , range( 1 , 100 ) ) ;
 
 	t.same( list( A ) , list( B ) , "compare to zip output" ) ;
 

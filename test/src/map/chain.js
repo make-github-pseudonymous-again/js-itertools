@@ -1,7 +1,7 @@
-import { test } from 'ava' ;
+import test from 'ava' ;
 import { list , chain } from '../../..' ;
 
-test.only( "chain", t => {
+test( "chain", t => {
 
 	const x = ( iterables, out ) => {
 		t.same( list( chain( iterables ) ), out );

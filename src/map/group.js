@@ -1,9 +1,11 @@
 
+import { iter } from '..' ;
+
 export function* group ( key , iterable ) {
 
 	let iterator = iter( iterable ) ;
 
-	let first = next( iterator ) ;
+	let first = iterator.next() ;
 
 	if ( first.done ) return ;
 
@@ -19,7 +21,7 @@ export function* group ( key , iterable ) {
 
 		while ( true ) {
 
-			let current = next( iterator ) ;
+			let current = iterator.next() ;
 
 			if ( current.done ) break grouping ;
 

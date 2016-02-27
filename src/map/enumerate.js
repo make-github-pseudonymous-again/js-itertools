@@ -1,6 +1,8 @@
 
-export function enumerate ( iterable, start ) {
+import { _zip2 , _count } from '..' ;
 
-	return _zip( [ _count( start , 1 ) , iterable ] ) ;
+export function enumerate ( iterable, start = 0 ) {
+
+	return _zip2( _count( start , 1 ) , iterable ) ;
 
 }

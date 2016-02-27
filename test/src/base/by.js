@@ -1,4 +1,4 @@
-import { test } from 'ava' ;
+import test from 'ava' ;
 
 	 import {
 		 range ,
@@ -9,7 +9,7 @@ test( 'by' , t => {
 
 
 	const A = by( range( 100 ) , 2 ) ;
-	const B = zip( [ range( 0 , 100 , 2 ) , range( 1 , 100 , 2 ) ] ) ;
+	const B = zip( range( 0 , 100 , 2 ) , range( 1 , 100 , 2 ) ) ;
 
 	t.same( list( A ) , list( B ) , 'compare to zip output' ) ;
 

@@ -1,4 +1,6 @@
 
+import { list , range , head , pick } from '..' ;
+
 /**
  * @example permutations('ABCD', 2) // AB AC AD BA BC BD CA CB CD DA DB DC
  * @example permutations(range(3), 3) // 012 021 102 120 201 210
@@ -29,6 +31,7 @@ export function* permutations ( iterable , r ) {
 
 			if ( cycles[i] === 0 ) {
 
+				// use deque
 				indices.push( indices.splice( i , 1 )[0] ) ;
 
 				cycles[i] = len - i ;

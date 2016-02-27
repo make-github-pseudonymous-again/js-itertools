@@ -1,14 +1,17 @@
 
+import { iter } from '..' ;
+
 export function* _zip2 ( A , B ) {
 
-	let iterators = [ iter( A ) , iter( B ) ] ;
+	A = iter( A ) ;
+	B = iter( B ) ;
 
 	while ( true ) {
 
-		a = next( A ) ;
+		const a = A.next() ;
 		if ( a.done ) return ;
 
-		b = next( B ) ;
+		const b = B.next() ;
 		if ( b.done ) return ;
 
 		yield [ a.value , b.value ] ;

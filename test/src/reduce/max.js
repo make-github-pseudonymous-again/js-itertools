@@ -1,4 +1,4 @@
-import { test } from 'ava' ;
+import test from 'ava' ;
 
 import { increasing , decreasing } from 'aureooms-js-compare' ;
 

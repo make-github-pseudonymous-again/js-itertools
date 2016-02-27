@@ -1,4 +1,6 @@
 
+import { list , map , iter , _next } from '..' ;
+
 export function* _zip ( iterables ) {
 
 	let iterators = list( map( iter , iterables ) ) ;
@@ -9,7 +11,7 @@ export function* _zip ( iterables ) {
 
 		let buffer = [ ] ;
 
-		for ( let result of map( next , iterators ) ) {
+		for ( let result of map( _next , iterators ) ) {
 
 			if ( result.done ) return ;
 

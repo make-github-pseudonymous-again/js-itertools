@@ -1,4 +1,5 @@
 import { iter } from './iter' ;
+import { range } from './range' ;
 
 export function* by ( iterable , n ) {
 

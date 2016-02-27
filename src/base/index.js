@@ -10,6 +10,7 @@ export * from './iter' ;
 export * from './len' ;
 export * from './list' ;
 export * from './ncycle' ;
+export * from './_next' ;
 export * from './next' ;
 export * from './pick' ;
 export * from './_range' ;

@@ -1,11 +1,13 @@
 
+import { iter } from '..' ;
+
 export function* slice ( iterable , start , stop , step ) {
 
 	let iterator = iter( iterable ) ;
 
 	while ( start > 0 ) {
 
-		if ( next( iterator ).done ) return ;
+		if ( iterator.next().done ) return ;
 
 		--start ;
 		--stop ;
@@ -14,7 +16,7 @@ export function* slice ( iterable , start , stop , step ) {
 
 	while ( stop > 0 ) {
 
-		let current = next( iterator ) ;
+		let current = iterator.next() ;
 
 		if ( current.done ) return ;
 
@@ -26,7 +28,7 @@ export function* slice ( iterable , start , stop , step ) {
 
 		while ( n > 1 ) {
 
-			if ( next( iterator ).done ) return ;
+			if ( iterator.next().done ) return ;
 
 			--n ;
 

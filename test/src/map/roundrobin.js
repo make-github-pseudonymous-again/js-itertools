@@ -1,6 +1,7 @@
-import { test } from 'ava' ;
+import test from 'ava' ;
 
-	import { list , roundrobin } from '../../..' ;
+import { list , roundrobin } from '../../..' ;
+
 test( "roundrobin", t => {
 
 	const x = function ( iterables, expected ) {

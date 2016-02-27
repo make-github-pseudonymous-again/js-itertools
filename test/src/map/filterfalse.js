@@ -1,8 +1,8 @@
-import { test } from 'ava' ;
+import test from 'ava' ;
 
+import { list , filterfalse } from '../../..' ;
+import { le } from 'aureooms-js-predicate' ;
 
-	import { list , filterfalse } from '../../..' ;
-	import { le } from 'aureooms-js-predicate' ;
 test("filterfalse", t => {
 
 	const x = ( predicate, iterable, out ) => {

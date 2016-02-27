@@ -1,12 +1,13 @@
-import { test } from 'ava' ;
+import test from 'ava' ;
 
-	import { list , zip } from '../../..' ;
-	import compare from 'aureooms-js-compare' ;
-test( "zip", function () {
+import { list , zip , min } from '../../..' ;
+import compare from 'aureooms-js-compare' ;
+
+test( "zip", t => {
 
 	const x = function ( iterables, out ) {
 
-		t.same( list( zip( iterables ) ) , out );
+		t.same( list( zip( ...iterables ) ) , out );
 
 		const strip = function ( iterables, out ) {
 
@@ -31,7 +32,7 @@ test( "zip", function () {
 
 		const unzipped = strip( iterables, [] );
 
-		t.same( list( zip( out ) ), unzipped  );
+		t.same( list( zip( ...out ) ), unzipped  );
 
 	};
 

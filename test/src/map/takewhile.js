@@ -1,7 +1,8 @@
-import { test } from 'ava' ;
+import test from 'ava' ;
 
-	import { list , takewhile } from '../../..' ;
-	import { lt } from 'aureooms-js-predicate' ;
+import { list , range, takewhile } from '../../..' ;
+import { lt } from 'aureooms-js-predicate' ;
+
 test( "takewhile", t => {
 
 	const x = function ( iterable, predicate, expected ) {

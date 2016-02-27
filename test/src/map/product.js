@@ -1,7 +1,8 @@
-import { test } from 'ava' ;
+import test from 'ava' ;
 
-	import { list , product } from '../../..' ;
-test( "product", function () {
+import { list , product } from '../../..' ;
+
+test( "product", t => {
 
 	const x = ( iterables, r, expected ) => {
 		t.same( list( product( iterables, r ) ), expected );

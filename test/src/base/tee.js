@@ -1,8 +1,8 @@
-import { test } from 'ava' ;
+import test from 'ava' ;
 
 
 	import { list , map , tee } from '../../..' ;
-test( "tee", function () {
+test( "tee", t => {
 
 
 	const x = ( iterable , n , expected ) => {
