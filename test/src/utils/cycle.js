@@ -1,7 +1,7 @@
+import { test } from 'ava' ;
 
+	import { cycle , next } from '../../..' ;
 test( 'cycle (empty)' , t => {
-
-	import { cycle } from 'aureooms-es-itertools' ;
 
 	// the empty use case is very important
 	// in case of an empty input, cycle must
@@ -15,7 +15,6 @@ test( 'cycle (empty)' , t => {
 
 test( 'cycle' , t => {
 
-	import { cycle , next } from 'aureooms-es-itertools' ;
 
 	const a = [ 1 , 7 , 3 ] ;
 

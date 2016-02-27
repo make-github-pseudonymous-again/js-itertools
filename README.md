@@ -125,105 +125,105 @@ require( [ "aureooms-js-itertools" ] , function ( itertools ) { ... } ) ;
 ## Use
 
 ```js
-itertools.range( 3 ) ; // 0 1 2
+range( 3 ) ; // 0 1 2
 
-itertools.range( 2 , 5 ) ; // 2 3 4
+range( 2 , 5 ) ; // 2 3 4
 
-itertools.range( 5 , 2 , -1 ) ; // 5 4 3
+range( 5 , 2 , -1 ) ; // 5 4 3
 
-itertools.count( 2 , 3 ) ; // 2 5 8 11 14 ...
+count( 2 , 3 ) ; // 2 5 8 11 14 ...
 
-itertools.repeat( "A" ) ; // A A A ...
+repeat( "A" ) ; // A A A ...
 
-itertools.nrepeat( "A" , 3 ) ; // A A A
+nrepeat( "A" , 3 ) ; // A A A
 
-itertools.cycle( "AB" ) ; // A B A B A B ...
+cycle( "AB" ) ; // A B A B A B ...
 
-itertools.ncycle( "AB" , 3 ) ; // A B A B A B
+ncycle( "AB" , 3 ) ; // A B A B A B
 
-itertools.head( itertools.repeat( "A" ) , 3 ) : // A A A
+head( repeat( "A" ) , 3 ) : // A A A
 
-itertools.list( itertools.nrepeat( "A" , 3 ) ) ; // AAA
+list( nrepeat( "A" , 3 ) ) ; // AAA
 
-itertools.pick( "ABCD" , itertools.range( 2 ) ) ; // A C
+pick( "ABCD" , range( 2 ) ) ; // A C
 
-itertools.tee( "ABC" , 2 ) ; // [ A B C , A B C ]
+tee( "ABC" , 2 ) ; // [ A B C , A B C ]
 
-itertools.any( [ false* , true , ... ] ) ; // T
+any( [ false* , true , ... ] ) ; // T
 
-itertools.any( [ false* ] ) ; // F
+any( [ false* ] ) ; // F
 
-itertools.all( [ true* , false , ... ] ) ; // F
+all( [ true* , false , ... ] ) ; // F
 
-itertools.all( [ true* ] ) ; // T
+all( [ true* ] ) ; // T
 
-itertools.some( [ true , true , false , true , ... ] , 3 ) ; // T
+some( [ true , true , false , true , ... ] , 3 ) ; // T
 
-itertools.some( [ true , false , true , false* ] , 3 ) ; // F
+some( [ true , false , true , false* ] , 3 ) ; // F
 
-let compare = require( "aureooms-js-compare" ) ;
+import compare from "aureooms-js-compare" ;
 
-itertools.min( compare.increasing , [ 2 , 1 , 3 ] ) ; // 1
+min( compare.increasing , [ 2 , 1 , 3 ] ) ; // 1
 
-itertools.max( compare.increasing , [ 2 , 1 , 3 ] ) ; // 3
+max( compare.increasing , [ 2 , 1 , 3 ] ) ; // 3
 
-let operator = require( "aureooms-js-operator" ) ;
+import operator from "aureooms-js-operator" ;
 
-itertools.reduce( operator.mul , itertools.range( 2 , 6 ) , 1 ) ; // 120
+reduce( operator.mul , range( 2 , 6 ) , 1 ) ; // 120
 
-itertools.reduce( operator.add , itertools.range( 2 , 6 ) , 1 ) ; // 15
+reduce( operator.add , range( 2 , 6 ) , 1 ) ; // 15
 
-itertools.sum( itertools.range( 1 , 6 ) ) ; // 15
+sum( range( 1 , 6 ) ) ; // 15
 
-itertools.chain( [ "ABC" , "XY" ] ) ; // A B C X Y
+chain( [ "ABC" , "XY" ] ) ; // A B C X Y
 
-itertools.zip( [ "ABC" , "XY" ] ) ; // AX BY
+zip( [ "ABC" , "XY" ] ) ; // AX BY
 
-itertools.compress( itertools.count( 0 , 1 ) , itertools.cycle( [ true , false ] ) ) ; // 0 2 4 6 ...
+compress( count( 0 , 1 ) , cycle( [ true , false ] ) ) ; // 0 2 4 6 ...
 
-let predicate = require( "aureooms-js-predicate" ) ;
+import predicate from "aureooms-js-predicate" ;
 
-itertools.takewhile( predicate.le( 5 ) , itertools.count( 0 , 1 ) ) ; // 0 1 2 3 4 5
+takewhile( predicate.le( 5 ) , count( 0 , 1 ) ) ; // 0 1 2 3 4 5
 
-itertools.dropwhile( predicate.le( 5 ) , itertools.count( 0 , 1 ) ) ; // 6 7 8 ...
+dropwhile( predicate.le( 5 ) , count( 0 , 1 ) ) ; // 6 7 8 ...
 
-itertools.zip( [ itertools.count( 0 , 1 ) , "ABC" ] ) ; // 0A 1B 2C
+zip( [ count( 0 , 1 ) , "ABC" ] ) ; // 0A 1B 2C
 
-itertools.enumerate( "ABC" ) ; // 0A 1B 2C
+enumerate( "ABC" ) ; // 0A 1B 2C
 
-itertools.filter( predicate.divisible( 2 ) , itertools.count( 0 , 1 ) ) ; // 0 2 4 8 ...
+filter( predicate.divisible( 2 ) , count( 0 , 1 ) ) ; // 0 2 4 8 ...
 
-itertools.filterfalse( predicate.divisible( 2 ) , itertools.count( 0 , 1 ) ) ; // 1 3 5 7 ...
+filterfalse( predicate.divisible( 2 ) , count( 0 , 1 ) ) ; // 1 3 5 7 ...
 
-itertools.group( operator.identity , "AAAABBBCCAABB" ) ; // [ A AAAA ] [ B BBB ] [ C CC ] [ A AA ] [ B BB ]
+group( operator.identity , "AAAABBBCCAABB" ) ; // [ A AAAA ] [ B BBB ] [ C CC ] [ A AA ] [ B BB ]
 
-itertools.slice( itertools.count( 0 , 1 ) , 40 , 50 , 3 ) ; // 40 43 46 49
+slice( count( 0 , 1 ) , 40 , 50 , 3 ) ; // 40 43 46 49
 
-itertools.roundrobin( [ "ABC" , "D" , "EF" ] ) ; // A D E B F C
+roundrobin( [ "ABC" , "D" , "EF" ] ) ; // A D E B F C
 
-itertools.map( operator.truth , [ 0 , 1 , null , undefined , "A" ] ) ; // F T F F T
+map( operator.truth , [ 0 , 1 , null , undefined , "A" ] ) ; // F T F F T
 
-itertools.starmap( operator.mul , itertools.zip( itertools.count( 0 , 1 ) , itertools.count( 0 , 1 ) ) ) ; // 0 1 4 9 16 25 36 ...
+starmap( operator.mul , zip( count( 0 , 1 ) , count( 0 , 1 ) ) ) ; // 0 1 4 9 16 25 36 ...
 
-itertools.product( [ "ABCD" , "xy" ] , 1 ) ; // Ax Ay Bx By Cx Cy Dx Dy
+product( [ "ABCD" , "xy" ] , 1 ) ; // Ax Ay Bx By Cx Cy Dx Dy
 
-itertools.product( [ itertools.range( 2 ) ] , 3 ) ; // 000 001 010 011 100 101 110 111
+product( [ range( 2 ) ] , 3 ) ; // 000 001 010 011 100 101 110 111
 
-itertools.permutations( "ABCD" , 2 ) ; // AB AC AD BA BC BD CA CB CD DA DB DC
+permutations( "ABCD" , 2 ) ; // AB AC AD BA BC BD CA CB CD DA DB DC
 
-itertools.permutations( itertools.range( 3 ) , 3 ) ; // 012 021 102 120 201 210
+permutations( range( 3 ) , 3 ) ; // 012 021 102 120 201 210
 
-itertools.combinations( "ABCD" , 2 ) ; // AB AC AD BC BD CD
+combinations( "ABCD" , 2 ) ; // AB AC AD BC BD CD
 
-itertools.combinations( itertools.range( 4 ) , 3 ) ; // 012 013 023 123
+combinations( range( 4 ) , 3 ) ; // 012 013 023 123
 
-itertools.combinationswithrepetition( "ABC" , 1 ) ; // A B C
+combinationswithrepetition( "ABC" , 1 ) ; // A B C
 
-itertools.combinationswithrepetition( itertools.range( 3 ) , 2 ) ; // 00 01 02 11 12 22
+combinationswithrepetition( range( 3 ) , 2 ) ; // 00 01 02 11 12 22
 
-itertools.reversed( "ABC" ) ; // C B A
+reversed( "ABC" ) ; // C B A
 
-itertools.sorted( compare.increasing , [ 3 , 1 , 2 ] ) ; // 1 2 3
+sorted( compare.increasing , [ 3 , 1 , 2 ] ) ; // 1 2 3
 ```
 
 ## References in Python and JavaScript

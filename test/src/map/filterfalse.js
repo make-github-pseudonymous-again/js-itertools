@@ -1,8 +1,9 @@
+import { test } from 'ava' ;
 
-test("filterfalse", t => {
 
-	import { list , filterfalse } from 'aureooms-es-itertools' ;
+	import { list , filterfalse } from '../../..' ;
 	import { le } from 'aureooms-js-predicate' ;
+test("filterfalse", t => {
 
 	const x = ( predicate, iterable, out ) => {
 		t.same( list( filterfalse( predicate, iterable ) ), out );

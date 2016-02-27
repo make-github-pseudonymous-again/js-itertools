@@ -1,5 +1,6 @@
-import { iter , list } from '.' ;
-import { map } from '../map' ;
+import { iter } from './iter' ;
+import { list } from './list' ;
+import { map } from '../map/map' ;
 
 export function tee ( iterable , n ) {
 

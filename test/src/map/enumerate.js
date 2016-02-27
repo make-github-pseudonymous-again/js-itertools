@@ -1,8 +1,9 @@
+import { test } from 'ava' ;
 
 
+
+	import { list , enumerate } from '../../..' ;
 test( "enumerate", t => {
-
-	import { list , enumerate } from 'aureooms-es-itertools' ;
 
 	const x = ( iterable, out ) => {
 		t.same( list( enumerate( iterable ) ) , out ) ;

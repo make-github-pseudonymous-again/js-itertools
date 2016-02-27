@@ -1,6 +1,7 @@
-test( "nrepeat", t => {
+import { test } from 'ava' ;
 
-	import { list, nrepeat } from 'aureooms-es-itertools' ;
+	import { list, nrepeat } from '../../..' ;
+test( "nrepeat", t => {
 
 	const x = function ( item, times, expected ) {
 		t.same(list( nrepeat( item , times ) ),expected);

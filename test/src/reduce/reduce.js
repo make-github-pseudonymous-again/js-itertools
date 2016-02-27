@@ -1,5 +1,6 @@
+import { test } from 'ava' ;
 
-import { reduce } from 'aureooms-es-itertools' ;
+import { reduce } from '../../..' ;
 
 test( 'reduce' , t => {
 

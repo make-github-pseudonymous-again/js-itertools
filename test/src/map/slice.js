@@ -1,6 +1,7 @@
-test( "slice", t => {
+import { test } from 'ava' ;
 
-	import { list , range , slice } from 'aureooms-es-itertools' ;
+	import { list , range , slice } from '../../..' ;
+test( "slice", t => {
 
 	const x = ( start, stop, step ) => {
 

@@ -1,7 +1,8 @@
-test( "takewhile", t => {
+import { test } from 'ava' ;
 
-	import { list , takewhile } from 'aureooms-es-itertools' ;
+	import { list , takewhile } from '../../..' ;
 	import { lt } from 'aureooms-js-predicate' ;
+test( "takewhile", t => {
 
 	const x = function ( iterable, predicate, expected ) {
 		t.same( list( takewhile( predicate, iterable ) ), expected );

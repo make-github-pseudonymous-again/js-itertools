@@ -1,6 +1,7 @@
-test( "chain", t => {
+import { test } from 'ava' ;
+import { list , chain } from '../../..' ;
 
-	import { list , chain } from 'aureooms-es-itertools' ;
+test.only( "chain", t => {
 
 	const x = ( iterables, out ) => {
 		t.same( list( chain( iterables ) ), out );

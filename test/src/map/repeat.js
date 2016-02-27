@@ -1,6 +1,7 @@
-test( "repeat", function () {
+import { test } from 'ava' ;
 
-	import { list , head , repeat } from 'aureooms-es-itertools' ;
+	import { list , head , repeat } from '../../..' ;
+test( "repeat", function () {
 
 	const x = function ( item, times, expected ) {
 		t.same( list( head( repeat( item ) , times ) ) , expected );

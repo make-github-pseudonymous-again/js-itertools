@@ -1,8 +1,7 @@
+import { test } from 'ava' ;
 
-
+	import { list , range , permutations } from '../../..' ;
 test( "permutations", t => {
-
-	import { list , range , permutations } from 'aureooms-es-itertools' ;
 
 	x = ( iterable, repeat, expected ) => {
 		t.same( list( permutations( iterable , repeat ) ) , expected);

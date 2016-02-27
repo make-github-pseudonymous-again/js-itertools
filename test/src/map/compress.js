@@ -1,7 +1,8 @@
+import { test } from 'ava' ;
+
+	import { list , compress } from '../../..' ;
+
 test( "compress", t => {
-
-	import { list , compress } from 'aureooms-es-itertools' ;
-
 	const x = ( iterable, selector, expected ) => {
 		t.same( list( compress( iterable, selector) ), expected );
 	};

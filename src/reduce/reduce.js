@@ -1,5 +1,5 @@
 import { _reduce } from './_reduce' ;
-import { iter } from '../base' ;
+import { iter } from '../base/iter' ;
 
 /**
  * Applies the accumulator function iteratively on the

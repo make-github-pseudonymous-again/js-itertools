@@ -14,5 +14,5 @@ export * from './next' ;
 export * from './pick' ;
 export * from './_range' ;
 export * from './range' ;
-export * from './tee' ;
 export * from './StopIteration' ;
+export * from './tee' ;

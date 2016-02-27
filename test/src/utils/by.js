@@ -1,11 +1,12 @@
-
-test( 'by' , t => {
+import { test } from 'ava' ;
 
 	 import {
 		 range ,
 		 by ,
 		 zip ,
-		 list } from 'aureooms-es-itertools' ;
+		 list } from '../../..' ;
+test( 'by' , t => {
+
 
 	const A = by( range( 100 ) , 2 ) ;
 	const B = zip( [ range( 0 , 100 , 2 ) , range( 1 , 100 , 2 ) ] ) ;

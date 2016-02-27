@@ -1,7 +1,8 @@
+import { test } from 'ava' ;
+
+	import { list , range , combinations } from '../../..' ;
+
 test( "combinations", t => {
-
-	import { list , range , combinations } from 'aureooms-es-itertools' ;
-
 	const x = ( iterable, r, expected ) => {
 		t.same( list( combinations( iterable, r ) ), expected );
 	};

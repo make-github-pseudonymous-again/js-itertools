@@ -1,9 +1,10 @@
+import { test } from 'ava' ;
 
-test( "sorted", function () {
 
-	import { reduce , sorted } from 'aureooms-es-itertools' ;
+	import { reduce , sorted } from '../../..' ;
 	import { increasing , decreasing } from "aureooms-js-compare" ;
 	import { contains } from "aureooms-js-operator" ;
+test( "sorted", function () {
 
 	const x = function ( compare, a ) {
 

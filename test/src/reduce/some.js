@@ -1,5 +1,6 @@
+import { test } from 'ava' ;
 
-import { some } from 'aureooms-es-itertools' ;
+import { some } from '../../..' ;
 
 test('some', t => {
 

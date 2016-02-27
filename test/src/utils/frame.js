@@ -1,7 +1,8 @@
+import { test } from 'ava' ;
 
+	import { range , frame , zip , list } from '../../..' ;
 test( "frame" , function ( ) {
 
-	import { range , frame , zip , list } from 'aureooms-es-itertools' ;
 
 	const A = frame( range( 100 ) , 2 ) ;
 	const B = zip( [ range( 100 ) , range( 1 , 100 ) ] ) ;

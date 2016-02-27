@@ -1,11 +1,12 @@
+import { test } from 'ava' ;
 
 
 
 
-test( "dropwhile", t => {
 
-	import { list , range , dropwhile } from 'aureooms-es-itertools' ;
+	import { list , range , dropwhile } from '../../..' ;
 	import { lt } from 'aureooms-js-predicate' ;
+test( "dropwhile", t => {
 
 	const x = ( iterable, predicate, expected ) => {
 		t.same( list( dropwhile( predicate, iterable) ), expected );

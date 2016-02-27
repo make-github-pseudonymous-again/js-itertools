@@ -1,7 +1,8 @@
-test( "group", function () {
+import { test } from 'ava' ;
 
-	import { list , group } from 'aureooms-es-itertools' ;
+	import { list , group } from '../../..' ;
 	import { identity } from 'aureooms-js-operator' ;
+test( "group", function () {
 
 	const x = function ( key, iterable, expected ) {
 

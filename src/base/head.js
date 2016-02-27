@@ -1,4 +1,4 @@
-import { iter } from '.' ;
+import { iter } from './iter' ;
 
 export function* head ( iterable , n ) {
 

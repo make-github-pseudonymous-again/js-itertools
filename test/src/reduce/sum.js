@@ -1,7 +1,8 @@
+import { test } from 'ava' ;
 
+	import { sum } from '../../..' ;
 test( 'sum' , t => {
 
-	import { sum } from 'aureooms-es-itertools' ;
 
 	const x = ( iterable, out ) => {
 		t.same( sum( iterable ), out ) ;

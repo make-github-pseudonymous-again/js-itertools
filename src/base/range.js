@@ -1,4 +1,4 @@
-import { _range } from '.' ;
+import { _range } from './_range' ;
 
 export function range ( start , stop , step ) {
 

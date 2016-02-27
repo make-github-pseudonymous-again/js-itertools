@@ -1,7 +1,8 @@
+import { test } from 'ava' ;
 
 import { increasing , decreasing } from 'aureooms-js-compare' ;
 
-import { min } from 'aureooms-es-itertools' ;
+import { min } from '../../..' ;
 
 test( 'min' , t => {
 

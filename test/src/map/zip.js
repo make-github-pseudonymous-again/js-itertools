@@ -1,7 +1,8 @@
-test( "zip", function () {
+import { test } from 'ava' ;
 
-	import { list , zip } from 'aureooms-es-itertools' ;
+	import { list , zip } from '../../..' ;
 	import compare from 'aureooms-js-compare' ;
+test( "zip", function () {
 
 	const x = function ( iterables, out ) {
 

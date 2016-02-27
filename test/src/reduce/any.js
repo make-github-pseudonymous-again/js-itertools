@@ -1,3 +1,4 @@
+import { test } from 'ava' ;
 import { any } from '../../../src' ;
 
 test( 'any' , t => {

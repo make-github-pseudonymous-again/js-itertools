@@ -1,9 +1,7 @@
+import { test } from 'ava' ;
 
-
-
+	import { list , reversed } from '../../..' ;
 test( "reversed", function () {
-
-	import { list , reversed } from 'aureooms-es-itertools' ;
 
 	const x = function ( A, B ) {
 		t.same( list( reversed( A ) ), B ) ;

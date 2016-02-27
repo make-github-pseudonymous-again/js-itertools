@@ -1,7 +1,8 @@
+import { test } from 'ava' ;
 
+	import { count , next } from '../../..' ;
 test( 'count( 0 , 1 )' , t => {
 
-	import { count , next } from 'aureooms-es-itertools' ;
 
 	const it = count( 0 , 1 ) ;
 
@@ -14,8 +15,6 @@ test( 'count( 0 , 1 )' , t => {
 } ) ;
 
 test( 'count( 2 , 3 )' , t => {
-
-	import { count , next } from 'aureooms-es-itertools' ;
 
 	const it = count( 2 , 3 ) ;
 

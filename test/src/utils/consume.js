@@ -1,7 +1,8 @@
+import { test } from 'ava' ;
 
+
+	import { range , consume , list } from '../../..' ;
 test( "consume" , t => {
-
-	import { range , consume , list } from 'aureooms-es-itertools' ;
 
 	const iterator = range( 100 ) ;
 

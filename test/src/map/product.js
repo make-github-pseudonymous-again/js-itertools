@@ -1,6 +1,7 @@
-test( "product", function () {
+import { test } from 'ava' ;
 
-	import { list , product } from 'aureooms-es-itertools' ;
+	import { list , product } from '../../..' ;
+test( "product", function () {
 
 	const x = ( iterables, r, expected ) => {
 		t.same( list( product( iterables, r ) ), expected );

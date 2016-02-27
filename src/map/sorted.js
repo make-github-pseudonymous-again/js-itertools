@@ -1,5 +1,5 @@
 
-import { list } from './list' ;
+import { list } from '../base/list' ;
 
 export function sorted ( compare , iterable ) {
 

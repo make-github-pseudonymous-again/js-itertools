@@ -1,4 +1,5 @@
-import { iter , next , range } from '.' ;
+import { iter } from './iter' ;
+import { range } from './range' ;
 
 export function* frame ( iterable , n ) {
 
@@ -13,7 +14,7 @@ export function* frame ( iterable , n ) {
 
 	for ( const i of range( n ) ) {
 
-		const current = next( iterator ) ;
+		const current = iterator.next( ) ;
 
 		if ( current.done ) return ;
 

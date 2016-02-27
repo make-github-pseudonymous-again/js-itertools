@@ -1,9 +1,10 @@
+import { test } from 'ava' ;
 
 
-test( "starmap", function () {
 
-	import { list , starmap } from 'aureooms-es-itertools' ;
+	import { list , starmap } from '../../..' ;
 	import { mul } from 'aureooms-js-operator' ;
+test( "starmap", function () {
 
 	const x = ( callable, iterable, out ) => {
 		t.same( list( starmap( callable , iterable ) ) , out ) ;

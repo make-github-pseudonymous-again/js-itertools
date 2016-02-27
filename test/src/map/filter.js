@@ -1,10 +1,11 @@
+import { test } from 'ava' ;
 
 
 
-test("filter", t => {
 
-	import { list , filter } from 'aureooms-es-itertools' ;
+	import { list , filter } from '../../..' ;
 	import { gt } from 'aureooms-js-predicate' ;
+test("filter", t => {
 
 	const x = ( predicate, iterable, out ) => {
 		t.same( list( filter( predicate, iterable ) ), out );

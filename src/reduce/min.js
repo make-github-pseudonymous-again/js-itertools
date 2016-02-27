@@ -1,5 +1,4 @@
 import { iter } from '../base/iter' ;
-import { next } from '../base/next' ;
 
 /**
  * Returns the smallest element of an iterable according
@@ -10,7 +9,7 @@ export function min ( compare , iterable ) {
 
 	let iterator = iter( iterable ) ;
 
-	let first = next( iterator ) ;
+	let first = iterator.next( ) ;
 
 	if ( first.done ) return undefined ;
 

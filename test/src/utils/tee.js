@@ -1,8 +1,9 @@
+import { test } from 'ava' ;
 
 
+	import { list , map , tee } from '../../..' ;
 test( "tee", function () {
 
-	import { list , map , tee } from 'aureooms-es-itertools' ;
 
 	const x = ( iterable , n , expected ) => {
 		t.same( list( map( list , tee( iterable , n ) ) ) , expected ) ;
