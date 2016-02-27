@@ -1,29 +1,20 @@
 
 
+test( "permutations", t => {
 
-var one;
+	import { list , range , permutations } from 'aureooms-es-itertools' ;
 
-one = function ( iterable, repeat, expected ) {
-
-
-	deepEqual(
-		itertools.list( itertools.permutations( iterable , repeat ) ) ,
-		expected,
-		JSON.stringify( [iterable, repeat] )
-	);
-
-};
+	x = ( iterable, repeat, expected ) => {
+		t.same( list( permutations( iterable , repeat ) ) , expected);
+	};
 
 
+	x( [], 1, [] );
+	x( [], 0, [[]] );
+	x( [1, 2, 3], 0, [[]] );
+	x( [1, 2, 3], 4, [] );
 
-test( "permutations", function () {
-
-	one( [], 1, [] );
-	one( [], 0, [[]] );
-	one( [1, 2, 3], 0, [[]] );
-	one( [1, 2, 3], 4, [] );
-
-	one(
+	x(
 		"ABCD",
 		2,
 		[
@@ -32,8 +23,8 @@ test( "permutations", function () {
 		]
 	);
 
-	one(
-		itertools.range( 0, 3, 1, [] ),
+	x(
+		range( 0, 3, 1, [] ),
 		3,
 		[ [0,1,2], [0,2,1], [1,0,2], [1,2,0], [2,0,1], [2,1,0] ]
 	);

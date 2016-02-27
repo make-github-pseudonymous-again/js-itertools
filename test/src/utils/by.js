@@ -1,23 +1,24 @@
 
-var range = itertools.range ;
-var by = itertools.by ;
-var zip = itertools.zip ;
-var list = itertools.list ;
+test( 'by' , t => {
 
-test( "by" , function ( ) {
+	 import {
+		 range ,
+		 by ,
+		 zip ,
+		 list } from 'aureooms-es-itertools' ;
 
-	var A = by( range( 100 ) , 2 ) ;
-	var B = zip( [ range( 0 , 100 , 2 ) , range( 1 , 100 , 2 ) ] ) ;
+	const A = by( range( 100 ) , 2 ) ;
+	const B = zip( [ range( 0 , 100 , 2 ) , range( 1 , 100 , 2 ) ] ) ;
 
-	deepEqual( list( A ) , list( B ) , "compare to zip output" ) ;
+	t.same( list( A ) , list( B ) , 'compare to zip output' ) ;
 
-	var C = by( range( 4 ) , 3 ) ;
+	const C = by( range( 4 ) , 3 ) ;
 
-	deepEqual( list( C ) , [ [ 0 , 1 , 2 ] , [ 3 , undefined , undefined ] ] , "n !| N" ) ;
+	t.same( list( C ) , [ [ 0 , 1 , 2 ] , [ 3 , undefined , undefined ] ] , 'n !| N' ) ;
 
-	var D = by( "" , 3 ) ;
+	const D = by( '' , 3 ) ;
 
-	deepEqual( list( D ) , [ ] , "empty" ) ;
+	t.same( list( D ) , [ ] , 'empty' ) ;
 
 } ) ;
 

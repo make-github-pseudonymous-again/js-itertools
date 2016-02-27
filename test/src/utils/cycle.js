@@ -1,25 +1,31 @@
 
-test( "cycle" , function ( ) {
+test( 'cycle (empty)' , t => {
 
-	var a , i , j , it ;
+	import { cycle } from 'aureooms-es-itertools' ;
 
 	// the empty use case is very important
-	// in case of an empty input, itertools.cycle must
+	// in case of an empty input, cycle must
 	// stop immediately (no infinite loop)
 
-	it = itertools.cycle( [ ] ) ;
+	let it = cycle( [ ] ) ;
 
-	deepEqual( it.next( ).done , true , "Cycle on empty list should be empty." ) ;
+	t.same( it.next( ).done , true , 'Cycle on empty list should be empty.' ) ;
 
-	a = [ 1 , 7 , 3 ] ;
+} ) ;
 
-	it = itertools.cycle( a ) ;
+test( 'cycle' , t => {
 
-	for ( i = 0 ; i < 1000 ; ++i ) {
+	import { cycle , next } from 'aureooms-es-itertools' ;
 
-		for ( j = 0 ; j < a.length ; ++j ) {
+	const a = [ 1 , 7 , 3 ] ;
 
-			deepEqual( it.next( ).value , a[j] , i + "." + j ) ;
+	let it = cycle( a ) ;
+
+	for ( let i = 0 ; i < 1000 ; ++i ) {
+
+		for ( let j = 0 ; j < a.length ; ++j ) {
+
+			t.same( next( it ) , a[j] , i + '.' + j ) ;
 
 		}
 

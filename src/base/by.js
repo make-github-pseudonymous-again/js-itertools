@@ -1,5 +1,6 @@
+import { iter } from './iter' ;
 
-const by = function* ( iterable , n ) {
+export function* by ( iterable , n ) {
 
 	const iterator = iter( iterable ) ;
 
@@ -9,7 +10,7 @@ const by = function* ( iterable , n ) {
 
 		for ( const i of range( n ) ) {
 
-			const current = next( iterator ) ;
+			const current = iterator.next( ) ;
 
 			if ( current.done ) {
 
@@ -31,6 +32,4 @@ const by = function* ( iterable , n ) {
 
 	}
 
-} ;
-
-exports.by = by ;
+}

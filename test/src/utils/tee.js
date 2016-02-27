@@ -1,24 +1,21 @@
-var one = function ( iterable , n , out ) {
-
-	var msg;
-
-	msg = "tee " + JSON.stringify( [iterable, n] );
-
-	deepEqual( itertools.list( itertools.map( itertools.list , itertools.tee( iterable , n ) ) ) , out , msg ) ;
-
-};
 
 
 test( "tee", function () {
 
-	one( [], 0, [] );
-	one( [], 1, [[]] );
-	one( [], 2, [[],[]] );
-	one( [0], 0, [] );
-	one( [0], 1, [[0]] );
-	one( [0], 2, [[0],[0]] );
-	one( [5, 7], 0, [] );
-	one( [5, 7], 1, [[5, 7]] );
-	one( [5, 7], 2, [[5, 7],[5, 7]] );
+	import { list , map , tee } from 'aureooms-es-itertools' ;
+
+	const x = ( iterable , n , expected ) => {
+		t.same( list( map( list , tee( iterable , n ) ) ) , expected ) ;
+	};
+
+	x( [], 0, [] );
+	x( [], 1, [[]] );
+	x( [], 2, [[],[]] );
+	x( [0], 0, [] );
+	x( [0], 1, [[0]] );
+	x( [0], 2, [[0],[0]] );
+	x( [5, 7], 0, [] );
+	x( [5, 7], 1, [[5, 7]] );
+	x( [5, 7], 2, [[5, 7],[5, 7]] );
 
 });

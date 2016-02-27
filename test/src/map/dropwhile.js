@@ -1,41 +1,21 @@
 
-var one, functools, operator;
-
-functools = require( "aureooms-js-functools" );
-operator = require( "aureooms-js-operator" );
-
-one = function ( iterable, predicate, expected ) {
-
-
-	deepEqual(
-		itertools.list( itertools.dropwhile( predicate, iterable) ),
-		expected,
-		JSON.stringify( [iterable, predicate] )
-	);
-
-};
 
 
 
-test( "dropwhile", function () {
+test( "dropwhile", t => {
 
-	one(
-		itertools.list( itertools.range( 0, 100, 1 ) ),
-		functools.rpartial( operator.lt, [50] ),
-		itertools.list( itertools.range( 50, 100, 1 ) )
-	);
+	import { list , range , dropwhile } from 'aureooms-es-itertools' ;
+	import { lt } from 'aureooms-js-predicate' ;
 
-	one(
-		itertools.list( itertools.range( 0, 100, 1 ) ),
-		functools.rpartial( operator.lt, [100] ),
-		itertools.list( itertools.range( 0, 0, 1 ) )
-	);
+	const x = ( iterable, predicate, expected ) => {
+		t.same( list( dropwhile( predicate, iterable) ), expected );
+	};
 
-	one(
-		itertools.list( itertools.range( 0, 0, 1 ) ),
-		functools.rpartial( operator.lt, [1] ),
-		itertools.list( itertools.range( 0, 0, 1 ) )
-	);
+	x( list( range( 0, 100, 1 ) ), lt(50), list( range( 50, 100, 1 ) ) );
+
+	x( list( range( 0, 100, 1 ) ), lt(100), list( range( 0, 0, 1 ) ) );
+
+	x( list( range( 0, 0, 1 ) ), lt(1), list( range( 0, 0, 1 ) ) ) ;
 
 });
 

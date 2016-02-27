@@ -1,3 +1,5 @@
+import { test } from 'ava' ;
+
 import { all } from '../../../src' ;
 
 test( 'all' , t => {

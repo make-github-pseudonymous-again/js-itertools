@@ -1,4 +1,4 @@
-import { iter , next , list } from '.' ;
+import { iter , list } from '.' ;
 import { map } from '../map' ;
 
 export function tee ( iterable , n ) {
@@ -16,7 +16,7 @@ export function tee ( iterable , n ) {
 
 			if ( mydeque.length === 0 ) {
 
-				let current = next( iterator ) ;
+				let current = iterator.next() ;
 
 				if ( current.done ) return ;
 

@@ -1,28 +1,17 @@
-
-let one = function ( item, times, expected ) {
-
-
-	deepEqual(
-		itertools.list( itertools.head( itertools.repeat( item ) , times ) ) ,
-		expected,
-		JSON.stringify( [item, times] )
-	);
-
-};
-
-
-
 test( "repeat", function () {
 
-	[0, 1, -1, [], "A", "ABC", ["A"], [0, 1, -1], ["A", "B", "C"]]
-	.forEach( function ( item ) {
-		one( item, 0, [] );
-		one( item, 1, [item] );
-		one( item, 2, [item,item] );
-		one( item, 3, [item,item,item] );
-	});
+	import { list , head , repeat } from 'aureooms-es-itertools' ;
 
+	const x = function ( item, times, expected ) {
+		t.same( list( head( repeat( item ) , times ) ) , expected );
+	};
 
+	for ( const item of [0, 1, -1, [], "A", "ABC", ["A"], [0, 1, -1], ["A", "B", "C"]] ) {
+		x( item, 0, [] );
+		x( item, 1, [item] );
+		x( item, 2, [item,item] );
+		x( item, 3, [item,item,item] );
+	}
 
 });
 

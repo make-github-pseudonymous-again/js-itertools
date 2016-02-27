@@ -1,20 +1,16 @@
-var one = function ( iterable, out ) {
 
-	var msg;
+test( 'sum' , t => {
 
-	msg = "sum " + JSON.stringify( iterable );
+	import { sum } from 'aureooms-es-itertools' ;
 
-	deepEqual( itertools.sum( iterable ), out, msg )
+	const x = ( iterable, out ) => {
+		t.same( sum( iterable ), out ) ;
+	};
 
-};
-
-
-test( "sum", function () {
-
-	one( [], 0 );
-	one( [1], 1 );
-	one( [1, 2, 3], 3 * 4 / 2 );
-	one( [1, 2, 3, 4, 5, 6], 6 * 7 / 2 );
-	one( [1, 2, 3, 4, 5, 6, 7, 8, 9], 9 * 10 / 2 );
+	x( [], 0 );
+	x( [1], 1 );
+	x( [1, 2, 3], 3 * 4 / 2 );
+	x( [1, 2, 3, 4, 5, 6], 6 * 7 / 2 );
+	x( [1, 2, 3, 4, 5, 6, 7, 8, 9], 9 * 10 / 2 );
 
 });

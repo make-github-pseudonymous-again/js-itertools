@@ -1,5 +1,4 @@
-
-const _range = function* ( start , stop , step ) {
+export function* _range ( start , stop , step ) {
 
 	if ( step < 0 ) {
 		for ( ; start > stop ; start += step ) yield start ;
@@ -9,6 +8,4 @@ const _range = function* ( start , stop , step ) {
 		for ( ; start < stop ; start += step ) yield start ;
 	}
 
-} ;
-
-exports._range = _range ;
+}

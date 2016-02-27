@@ -1,5 +1,5 @@
 import { _reduce } from './_reduce' ;
-import { iter , next } from '../base' ;
+import { iter } from '../base' ;
 
 /**
  * Applies the accumulator function iteratively on the
@@ -12,7 +12,7 @@ export function reduce ( accumulator , iterable , initializer = undefined ) {
 
 	if ( initializer === undefined ) {
 		const iterator = iter( iterable ) ;
-		const first = next( iterator ) ;
+		const first = iterator.next() ;
 
 		if ( first.done ) {
 			return undefined ;

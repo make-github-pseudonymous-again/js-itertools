@@ -1,53 +1,45 @@
+test( "zip", function () {
 
-let compare = require( "aureooms-js-compare" ) ;
+	import { list , zip } from 'aureooms-es-itertools' ;
+	import compare from 'aureooms-js-compare' ;
 
-var one = function ( iterables, out ) {
+	const x = function ( iterables, out ) {
 
-	var msg, unzipped, strip;
+		t.same( list( zip( iterables ) ) , out );
 
-	msg = "zip " + JSON.stringify( iterables );
+		const strip = function ( iterables, out ) {
 
-	deepEqual( itertools.list( itertools.zip( iterables ) ) , out, msg );
+			// makes all the inputs have the same length
+			// (min length among all iterables)
 
-	strip = function ( iterables, out ) {
+			const len = iterables.length;
 
-		// makes all the inputs have the same length
-		// (min length among all iterables)
+			if ( len === 0 ) {
+				return out;
+			}
 
-		var i, n, len, tmp;
+			const n = min( compare.len( compare.increasing ) , iterables ).length ;
 
-		len = iterables.length;
+			for ( let i = 0 ; i < len ; ++i ) {
+				out.push( iterables[i].slice( 0, n ) );
+			}
 
-		if ( len === 0 ) {
 			return out;
-		}
 
-		n = itertools.min( compare.len( compare.increasing ) , iterables ).length ;
+		};
 
-		for ( i = 0 ; i < len ; ++i ) {
-			out.push( iterables[i].slice( 0, n ) );
-		}
+		const unzipped = strip( iterables, [] );
 
-		return out;
+		t.same( list( zip( out ) ), unzipped  );
 
 	};
 
-
-	unzipped = strip( iterables, [] );
-
-	deepEqual( itertools.list( itertools.zip( out ) ), unzipped, "un" + msg );
-
-};
-
-
-test( "zip", function () {
-
-	one( [], [] );
-	one( [[1]], [[1]] );
-	one( [[1, 2, 3]], [[1], [2], [3]] );
-	one( [[1, 2, 3], [4, 5, 6]], [[1, 4], [2, 5], [3, 6]] );
-	one( [[1, 2, 3], [4, 5, 6], [7, 8, 9]], [[1, 4, 7], [2, 5, 8], [3, 6, 9]] );
-	one( [[1, 2, 3], [4, 5, 6], [7, 8, 9, 10]], [[1, 4, 7], [2, 5, 8], [3, 6, 9]] );
-	one( [[1, 2, 3, 4], [4, 5, 6], [7, 8, 9]], [[1, 4, 7], [2, 5, 8], [3, 6, 9]] );
+	x( [], [] );
+	x( [[1]], [[1]] );
+	x( [[1, 2, 3]], [[1], [2], [3]] );
+	x( [[1, 2, 3], [4, 5, 6]], [[1, 4], [2, 5], [3, 6]] );
+	x( [[1, 2, 3], [4, 5, 6], [7, 8, 9]], [[1, 4, 7], [2, 5, 8], [3, 6, 9]] );
+	x( [[1, 2, 3], [4, 5, 6], [7, 8, 9, 10]], [[1, 4, 7], [2, 5, 8], [3, 6, 9]] );
+	x( [[1, 2, 3, 4], [4, 5, 6], [7, 8, 9]], [[1, 4, 7], [2, 5, 8], [3, 6, 9]] );
 
 });

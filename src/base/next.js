@@ -1,5 +1,9 @@
 export function next ( iterator ) {
 
-	return iterator.next( ) ;
+	const x = iterator.next( ) ;
+
+	if ( x.done ) throw new StopIteration();
+
+	return x.value ;
 
 }

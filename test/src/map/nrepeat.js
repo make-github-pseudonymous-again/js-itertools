@@ -1,30 +1,18 @@
+test( "nrepeat", t => {
 
-var one;
+	import { list, nrepeat } from 'aureooms-es-itertools' ;
 
-one = function ( item, times, expected ) {
+	const x = function ( item, times, expected ) {
+		t.same(list( nrepeat( item , times ) ),expected);
+	};
 
+	for ( const item of [0, 1, -1, [], "A", "ABC", ["A"], [0, 1, -1], ["A", "B", "C"]] ) {
 
-	deepEqual(
-		itertools.list( itertools.nrepeat( item , times ) ),
-		expected,
-		JSON.stringify( [item, times] )
-	);
+		x( item, 0, [] );
+		x( item, 1, [item] );
+		x( item, 2, [item,item] );
+		x( item, 3, [item,item,item] );
 
-};
-
-
-
-test( "nrepeat", function () {
-
-	[0, 1, -1, [], "A", "ABC", ["A"], [0, 1, -1], ["A", "B", "C"]]
-	.forEach( function ( item ) {
-		one( item, 0, [] );
-		one( item, 1, [item] );
-		one( item, 2, [item,item] );
-		one( item, 3, [item,item,item] );
-	});
-
-
+	}
 
 });
-

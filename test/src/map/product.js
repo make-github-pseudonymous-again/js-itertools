@@ -1,25 +1,12 @@
-
-
-
-
-var one;
-
-one = function ( iterables, r, expected ) {
-
-
-	deepEqual(
-		itertools.list( itertools.product( iterables, r ) ),
-		expected,
-		JSON.stringify( [iterables, r] )
-	);
-
-};
-
-
-
 test( "product", function () {
 
-	one(
+	import { list , product } from 'aureooms-es-itertools' ;
+
+	const x = ( iterables, r, expected ) => {
+		t.same( list( product( iterables, r ) ), expected );
+	};
+
+	x(
 		[ "ABCD", "xy" ],
 		1,
 		[
@@ -28,7 +15,7 @@ test( "product", function () {
 		]
 	);
 
-	one(
+	x(
 		[ [0, 1] ],
 		3,
 		[ [0,0,0], [0,0,1], [0,1,0], [0,1,1], [1,0,0], [1,0,1], [1,1,0], [1,1,1] ]

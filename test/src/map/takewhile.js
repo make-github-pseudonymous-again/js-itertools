@@ -1,40 +1,28 @@
+test( "takewhile", t => {
 
-var one, functools, operator;
+	import { list , takewhile } from 'aureooms-es-itertools' ;
+	import { lt } from 'aureooms-js-predicate' ;
 
-functools = require( "aureooms-js-functools" );
-operator = require( "aureooms-js-operator" );
+	const x = function ( iterable, predicate, expected ) {
+		t.same( list( takewhile( predicate, iterable ) ), expected );
+	};
 
-one = function ( iterable, predicate, expected ) {
-
-
-	deepEqual(
-		itertools.list( itertools.takewhile( predicate, iterable ) ),
-		expected,
-		JSON.stringify( [iterable, predicate] )
+	x(
+		list( range( 0, 100, 1 ) ),
+		lt(50),
+		list( range( 0, 50, 1 ) )
 	);
 
-};
-
-
-
-test( "takewhile", function () {
-
-	one(
-		itertools.list( itertools.range( 0, 100, 1 ) ),
-		functools.rpartial( operator.lt, [50] ),
-		itertools.list( itertools.range( 0, 50, 1 ) )
+	x(
+		list( range( 0, 100, 1 ) ),
+		lt(100),
+		list( range( 0, 100, 1 ) )
 	);
 
-	one(
-		itertools.list( itertools.range( 0, 100, 1 ) ),
-		functools.rpartial( operator.lt, [100] ),
-		itertools.list( itertools.range( 0, 100, 1 ) )
-	);
-
-	one(
-		itertools.list( itertools.range( 0, 0, 1 ) ),
-		functools.rpartial( operator.lt, [1] ),
-		itertools.list( itertools.range( 0, 0, 1 ) )
+	x(
+		list( range( 0, 0, 1 ) ),
+		lt(1),
+		list( range( 0, 0, 1 ) )
 	);
 
 });

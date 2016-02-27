@@ -1,12 +1,14 @@
 
-test( "consume" , function ( ) {
+test( "consume" , t => {
 
-	var iterator = itertools.range( 100 ) ;
+	import { range , consume , list } from 'aureooms-es-itertools' ;
 
-	itertools.consume( iterator , 37 ) ;
+	const iterator = range( 100 ) ;
 
-	var output = itertools.list( iterator ) ;
+	consume( iterator , 37 ) ;
 
-	deepEqual( output , itertools.list( itertools.range( 37 , 100 ) ) ) ;
+	const output = list( iterator ) ;
+
+	t.same( output , list( range( 37 , 100 ) ) ) ;
 
 } ) ;

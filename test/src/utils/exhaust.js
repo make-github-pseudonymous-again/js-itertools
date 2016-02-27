@@ -1,12 +1,14 @@
 
-test( "exhaust" , function ( ) {
+test( "exhaust" , t => {
 
-	var iterator = itertools.range( 0 , 100 , 1 ) ;
+	import { range , head , exhaust , list } from 'aureooms-es-itertools' ;
 
-	itertools.exhaust( itertools.head( iterator , 37 ) ) ;
+	const iterator = range( 0 , 100 , 1 ) ;
 
-	var output = itertools.list( iterator ) ;
+	exhaust( head( iterator , 37 ) ) ;
 
-	deepEqual( output , itertools.list( itertools.range( 37 , 100 , 1 ) ) ) ;
+	const output = list( iterator ) ;
+
+	t.same( output , list( range( 37 , 100 , 1 ) ) ) ;
 
 } ) ;

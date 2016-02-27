@@ -1,27 +1,27 @@
 
-test( "count( 0 , 1 )" , function ( ) {
+test( 'count( 0 , 1 )' , t => {
 
-	var i , it ;
+	import { count , next } from 'aureooms-es-itertools' ;
 
-	it = itertools.count( 0 , 1 ) ;
+	const it = count( 0 , 1 ) ;
 
-	for ( i = 0 ; i < 1000 ; ++i ) {
+	for ( let i = 0 ; i < 1000 ; ++i ) {
 
-		deepEqual( it.next( ).value , i , i ) ;
+		t.same( next( it ) , i ) ;
 
 	}
 
 } ) ;
 
-test( "count( 2 , 3 )" , function ( ) {
+test( 'count( 2 , 3 )' , t => {
 
-	var i , it ;
+	import { count , next } from 'aureooms-es-itertools' ;
 
-	it = itertools.count( 2 , 3 ) ;
+	const it = count( 2 , 3 ) ;
 
-	for ( i = 2 ; i < 1000 ; i += 3 ) {
+	for ( let i = 2 ; i < 1000 ; i += 3 ) {
 
-		deepEqual( it.next( ).value , i , i ) ;
+		t.same( next( value ) , i ) ;
 
 	}
 

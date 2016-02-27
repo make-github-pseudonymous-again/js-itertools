@@ -1,8 +1,6 @@
 
-let consume = function ( iterator , n ) {
+export function consume ( iterator , n ) {
 
-	while ( n --> 0 && !next( iterator ).done ) ;
+	while ( n --> 0 && !iterator.next().done ) ;
 
-} ;
-
-exports.consume = consume ;
+}

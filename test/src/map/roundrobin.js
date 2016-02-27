@@ -1,17 +1,11 @@
+test( "roundrobin", t => {
 
-var one = function ( iterables, out ) {
+	import { list , roundrobin } from 'aureooms-es-itertools' ;
 
-	var msg;
+	const x = function ( iterables, expected ) {
+		t.same( list( roundrobin( iterables ) ), expected );
+	};
 
-	msg = "roundrobin " + JSON.stringify( iterables );
-
-	deepEqual( itertools.list( itertools.roundrobin( iterables ) ), out, msg );
-
-};
-
-
-test( "chain", function () {
-
-	one( [ 'ABC', 'D', 'EF' ] , ['A' ,'D', 'E', 'B' ,'F', 'C' ] ) ;
+	x( [ 'ABC', 'D', 'EF' ] , ['A' ,'D', 'E', 'B' ,'F', 'C' ] ) ;
 
 });

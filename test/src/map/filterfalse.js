@@ -1,25 +1,18 @@
 
-var one = function ( predicate, iterable, out ) {
+test("filterfalse", t => {
 
-	var msg;
+	import { list , filterfalse } from 'aureooms-es-itertools' ;
+	import { le } from 'aureooms-js-predicate' ;
 
-	msg = "filterfalse " + JSON.stringify( iterable );
-
-	deepEqual( itertools.list( itertools.filterfalse( predicate, iterable ) ), out, msg );
-};
-
-
-test("filterfalse", function () {
-
-	var negativeorzero = function (x) {
-		return x <= 0;
+	const x = ( predicate, iterable, out ) => {
+		t.same( list( filterfalse( predicate, iterable ) ), out );
 	};
 
-	one( negativeorzero, [], [] );
-	one( negativeorzero, [0], [] );
-	one( negativeorzero, [6], [6] );
+	x( le(0), [], [] );
+	x( le(0), [0], [] );
+	x( le(0), [6], [6] );
 
-	one( negativeorzero, [-6], [] );
-	one( negativeorzero, [0, 1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 5, 6] );
-	one( negativeorzero, [0, 0, 1, 2, 0, 3, 0, 4, -7, 5, 6], [1, 2, 3, 4, 5, 6] );
+	x( le(0), [-6], [] );
+	x( le(0), [0, 1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 5, 6] );
+	x( le(0), [0, 0, 1, 2, 0, 3, 0, 4, -7, 5, 6], [1, 2, 3, 4, 5, 6] );
 });

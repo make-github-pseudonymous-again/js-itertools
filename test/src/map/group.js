@@ -1,26 +1,18 @@
-
-var one, operator;
-
-operator = require( "aureooms-js-operator" );
-
-one = function ( key, iterable, expected ) {
-
-	deepEqual(
-		itertools.list( itertools.group( key , iterable ) ),
-		expected,
-		JSON.stringify( [iterable, key] )
-	);
-
-};
-
-
-
 test( "group", function () {
 
-	one( operator.identity, "", [] );
+	import { list , group } from 'aureooms-es-itertools' ;
+	import { identity } from 'aureooms-js-operator' ;
 
-	one(
-		operator.identity,
+	const x = function ( key, iterable, expected ) {
+
+		t.same( list( group( key , iterable ) ), expected );
+
+	};
+
+	x( identity, "", [] );
+
+	x(
+		identity,
 		"AAAAAABBBBCCCCAABBCC",
 		[
 			["A", ["A","A","A","A","A","A"] ],
@@ -32,7 +24,7 @@ test( "group", function () {
 		]
 	);
 
-	one(
+	x(
 		function ( item ) {
 			return item.charCodeAt(0) - 65;
 		},
@@ -47,7 +39,7 @@ test( "group", function () {
 		]
 	);
 
-	one(
+	x(
 		function ( item ) {
 			return Math.floor( ( item.charCodeAt(0) - 65 ) / 2 );
 		},

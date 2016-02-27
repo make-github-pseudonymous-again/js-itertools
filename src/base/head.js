@@ -1,4 +1,4 @@
-import { iter , next } from '.' ;
+import { iter } from '.' ;
 
 export function* head ( iterable , n ) {
 
@@ -6,7 +6,7 @@ export function* head ( iterable , n ) {
 
 	while ( n --> 0 ) {
 
-		let current = next( iterator ) ;
+		let current = iterator.next() ;
 
 		if ( current.done ) return ;
 

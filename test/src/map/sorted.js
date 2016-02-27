@@ -1,56 +1,47 @@
 
-var one, compare, util, operator;
-
-util = require( "util" );
-
-compare = require( "aureooms-js-compare" );
-
-operator = require( "aureooms-js-operator" );
-
-one = function ( f, a ) {
-
-	var b, i, initializer;
-
-	b = itertools.sorted( f, a );
-
-	deepEqual( b.length, a.length, "length check" );
-
-	initializer = {};
-
-	itertools.reduce( function ( x, y ) {
-
-		if ( x !== initializer ) {
-
-			ok( f( x, y ) <= 0, util.format( "f( %f, %f ) <= 0", x, y ) );
-
-		}
-
-		ok( operator.contains( a, y ), util.format( "%f in %s", y, JSON.stringify( a ) ) );
-
-		return y;
-
-	}, b, initializer );
-
-};
-
 test( "sorted", function () {
 
-	[compare.increasing, compare.decreasing].forEach( function (f) {
+	import { reduce , sorted } from 'aureooms-es-itertools' ;
+	import { increasing , decreasing } from "aureooms-js-compare" ;
+	import { contains } from "aureooms-js-operator" ;
 
-		var a, i, n;
+	const x = function ( compare, a ) {
 
-		a = [];
+		const b = sorted( compare, a );
 
-		n = 100;
+		t.same( b.length, a.length, "length check" );
 
-		i = n;
+		const initializer = {};
 
-		while ( i-- ) {
+		reduce( function ( x, y ) {
+
+			if ( x !== initializer ) {
+
+				t.ok( compare( x, y ) <= 0 );
+
+			}
+
+			t.ok( contains( a, y ) );
+
+			return y;
+
+		}, b, initializer );
+
+	};
+
+
+	for ( const compare of [increasing, decreasing] ) {
+
+		const a = [];
+
+		const n = 100;
+
+		for ( let i = n ; i-- ; ) {
 			a.push( Math.random() );
 		}
 
-		one( f, a );
+		x( compare, a );
 
-	});
+	}
 
 });

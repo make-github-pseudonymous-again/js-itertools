@@ -1,24 +1,18 @@
-var one = function ( callable, iterable, out ) {
 
-	var msg;
+import { reduce } from 'aureooms-es-itertools' ;
 
-	msg = "reduce " + JSON.stringify( iterable );
+test( 'reduce' , t => {
 
-	deepEqual( itertools.reduce( callable, iterable, 0 ), out, msg )
+	const x = ( callable, iterable, expected ) => {
+		t.same( reduce( callable, iterable, 0 ) , expected ) ;
+	} ;
 
-};
+	const addpow2 = (x, y) => x + y * y ;
 
-
-test( "reduce", function () {
-
-	var addpow2 = function (x, y) {
-		return x + y * y;
-	};
-
-	one( addpow2, [], 0 );
-	one( addpow2, [1], 1 );
-	one( addpow2, [1, 2, 3], 14 );
-	one( addpow2, [1, 2, 3, 4, 5, 6], 91 );
-	one( addpow2, [1, 2, 3, 4, 5, 6, 7, 8, 9], 285 );
+	x( addpow2, [], 0 );
+	x( addpow2, [1], 1 );
+	x( addpow2, [1, 2, 3], 14 );
+	x( addpow2, [1, 2, 3, 4, 5, 6], 91 );
+	x( addpow2, [1, 2, 3, 4, 5, 6, 7, 8, 9], 285 );
 
 });

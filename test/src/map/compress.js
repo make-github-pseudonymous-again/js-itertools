@@ -1,38 +1,28 @@
+test( "compress", t => {
 
-var one;
+	import { list , compress } from 'aureooms-es-itertools' ;
 
-one = function ( iterable, selector, expected ) {
+	const x = ( iterable, selector, expected ) => {
+		t.same( list( compress( iterable, selector) ), expected );
+	};
 
+	x( "ABC", [0,0,0], [] );
+	x( "ABC", [0,0,1], ["C"] );
+	x( "ABC", [0,1,0], ["B"] );
+	x( "ABC", [0,1,1], ["B","C"] );
+	x( "ABC", [1,0,0], ["A"] );
+	x( "ABC", [1,0,1], ["A","C"] );
+	x( "ABC", [1,1,0], ["A","B"] );
+	x( "ABC", [1,1,1], ["A","B","C"] );
 
-	deepEqual(
-		itertools.list( itertools.compress( iterable, selector) ),
-		expected,
-		JSON.stringify( [iterable, selector] )
-	);
-
-};
-
-
-
-test( "compress", function () {
-
-	one( "ABC", [0,0,0], [] );
-	one( "ABC", [0,0,1], ["C"] );
-	one( "ABC", [0,1,0], ["B"] );
-	one( "ABC", [0,1,1], ["B","C"] );
-	one( "ABC", [1,0,0], ["A"] );
-	one( "ABC", [1,0,1], ["A","C"] );
-	one( "ABC", [1,1,0], ["A","B"] );
-	one( "ABC", [1,1,1], ["A","B","C"] );
-
-	one( [0,1,2], [0,0,0], [] );
-	one( [0,1,2], [0,0,1], [2] );
-	one( [0,1,2], [0,1,0], [1] );
-	one( [0,1,2], [0,1,1], [1,2] );
-	one( [0,1,2], [1,0,0], [0] );
-	one( [0,1,2], [1,0,1], [0,2] );
-	one( [0,1,2], [1,1,0], [0,1] );
-	one( [0,1,2], [1,1,1], [0,1,2] );
+	x( [0,1,2], [0,0,0], [] );
+	x( [0,1,2], [0,0,1], [2] );
+	x( [0,1,2], [0,1,0], [1] );
+	x( [0,1,2], [0,1,1], [1,2] );
+	x( [0,1,2], [1,0,0], [0] );
+	x( [0,1,2], [1,0,1], [0,2] );
+	x( [0,1,2], [1,1,0], [0,1] );
+	x( [0,1,2], [1,1,1], [0,1,2] );
 
 });
 

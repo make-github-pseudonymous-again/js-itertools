@@ -1,24 +1,19 @@
-var one = function ( callable, iterable, out ) {
-
-	var msg;
-
-	msg = "map " + JSON.stringify( iterable );
-
-	deepEqual( itertools.list( itertools.map( callable , iterable ) ) , out, msg )
-
-};
 
 
-test( "map", function () {
+test( "map", t => {
 
-	var pow2 = function (x) {
-		return x * x;
+	import { list , map } from 'aureooms-es-itertools' ;
+
+	const x = function ( callable, iterable, out ) {
+		t.same( list( map( callable , iterable ) ) , out ) ;
 	};
 
-	one( pow2, [], [] );
-	one( pow2, [1], [1] );
-	one( pow2, [1, 2, 3], [1, 4, 9] );
-	one( pow2, [1, 2, 3, 4, 5, 6], [1, 4, 9, 16, 25, 36] );
-	one( pow2, [1, 2, 3, 4, 5, 6, 7, 8, 9], [1, 4, 9, 16, 25, 36, 49, 64, 81] );
+	const pow2 = x => x * x;
+
+	x( pow2, [], [] );
+	x( pow2, [1], [1] );
+	x( pow2, [1, 2, 3], [1, 4, 9] );
+	x( pow2, [1, 2, 3, 4, 5, 6], [1, 4, 9, 16, 25, 36] );
+	x( pow2, [1, 2, 3, 4, 5, 6, 7, 8, 9], [1, 4, 9, 16, 25, 36, 49, 64, 81] );
 
 });

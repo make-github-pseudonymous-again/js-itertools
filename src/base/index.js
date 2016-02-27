@@ -15,3 +15,4 @@ export * from './pick' ;
 export * from './_range' ;
 export * from './range' ;
 export * from './tee' ;
+export * from './StopIteration' ;

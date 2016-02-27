@@ -1,21 +1,15 @@
+test( "chain", t => {
 
-var one = function ( iterables, out ) {
+	import { list , chain } from 'aureooms-es-itertools' ;
 
-	var msg;
+	const x = ( iterables, out ) => {
+		t.same( list( chain( iterables ) ), out );
+	};
 
-	msg = "chain " + JSON.stringify( iterables );
-
-	deepEqual( itertools.list( itertools.chain( iterables ) ), out, msg );
-
-};
-
-
-test( "chain", function () {
-
-	one( [], [] );
-	one( [[1]], [1] );
-	one( [[1, 2, 3]], [1, 2, 3] );
-	one( [[1, 2, 3], [4, 5, 6]], [1, 2, 3, 4, 5, 6] );
-	one( [[1, 2, 3], [], [4, 5, 6]], [1, 2, 3, 4, 5, 6] );
+	x( [], [] );
+	x( [[1]], [1] );
+	x( [[1, 2, 3]], [1, 2, 3] );
+	x( [[1, 2, 3], [4, 5, 6]], [1, 2, 3, 4, 5, 6] );
+	x( [[1, 2, 3], [], [4, 5, 6]], [1, 2, 3, 4, 5, 6] );
 
 });
