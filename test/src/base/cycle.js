@@ -1,6 +1,7 @@
 import test from 'ava' ;
 
-	import { cycle , next } from '../../..' ;
+import { cycle , next } from '../../..' ;
+
 test( 'cycle (empty)' , t => {
 
 	// the empty use case is very important
