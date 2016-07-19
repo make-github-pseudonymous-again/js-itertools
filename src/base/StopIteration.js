@@ -1,1 +1,3 @@
-export class StopIteration { }
+export class StopIteration {
+	constructor ( ) { }
+}
