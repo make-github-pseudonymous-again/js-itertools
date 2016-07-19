@@ -1,8 +1,9 @@
 import test from 'ava' ;
 
-	import { list , range , combinations } from '../../..' ;
+import { list , range , combinations } from '../../..' ;
 
 test( "combinations", t => {
+
 	const x = ( iterable, r, expected ) => {
 		t.deepEqual( list( combinations( iterable, r ) ), expected );
 	};

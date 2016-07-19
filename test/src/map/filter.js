@@ -1,10 +1,8 @@
 import test from 'ava' ;
 
+import { list , filter } from '../../..' ;
+import { gt } from 'aureooms-js-predicate' ;
 
-
-
-	import { list , filter } from '../../..' ;
-	import { gt } from 'aureooms-js-predicate' ;
 test("filter", t => {
 
 	const x = ( predicate, iterable, out ) => {

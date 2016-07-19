@@ -1,8 +1,9 @@
 import test from 'ava' ;
 
-	import { list , compress } from '../../..' ;
+import { list , compress } from '../../..' ;
 
 test( "compress", t => {
+
 	const x = ( iterable, selector, expected ) => {
 		t.deepEqual( list( compress( iterable, selector) ), expected );
 	};

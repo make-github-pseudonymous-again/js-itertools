@@ -1,8 +1,7 @@
 import test from 'ava' ;
 
+import { list , enumerate } from '../../..' ;
 
-
-	import { list , enumerate } from '../../..' ;
 test( "enumerate", t => {
 
 	const x = ( iterable, out ) => {

@@ -1,7 +1,7 @@
 import test from 'ava' ;
 
+import { range , consume , list } from '../../..' ;
 
-	import { range , consume , list } from '../../..' ;
 test( "consume" , t => {
 
 	const iterator = range( 100 ) ;
