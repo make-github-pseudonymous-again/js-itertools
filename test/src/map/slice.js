@@ -7,7 +7,7 @@ test( "slice", t => {
 
 		const iterable = range( 0, stop, 1 );
 
-		t.same(
+		t.deepEqual(
 			list( slice( iterable, start, stop, step ) ),
 			list( range( start, stop, step ) )
 		);

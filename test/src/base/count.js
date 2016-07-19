@@ -9,7 +9,7 @@ test( 'count( 0 , 1 )' , t => {
 
 	for ( let i = 0 ; i < 1000 ; ++i ) {
 
-		t.same( next( it ) , i ) ;
+		t.deepEqual( next( it ) , i ) ;
 
 	}
 
@@ -21,7 +21,7 @@ test( 'count( 2 , 3 )' , t => {
 
 	for ( let i = 2 ; i < 1000 ; i += 3 ) {
 
-		t.same( next( it ) , i ) ;
+		t.deepEqual( next( it ) , i ) ;
 
 	}
 

@@ -6,7 +6,7 @@ test( "tee", t => {
 
 
 	const x = ( iterable , n , expected ) => {
-		t.same( list( map( list , tee( iterable , n ) ) ) , expected ) ;
+		t.deepEqual( list( map( list , tee( iterable , n ) ) ) , expected ) ;
 	};
 
 	x( [], 0, [] );

@@ -10,6 +10,6 @@ test( "consume" , t => {
 
 	const output = list( iterator ) ;
 
-	t.same( output , list( range( 37 , 100 ) ) ) ;
+	t.deepEqual( output , list( range( 37 , 100 ) ) ) ;
 
 } ) ;

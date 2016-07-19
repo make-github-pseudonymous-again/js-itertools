@@ -5,7 +5,7 @@ import { list , product } from '../../..' ;
 test( "product", t => {
 
 	const x = ( iterables, r, expected ) => {
-		t.same( list( product( iterables, r ) ), expected );
+		t.deepEqual( list( product( iterables, r ) ), expected );
 	};
 
 	x(

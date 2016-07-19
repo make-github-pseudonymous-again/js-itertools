@@ -4,7 +4,7 @@ import test from 'ava' ;
 
 test( "combinationswithrepetition", t => {
 	const x = ( iterable, r, expected ) => {
-		t.same( list( combinationswithrepetition( iterable, r) ), expected );
+		t.deepEqual( list( combinationswithrepetition( iterable, r) ), expected );
 	};
 
 	x( "ABC", 2, [ ["A","A"], ["A","B"], ["A","C"], ["B","B"], ["B","C"], ["C","C"] ] );

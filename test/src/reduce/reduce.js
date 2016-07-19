@@ -5,7 +5,7 @@ import { reduce } from '../../..' ;
 test( 'reduce' , t => {
 
 	const x = ( callable, iterable, expected ) => {
-		t.same( reduce( callable, iterable, 0 ) , expected ) ;
+		t.deepEqual( reduce( callable, iterable, 0 ) , expected ) ;
 	} ;
 
 	const addpow2 = (x, y) => x + y * y ;

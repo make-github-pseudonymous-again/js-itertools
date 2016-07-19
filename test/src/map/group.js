@@ -7,7 +7,7 @@ test( "group", t => {
 
 	const x = ( key, iterable, expected ) => {
 
-		t.same( list( group( key , iterable ) ), expected );
+		t.deepEqual( list( group( key , iterable ) ), expected );
 
 	};
 

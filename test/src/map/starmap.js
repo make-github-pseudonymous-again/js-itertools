@@ -6,7 +6,7 @@ import { mul } from 'aureooms-js-operator' ;
 test( "starmap", t => {
 
 	const x = ( callable, iterable, out ) => {
-		t.same( list( starmap( callable , iterable ) ) , out ) ;
+		t.deepEqual( list( starmap( callable , iterable ) ) , out ) ;
 	};
 
 	x( mul, [], [] );

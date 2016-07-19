@@ -10,7 +10,7 @@ test( "sorted", t => {
 
 		const b = sorted( compare, a );
 
-		t.same( b.length, a.length, "length check" );
+		t.deepEqual( b.length, a.length, "length check" );
 
 		const initializer = {};
 
@@ -18,11 +18,11 @@ test( "sorted", t => {
 
 			if ( x !== initializer ) {
 
-				t.ok( compare( x, y ) <= 0 );
+				t.truthy( compare( x, y ) <= 0 );
 
 			}
 
-			t.ok( contains( a, y ) );
+			t.truthy( contains( a, y ) );
 
 			return y;
 

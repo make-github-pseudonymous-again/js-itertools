@@ -7,7 +7,7 @@ test( "zip", t => {
 
 	const x = function ( iterables, out ) {
 
-		t.same( list( zip( ...iterables ) ) , out );
+		t.deepEqual( list( zip( ...iterables ) ) , out );
 
 		const strip = function ( iterables, out ) {
 
@@ -32,7 +32,7 @@ test( "zip", t => {
 
 		const unzipped = strip( iterables, [] );
 
-		t.same( list( zip( ...out ) ), unzipped  );
+		t.deepEqual( list( zip( ...out ) ), unzipped  );
 
 	};
 

@@ -8,7 +8,7 @@ import test from 'ava' ;
 test("filter", t => {
 
 	const x = ( predicate, iterable, out ) => {
-		t.same( list( filter( predicate, iterable ) ), out );
+		t.deepEqual( list( filter( predicate, iterable ) ), out );
 	};
 
 	x( gt(0), [], [] );

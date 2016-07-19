@@ -5,7 +5,7 @@ test( 'sum' , t => {
 
 
 	const x = ( iterable, out ) => {
-		t.same( sum( iterable ), out ) ;
+		t.deepEqual( sum( iterable ), out ) ;
 	};
 
 	x( [], 0 );

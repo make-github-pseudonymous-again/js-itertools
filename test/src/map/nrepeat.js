@@ -4,7 +4,7 @@ import test from 'ava' ;
 test( "nrepeat", t => {
 
 	const x = function ( item, times, expected ) {
-		t.same(list( nrepeat( item , times ) ),expected);
+		t.deepEqual(list( nrepeat( item , times ) ),expected);
 	};
 
 	for ( const item of [0, 1, -1, [], "A", "ABC", ["A"], [0, 1, -1], ["A", "B", "C"]] ) {

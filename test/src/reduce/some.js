@@ -5,7 +5,7 @@ import { some } from '../../..' ;
 test('some', t => {
 
 	const x = ( iterable , n , expected ) => {
-		t.same( some( iterable , n ), expected );
+		t.deepEqual( some( iterable , n ), expected );
 	};
 
 	x( [], 1 , false );

@@ -3,7 +3,7 @@ import { any } from '../../../src' ;
 
 test( 'any' , t => {
 
-	const x = ( obj, val ) => t.same( any( obj ) , val ) ;
+	const x = ( obj, val ) => t.deepEqual( any( obj ) , val ) ;
 
 	x( [], false );
 	x( [true], true );

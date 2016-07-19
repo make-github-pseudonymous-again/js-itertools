@@ -5,7 +5,7 @@ import { list , map } from '../../..' ;
 test( "map", t => {
 
 	const x = function ( callable, iterable, out ) {
-		t.same( list( map( callable , iterable ) ) , out ) ;
+		t.deepEqual( list( map( callable , iterable ) ) , out ) ;
 	};
 
 	const pow2 = x => x * x;

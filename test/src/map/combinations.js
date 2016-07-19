@@ -4,7 +4,7 @@ import test from 'ava' ;
 
 test( "combinations", t => {
 	const x = ( iterable, r, expected ) => {
-		t.same( list( combinations( iterable, r ) ), expected );
+		t.deepEqual( list( combinations( iterable, r ) ), expected );
 	};
 
 	x( "ABCD", 2, [ ["A","B"], ["A","C"], ["A","D"], ["B","C"], ["B","D"], ["C","D"]] );

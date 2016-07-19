@@ -10,6 +10,6 @@ test( "exhaust" , t => {
 
 	const output = list( iterator ) ;
 
-	t.same( output , list( range( 37 , 100 , 1 ) ) ) ;
+	t.deepEqual( output , list( range( 37 , 100 , 1 ) ) ) ;
 
 } ) ;

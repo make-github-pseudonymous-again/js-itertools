@@ -4,7 +4,7 @@ import { all } from '../../../src' ;
 
 test( 'all' , t => {
 
-	const x = ( obj, val ) => t.same( all( obj ) , val ) ;
+	const x = ( obj, val ) => t.deepEqual( all( obj ) , val ) ;
 
 	x( [], true );
 	x( [true], true );

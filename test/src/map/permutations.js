@@ -5,7 +5,7 @@ import { list , range , permutations } from '../../..' ;
 test( "permutations", t => {
 
 	const x = ( iterable, repeat, expected ) => {
-		t.same( list( permutations( iterable , repeat ) ) , expected);
+		t.deepEqual( list( permutations( iterable , repeat ) ) , expected);
 	};
 
 

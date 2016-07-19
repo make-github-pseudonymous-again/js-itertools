@@ -6,7 +6,7 @@ import { max } from '../../..' ;
 
 test( 'max' , t => {
 
-	const x = ( iterable , compare , expected ) => t.same( max( compare , iterable ) , expected ) ;
+	const x = ( iterable , compare , expected ) => t.deepEqual( max( compare , iterable ) , expected ) ;
 
 	x( [], increasing, undefined );
 	x( [1], increasing, 1 );

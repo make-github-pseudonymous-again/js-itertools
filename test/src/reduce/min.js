@@ -6,7 +6,7 @@ import { min } from '../../..' ;
 
 test( 'min' , t => {
 
-	const x = ( iterable , compare , expected ) => t.same( min( compare , iterable ) , expected ) ;
+	const x = ( iterable , compare , expected ) => t.deepEqual( min( compare , iterable ) , expected ) ;
 
 	x( [], increasing, undefined );
 	x( [1], increasing, 1 );

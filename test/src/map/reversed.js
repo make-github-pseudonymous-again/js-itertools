@@ -5,8 +5,8 @@ import { list , reversed } from '../../..' ;
 test( "reversed", t => {
 
 	const x = function ( A, B ) {
-		t.same( list( reversed( A ) ), B ) ;
-		t.same( list( reversed( B ) ), A ) ;
+		t.deepEqual( list( reversed( A ) ), B ) ;
+		t.deepEqual( list( reversed( B ) ), A ) ;
 	};
 
 	x( [], [] );

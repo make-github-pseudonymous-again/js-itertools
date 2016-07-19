@@ -9,7 +9,7 @@ import test from 'ava' ;
 test( "dropwhile", t => {
 
 	const x = ( iterable, predicate, expected ) => {
-		t.same( list( dropwhile( predicate, iterable) ), expected );
+		t.deepEqual( list( dropwhile( predicate, iterable) ), expected );
 	};
 
 	x( list( range( 0, 100, 1 ) ), lt(50), list( range( 50, 100, 1 ) ) );

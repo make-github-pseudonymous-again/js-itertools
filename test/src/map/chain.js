@@ -4,7 +4,7 @@ import { list , chain } from '../../..' ;
 test( "chain", t => {
 
 	const x = ( iterables, out ) => {
-		t.same( list( chain( iterables ) ), out );
+		t.deepEqual( list( chain( iterables ) ), out );
 	};
 
 	x( [], [] );

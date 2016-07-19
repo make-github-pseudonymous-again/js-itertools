@@ -6,7 +6,7 @@ import { le } from 'aureooms-js-predicate' ;
 test("filterfalse", t => {
 
 	const x = ( predicate, iterable, out ) => {
-		t.same( list( filterfalse( predicate, iterable ) ), out );
+		t.deepEqual( list( filterfalse( predicate, iterable ) ), out );
 	};
 
 	x( le(0), [], [] );

@@ -4,7 +4,7 @@ import test from 'ava' ;
 
 test( "compress", t => {
 	const x = ( iterable, selector, expected ) => {
-		t.same( list( compress( iterable, selector) ), expected );
+		t.deepEqual( list( compress( iterable, selector) ), expected );
 	};
 
 	x( "ABC", [0,0,0], [] );

@@ -6,7 +6,7 @@ import test from 'ava' ;
 test( "enumerate", t => {
 
 	const x = ( iterable, out ) => {
-		t.same( list( enumerate( iterable ) ) , out ) ;
+		t.deepEqual( list( enumerate( iterable ) ) , out ) ;
 	};
 
 	x( [], [] );

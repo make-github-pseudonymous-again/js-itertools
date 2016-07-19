@@ -5,7 +5,7 @@ import { list , head , repeat } from '../../..' ;
 test( "repeat", t => {
 
 	const x = function ( item, times, expected ) {
-		t.same( list( head( repeat( item ) , times ) ) , expected );
+		t.deepEqual( list( head( repeat( item ) , times ) ) , expected );
 	};
 
 	for ( const item of [0, 1, -1, [], "A", "ABC", ["A"], [0, 1, -1], ["A", "B", "C"]] ) {

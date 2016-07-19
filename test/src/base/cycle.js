@@ -9,7 +9,7 @@ test( 'cycle (empty)' , t => {
 
 	let it = cycle( [ ] ) ;
 
-	t.same( it.next( ).done , true , 'Cycle on empty list should be empty.' ) ;
+	t.deepEqual( it.next( ).done , true , 'Cycle on empty list should be empty.' ) ;
 
 } ) ;
 
@@ -24,7 +24,7 @@ test( 'cycle' , t => {
 
 		for ( let j = 0 ; j < a.length ; ++j ) {
 
-			t.same( next( it ) , a[j] , i + '.' + j ) ;
+			t.deepEqual( next( it ) , a[j] , i + '.' + j ) ;
 
 		}
 

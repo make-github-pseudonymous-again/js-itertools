@@ -6,7 +6,7 @@ import { lt } from 'aureooms-js-predicate' ;
 test( "takewhile", t => {
 
 	const x = function ( iterable, predicate, expected ) {
-		t.same( list( takewhile( predicate, iterable ) ), expected );
+		t.deepEqual( list( takewhile( predicate, iterable ) ), expected );
 	};
 
 	x(

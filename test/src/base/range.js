@@ -6,7 +6,7 @@ test( "range", t => {
 
 	const x = ( begin, end, step, expected ) => {
 
-		t.same( list( range( begin, end, step ) ), expected );
+		t.deepEqual( list( range( begin, end, step ) ), expected );
 
 	};
 
