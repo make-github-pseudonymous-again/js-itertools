@@ -1,3 +1,3 @@
 export * from './base' ;
-export * from './map';
-export * from './reduce';
+export * from './map' ;
+export * from './reduce' ;

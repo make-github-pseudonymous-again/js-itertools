@@ -6,12 +6,12 @@ export function drop ( iterable , n ) {
 
 	if ( n < 0 ) return tail( iterable , -n ) ;
 
-	return function* ( ) {
+	return ( function* ( ) {
 
 		const iterator = iter( iterable ) ;
 		consume( iterator , n ) ;
 		yield* iterator ;
 
-	} ;
+	} )( ) ;
 
 }

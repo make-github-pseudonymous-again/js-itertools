@@ -3,7 +3,10 @@ import { take } from './take' ;
 
 export function* trunc ( iterable , n ) {
 
-	if ( n < 0 ) return take( iterable , -n ) ;
+	if ( n < 0 ) {
+		yield* take( iterable , -n ) ;
+		return ;
+	}
 
 	const iterator = iter( iterable ) ;
 
@@ -17,8 +20,8 @@ export function* trunc ( iterable , n ) {
 	}
 
 	for ( const value of iterator ) {
-		yield buffer.shift() ;
 		buffer.push( value ) ;
+		yield buffer.shift() ;
 	}
 
 }

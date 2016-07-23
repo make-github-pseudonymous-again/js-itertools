@@ -3,7 +3,10 @@ import { trunc } from './trunc' ;
 
 export function* take ( iterable , n ) {
 
-	if ( n < 0 ) return trunc( iterable , -n ) ;
+	if ( n < 0 ) {
+		yield* trunc( iterable , -n ) ;
+		return ;
+	}
 
 	const iterator = iter( iterable ) ;
 

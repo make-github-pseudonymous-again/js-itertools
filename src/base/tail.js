@@ -17,8 +17,8 @@ export function tail ( iterable , n ) {
 	}
 
 	for ( const value of iterator ) {
-		buffer.shift() ;
 		buffer.push( value ) ;
+		buffer.shift() ;
 	}
 
 	return buffer ;
