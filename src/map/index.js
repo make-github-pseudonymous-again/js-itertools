@@ -1,4 +1,3 @@
-export * from './_enumerate' ;
 export * from './_product' ;
 export * from './_zip' ;
 export * from './_zip2' ;

@@ -12,7 +12,7 @@ export function tail ( iterable , n ) {
 
 	while ( n --> 0 ) {
 		const e = iterator.next( ) ;
-		if ( e.done ) return ;
+		if ( e.done ) return buffer ;
 		buffer.push( e.value ) ;
 	}
 

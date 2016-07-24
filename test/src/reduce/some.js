@@ -8,6 +8,40 @@ test('some', t => {
 		t.deepEqual( some( iterable , n ), expected );
 	};
 
+	x( [], -298392 , true );
+	x( [true], -298392 , true );
+	x( [false], -298392, true );
+
+	x( [true, true, true, true], -298392, true );
+	x( [false, false, false, false], -298392, true );
+
+	x( [false, true, true, true], -298392, true );
+	x( [true, false, true, true], -298392, true );
+	x( [true, true, false, true], -298392, true );
+	x( [true, true, true, false], -298392, true );
+
+	x( [true, false, false, false], -298392, true );
+	x( [false, true, false, false], -298392, true );
+	x( [false, false, true, false], -298392, true );
+	x( [false, false, false, true], -298392, true );
+
+	x( [], 0 , true );
+	x( [true], 0 , true );
+	x( [false], 0, true );
+
+	x( [true, true, true, true], 0, true );
+	x( [false, false, false, false], 0, true );
+
+	x( [false, true, true, true], 0, true );
+	x( [true, false, true, true], 0, true );
+	x( [true, true, false, true], 0, true );
+	x( [true, true, true, false], 0, true );
+
+	x( [true, false, false, false], 0, true );
+	x( [false, true, false, false], 0, true );
+	x( [false, false, true, false], 0, true );
+	x( [false, false, false, true], 0, true );
+
 	x( [], 1 , false );
 	x( [true], 1 , true );
 	x( [false], 1, false );

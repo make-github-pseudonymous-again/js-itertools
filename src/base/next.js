@@ -1,3 +1,5 @@
+import { StopIteration } from './StopIteration' ;
+
 export function next ( iterator ) {
 
 	const x = iterator.next( ) ;
