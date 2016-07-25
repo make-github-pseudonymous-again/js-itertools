@@ -1,6 +1,7 @@
 export * from './_product' ;
 export * from './_zip' ;
 export * from './_zip2' ;
+export * from './_ziplongest' ;
 export * from './chain' ;
 export * from './combinations' ;
 export * from './combinationswithrepetition' ;
@@ -22,3 +23,4 @@ export * from './sorted' ;
 export * from './starmap' ;
 export * from './takewhile' ;
 export * from './zip' ;
+export * from './ziplongest' ;
