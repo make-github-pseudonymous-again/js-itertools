@@ -1,7 +1,7 @@
 import test from 'ava' ;
 
-import { list , zip , min } from '../../..' ;
-import compare from 'aureooms-js-compare' ;
+import { len , list , map , zip , min , take } from '../../..' ;
+import { increasing } from 'aureooms-js-compare' ;
 
 test( "zip", t => {
 
@@ -9,28 +9,20 @@ test( "zip", t => {
 
 		t.deepEqual( list( zip( ...iterables ) ) , out );
 
-		const strip = function ( iterables, out ) {
+		const strip = function* ( iterables ) {
 
 			// makes all the inputs have the same length
 			// (min length among all iterables)
 
-			const len = iterables.length;
+			if ( len( iterables ) === 0 ) return ;
 
-			if ( len === 0 ) {
-				return out;
-			}
+			const n = min( increasing , map( len , iterables ) ) ;
 
-			const n = min( compare.len( compare.increasing ) , iterables ).length ;
+			for ( const iterable of iterables ) yield take( iterable , n ) ;
 
-			for ( let i = 0 ; i < len ; ++i ) {
-				out.push( iterables[i].slice( 0, n ) );
-			}
+		} ;
 
-			return out;
-
-		};
-
-		const unzipped = strip( iterables, [] );
+		const unzipped = list( map( list , strip( iterables ) ) ) ;
 
 		t.deepEqual( list( zip( ...out ) ), unzipped  );
 
