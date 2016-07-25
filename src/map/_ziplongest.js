@@ -6,10 +6,10 @@ import { list , map , iter , _next , repeat , enumerate } from '..' ;
  *
  * @example
  * // returns [['A','x'],['B','y'],['C','-'],['D','-']]
- * list( _ziplongest( [ 'ABCD', 'xy' ] , '-' ) )
+ * list( _ziplongest( '-' , [ 'ABCD', 'xy' ] ) ) ;
  *
- * @param fillvalue the value to yield for iterators that are exhausted
- * @param {Iterable[]} iterables to zip
+ * @param fillvalue - The value to yield for iterators that are exhausted.
+ * @param {Iterable[]} iterables - The iterables to zip.
  * @returns {Iterator}
  *
  */
