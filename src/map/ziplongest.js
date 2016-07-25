@@ -10,7 +10,7 @@ import { _ziplongest } from './_ziplongest' ;
  * list( ziplongest( '-' , 'ABCD', 'xy' ) ) ;
  *
  * @param fillvalue - The value to yield for iterators that are exhausted.
- * @param {...Iterable} ...iterables - The iterables to zip.
+ * @param {...Iterable} iterables - The iterables to zip.
  * @returns {Iterator}
  *
  */

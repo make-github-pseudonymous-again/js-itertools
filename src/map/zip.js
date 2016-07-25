@@ -10,7 +10,7 @@ import { _zip } from './_zip' ;
  * // returns [ [ 'a' , 1 ] , [ 'b' , 2 ] , [ 'c' , 3 ] ]
  * list( zip( 'abcd' , range(3) ) ) ;
  *
- * @param {...Iterable} ...iterables - The iterables to zip.
+ * @param {...Iterable} iterables - The iterables to zip.
  * @returns {Iterator}
  *
  */
