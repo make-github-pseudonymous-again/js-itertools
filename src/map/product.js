@@ -3,14 +3,22 @@ import { list , map , _product , ncycle , reversed } from '..' ;
 
 /**
  * Computes the product of the iterables given as first parameter. The second
- * is an integer that tells how many times the list of iterables given as input
- * should be concatenated to itself before computing the product.
+ * parameter is an integer that tells how many times the list of iterables
+ * given as input should be concatenated to itself before computing the
+ * product. This second parameter is optional and its default value is
+ * <code>1</code>.
  *
- * @param {iterable} iterables input iterables
- * @param {Number} repeat number of times to cycle through the input iterables
- * @example product(['ABCD', 'xy']) // Ax Ay Bx By Cx Cy Dx Dy
- * @example product([range(0, 2, 1)], 3) // 000 001 010 011 100 101 110 111
- * @return {Generator}
+ * @example
+ * // Ax Ay Bx By Cx Cy Dx Dy
+ * product(['ABCD', 'xy']) ;
+ *
+ * @example
+ * // 000 001 010 011 100 101 110 111
+ * product([range(2)], 3) ;
+ *
+ * @param {Iterable} iterables - The input iterables.
+ * @param {Number} repeat - The number of times to cycle through the input iterables.
+ * @return {Iterator}
  */
 
 export function product ( iterables , repeat = 1 ) {

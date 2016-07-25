@@ -1,11 +1,21 @@
-
 import { list , range , head , pick } from '..' ;
 
 /**
- * @example permutations('ABCD', 2) // AB AC AD BA BC BD CA CB CD DA DB DC
- * @example permutations(range(3), 3) // 012 021 102 120 201 210
+ * Yields all permutations of each possible choice of <code>r</code> elements
+ * of the input iterable.
+ *
+ * @example
+ * // AB AC AD BA BC BD CA CB CD DA DB DC
+ * permutations('ABCD', 2) ;
+ *
+ * @example
+ * // 012 021 102 120 201 210
+ * permutations(range(3), 3) ;
+ *
+ * @param {Iterable} iterable - The input iterable.
+ * @param {Number} r - The size of the permutations to generate.
+ * @returns {Iterator}
  */
-
 export function* permutations ( iterable , r ) {
 
 	let pool = list( iterable ) ;
