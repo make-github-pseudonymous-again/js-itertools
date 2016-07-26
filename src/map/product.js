@@ -1,4 +1,3 @@
-
 import { list , map , _product , ncycle , reversed } from '..' ;
 
 /**

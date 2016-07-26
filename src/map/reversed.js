@@ -1,4 +1,9 @@
-
+/**
+ * Yields elements of the input iterable in reverse order.
+ *
+ * @param {Iterable} iterable - The input iterable.
+ * @returns {Iterator} - The input iterable, reversed.
+ */
 export function* reversed ( iterable ) {
 
 	let buffer = [ ] ;

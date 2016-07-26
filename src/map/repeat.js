@@ -1,4 +1,3 @@
-
 /**
  * Repeats the input item endlessly. Returns an iterator that yields the input
  * item over and over again.

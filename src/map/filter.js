@@ -1,4 +1,3 @@
-
 /**
  * Yields all elements from input iterable that verify a given predicate.
  *

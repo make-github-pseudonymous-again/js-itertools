@@ -1,6 +1,14 @@
-
 import { iter } from '..' ;
 
+/**
+ * Yields elements of the input iterable by grouping them into tuples
+ * consecutive elements from the same equivalence class.
+ *
+ * @param {Function} key - The function used to determine the equivalence class
+ * of an element.
+ * @param {Iterable} iterable - The input iterable.
+ * @returns {Iterator}
+ */
 export function* group ( key , iterable ) {
 
 	let iterator = iter( iterable ) ;
@@ -48,4 +56,8 @@ export function* group ( key , iterable ) {
 
 }
 
+/**
+ * Same as {@link group}.
+ * @function groupby
+ */
 export const groupby = group ;

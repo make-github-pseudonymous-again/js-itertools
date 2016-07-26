@@ -1,4 +1,3 @@
-
 import { list , map , iter , _next } from '..' ;
 
 /**

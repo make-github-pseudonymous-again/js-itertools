@@ -1,10 +1,21 @@
 import { list , range , pick } from '..' ;
 
 /**
- * @example combinations('ABCD', 2) // AB AC AD BC BD CD
- * @example combinations(range(4), 3) // 012 013 023 123
+ * Yields all combinations of each possible choice of <code>r</code> elements
+ * of the input iterable.
+ *
+ * @example
+ * // AB AC AD BC BD CD
+ * combinations('ABCD', 2)
+ *
+ * @example
+ * // 012 013 023 123
+ * combinations(range(4), 3)
+ *
+ * @param {Iterable} iterable - The input iterable.
+ * @param {Number} r - The size of the combinations to generate.
+ * @returns {Iterator}
  */
-
 export function* combinations ( iterable , r ) {
 
 	let pool = list( iterable ) ;

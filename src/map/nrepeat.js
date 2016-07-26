@@ -1,4 +1,3 @@
-
 /**
  * Repeats the input item a few times. Returns an iterator that yields the input
  * item a fixed number of times.
