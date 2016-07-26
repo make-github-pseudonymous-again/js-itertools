@@ -13,11 +13,11 @@ import { iter } from '../base/iter' ;
  * @example
  * _reduce( ( x , y ) => x + y , range( 10 ) , 100 ) ; // returns 145
  *
+ * @param {Function} accumulator - The accumulator, a 2-ary function.
  * @param {Iterable} iterable - The input iterable.
- * @param {Object} initializer - The initial value of the reduction.
+ * @param {Object} [initializer=undefined] - The initial value of the reduction.
  * @returns {Object} - The reduction of the elements of <code>iterable</code>.
  */
-
 export function reduce ( accumulator , iterable , initializer = undefined ) {
 
 	if ( initializer === undefined ) {
