@@ -1,6 +1,6 @@
 {
   "name": "aureooms-es-itertools",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "author": "aureooms",
   "license": "AGPL-3.0",
   "description": "Iterable and iterator library for JavaScript",
