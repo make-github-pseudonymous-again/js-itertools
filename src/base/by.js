@@ -1,6 +1,14 @@
 import { iter } from './iter' ;
 import { range } from './range' ;
 
+/**
+ * Yields elements of the input iterable by grouping them into tuples of a
+ * given size.
+ *
+ * @param {Iterable} iterable - The input iterable.
+ * @param {Number} n - The size of the yielded tuples.
+ * @returns {Iterator}
+ */
 export function* by ( iterable , n ) {
 
 	const iterator = iter( iterable ) ;
