@@ -1,6 +1,20 @@
 import { iter } from './iter' ;
 import { range } from './range' ;
 
+/**
+ * Yields tuples that contain the current element of the input iterable and the
+ * next <code>n-1</code> elements of the input iterable.
+ *
+ * @example
+ * frame( range( 100 ) , 2 ) ;
+ * // is equivalent to
+ * zip( range( 100 ) , range( 1 , 100 ) ) ;
+ *
+ * @param {Iterable} iterable - The input iterable.
+ * @param {Number} n - The frame size.
+ * @returns {Iterator}
+ *
+ */
 export function* frame ( iterable , n ) {
 
 	// Could have an implementation using a deque

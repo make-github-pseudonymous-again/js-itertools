@@ -4,6 +4,12 @@ import { tail } from './tail' ;
 
 /**
  * Drops the first <code>n</code> elements of the input iterable.
+ * If <code>n</code> is negative, behaves like <code>{@link tail}( iterable,
+ * -n)</code>.
+ *
+ * @example
+ * // returns [ 3 , 4 ]
+ * list( drop( range( 5 ) , 3 ) ) ;
  *
  * @param {Iterable} iterable - The input iterable.
  * @param {Number} n - The number of elements to drop.

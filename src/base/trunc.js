@@ -1,6 +1,19 @@
 import { iter } from './iter' ;
 import { take } from './take' ;
 
+/**
+ * Yields all elements of the iterable except the last <code>n</code> ones. If
+ * <code>n</code> is negative, behaves like <code>{@link take}( iterable, -n
+ * )</code>.
+ *
+ * @example
+ * // returns [ 0 , 1 , 2 ]
+ * list( trunc( range( 5 ) , 2 ) ) ;
+ *
+ * @param {Iterable} iterable - The input iterable.
+ * @param {Number} n - The number of elements to exclude from the output.
+ * @returns {Iterator}
+ */
 export function* trunc ( iterable , n ) {
 
 	if ( n < 0 ) {
