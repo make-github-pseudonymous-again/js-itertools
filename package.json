@@ -26,8 +26,8 @@
     "url": "https://github.com/aureooms/es-itertools/issues"
   },
   "scripts": {
-    "test": "./node_modules/.bin/ava ./test/src --concurrency 4",
-    "cover": "./node_modules/.bin/nyc --reporter=lcov npm test"
+    "test": "ava ./test/src --concurrency 4",
+    "cover": "nyc --reporter=lcov npm test"
   },
   "main": "src/index.js",
   "dependencies": {},
