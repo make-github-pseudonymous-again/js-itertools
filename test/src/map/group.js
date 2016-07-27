@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { list , map , group , repeat , next , range } from '../../..' ;
+import { list , map , group , repeat , ncycle , next , range } from '../../..' ;
 import { identity } from 'aureooms-js-operator' ;
 
 test( "group", t => {
@@ -52,6 +52,40 @@ test( "group", t => {
 			[0, ["A","A","B","B"] ],
 			[1, ["C","C"] ]
 		]
+	);
+
+});
+
+test( "group keys", t => {
+
+	const x = ( key, iterable, expected ) => {
+
+		t.deepEqual( list( map( ( [ k , g ] ) => k , group( key , iterable ) ) ), expected );
+
+	};
+
+	x( identity, "", [] );
+
+	x(
+		identity,
+		"AAAAAABBBBCCCCAABBCC",
+		list("ABCABC")
+	);
+
+	x(
+		function ( item ) {
+			return item.charCodeAt(0) - 65;
+		},
+		"AAAAAABBBBCCCCAABBCC",
+		list( ncycle( range( 3 ) , 2 ) )
+	);
+
+	x(
+		function ( item ) {
+			return Math.floor( ( item.charCodeAt(0) - 65 ) / 2 );
+		},
+		"AAAAAABBBBCCCCAABBCC",
+		list( ncycle( range( 2 ) , 2 ) )
 	);
 
 });
