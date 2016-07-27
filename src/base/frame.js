@@ -19,8 +19,8 @@ export function* frame ( iterable , n ) {
 
 	// Could have an implementation using a deque
 	// that doesn't slice (and thus allocate a new
-	// vector everytime). Though the yieded object
-	// cannot be modified by the caller in this case.
+	// vector everytime). Though the yield object
+	// could not be modified by the caller in that case.
 
 	const iterator = iter( iterable ) ;
 

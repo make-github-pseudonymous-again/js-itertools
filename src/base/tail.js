@@ -14,9 +14,12 @@ import { drop } from './drop' ;
  * @param {Number} n - The number of elements to include in the output.
  * @returns {Array} - The last <code>n</code> elements of the input iterable.
  */
-export function tail ( iterable , n ) {
+export function* tail ( iterable , n ) {
 
-	if ( n < 0 ) return drop( iterable , -n ) ;
+	if ( n < 0 ) {
+		yield* drop( iterable , -n ) ;
+		return ;
+	}
 
 	const iterator = iter( iterable ) ;
 
@@ -25,7 +28,10 @@ export function tail ( iterable , n ) {
 
 	while ( n --> 0 ) {
 		const e = iterator.next( ) ;
-		if ( e.done ) return buffer ;
+		if ( e.done ) {
+			yield* buffer ;
+			return ;
+		}
 		buffer.push( e.value ) ;
 	}
 
@@ -34,6 +40,6 @@ export function tail ( iterable , n ) {
 		buffer.shift() ;
 	}
 
-	return buffer ;
+	yield* buffer ;
 
 }
