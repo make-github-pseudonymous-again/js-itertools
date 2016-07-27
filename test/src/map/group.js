@@ -1,13 +1,13 @@
 import test from 'ava' ;
 
-import { list , group } from '../../..' ;
+import { list , map , group } from '../../..' ;
 import { identity } from 'aureooms-js-operator' ;
 
 test( "group", t => {
 
 	const x = ( key, iterable, expected ) => {
 
-		t.deepEqual( list( group( key , iterable ) ), expected );
+		t.deepEqual( list( map( ( [ k , g ] ) => [ k , list( g ) ] , group( key , iterable ) ) ), expected );
 
 	};
 
@@ -56,3 +56,6 @@ test( "group", t => {
 
 });
 
+//test( 'group for infinite sequence of 0' , t => {
+
+//} );

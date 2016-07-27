@@ -4,6 +4,14 @@ import { iter } from '..' ;
  * Yields elements of the input iterable by grouping them into tuples
  * consecutive elements from the same equivalence class.
  *
+ * @example
+ * // A B C D A B
+ * list( map( ( k , g ) => k , groupby('AAAABBBCCDAABBB') ) )
+ *
+ * @example
+ * // AAAA BBB CC D
+ * list( map( ( k , g ) => list( g ) , groupby('AAAABBBCCD') ) )
+ *
  * @param {Function} key - The function used to determine the equivalence class
  * of an element.
  * @param {Iterable} iterable - The input iterable.
