@@ -60,7 +60,7 @@ test( 'group for infinite sequence of something' , t => {
 
 	const v = Math.random( ) ;
 
-	[ k , g ] = next( group( identity , repeat( v ) ) ) ;
+	const [ k , g ] = next( group( identity , repeat( v ) ) ) ;
 
 	t.deepEqual( k , v ) ;
 

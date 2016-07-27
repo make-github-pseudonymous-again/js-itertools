@@ -25,42 +25,48 @@ export function* group ( key , iterable ) {
 
 	if ( first.done ) return ;
 
-	let item = first.value ;
-	let nextkey = key( item ) ;
+	let currval = first.value ;
+	let currkey = key( currval ) ;
 
-	let currkey , buffer ;
+	let tgtkey ;
 
-	grouping : while ( true ) {
-
-		currkey = nextkey ;
-		buffer = [ item ] ;
+	const grouper = function* ( ) {
 
 		while ( true ) {
 
-			let current = iterator.next() ;
+			yield currval ;
 
-			if ( current.done ) break grouping ;
+			let event = iterator.next( ) ;
+			if ( event.done ) return ;
 
-			item = current.value ;
+			currval = event.value ;
+			currkey = key( currval ) ;
 
-			nextkey = key( item ) ;
-
-			if ( nextkey !== currkey ) {
-
-				yield [ currkey , buffer ] ;
-				continue grouping ;
-
-			}
-
-			buffer.push( item ) ;
+			if ( currkey !== tgtkey ) return ;
 
 		}
 
-		break grouping ;
+	} ;
+
+	while ( true ) {
+
+		tgtkey = currkey ;
+
+		const g = grouper( ) ;
+
+		yield [ tgtkey , g ] ;
+
+		while ( currkey === tgtkey ) {
+
+			let event = iterator.next( ) ;
+			if ( event.done ) return ;
+
+			currval = event.value ;
+			currkey = key( currval ) ;
+
+		}
 
 	}
-
-	yield [ currkey , buffer ] ;
 
 }
 
