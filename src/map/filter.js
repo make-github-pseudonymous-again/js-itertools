@@ -22,7 +22,7 @@ export function* filter ( predicate , iterable ) {
 }
 
 /**
- * @function filtertrue
  * Same as {@link filter}.
+ * @function filtertrue
  */
 export const filtertrue = filter ;

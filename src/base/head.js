@@ -1,7 +1,7 @@
 import { take } from './take' ;
 
 /**
- * @function head
  * Same as {@link take}.
+ * @function head
  */
 export const head = take ;
