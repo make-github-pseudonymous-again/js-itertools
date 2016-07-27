@@ -28,9 +28,7 @@ export function* group ( key , iterable ) {
 	let currval = first.value ;
 	let currkey = key( currval ) ;
 
-	let tgtkey ;
-
-	const grouper = function* ( ) {
+	const grouper = function* ( tgtkey ) {
 
 		while ( true ) {
 
@@ -50,9 +48,9 @@ export function* group ( key , iterable ) {
 
 	while ( true ) {
 
-		tgtkey = currkey ;
+		const tgtkey = currkey ;
 
-		const g = grouper( ) ;
+		const g = grouper( tgtkey ) ;
 
 		yield [ tgtkey , g ] ;
 
