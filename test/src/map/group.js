@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { list , map , group } from '../../..' ;
+import { list , map , group , repeat , next , range } from '../../..' ;
 import { identity } from 'aureooms-js-operator' ;
 
 test( "group", t => {
@@ -56,6 +56,14 @@ test( "group", t => {
 
 });
 
-//test( 'group for infinite sequence of 0' , t => {
+test( 'group for infinite sequence of something' , t => {
 
-//} );
+	const v = Math.random( ) ;
+
+	[ k , g ] = next( group( identity , repeat( v ) ) ) ;
+
+	t.deepEqual( k , v ) ;
+
+	for ( let i of range( 1000 ) ) t.deepEqual( next( g ) , v ) ;
+
+} );
