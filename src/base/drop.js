@@ -15,16 +15,15 @@ import { tail } from './tail' ;
  * @param {Number} n - The number of elements to drop.
  * @returns {Iterator}
  */
-export function drop ( iterable , n ) {
+export function* drop ( iterable , n ) {
 
-	if ( n < 0 ) return tail( iterable , -n ) ;
+	if ( n < 0 ) {
+		yield* tail( iterable , -n ) ;
+		return ;
+	}
 
-	return ( function* ( ) {
-
-		const iterator = iter( iterable ) ;
-		consume( iterator , n ) ;
-		yield* iterator ;
-
-	} )( ) ;
+	const iterator = iter( iterable ) ;
+	consume( iterator , n ) ;
+	yield* iterator ;
 
 }
