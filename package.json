@@ -30,7 +30,9 @@
     "cover": "nyc --reporter=lcov npm test"
   },
   "main": "src/index.js",
-  "dependencies": {},
+  "dependencies": {
+    "aureooms-js-collections": "^1.0.0"
+  },
   "devDependencies": {
     "aureooms-js-compare": "^1.4.5",
     "aureooms-js-operator": "^1.0.2",
