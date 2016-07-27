@@ -41,7 +41,7 @@ export function* permutations ( iterable , r ) {
 
 			if ( cycles[i] === 0 ) {
 
-				// use deque
+				// could be costly
 				indices.push( indices.splice( i , 1 )[0] ) ;
 
 				cycles[i] = len - i ;

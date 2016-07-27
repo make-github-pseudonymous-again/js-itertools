@@ -1,3 +1,5 @@
+import { deque } from 'aureooms-js-collections' ;
+
 import { iter } from './iter' ;
 import { take } from './take' ;
 
@@ -21,20 +23,24 @@ export function* trunc ( iterable , n ) {
 		return ;
 	}
 
+	if ( n === 0 ) {
+		yield* iterable ;
+		return ;
+	}
+
 	const iterator = iter( iterable ) ;
 
-	// use real deque here
-	const buffer = [ ] ;
+	const buffer = deque( null , n ) ;
 
 	while ( n --> 0 ) {
 		const e = iterator.next( ) ;
 		if ( e.done ) return ;
-		buffer.push( e.value ) ;
+		buffer.append( e.value ) ;
 	}
 
 	for ( const value of iterator ) {
-		buffer.push( value ) ;
-		yield buffer.shift() ;
+		yield buffer.popleft() ;
+		buffer.append( value ) ;
 	}
 
 }
