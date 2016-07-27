@@ -3,7 +3,9 @@ import { list } from './list' ;
 import { map } from '../map/map' ;
 
 /**
- * Returns <code>n</code> copies of the input iterable.
+ * Returns <code>n</code> copies of the input iterable. Note that if the input
+ * iterable is an iterator, then it must be discarded by the caller after
+ * calling tee.
  *
  * @param {Iterable} iterable - The input iterable.
  * @param {Number} n - The number of copies to make.

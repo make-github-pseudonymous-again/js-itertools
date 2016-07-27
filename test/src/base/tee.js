@@ -1,9 +1,8 @@
 import test from 'ava' ;
 
+import { list , map , count , range , head , tee } from '../../..' ;
 
-	import { list , map , tee } from '../../..' ;
 test( "tee", t => {
-
 
 	const x = ( iterable , n , expected ) => {
 		t.deepEqual( list( map( list , tee( iterable , n ) ) ) , expected ) ;
@@ -20,3 +19,12 @@ test( "tee", t => {
 	x( [5, 7], 2, [[5, 7],[5, 7]] );
 
 });
+
+test( "tee of infinite sequence" , t => {
+
+	for ( const it of tee( count( ) , 10 ) ) {
+		t.deepEqual( list( head( it , 1000 ) ) , list( range( 1000 ) ) ) ;
+		t.deepEqual( list( head( it , 100 ) ) , list( range( 1000, 1100 ) ) ) ;
+	}
+
+} ) ;
