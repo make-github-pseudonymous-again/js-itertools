@@ -17,7 +17,7 @@
 		"aureooms-js-functools": "^2.0.3",
 		"aureooms-js-operator": "^1.0.2",
 		"aureooms-js-sort": "^6.0.0",
-		"aureooms-node-package": "^5.0.2"
+		"aureooms-node-package": "^7.0.0"
 	},
 	"dependencies": {},
 	"keywords": [
