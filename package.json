@@ -46,7 +46,7 @@
     "codeclimate-test-reporter": "^0.3.3",
     "coveralls": "^2.11.12",
     "esdoc": "^0.4.8",
-    "nyc": "^7.1.0"
+    "nyc": "^8.1.0"
   },
   "ava": {
     "require": [
