@@ -4,12 +4,12 @@ or [npm](https://github.com/npm/npm).
 
 ### jspm
 ```terminal
-jspm install github:aureooms/es-itertools
+jspm install github:aureooms/js-itertools
 # or
-jspm install npm:aureooms-es-itertools
+jspm install npm:aureooms-js-itertools
 ```
 
 ### npm
 ```terminal
-npm install aureooms-es-itertools --save
+npm install aureooms-js-itertools --save
 ```

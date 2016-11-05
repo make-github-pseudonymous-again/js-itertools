@@ -1,5 +1,5 @@
 {
-  "name": "aureooms-es-itertools",
+  "name": "aureooms-js-itertools",
   "version": "2.3.1",
   "author": "aureooms",
   "license": "AGPL-3.0",
@@ -17,13 +17,13 @@
     "product",
     "reduce"
   ],
-  "homepage": "https://aureooms.github.io/es-itertools",
+  "homepage": "https://aureooms.github.io/js-itertools",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aureooms/es-itertools"
+    "url": "https://github.com/aureooms/js-itertools"
   },
   "bugs": {
-    "url": "https://github.com/aureooms/es-itertools/issues"
+    "url": "https://github.com/aureooms/js-itertools/issues"
   },
   "scripts": {
     "test": "ava ./test/src --concurrency 4",
