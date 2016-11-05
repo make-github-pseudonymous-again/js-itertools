@@ -1,9 +1,44 @@
 {
   "name": "aureooms-js-itertools",
-  "version": "2.3.1",
-  "author": "aureooms",
-  "license": "AGPL-3.0",
   "description": "Iterable and iterator library for JavaScript",
+  "version": "2.3.1",
+  "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
+  "ava": {
+    "require": [
+      "babel-polyfill",
+      "babel-register"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ],
+    "env": {
+      "development": {
+        "sourceMaps": "inline"
+      }
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/aureooms/js-itertools/issues"
+  },
+  "dependencies": {
+    "aureooms-js-collections": "^1.0.0"
+  },
+  "devDependencies": {
+    "aureooms-js-compare": "^1.4.5",
+    "aureooms-js-operator": "^1.0.2",
+    "aureooms-js-predicate": "^2.0.2",
+    "ava": "^0.16.0",
+    "babel-cli": "^6.16.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-latest": "^6.16.0",
+    "codeclimate-test-reporter": "^0.4.0",
+    "coveralls": "^2.11.14",
+    "esdoc": "^0.4.8",
+    "nyc": "^8.3.1"
+  },
+  "homepage": "https://aureooms.github.io/js-itertools",
   "keywords": [
     "chain",
     "combinations",
@@ -17,51 +52,16 @@
     "product",
     "reduce"
   ],
-  "homepage": "https://aureooms.github.io/js-itertools",
+  "license": "AGPL-3.0",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/aureooms/js-itertools"
   },
-  "bugs": {
-    "url": "https://github.com/aureooms/js-itertools/issues"
-  },
   "scripts": {
-    "test": "ava ./test/src --concurrency 4",
-    "cover": "nyc --reporter=lcov npm test"
-  },
-  "main": "src/index.js",
-  "dependencies": {
-    "aureooms-js-collections": "^1.0.0"
-  },
-  "devDependencies": {
-    "aureooms-js-compare": "^1.4.5",
-    "aureooms-js-operator": "^1.0.2",
-    "aureooms-js-predicate": "^2.0.2",
-    "ava": "^0.16.0",
-    "babel-cli": "^6.11.4",
-    "babel-plugin-transform-runtime": "^6.12.0",
-    "babel-polyfill": "^6.13.0",
-    "babel-preset-es2015": "^6.13.2",
-    "babel-preset-stage-0": "^6.5.0",
-    "codeclimate-test-reporter": "^0.4.0",
-    "coveralls": "^2.11.12",
-    "esdoc": "^0.4.8",
-    "nyc": "^8.1.0"
-  },
-  "ava": {
-    "require": [
-      "babel-polyfill",
-      "babel-register"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "es2015"
-    ],
-    "env": {
-      "development": {
-        "sourceMaps": "inline"
-      }
-    }
+    "build": "babel src -d lib",
+    "cover": "nyc --reporter=lcov npm test",
+    "prepublish": "npm run build",
+    "test": "ava ./test/src --concurrency 8"
   }
 }

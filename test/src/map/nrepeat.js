@@ -1,6 +1,7 @@
 import test from 'ava' ;
 
-	import { list, nrepeat } from '../../..' ;
+import { list, nrepeat } from '../../..' ;
+
 test( "nrepeat", t => {
 
 	const x = function ( item, times, expected ) {

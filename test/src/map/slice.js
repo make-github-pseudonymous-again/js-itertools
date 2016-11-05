@@ -1,6 +1,7 @@
 import test from 'ava' ;
 
-	import { list , range , slice } from '../../..' ;
+import { list , range , slice } from '../../..' ;
+
 test( "slice", t => {
 
 	const x = ( start, stop, step ) => {

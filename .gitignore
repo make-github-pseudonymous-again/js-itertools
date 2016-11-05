@@ -1,5 +1,6 @@
 # Dependency directory
 node_modules
+jspm_packages
 
 # Coverage directory used by nyc
 coverage

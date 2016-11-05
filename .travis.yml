@@ -1,3 +1,13 @@
+env:
+  - CXX=g++-4.8
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+
 language: node_js
 
 node_js:
@@ -10,6 +20,6 @@ script:
   - npm run cover
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash) || true
-  - ./node_modules/.bin/coveralls                 < coverage/lcov.info || true
-  - ./node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info || true
+  - bash <(curl -s https://codecov.io/bash)            || true
+  - npm coveralls                 < coverage/lcov.info || true
+  - npm codeclimate-test-reporter < coverage/lcov.info || true

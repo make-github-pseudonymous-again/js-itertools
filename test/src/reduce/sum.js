@@ -1,6 +1,7 @@
 import test from 'ava' ;
 
-	import { sum } from '../../..' ;
+import { sum } from '../../..' ;
+
 test( 'sum' , t => {
 
 

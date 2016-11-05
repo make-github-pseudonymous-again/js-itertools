@@ -24,9 +24,9 @@ cycle( chain( [ [ 0 , 1 , 2 ] , [ 3 , 4 , 5 ] ] ) ) ; // 0 1 2 3 4 5 0 1 ...
   - https://docs.python.org/3/library/itertools.html
   - http://mochi.github.io/mochikit/doc/html/MochiKit/Iter.html
   - https://github.com/cweider/js-itertools
-  - http://itertoolsjs.com/
+  - http://itertoolsjs.com
   - https://github.com/thegoleffect/node-itertools
-  - http://rfw.name/sloth.js/
+  - http://rfw.name/sloth.js
   - https://github.com/lodash/lodash
   - https://github.com/erikrose/more-itertools
   - https://github.com/StreetStrider/aux.js
