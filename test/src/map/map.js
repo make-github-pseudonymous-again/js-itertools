@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { list , map } from '../../..' ;
+import { list , map } from '../../../src' ;
 
 test( "map", t => {
 

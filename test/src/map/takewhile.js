@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { list , range, takewhile } from '../../..' ;
+import { list , range, takewhile } from '../../../src' ;
 import { lt } from 'aureooms-js-predicate' ;
 
 test( "takewhile", t => {

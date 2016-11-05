@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { list , head , repeat } from '../../..' ;
+import { list , head , repeat } from '../../../src' ;
 
 test( "repeat", t => {
 

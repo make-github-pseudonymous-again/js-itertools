@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { list , range , slice } from '../../..' ;
+import { list , range , slice } from '../../../src' ;
 
 test( "slice", t => {
 

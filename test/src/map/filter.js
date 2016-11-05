@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { list , filter } from '../../..' ;
+import { list , filter } from '../../../src' ;
 import { gt } from 'aureooms-js-predicate' ;
 
 test("filter", t => {

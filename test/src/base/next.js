@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { range , next , StopIteration } from '../../..' ;
+import { range , next , StopIteration } from '../../../src' ;
 
 test( "next" , t => {
 

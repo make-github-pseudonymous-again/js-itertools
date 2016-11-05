@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { list , product } from '../../..' ;
+import { list , product } from '../../../src' ;
 
 test( "product", t => {
 

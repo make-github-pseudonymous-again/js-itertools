@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { cycle , next } from '../../..' ;
+import { cycle , next } from '../../../src' ;
 
 test( 'cycle (empty)' , t => {
 

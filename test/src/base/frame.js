@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { range , frame , zip , list } from '../../..' ;
+import { range , frame , zip , list } from '../../../src' ;
 
 test( "frame" , t => {
 

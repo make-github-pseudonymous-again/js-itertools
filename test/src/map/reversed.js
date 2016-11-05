@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { list , reversed } from '../../..' ;
+import { list , reversed } from '../../../src' ;
 
 test( "reversed", t => {
 

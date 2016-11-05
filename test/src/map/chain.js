@@ -1,5 +1,5 @@
 import test from 'ava' ;
-import { list , chain } from '../../..' ;
+import { list , chain } from '../../../src' ;
 
 test( "chain", t => {
 

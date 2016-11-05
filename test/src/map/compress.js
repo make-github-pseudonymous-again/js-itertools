@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { list , compress } from '../../..' ;
+import { list , compress } from '../../../src' ;
 
 test( "compress", t => {
 

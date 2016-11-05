@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { count , next } from '../../..' ;
+import { count , next } from '../../../src' ;
 
 test( 'count( 0 , 1 )' , t => {
 

@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { reduce } from '../../..' ;
+import { reduce } from '../../../src' ;
 
 test( 'reduce' , t => {
 

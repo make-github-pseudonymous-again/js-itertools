@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { list , roundrobin } from '../../..' ;
+import { list , roundrobin } from '../../../src' ;
 
 test( "roundrobin", t => {
 

@@ -2,7 +2,7 @@ import test from 'ava' ;
 
 import { increasing , decreasing } from 'aureooms-js-compare' ;
 
-import { min } from '../../..' ;
+import { min } from '../../../src' ;
 
 test( 'min' , t => {
 

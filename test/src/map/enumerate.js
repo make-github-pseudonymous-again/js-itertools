@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { list , enumerate } from '../../..' ;
+import { list , enumerate } from '../../../src' ;
 
 test( "enumerate", t => {
 

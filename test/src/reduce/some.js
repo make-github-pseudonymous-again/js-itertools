@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { some } from '../../..' ;
+import { some } from '../../../src' ;
 
 test('some', t => {
 

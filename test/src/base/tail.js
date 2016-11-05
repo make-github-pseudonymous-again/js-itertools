@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { range , tail , list , count } from '../../..' ;
+import { range , tail , list , count } from '../../../src' ;
 
 test( "tail" , t => {
 

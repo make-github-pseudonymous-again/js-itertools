@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { list, nrepeat } from '../../..' ;
+import { list, nrepeat } from '../../../src' ;
 
 test( "nrepeat", t => {
 
