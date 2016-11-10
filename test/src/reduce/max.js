@@ -26,4 +26,9 @@ test( 'max' , t => {
 	x( [2, 1, 3], decreasing, 1 );
 	x( [3, 1, 2], decreasing, 1 );
 
+	// sentinel
+	const sentinel = {} ;
+	t.is(max(increasing, [], sentinel), sentinel, 'sentinel increasing');
+	t.is(max(decreasing, [], sentinel), sentinel, 'sentinel decreasing');
+
 });

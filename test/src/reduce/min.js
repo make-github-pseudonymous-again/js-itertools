@@ -26,5 +26,10 @@ test( 'min' , t => {
 	x( [2, 1, 3], decreasing, 3 );
 	x( [3, 1, 2], decreasing, 3 );
 
+	// sentinel
+	const sentinel = {} ;
+	t.is(min(increasing, [], sentinel), sentinel, 'sentinel increasing');
+	t.is(min(decreasing, [], sentinel), sentinel, 'sentinel decreasing');
+
 });
 

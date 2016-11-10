@@ -18,13 +18,13 @@ import { iter } from '../base/iter' ;
  * @returns {Object} The largest element of <code>iterable</code> according to
  * <code>compare</code>.
  */
-export function max ( compare , iterable ) {
+export function max ( compare , iterable , dflt = undefined ) {
 
 	let iterator = iter( iterable ) ;
 
 	let first = iterator.next() ;
 
-	if ( first.done ) return undefined ;
+	if ( first.done ) return dflt ;
 
 	let largest = first.value ;
 
