@@ -23,7 +23,7 @@
     "url": "https://github.com/aureooms/js-itertools/issues"
   },
   "dependencies": {
-    "aureooms-js-collections": "^1.0.0"
+    "aureooms-js-collections": "^2.0.0"
   },
   "devDependencies": {
     "aureooms-js-compare": "^1.4.5",
