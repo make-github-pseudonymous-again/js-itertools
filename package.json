@@ -23,7 +23,7 @@
     "url": "https://github.com/aureooms/js-itertools/issues"
   },
   "dependencies": {
-    "aureooms-js-collections": "^2.0.0"
+    "aureooms-js-collections-deque": "^3.1.0"
   },
   "devDependencies": {
     "aureooms-js-compare": "^1.4.5",
@@ -34,7 +34,7 @@
     "babel-polyfill": "^6.16.0",
     "babel-preset-latest": "^6.16.0",
     "codeclimate-test-reporter": "^0.4.0",
-    "coveralls": "^2.11.14",
+    "coveralls": "^2.11.15",
     "esdoc": "^0.4.8",
     "nyc": "^9.0.1"
   },
