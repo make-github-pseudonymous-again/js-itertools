@@ -36,7 +36,7 @@
     "codeclimate-test-reporter": "^0.4.0",
     "coveralls": "^2.11.15",
     "esdoc": "^0.4.8",
-    "nyc": "^9.0.1"
+    "nyc": "^10.0.0"
   },
   "homepage": "https://aureooms.github.io/js-itertools",
   "keywords": [
