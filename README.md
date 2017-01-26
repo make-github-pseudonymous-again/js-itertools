@@ -1,5 +1,7 @@
 # [aureooms/js-itertools](https://aureooms.github.io/js-itertools)
 
+<img src="http://www.explainxkcd.com//wiki/images/f/fd/python.png" width="864">
+
 Iterable and iterator library for JavaScript.
 Parent is [aureooms/js-library](https://github.com/aureooms/js-library).
 See [documentation](https://aureooms.github.io/js-itertools/index.html).
