@@ -1,10 +1,10 @@
-# [aureooms/js-itertools](https://aureooms.github.io/js-itertools)
+# [@aureooms/js-itertools](https://aureooms.github.io/js-itertools)
 
 <img src="http://www.explainxkcd.com//wiki/images/f/fd/python.png" width="864">
 
-Iterable and iterator library for JavaScript.
-Parent is [aureooms/js-library](https://github.com/aureooms/js-library).
-See [documentation](https://aureooms.github.io/js-itertools/index.html).
+Python's iterable and iterator library for JavaScript.
+See [docs](https://aureooms.github.io/js-itertools).
+Parent is [@aureooms/js-library](https://github.com/aureooms/js-library).
 
 ```js
 cycle( chain( [ [ 0 , 1 , 2 ] , [ 3 , 4 , 5 ] ] ) ) ; // 0 1 2 3 4 5 0 1 ...
