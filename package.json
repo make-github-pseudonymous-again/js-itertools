@@ -1,5 +1,5 @@
 {
-  "name": "aureooms-js-itertools",
+  "name": "@aureooms/js-itertools",
   "description": "Iterable and iterator library for JavaScript",
   "version": "3.1.1",
   "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
@@ -23,12 +23,12 @@
     "url": "https://github.com/aureooms/js-itertools/issues"
   },
   "dependencies": {
-    "aureooms-js-collections-deque": "^3.1.0"
+    "@aureooms/js-collections-deque": "^3.1.0"
   },
   "devDependencies": {
-    "aureooms-js-compare": "^1.4.5",
-    "aureooms-js-operator": "^1.0.2",
-    "aureooms-js-predicate": "^2.0.2",
+    "@aureooms/js-compare": "^1.4.5",
+    "@aureooms/js-operator": "^1.0.2",
+    "@aureooms/js-predicate": "^2.0.2",
     "ava": "^0.18.0",
     "babel-cli": "^6.18.0",
     "babel-polyfill": "^6.16.0",
