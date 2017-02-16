@@ -1,6 +1,6 @@
 import test from 'ava' ;
 
-import { increasing , decreasing } from 'aureooms-js-compare' ;
+import { increasing , decreasing } from '@aureooms/js-compare' ;
 
 import { max } from '../../../src' ;
 

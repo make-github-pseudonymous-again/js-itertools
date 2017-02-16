@@ -1,7 +1,7 @@
 import test from 'ava' ;
 
 import { list , starmap } from '../../../src' ;
-import { mul } from 'aureooms-js-operator' ;
+import { mul } from '@aureooms/js-operator' ;
 
 test( "starmap", t => {
 

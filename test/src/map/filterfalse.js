@@ -1,7 +1,7 @@
 import test from 'ava' ;
 
 import { list , filterfalse } from '../../../src' ;
-import { le } from 'aureooms-js-predicate' ;
+import { le } from '@aureooms/js-predicate' ;
 
 test("filterfalse", t => {
 

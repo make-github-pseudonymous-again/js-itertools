@@ -1,7 +1,7 @@
 import test from 'ava' ;
 
 import { len , list , map , zip , min , take } from '../../../src' ;
-import { increasing } from 'aureooms-js-compare' ;
+import { increasing } from '@aureooms/js-compare' ;
 
 test( "zip", t => {
 
