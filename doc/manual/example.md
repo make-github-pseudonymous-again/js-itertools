@@ -35,13 +35,13 @@ some( [ true , true , false , true , ... ] , 3 ) ; // T
 
 some( [ true , false , true , false* ] , 3 ) ; // F
 
-import compare from "aureooms-js-compare" ;
+import compare from "@aureooms/js-compare" ;
 
 min( compare.increasing , [ 2 , 1 , 3 ] ) ; // 1
 
 max( compare.increasing , [ 2 , 1 , 3 ] ) ; // 3
 
-import operator from "aureooms-js-operator" ;
+import operator from "@aureooms/js-operator" ;
 
 reduce( operator.mul , range( 2 , 6 ) , 1 ) ; // 120
 
@@ -55,7 +55,7 @@ zip( [ "ABC" , "XY" ] ) ; // AX BY
 
 compress( count( 0 , 1 ) , cycle( [ true , false ] ) ) ; // 0 2 4 6 ...
 
-import predicate from "aureooms-js-predicate" ;
+import predicate from "@aureooms/js-predicate" ;
 
 takewhile( predicate.le( 5 ) , count( 0 , 1 ) ) ; // 0 1 2 3 4 5
 

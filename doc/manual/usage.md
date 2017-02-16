@@ -6,14 +6,14 @@ Configure [jspm](http://jspm.io) to transpile all the code. Then
 ```js
 let itertools = require( 'github:aureooms/js-itertools' ) ;
 // or
-import itertools from 'aureooms-js-itertools' ;
+import itertools from '@aureooms/js-itertools' ;
 ```
 
 ### npm
 Configure your code to transpile dependencies on the fly (for example with
 [babel-register](https://babeljs.io/docs/usage/require)). Then you can
 ```js
-import itertools from 'aureooms-js-itertools' ;
+import itertools from '@aureooms/js-itertools' ;
 ```
 
 Additionally, for the browser, you can configure
