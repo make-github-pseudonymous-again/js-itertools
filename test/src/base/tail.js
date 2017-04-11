@@ -15,5 +15,6 @@ test( "tail" , t => {
 test( "construct tail of infinite generator" , t => {
 
 	tail( count( ) , 10 ) ;
+	t.pass();
 
 } ) ;
