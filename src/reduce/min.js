@@ -15,6 +15,8 @@ import { iter } from '../base/iter' ;
  * parameter is, respectively, less than, equal to, or greater than the second
  * parameter.
  * @param {Iterable} iterable - The input iterable.
+ * @param {Object} [dflt=undefined] - The default value to return in the case
+ * that the input iterable is empty.
  * @returns {Object} The smallest element of <code>iterable</code> according to
  * <code>compare</code>.
  */
