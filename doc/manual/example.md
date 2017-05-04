@@ -1,3 +1,5 @@
+# Example
+
 ```js
 range( 3 ) ; // 0 1 2
 
@@ -98,4 +100,6 @@ combinationswithrepetition( range( 3 ) , 2 ) ; // 00 01 02 11 12 22
 reversed( "ABC" ) ; // C B A
 
 sorted( compare.increasing , [ 3 , 1 , 2 ] ) ; // 1 2 3
+
+closure( x => x + 1 , 0 ) ; // 0 1 2 3 ...
 ```

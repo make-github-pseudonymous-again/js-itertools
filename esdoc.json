@@ -11,7 +11,6 @@
     "source": "./test/src"
   },
   "manual": {
-    "overview": ["./doc/manual/overview.md"],
     "installation": ["./doc/manual/installation.md"],
     "usage": ["./doc/manual/usage.md"],
     "example": ["./doc/manual/example.md"]

@@ -1,3 +1,5 @@
+# Installation
+
 Can be managed through
 [jspm](http://jspm.io)
 or [npm](https://github.com/npm/npm).
