@@ -35,7 +35,7 @@
     "babel-preset-latest": "^6.24.1",
     "codeclimate-test-reporter": "^0.4.1",
     "coveralls": "^2.13.0",
-    "esdoc": "^0.5.2",
+    "esdoc": "^1.0.0-alpha.1",
     "nyc": "^10.2.0"
   },
   "homepage": "https://aureooms.github.io/js-itertools",
