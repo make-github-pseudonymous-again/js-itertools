@@ -1,7 +1,7 @@
 {
   "name": "@aureooms/js-itertools",
   "description": "Iterable and iterator library for JavaScript",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
   "ava": {
     "require": [
