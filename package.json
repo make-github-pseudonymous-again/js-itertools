@@ -11,7 +11,14 @@
   },
   "babel": {
     "presets": [
-      "latest"
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
     ],
     "env": {
       "development": {
@@ -29,14 +36,14 @@
     "@aureooms/js-compare": "^1.4.5",
     "@aureooms/js-operator": "^1.0.2",
     "@aureooms/js-predicate": "^2.0.2",
-    "ava": "^0.22.0",
+    "ava": "^0.24.0",
     "babel-cli": "^6.26.0",
     "babel-polyfill": "^6.26.0",
-    "babel-preset-latest": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
     "codeclimate-test-reporter": "^0.5.0",
-    "coveralls": "^2.13.1",
-    "esdoc": "^1.0.2",
-    "nyc": "^11.1.0"
+    "coveralls": "^3.0.0",
+    "esdoc": "^1.0.4",
+    "nyc": "^11.4.1"
   },
   "homepage": "https://aureooms.github.io/js-itertools",
   "keywords": [
@@ -59,9 +66,10 @@
     "url": "https://github.com/aureooms/js-itertools"
   },
   "scripts": {
-    "build": "babel src -d lib",
+    "build": "rm -rf lib && babel src -d lib",
     "cover": "nyc --reporter=lcov npm test",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
+    "release": "np",
     "test": "ava ./test/src --concurrency 8"
   }
 }
