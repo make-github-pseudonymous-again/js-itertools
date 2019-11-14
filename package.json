@@ -36,7 +36,7 @@
     "@aureooms/js-compare": "1.4.5",
     "@aureooms/js-operator": "1.0.2",
     "@aureooms/js-predicate": "2.0.2",
-    "ava": "0.25.0",
+    "ava": "2.4.0",
     "babel-cli": "6.26.0",
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.7.0",
