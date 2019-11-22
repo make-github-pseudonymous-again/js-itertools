@@ -4,21 +4,20 @@
   "version": "3.4.0",
   "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
   "ava": {
+    "sources": [
+      "src/**/*"
+    ],
+    "files": [
+      "test/src/**/*"
+    ],
     "require": [
-      "babel-polyfill",
-      "babel-register"
+      "@babel/polyfill",
+      "@babel/register"
     ]
   },
   "babel": {
     "presets": [
-      [
-        "env",
-        {
-          "targets": {
-            "node": "current"
-          }
-        }
-      ]
+      "@babel/preset-env"
     ],
     "env": {
       "development": {
@@ -30,21 +29,27 @@
     "url": "https://github.com/aureooms/js-itertools/issues"
   },
   "dependencies": {
-    "@aureooms/js-collections-deque": "^3.1.0"
+    "@aureooms/js-collections-deque": "^3.1.0",
+    "@aureooms/js-error": "^4.0.0"
   },
   "devDependencies": {
     "@aureooms/js-compare": "1.4.5",
     "@aureooms/js-operator": "1.0.2",
     "@aureooms/js-predicate": "2.0.2",
-    "ava": "0.25.0",
-    "babel-cli": "6.26.0",
-    "babel-polyfill": "6.26.0",
-    "babel-preset-env": "1.7.0",
+    "@babel/cli": "7.7.0",
+    "@babel/core": "7.7.2",
+    "@babel/polyfill": "7.7.0",
+    "@babel/preset-env": "7.7.1",
+    "@babel/register": "7.7.0",
+    "ava": "2.4.0",
     "codeclimate-test-reporter": "0.5.1",
-    "coveralls": "3.0.7",
+    "coveralls": "3.0.8",
     "esdoc": "1.1.0",
     "nyc": "14.1.1"
   },
+  "files": [
+    "lib"
+  ],
   "homepage": "https://aureooms.github.io/js-itertools",
   "keywords": [
     "chain",
@@ -70,6 +75,6 @@
     "cover": "nyc --reporter=lcov npm test",
     "prepare": "npm run build",
     "release": "np",
-    "test": "ava ./test/src --concurrency 8"
+    "test": "ava --concurrency 8"
   }
 }
