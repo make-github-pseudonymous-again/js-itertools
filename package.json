@@ -72,6 +72,7 @@
   "scripts": {
     "build": "rm -rf lib && babel src -d lib",
     "cover": "nyc --reporter=lcov npm test",
+    "esdoc": "esdoc",
     "prepare": "npm run build",
     "release": "np",
     "test": "ava --concurrency 8"
