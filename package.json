@@ -39,7 +39,7 @@
     "@babel/cli": "7.7.5",
     "@babel/core": "7.7.5",
     "@babel/polyfill": "7.7.0",
-    "@babel/preset-env": "7.7.5",
+    "@babel/preset-env": "7.7.6",
     "@babel/register": "7.7.4",
     "ava": "2.4.0",
     "coveralls": "3.0.9",
