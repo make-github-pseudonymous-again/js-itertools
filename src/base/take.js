@@ -1,5 +1,5 @@
-import { iter } from './iter' ;
-import { trunc } from './trunc' ;
+import {iter} from './iter';
+import {trunc} from './trunc';
 
 /**
  * Yields the first <code>n</code> elements of the input iterable. If
@@ -14,23 +14,21 @@ import { trunc } from './trunc' ;
  * @param {Number} n - The number of elements to include in the output.
  * @returns {Iterator} - The first <code>n</code> elements of the input iterable.
  */
-export function* take ( iterable , n ) {
-
-	if ( n < 0 ) {
-		yield* trunc( iterable , -n ) ;
-		return ;
+export function* take(iterable, n) {
+	if (n < 0) {
+		yield* trunc(iterable, -n);
+		return;
 	}
 
-	const iterator = iter( iterable ) ;
+	const iterator = iter(iterable);
 
-	while ( n --> 0 ) {
+	while (n-- > 0) {
+		const current = iterator.next();
 
-		const current = iterator.next() ;
+		if (current.done) {
+			return;
+		}
 
-		if ( current.done ) return ;
-
-		yield current.value ;
-
+		yield current.value;
 	}
-
 }

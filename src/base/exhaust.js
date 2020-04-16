@@ -9,8 +9,7 @@
  * @param {Iterator} iterator - The input iterator.
  *
  */
-export function exhaust ( iterator ) {
-
-	for ( let item of iterator ) ;
-
+export function exhaust(iterator) {
+	// eslint-disable-next-line no-empty,no-unused-vars,prettier/prettier
+	for (const item of iterator) {}
 }

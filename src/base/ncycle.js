@@ -10,19 +10,19 @@
  * @returns {Iterator}
  *
  */
-export function* ncycle ( iterable , n ) {
+export function* ncycle(iterable, n) {
+	const buffer = [];
 
-	let buffer = [ ] ;
-
-	for ( let item of iterable ) {
-
-		yield item ;
-		buffer.push( item ) ;
-
+	for (const item of iterable) {
+		yield item;
+		buffer.push(item);
 	}
 
-	if ( buffer.length === 0 ) return ;
+	if (buffer.length === 0) {
+		return;
+	}
 
-	while ( --n > 0 ) yield* buffer ;
-
+	while (--n > 0) {
+		yield* buffer;
+	}
 }

@@ -9,9 +9,8 @@
  * @param {Iterable} iterable - The input iterable.
  * @returns {Iterator}
  */
-export function* starmap ( callable , iterable ) {
-
-	for ( let args of iterable ) yield callable.apply( null , args ) ;
-	//for ( let args of iterable ) yield callable( ... ) ;
-
+export function* starmap(callable, iterable) {
+	for (const args of iterable) {
+		yield callable(...args);
+	}
 }

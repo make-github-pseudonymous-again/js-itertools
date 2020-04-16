@@ -1,4 +1,4 @@
-import { list , map , iter , _next , repeat , enumerate } from '..' ;
+import {list, map, iter, _next, repeat, enumerate} from '..';
 
 /**
  * Same as _zip, but continues to yield zipped tuples until the last iterable is
@@ -13,34 +13,34 @@ import { list , map , iter , _next , repeat , enumerate } from '..' ;
  * @returns {Iterator}
  *
  */
-export function* _ziplongest ( fillvalue, iterables ) {
+export function* _ziplongest(fillvalue, iterables) {
+	let counter = iterables.length;
 
-    let counter = iterables.length ;
-
-    if ( counter === 0 ) return ;
-
-    const filler = repeat( fillvalue ) ;
-
-    const iterators = list( map( iter , iterables ) ) ;
-
-    while ( true ) {
-
-	const buffer = [ ] ;
-
-	for ( const [ i , e ] of enumerate( map( _next , iterators ) ) ) {
-	    if ( e.done ) {
-		--counter ;
-		if ( counter === 0 ) return ;
-		iterators[i] = filler ;
-		buffer.push( fillvalue ) ;
-	    }
-	    else {
-		buffer.push( e.value ) ;
-	    }
+	if (counter === 0) {
+		return;
 	}
 
-	yield buffer ;
+	const filler = repeat(fillvalue);
 
-    }
+	const iterators = list(map(iter, iterables));
 
+	while (true) {
+		const buffer = [];
+
+		for (const [i, event] of enumerate(map(_next, iterators))) {
+			if (event.done) {
+				--counter;
+				if (counter === 0) {
+					return;
+				}
+
+				iterators[i] = filler;
+				buffer.push(fillvalue);
+			} else {
+				buffer.push(event.value);
+			}
+		}
+
+		yield buffer;
+	}
 }

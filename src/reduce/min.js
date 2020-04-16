@@ -1,4 +1,4 @@
-import { iter } from '../base/iter' ;
+import {iter} from '../base/iter';
 
 /**
  * Returns the smallest element of the input iterable according
@@ -20,26 +20,22 @@ import { iter } from '../base/iter' ;
  * @returns {Object} The smallest element of <code>iterable</code> according to
  * <code>compare</code>.
  */
-export function min ( compare , iterable , dflt = undefined ) {
+export function min(compare, iterable, dflt = undefined) {
+	const iterator = iter(iterable);
 
-	let iterator = iter( iterable ) ;
+	const first = iterator.next();
 
-	let first = iterator.next( ) ;
-
-	if ( first.done ) return dflt ;
-
-	let smallest = first.value ;
-
-	for ( let candidate of iterator ) {
-
-		if ( compare( candidate , smallest ) < 0 ) {
-
-			smallest = candidate ;
-
-		}
-
+	if (first.done) {
+		return dflt;
 	}
 
-	return smallest ;
+	let smallest = first.value;
 
+	for (const candidate of iterator) {
+		if (compare(candidate, smallest) < 0) {
+			smallest = candidate;
+		}
+	}
+
+	return smallest;
 }

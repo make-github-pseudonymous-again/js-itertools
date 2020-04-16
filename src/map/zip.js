@@ -1,4 +1,4 @@
-import { _zip } from './_zip' ;
+import {_zip} from './_zip';
 
 /**
  * Zips iterables together. Yields a tuple containing the first element of each
@@ -13,8 +13,6 @@ import { _zip } from './_zip' ;
  * @returns {Iterator}
  *
  */
-export function zip ( ...iterables ) {
-
-	return _zip( iterables ) ;
-
+export function zip(...iterables) {
+	return _zip(iterables);
 }

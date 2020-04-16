@@ -1,5 +1,5 @@
-import { iter } from './iter' ;
-import { range } from './range' ;
+import {iter} from './iter';
+import {range} from './range';
 
 /**
  * Yields elements of the input iterable by grouping them into tuples of a
@@ -9,36 +9,33 @@ import { range } from './range' ;
  * @param {Number} n - The size of the yielded tuples.
  * @returns {Iterator}
  */
-export function* by ( iterable , n ) {
+export function* by(iterable, n) {
+	const iterator = iter(iterable);
 
-	const iterator = iter( iterable ) ;
+	while (true) {
+		const tuple = [];
 
-	while ( true ) {
+		for (const i of range(n)) {
+			const current = iterator.next();
 
-		const tuple = [ ] ;
+			if (current.done) {
+				if (i === 0) {
+					return;
+				}
 
-		for ( const i of range( n ) ) {
+				// eslint-disable-next-line no-unused-vars
+				for (const j of range(n - i)) {
+					tuple.push(undefined);
+				}
 
-			const current = iterator.next( ) ;
+				yield tuple;
 
-			if ( current.done ) {
-
-				if ( i === 0 ) return ;
-
-				for ( const j of range( n - i ) ) tuple.push( undefined ) ;
-
-				yield tuple ;
-
-				return ;
-
+				return;
 			}
 
-			tuple.push( current.value ) ;
-
+			tuple.push(current.value);
 		}
 
-		yield tuple ;
-
+		yield tuple;
 	}
-
 }

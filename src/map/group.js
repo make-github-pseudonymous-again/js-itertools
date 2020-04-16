@@ -1,4 +1,4 @@
-import { iter } from '..' ;
+import {iter} from '..';
 
 /**
  * Yields elements of the input iterable by grouping them into tuples
@@ -17,59 +17,57 @@ import { iter } from '..' ;
  * @param {Iterable} iterable - The input iterable.
  * @returns {Iterator}
  */
-export function* group ( key , iterable ) {
+export function* group(key, iterable) {
+	const iterator = iter(iterable);
 
-	let iterator = iter( iterable ) ;
+	const first = iterator.next();
 
-	let first = iterator.next() ;
-
-	if ( first.done ) return ;
-
-	let currval = first.value ;
-	let currkey = key( currval ) ;
-
-	const grouper = function* ( tgtkey ) {
-
-		while ( true ) {
-
-			yield currval ;
-
-			let event = iterator.next( ) ;
-			if ( event.done ) return ;
-
-			currval = event.value ;
-			currkey = key( currval ) ;
-
-			if ( currkey !== tgtkey ) return ;
-
-		}
-
-	} ;
-
-	while ( true ) {
-
-		const tgtkey = currkey ;
-
-		const g = grouper( tgtkey ) ;
-
-		yield [ tgtkey , g ] ;
-
-		while ( currkey === tgtkey ) {
-
-			let event = iterator.next( ) ;
-			if ( event.done ) return ;
-
-			currval = event.value ;
-			currkey = key( currval ) ;
-
-		}
-
+	if (first.done) {
+		return;
 	}
 
+	let currval = first.value;
+	let currkey = key(currval);
+
+	const grouper = function* (tgtkey) {
+		while (true) {
+			yield currval;
+
+			const event = iterator.next();
+			if (event.done) {
+				return;
+			}
+
+			currval = event.value;
+			currkey = key(currval);
+
+			if (currkey !== tgtkey) {
+				return;
+			}
+		}
+	};
+
+	while (true) {
+		const tgtkey = currkey;
+
+		const g = grouper(tgtkey);
+
+		yield [tgtkey, g];
+
+		while (currkey === tgtkey) {
+			const event = iterator.next();
+			if (event.done) {
+				return;
+			}
+
+			currval = event.value;
+			currkey = key(currval);
+		}
+	}
 }
 
 /**
  * Same as {@link group}.
  * @function groupby
  */
-export const groupby = group ;
+export const groupby = group;

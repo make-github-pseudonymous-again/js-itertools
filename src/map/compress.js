@@ -1,4 +1,4 @@
-import { _zip2 } from '..' ;
+import {_zip2} from '..';
 
 /**
  * Filters the first input iterable according to truthy and flasy values from a
@@ -10,12 +10,10 @@ import { _zip2 } from '..' ;
  * values.
  * @returns {Iterator}
  */
-export function* compress ( iterable , selector ) {
-
-	for ( let [ take , item ] of _zip2( selector , iterable ) ) {
-
-		if ( take ) yield item ;
-
+export function* compress(iterable, selector) {
+	for (const [take, item] of _zip2(selector, iterable)) {
+		if (take) {
+			yield item;
+		}
 	}
-
 }

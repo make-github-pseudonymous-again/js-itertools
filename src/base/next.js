@@ -1,4 +1,4 @@
-import { StopIteration } from './StopIteration' ;
+import {StopIteration} from './StopIteration';
 
 /**
  * Returns the next value of the input iterator. If the iterator is exhausted,
@@ -10,15 +10,16 @@ import { StopIteration } from './StopIteration' ;
  * that the input iterator is exhausted.
  * @returns {Object}
  */
-export function next ( iterator , dflt = undefined ) {
+export function next(iterator, dflt = undefined) {
+	const x = iterator.next();
 
-	const x = iterator.next( ) ;
-
-	if ( x.done ) {
-		if ( dflt === undefined ) throw new StopIteration() ;
-		else return dflt ;
+	if (x.done) {
+		if (dflt === undefined) {
+			throw new StopIteration();
+		} else {
+			return dflt;
+		}
 	}
 
-	return x.value ;
-
+	return x.value;
 }

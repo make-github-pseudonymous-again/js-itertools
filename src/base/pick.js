@@ -10,8 +10,8 @@
  * @param {Iterable} iterable - The input iterable.
  * @returns {Iterator}
  */
-export function* pick ( object , iterable ) {
-
-	for ( let key of iterable ) yield object[key] ;
-
+export function* pick(object, iterable) {
+	for (const key of iterable) {
+		yield object[key];
+	}
 }

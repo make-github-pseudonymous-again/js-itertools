@@ -1,6 +1,6 @@
-import { iter } from './iter' ;
-import { consume } from './consume' ;
-import { tail } from './tail' ;
+import {iter} from './iter';
+import {consume} from './consume';
+import {tail} from './tail';
 
 /**
  * Drops the first <code>n</code> elements of the input iterable.
@@ -15,15 +15,13 @@ import { tail } from './tail' ;
  * @param {Number} n - The number of elements to drop.
  * @returns {Iterator}
  */
-export function* drop ( iterable , n ) {
-
-	if ( n < 0 ) {
-		yield* tail( iterable , -n ) ;
-		return ;
+export function* drop(iterable, n) {
+	if (n < 0) {
+		yield* tail(iterable, -n);
+		return;
 	}
 
-	const iterator = iter( iterable ) ;
-	consume( iterator , n ) ;
-	yield* iterator ;
-
+	const iterator = iter(iterable);
+	consume(iterator, n);
+	yield* iterator;
 }

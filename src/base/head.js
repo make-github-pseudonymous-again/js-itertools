@@ -1,7 +1,7 @@
-import { take } from './take' ;
+import {take} from './take';
 
 /**
  * Same as {@link take}.
  * @function head
  */
-export const head = take ;
+export const head = take;

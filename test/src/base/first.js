@@ -1,15 +1,17 @@
-import test from 'ava' ;
+import test from 'ava';
 
-import { range , first , StopIteration } from '../../../src' ;
+import {range, first, StopIteration} from '../../../src';
 
-test( "first" , t => {
+test('first', (t) => {
+	t.throws(
+		() => first(range(0)),
+		{instanceOf: StopIteration},
+		'first on empty iterator throws StopIteration'
+	);
 
-	t.throws( ( ) => first( range( 0 ) ) , {instanceOf: StopIteration} , 'first on empty iterator throws StopIteration' ) ;
+	const it = range(57, 14, -3);
 
-	const it = range( 57 , 14 , -3 ) ;
-
-	t.deepEqual( first( it ) , 57 ) ;
-	t.deepEqual( first( it ) , 54 ) ;
-	t.deepEqual( first( it ) , 51 ) ;
-
-} ) ;
+	t.is(first(it), 57);
+	t.is(first(it), 54);
+	t.is(first(it), 51);
+});

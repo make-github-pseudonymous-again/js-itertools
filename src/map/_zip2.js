@@ -1,4 +1,4 @@
-import { iter } from '..' ;
+import {iter} from '..';
 
 /**
  * Zips exactly two iterables together. Yields a tuple containing the first
@@ -14,21 +14,21 @@ import { iter } from '..' ;
  * @returns {Iterator}
  *
  */
-export function* _zip2 ( A , B ) {
+export function* _zip2(A, B) {
+	A = iter(A);
+	B = iter(B);
 
-	A = iter( A ) ;
-	B = iter( B ) ;
+	while (true) {
+		const a = A.next();
+		if (a.done) {
+			return;
+		}
 
-	while ( true ) {
+		const b = B.next();
+		if (b.done) {
+			return;
+		}
 
-		const a = A.next() ;
-		if ( a.done ) return ;
-
-		const b = B.next() ;
-		if ( b.done ) return ;
-
-		yield [ a.value , b.value ] ;
-
+		yield [a.value, b.value];
 	}
-
 }

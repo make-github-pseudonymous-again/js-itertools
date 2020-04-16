@@ -1,4 +1,4 @@
-import { _count } from './_count' ;
+import {_count} from './_count';
 
 /**
  * Yields increasing or decreasing sequences of numbers. The starting value
@@ -18,8 +18,6 @@ import { _count } from './_count' ;
  * @param {Number} [step=1] - The step between the values.
  * @returns {Iterator}
  */
-export function count ( start = 0 , step = 1 ) {
-
-	return _count( start , step ) ;
-
+export function count(start = 0, step = 1) {
+	return _count(start, step);
 }

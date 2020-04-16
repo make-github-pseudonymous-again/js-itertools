@@ -9,8 +9,8 @@
  * @param {Number} times - The number of times to yield <code>item</code>.
  * @returns {Iterator}
  */
-export function* nrepeat ( item , times ) {
-
-	while ( times --> 0 ) yield item ;
-
+export function* nrepeat(item, times) {
+	while (times-- > 0) {
+		yield item;
+	}
 }

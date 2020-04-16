@@ -8,8 +8,8 @@
  * @param {Object} item - The input item.
  * @returns {Iterator}
  */
-export function* repeat ( item ) {
-
-	while ( true ) yield item ;
-
+export function* repeat(item) {
+	while (true) {
+		yield item;
+	}
 }

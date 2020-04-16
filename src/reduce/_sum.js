@@ -14,10 +14,10 @@
  * <code>iterable</code>.
  *
  */
-export function _sum ( iterable , initializer ) {
+export function _sum(iterable, initializer) {
+	for (const item of iterable) {
+		initializer += item;
+	}
 
-	for ( let item of iterable ) initializer += item ;
-
-	return initializer ;
-
+	return initializer;
 }

@@ -1,4 +1,4 @@
-import { iter } from '..' ;
+import {iter} from '..';
 
 /**
  * Drop elements of the input iterable while the current element satisfies the
@@ -8,22 +8,20 @@ import { iter } from '..' ;
  * @param {Iterable} iterable - The input iterable.
  * @returns {Iterator}
  */
-export function* dropwhile ( predicate , iterable ) {
+export function* dropwhile(predicate, iterable) {
+	const iterator = iter(iterable);
 
-	let iterator = iter( iterable ) ;
+	for (const item of iterator) {
+		if (predicate(item)) {
+			continue;
+		}
 
-	for ( let item of iterator ) {
+		// Equivalent to return chain( [ [ item ] , iterator ] ) ;
 
-		if ( predicate( item ) ) continue ;
+		yield item;
 
-		// equivalent to return chain( [ [ item ] , iterator ] ) ;
+		yield* iterator;
 
-		yield item ;
-
-		yield* iterator ;
-
-		return ;
-
+		return;
 	}
-
 }

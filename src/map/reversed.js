@@ -4,16 +4,18 @@
  * @param {Iterable} iterable - The input iterable.
  * @returns {Iterator} - The input iterable, reversed.
  */
-export function* reversed ( iterable ) {
+export function* reversed(iterable) {
+	const buffer = [];
 
-	let buffer = [ ] ;
+	for (const item of iterable) {
+		buffer.push(item);
+	}
 
-	for ( let item of iterable ) buffer.push( item ) ;
+	// Caching length is believed to be faster
 
-	// caching length is believed to be faster
+	let jz = buffer.length;
 
-	let jz = buffer.length ;
-
-	for ( ; jz ; --jz ) yield buffer.pop( ) ;
-
+	for (; jz; --jz) {
+		yield buffer.pop();
+	}
 }

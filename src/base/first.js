@@ -1,7 +1,7 @@
-import { next } from './next' ;
+import {next} from './next';
 
 /**
  * Same as {@link next}.
  * @function first
  */
-export const first = next ;
+export const first = next;

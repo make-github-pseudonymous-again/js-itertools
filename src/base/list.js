@@ -9,8 +9,6 @@
  * @returns {Array}
  *
  */
-export function list ( iterable ) {
-
-	return Array.from( iterable ) ;
-
+export function list(iterable) {
+	return Array.from(iterable);
 }

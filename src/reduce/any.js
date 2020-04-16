@@ -14,14 +14,12 @@
  * @returns {Boolean} Returns <code>true</code> if any element of
  * <code>iterable</code> is truthy, <code>false</code> otherwise.
  */
-export function any ( iterable ) {
-
-	for ( let item of iterable ) {
-
-		if ( item ) return true ;
-
+export function any(iterable) {
+	for (const item of iterable) {
+		if (item) {
+			return true;
+		}
 	}
 
-	return false ;
-
+	return false;
 }

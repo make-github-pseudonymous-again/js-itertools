@@ -9,8 +9,8 @@
  * @param {Iterable} iterable - The input iterable.
  * @returns {Iterator}
  */
-export function* map ( callable , iterable ) {
-
-	for ( let item of iterable ) yield callable( item ) ;
-
+export function* map(callable, iterable) {
+	for (const item of iterable) {
+		yield callable(item);
+	}
 }

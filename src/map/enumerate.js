@@ -1,4 +1,4 @@
-import { _zip2 , _count } from '..' ;
+import {_zip2, _count} from '..';
 
 /**
  * Yields (index,element) tuples where the elements are taken from the input
@@ -17,8 +17,6 @@ import { _zip2 , _count } from '..' ;
  * @param {Number} [start=0] - The starting index.
  * @returns {Iterator}
  */
-export function enumerate ( iterable, start = 0 ) {
-
-	return _zip2( _count( start , 1 ) , iterable ) ;
-
+export function enumerate(iterable, start = 0) {
+	return _zip2(_count(start, 1), iterable);
 }

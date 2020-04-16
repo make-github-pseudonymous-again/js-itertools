@@ -11,18 +11,16 @@
  * @returns {Iterator}
  *
  */
-export function* filter ( predicate , iterable ) {
-
-	for ( let item of iterable ) {
-
-		if ( predicate( item ) ) yield item ;
-
+export function* filter(predicate, iterable) {
+	for (const item of iterable) {
+		if (predicate(item)) {
+			yield item;
+		}
 	}
-
 }
 
 /**
  * Same as {@link filter}.
  * @function filtertrue
  */
-export const filtertrue = filter ;
+export const filtertrue = filter;

@@ -9,8 +9,6 @@
  * @returns {Number}
  *
  */
-export function len ( array ) {
-
-	return array.length ;
-
+export function len(array) {
+	return array.length;
 }

@@ -14,14 +14,10 @@
  * @param {Number} step - The step between the values.
  * @returns {Iterator}
  */
-export function* _count ( start , step ) {
+export function* _count(start, step) {
+	while (true) {
+		yield start;
 
-	while ( true ) {
-
-		yield start ;
-
-		start += step ;
-
+		start += step;
 	}
-
 }

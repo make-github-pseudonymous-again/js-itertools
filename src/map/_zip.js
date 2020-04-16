@@ -1,4 +1,4 @@
-import { list , map , iter , _next } from '..' ;
+import {list, map, iter, _next} from '..';
 
 /**
  * Zips iterables together. Yields a tuple containing the first element of each
@@ -13,26 +13,24 @@ import { list , map , iter , _next } from '..' ;
  * @returns {Iterator}
  *
  */
-export function* _zip ( iterables ) {
+export function* _zip(iterables) {
+	const iterators = list(map(iter, iterables));
 
-	let iterators = list( map( iter , iterables ) ) ;
-
-	if ( iterators.length === 0 ) return ;
-
-	while ( true ) {
-
-		let buffer = [ ] ;
-
-		for ( let result of map( _next , iterators ) ) {
-
-			if ( result.done ) return ;
-
-			buffer.push( result.value ) ;
-
-		}
-
-		yield buffer ;
-
+	if (iterators.length === 0) {
+		return;
 	}
 
+	while (true) {
+		const buffer = [];
+
+		for (const result of map(_next, iterators)) {
+			if (result.done) {
+				return;
+			}
+
+			buffer.push(result.value);
+		}
+
+		yield buffer;
+	}
 }

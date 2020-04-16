@@ -9,19 +9,19 @@
  * @returns {Iterator}
  *
  */
-export function* cycle ( iterable ) {
+export function* cycle(iterable) {
+	const buffer = [];
 
-	let buffer = [ ] ;
-
-	for ( let item of iterable ) {
-
-		yield item ;
-		buffer.push( item ) ;
-
+	for (const item of iterable) {
+		yield item;
+		buffer.push(item);
 	}
 
-	if ( buffer.length === 0 ) return ;
+	if (buffer.length === 0) {
+		return;
+	}
 
-	while ( true ) yield* buffer ;
-
+	while (true) {
+		yield* buffer;
+	}
 }

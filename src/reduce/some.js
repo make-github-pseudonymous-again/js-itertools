@@ -1,4 +1,3 @@
-
 /**
  * Returns true if at least some of the elements of the input iterable are
  * truthy.
@@ -21,16 +20,16 @@
  * elements of <code>iterable</code> are truthy, <code>false</code> otherwise.
  */
 
-export function some ( iterable , n ) {
-
-	if ( n <= 0 ) return true ;
-
-	for ( let item of iterable ) {
-
-		if ( item && --n === 0 ) return true ;
-
+export function some(iterable, n) {
+	if (n <= 0) {
+		return true;
 	}
 
-	return false ;
+	for (const item of iterable) {
+		if (item && --n === 0) {
+			return true;
+		}
+	}
 
+	return false;
 }

@@ -1,5 +1,5 @@
-import { iter } from './iter' ;
-import { range } from './range' ;
+import {iter} from './iter';
+import {range} from './range';
 
 /**
  * Yields tuples that contain the current element of the input iterable and the
@@ -15,35 +15,32 @@ import { range } from './range' ;
  * @returns {Iterator}
  *
  */
-export function* frame ( iterable , n ) {
-
+export function* frame(iterable, n) {
 	// Could have an implementation using a deque
 	// that doesn't slice (and thus allocate a new
 	// vector everytime). Though the yield object
 	// could not be modified by the caller in that case.
 
-	const iterator = iter( iterable ) ;
+	const iterator = iter(iterable);
 
-	let tuple = [ ] ;
+	let tuple = [];
 
-	for ( const i of range( n ) ) {
+	// eslint-disable-next-line no-unused-vars
+	for (const i of range(n)) {
+		const current = iterator.next();
 
-		const current = iterator.next( ) ;
+		if (current.done) {
+			return;
+		}
 
-		if ( current.done ) return ;
-
-		tuple.push( current.value ) ;
-
+		tuple.push(current.value);
 	}
 
-	yield tuple ;
+	yield tuple;
 
-	for ( const value of iterator ) {
-
-		tuple = tuple.slice( 1 ) ;
-		tuple.push( value ) ;
-		yield tuple ;
-
+	for (const value of iterator) {
+		tuple = tuple.slice(1);
+		tuple.push(value);
+		yield tuple;
 	}
-
 }

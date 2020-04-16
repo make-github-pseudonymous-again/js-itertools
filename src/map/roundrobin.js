@@ -1,4 +1,4 @@
-import { iter , len , cycle , map , slice } from '..' ;
+import {iter, len, cycle, map, slice} from '..';
 
 /**
  * Yields the first item of the first input iterable, then the first item of
@@ -15,30 +15,26 @@ import { iter , len , cycle , map , slice } from '..' ;
  * @returns {Iterator}
  *
  */
-export function* roundrobin ( iterables ) {
+export function* roundrobin(iterables) {
+	let pending = len(iterables);
 
-	let pending = len( iterables ) ;
+	let iterators = cycle(map(iter, iterables));
 
-	let iterators = cycle( map( iter , iterables ) ) ;
+	while (pending) {
+		while (true) {
+			const iterator = iterators.next().value;
 
-	while ( pending ) {
+			const it = iterator.next();
 
-		while ( true ) {
+			if (it.done) {
+				break;
+			}
 
-			let iterator = iterators.next().value ;
-
-			let it = iterator.next() ;
-
-			if ( it.done ) break ;
-
-			yield it.value ;
-
+			yield it.value;
 		}
 
-		--pending ;
+		--pending;
 
-		iterators = cycle( slice( iterators , 0 , pending , 1 ) ) ;
-
+		iterators = cycle(slice(iterators, 0, pending, 1));
 	}
-
 }

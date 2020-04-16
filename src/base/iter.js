@@ -5,8 +5,6 @@
  * @returns {Iterator}
  *
  */
-export function iter ( iterable ) {
-
-	return iterable[Symbol.iterator]( ) ;
-
+export function iter(iterable) {
+	return iterable[Symbol.iterator]();
 }

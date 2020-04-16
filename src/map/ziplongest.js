@@ -1,4 +1,4 @@
-import { _ziplongest } from './_ziplongest' ;
+import {_ziplongest} from './_ziplongest';
 
 /**
  * Same as zip, but continues to yield zipped tuples until the last iterable is
@@ -13,8 +13,6 @@ import { _ziplongest } from './_ziplongest' ;
  * @returns {Iterator}
  *
  */
-export function ziplongest ( fillvalue , ...iterables ) {
-
-	return _ziplongest( fillvalue , iterables ) ;
-
+export function ziplongest(fillvalue, ...iterables) {
+	return _ziplongest(fillvalue, iterables);
 }

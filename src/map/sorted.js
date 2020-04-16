@@ -1,4 +1,4 @@
-import { list } from '../base/list' ;
+import {list} from '../base/list';
 
 /**
  * Outputs an array containing the elements of the input iterable sorted
@@ -11,8 +11,6 @@ import { list } from '../base/list' ;
  * @param {Iterable} iterable - The input iterable.
  * @returns {Array} - The input iterable, sorted.
  */
-export function sorted ( compare , iterable ) {
-
-	return list( iterable ).sort( compare ) ;
-
+export function sorted(compare, iterable) {
+	return list(iterable).sort(compare);
 }

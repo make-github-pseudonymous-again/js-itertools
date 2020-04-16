@@ -15,18 +15,14 @@
  * @param {Object} start The starting element.
  * @returns {Iterator} Iterator over the closure.
  */
-export function* closure ( operator , start ) {
+export function* closure(operator, start) {
+	yield start;
 
-	yield start ;
+	let element = start;
 
-	let element = start ;
+	while (true) {
+		element = operator(element);
 
-	while ( true ) {
-
-		element = operator(element) ;
-
-		yield element ;
-
+		yield element;
 	}
-
 }

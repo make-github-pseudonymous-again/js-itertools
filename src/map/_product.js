@@ -15,24 +15,21 @@
  * @param {Number} n - Number of pools in total.
  * @returns {Iterator}
  */
-export function* _product ( pools , i , n ) {
-
-	if ( i === n ) { yield [ ] ; return ; }
-
-	let iterable = pools[i] ;
-
-	for ( let buffer of _product( pools , i + 1 , n ) ) {
-
-		for ( let item of iterable ) {
-
-			buffer.push( item ) ;
-
-			yield buffer ;
-
-			buffer.pop( item ) ;
-
-		}
-
+export function* _product(pools, i, n) {
+	if (i === n) {
+		yield [];
+		return;
 	}
 
+	const iterable = pools[i];
+
+	for (const buffer of _product(pools, i + 1, n)) {
+		for (const item of iterable) {
+			buffer.push(item);
+
+			yield buffer;
+
+			buffer.pop(item);
+		}
+	}
 }

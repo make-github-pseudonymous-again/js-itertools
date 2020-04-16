@@ -10,8 +10,8 @@
  * @returns {Iterator}
  *
  */
-export function* chain ( iterables ) {
-
-	for ( let iterable of iterables ) yield* iterable ;
-
+export function* chain(iterables) {
+	for (const iterable of iterables) {
+		yield* iterable;
+	}
 }

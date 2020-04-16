@@ -1,4 +1,4 @@
-import { _range } from './_range' ;
+import {_range} from './_range';
 
 /**
  * Yields values in a range, separated by a fixed constant called step. If this
@@ -12,12 +12,14 @@ import { _range } from './_range' ;
  * @param {Number} [step=1] - The step value.
  * @returns {Iterator}
  */
-export function range ( start , stop , step ) {
+export function range(start, stop, step) {
+	if (stop === undefined) {
+		return _range(0, start, 1);
+	}
 
-	if ( stop === undefined ) return _range( 0 , start , 1 ) ;
+	if (step === undefined) {
+		return _range(start, stop, 1);
+	}
 
-	if ( step === undefined ) return _range( start , stop , 1 ) ;
-
-	return _range( start , stop , step ) ;
-
+	return _range(start, stop, step);
 }

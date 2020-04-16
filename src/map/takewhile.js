@@ -6,14 +6,12 @@
  * @param {Iterable} iterable - The input iterable.
  * @returns {Iterator}
  */
-export function* takewhile ( predicate , iterable ) {
+export function* takewhile(predicate, iterable) {
+	for (const item of iterable) {
+		if (!predicate(item)) {
+			return;
+		}
 
-	for ( let item of iterable ) {
-
-		if ( !predicate( item ) ) return ;
-
-		yield item ;
-
+		yield item;
 	}
-
 }
