@@ -4,7 +4,7 @@ import { range , last , StopIteration } from '../../../src' ;
 
 test( "last" , t => {
 
-	t.throws( ( ) => last( range( 0 ) ) , StopIteration , 'last on empty range throws StopIteration' ) ;
+	t.throws( ( ) => last( range( 0 ) ) , {instanceOf: StopIteration} , 'last on empty range throws StopIteration' ) ;
 
 	t.deepEqual( last( range( 57 , 14 , -3 ) ) , 15 ) ;
 	t.deepEqual( last( range( 57 , 15 , -3 ) ) , 18 ) ;
@@ -16,6 +16,6 @@ test( "last" , t => {
 
 	t.deepEqual( last( it ) , 99 ) ;
 
-	t.throws( ( ) => last( it ) , StopIteration , 'last on empty iterator throws StopIteration' ) ;
+	t.throws( ( ) => last( it ) , {instanceOf: StopIteration} , 'last on empty iterator throws StopIteration' ) ;
 
 } ) ;
