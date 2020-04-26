@@ -40,11 +40,11 @@
     "@babel/polyfill": "7.8.7",
     "@babel/preset-env": "7.9.5",
     "@babel/register": "7.9.0",
-    "ava": "3.7.0",
-    "coveralls": "3.0.11",
+    "ava": "3.7.1",
+    "coveralls": "3.1.0",
     "esdoc": "1.1.0",
     "nyc": "15.0.1",
-    "xo": "0.29.1"
+    "xo": "0.30.0"
   },
   "files": [
     "lib"
