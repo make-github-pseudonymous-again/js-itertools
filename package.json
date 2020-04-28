@@ -48,7 +48,7 @@
     "esdoc-inject-script-plugin": "1.0.0",
     "esdoc-inject-style-plugin": "1.0.0",
     "esdoc-standard-plugin": "1.0.0",
-    "np": "6.2.1"
+    "np": "6.2.3"
   },
   "files": [
     "lib"
