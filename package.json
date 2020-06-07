@@ -46,7 +46,7 @@
     "esdoc-inject-script-plugin": "1.0.0",
     "esdoc-inject-style-plugin": "1.0.0",
     "esdoc-standard-plugin": "1.0.0",
-    "np": "6.2.3",
+    "np": "6.2.4",
     "nyc": "15.1.0",
     "xo": "0.32.0"
   },
