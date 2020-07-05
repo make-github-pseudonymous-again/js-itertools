@@ -1,14 +1,16 @@
 # Usage
 
-The code needs a ES2015+ polyfill to work, for example
-[@babel/polyfill](https://babeljs.io/docs/usage/polyfill).
+> :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing
+> [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).
+
+First, require the polyfill at the entry point of your application
 ```js
-require( '@babel/polyfill' ) ;
+require( 'regenerator-runtime/runtime' );
 // or
-import '@babel/polyfill' ;
+import 'regenerator-runtime/runtime.js' ;
 ```
 
-Then
+Then, import the library where needed
 ```js
 const itertools = require( '@aureooms/js-itertools' ) ;
 // or

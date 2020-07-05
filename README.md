@@ -6,6 +6,9 @@ Python's iterable and iterator library for JavaScript.
 See [docs](https://aureooms.github.io/js-itertools).
 Parent is [@aureooms/js-library](https://github.com/aureooms/js-library).
 
+> :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing
+> [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).
+
 ```js
 cycle( chain( [ [ 0 , 1 , 2 ] , [ 3 , 4 , 5 ] ] ) ) ; // 0 1 2 3 4 5 0 1 ...
 ```
