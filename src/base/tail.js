@@ -3,7 +3,7 @@ import deque from '@aureooms/js-collections-deque';
 import {drop} from './drop';
 
 /**
- * Returns the last <code>n</code> elements of the input iterable in an array.
+ * Returns the last <code>n</code> values of the input iterable in an array.
  * If <code>n</code> is negative, behaves like <code>{@link drop}( iterable,
  * -n)</code>.
  *
@@ -12,8 +12,8 @@ import {drop} from './drop';
  * list( tail( range( 5 ) , 2 ) ) ;
  *
  * @param {Iterable} iterable - The input iterable.
- * @param {Number} n - The number of elements to include in the output.
- * @returns {Array} - The last <code>n</code> elements of the input iterable.
+ * @param {Number} n - The number of values to include in the output.
+ * @returns {Iterator} - The last <code>n</code> values of the input iterable.
  */
 export function* tail(iterable, n) {
 	if (n < 0) {

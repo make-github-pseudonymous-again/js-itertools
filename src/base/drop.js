@@ -3,7 +3,7 @@ import {consume} from './consume';
 import {tail} from './tail';
 
 /**
- * Drops the first <code>n</code> elements of the input iterable.
+ * Drops the first <code>n</code> values of the input iterable.
  * If <code>n</code> is negative, behaves like <code>{@link tail}( iterable,
  * -n)</code>.
  *
@@ -12,8 +12,8 @@ import {tail} from './tail';
  * list( drop( range( 5 ) , 3 ) ) ;
  *
  * @param {Iterable} iterable - The input iterable.
- * @param {Number} n - The number of elements to drop.
- * @returns {Iterator}
+ * @param {Number} n - The number of values to drop.
+ * @returns {Iterator} - The remaining values of the input iterable.
  */
 export function* drop(iterable, n) {
 	if (n < 0) {

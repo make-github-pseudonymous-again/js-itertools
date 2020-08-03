@@ -8,7 +8,7 @@ import {StopIteration} from './StopIteration';
  * @param {Iterator} iterator - The input iterator.
  * @param {Object} [dflt=undefined] - The default value to return in the case
  * that the input iterator is exhausted.
- * @returns {Object}
+ * @returns {Object} The next value of the input iterator.
  */
 export function next(iterator, dflt = undefined) {
 	const x = iterator.next();
