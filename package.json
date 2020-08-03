@@ -28,8 +28,8 @@
     "url": "https://github.com/aureooms/js-itertools/issues"
   },
   "dependencies": {
-    "@aureooms/js-collections-deque": "^4.0.0",
-    "@aureooms/js-error": "^4.0.0"
+    "@aureooms/js-collections-deque": "^4.0.1",
+    "@aureooms/js-error": "^4.0.1"
   },
   "devDependencies": {
     "@aureooms/js-compare": "1.4.5",
