@@ -36,7 +36,7 @@
     "@aureooms/js-operator": "1.0.2",
     "@aureooms/js-predicate": "2.0.2",
     "@babel/cli": "7.10.5",
-    "@babel/core": "7.11.0",
+    "@babel/core": "7.11.1",
     "@babel/preset-env": "7.11.0",
     "@babel/register": "7.10.5",
     "ava": "3.11.1",
