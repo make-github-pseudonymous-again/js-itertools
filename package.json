@@ -32,7 +32,7 @@
     "@aureooms/js-error": "^4.0.1"
   },
   "devDependencies": {
-    "@aureooms/js-compare": "1.4.7",
+    "@aureooms/js-compare": "1.4.8",
     "@aureooms/js-operator": "1.0.2",
     "@aureooms/js-predicate": "2.0.2",
     "@babel/cli": "7.10.5",
