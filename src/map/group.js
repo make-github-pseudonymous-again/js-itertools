@@ -6,11 +6,11 @@ import {iter} from '..';
  *
  * @example
  * // A B C D A B
- * list( map( ( k , g ) => k , group( x => x , 'AAAABBBCCDAABBB' ) ) )
+ * list( map( ( [ k , g ] ) => k , group( x => x , 'AAAABBBCCDAABBB' ) ) )
  *
  * @example
  * // AAAA BBB CC D
- * list( map( ( k , g ) => list( g ) , group( x => x , 'AAAABBBCCD' ) ) )
+ * list( map( ( [ k , g ] ) => list( g ) , group( x => x , 'AAAABBBCCD' ) ) )
  *
  * @param {Function} key - The function used to determine the equivalence class
  * of an element.
