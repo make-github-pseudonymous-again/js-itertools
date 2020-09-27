@@ -39,7 +39,7 @@
     "@babel/core": "7.11.6",
     "@babel/preset-env": "7.11.5",
     "@babel/register": "7.11.5",
-    "ava": "3.12.1",
+    "ava": "3.13.0",
     "coveralls": "3.1.0",
     "esdoc": "1.1.0",
     "esdoc-inject-script-plugin": "1.0.0",
