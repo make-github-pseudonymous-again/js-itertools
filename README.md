@@ -1,6 +1,11 @@
 # [@aureooms/js-itertools](https://aureooms.github.io/js-itertools)
 
-<img src="http://www.explainxkcd.com//wiki/images/f/fd/python.png" width="864">
+<p align="center">
+<a href="https://xkcd.com/353">
+<img src="https://imgs.xkcd.com/comics/python.png" width="450">
+</a><br/>
+© <a href="https://xkcd.com">xkcd.com</a>
+</p>
 
 Python's iterable and iterator library for JavaScript.
 See [docs](https://aureooms.github.io/js-itertools).
