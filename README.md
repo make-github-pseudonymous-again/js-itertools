@@ -1,4 +1,4 @@
-# [@aureooms/js-itertools](https://aureooms.github.io/js-itertools)
+# :hammer_and_wrench: [@aureooms/js-itertools](https://aureooms.github.io/js-itertools)
 
 <p align="center">
 <a href="https://xkcd.com/353">
@@ -33,7 +33,7 @@ cycle( chain( [ [ 0 , 1 , 2 ] , [ 3 , 4 , 5 ] ] ) ) ; // 0 1 2 3 4 5 0 1 ...
 [![Documentation](https://aureooms.github.io/js-itertools/badge.svg)](https://aureooms.github.io/js-itertools/source.html)
 [![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-itertools)](https://bundlephobia.com/result?p=@aureooms/js-itertools)
 
-## References in Python and JavaScript
+## :link: References in Python and JavaScript
 
   - https://docs.python.org/3/library/itertools.html
   - http://mochi.github.io/mochikit/doc/html/MochiKit/Iter.html
