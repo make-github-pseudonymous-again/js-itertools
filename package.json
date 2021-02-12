@@ -45,7 +45,7 @@
     "esdoc-inject-script-plugin": "1.0.0",
     "esdoc-inject-style-plugin": "1.0.0",
     "esdoc-standard-plugin": "1.0.0",
-    "np": "7.3.0",
+    "np": "7.4.0",
     "nyc": "15.1.0",
     "regenerator-runtime": "0.13.7",
     "xo": "0.36.1"
