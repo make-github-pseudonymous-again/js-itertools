@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {range, last, StopIteration} from '../../../src';
+import {range, last, StopIteration} from '../../../src/index.js';
 
 test('last', (t) => {
 	t.throws(

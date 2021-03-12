@@ -1,5 +1,5 @@
-import {iter} from './iter';
-import {range} from './range';
+import {iter} from './iter.js';
+import {range} from './range.js';
 
 /**
  * Yields elements of the input iterable by grouping them into tuples of a

@@ -1,3 +1,3 @@
-export * from './closure';
-export * from './diagonal';
-export * from './nth';
+export * from './closure.js';
+export * from './diagonal.js';
+export * from './nth.js';

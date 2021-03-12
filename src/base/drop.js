@@ -1,6 +1,6 @@
-import {iter} from './iter';
-import {consume} from './consume';
-import {tail} from './tail';
+import {iter} from './iter.js';
+import {consume} from './consume.js';
+import {tail} from './tail.js';
 
 /**
  * Drops the first <code>n</code> values of the input iterable.

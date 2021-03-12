@@ -1,5 +1,5 @@
-import {_reduce} from './_reduce';
-import {iter} from '../base/iter';
+import {_reduce} from './_reduce.js';
+import {iter} from '../base/iter.js';
 
 /**
  * Applies the accumulator function iteratively on the last return value of the

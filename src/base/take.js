@@ -1,5 +1,5 @@
-import {iter} from './iter';
-import {trunc} from './trunc';
+import {iter} from './iter.js';
+import {trunc} from './trunc.js';
 
 /**
  * Yields the first <code>n</code> elements of the input iterable. If

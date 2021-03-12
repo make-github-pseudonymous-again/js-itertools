@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {range, nth, StopIteration} from '../../../src';
+import {range, nth, StopIteration} from '../../../src/index.js';
 
 function macro(t, iterable, n, expected) {
 	t.is(expected, nth(iterable, n));

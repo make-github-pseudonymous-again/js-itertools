@@ -1,4 +1,4 @@
-import {_count} from './_count';
+import {_count} from './_count.js';
 
 /**
  * Yields increasing or decreasing sequences of numbers. The starting value

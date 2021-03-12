@@ -1,4 +1,4 @@
-import {list} from '../base/list';
+import {list} from '../base/list.js';
 
 /**
  * Outputs an array containing the elements of the input iterable sorted

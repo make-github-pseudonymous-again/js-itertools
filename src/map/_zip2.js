@@ -1,4 +1,4 @@
-import {iter} from '..';
+import {iter} from '../index.js';
 
 /**
  * Zips exactly two iterables together. Yields a tuple containing the first

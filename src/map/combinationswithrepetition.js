@@ -1,4 +1,4 @@
-import {list, nrepeat, pick} from '..';
+import {list, nrepeat, pick} from '../index.js';
 
 /**
  * Yields all combinations, with repetitions, of each possible choice of

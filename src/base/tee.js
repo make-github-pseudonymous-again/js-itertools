@@ -1,6 +1,6 @@
-import {iter} from './iter';
-import {list} from './list';
-import {map} from '../map/map';
+import {iter} from './iter.js';
+import {list} from './list.js';
+import {map} from '../map/map.js';
 
 import deque from '@aureooms/js-collections-deque';
 

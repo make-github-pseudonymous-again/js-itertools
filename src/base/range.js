@@ -1,4 +1,4 @@
-import {_range} from './_range';
+import {_range} from './_range.js';
 
 /**
  * Yields values in a range, separated by a fixed constant called step. If this

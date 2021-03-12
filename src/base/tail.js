@@ -1,6 +1,6 @@
 import deque from '@aureooms/js-collections-deque';
 
-import {drop} from './drop';
+import {drop} from './drop.js';
 
 /**
  * Returns the last <code>n</code> values of the input iterable in an array.

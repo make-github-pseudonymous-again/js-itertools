@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {closure, enumerate, list, takewhile} from '../../../src';
+import {closure, enumerate, list, takewhile} from '../../../src/index.js';
 
 // https://oeis.org/A006577
 const Collatz = (x) => (x % 2 === 1 ? 3 * x + 1 : Math.floor(x / 2));

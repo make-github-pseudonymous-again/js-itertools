@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {list, range, permutations} from '../../../src';
+import {list, range, permutations} from '../../../src/index.js';
 
 test('permutations', (t) => {
 	const x = (iterable, repeat, expected) => {

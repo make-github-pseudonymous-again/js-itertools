@@ -2,7 +2,7 @@ import test from 'ava';
 
 import {increasing, decreasing} from '@aureooms/js-compare';
 
-import {max} from '../../../src';
+import {max} from '../../../src/index.js';
 
 test('max', (t) => {
 	const x = (iterable, compare, expected) =>

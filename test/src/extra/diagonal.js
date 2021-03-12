@@ -10,7 +10,7 @@ import {
 	take,
 	product,
 	sorted
-} from '../../../src';
+} from '../../../src/index.js';
 
 test('diagonal docstring example', (t) => {
 	const result = list(diagonal(range(2), range(2)));

@@ -1,7 +1,7 @@
 import deque from '@aureooms/js-collections-deque';
 
-import {iter} from './iter';
-import {take} from './take';
+import {iter} from './iter.js';
+import {take} from './take.js';
 
 /**
  * Yields all elements of the iterable except the last <code>n</code> ones. If

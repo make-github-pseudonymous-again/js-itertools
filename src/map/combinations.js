@@ -1,4 +1,4 @@
-import {list, range, pick} from '..';
+import {list, range, pick} from '../index.js';
 
 /**
  * Yields all combinations of each possible choice of <code>r</code> elements

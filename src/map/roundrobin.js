@@ -1,4 +1,4 @@
-import {iter, len, cycle, map, slice} from '..';
+import {iter, len, cycle, map, slice} from '../index.js';
 
 /**
  * Yields the first item of the first input iterable, then the first item of

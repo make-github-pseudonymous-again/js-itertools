@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {list, reversed} from '../../../src';
+import {list, reversed} from '../../../src/index.js';
 
 test('reversed', (t) => {
 	const x = function (A, B) {

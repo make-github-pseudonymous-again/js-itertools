@@ -1,4 +1,4 @@
-import {_zip2, _count} from '..';
+import {_zip2, _count} from '../index.js';
 
 /**
  * Yields (index,element) tuples where the elements are taken from the input

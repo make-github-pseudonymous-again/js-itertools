@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {list, range} from '../../../src';
+import {list, range} from '../../../src/index.js';
 
 test('range', (t) => {
 	const x = (begin, end, step, expected) => {

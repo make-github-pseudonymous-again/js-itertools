@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {range, consume, list} from '../../../src';
+import {range, consume, list} from '../../../src/index.js';
 
 test('consume', (t) => {
 	const iterator = range(100);

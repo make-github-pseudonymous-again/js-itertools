@@ -1,4 +1,4 @@
-import {list, map, iter, _next, repeat, enumerate} from '..';
+import {list, map, iter, _next, repeat, enumerate} from '../index.js';
 
 /**
  * Same as _zip, but continues to yield zipped tuples until the last iterable is

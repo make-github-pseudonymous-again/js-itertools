@@ -1,4 +1,4 @@
-import {iter} from '..';
+import {iter} from '../index.js';
 
 /**
  * Yields elements of the input iterable by grouping them into tuples

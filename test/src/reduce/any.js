@@ -1,5 +1,5 @@
 import test from 'ava';
-import {any} from '../../../src';
+import {any} from '../../../src/index.js';
 
 test('any', (t) => {
 	const x = (object, value) => t.deepEqual(any(object), value);

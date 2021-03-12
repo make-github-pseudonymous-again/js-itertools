@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {range, take, list} from '../../../src';
+import {range, take, list} from '../../../src/index.js';
 
 test('take', (t) => {
 	t.deepEqual(list(take(range(100), 37)), list(range(37)));

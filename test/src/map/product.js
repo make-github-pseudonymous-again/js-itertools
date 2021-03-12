@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {list, product} from '../../../src';
+import {list, product} from '../../../src/index.js';
 
 test('product', (t) => {
 	const x = (iterables, r, expected) => {

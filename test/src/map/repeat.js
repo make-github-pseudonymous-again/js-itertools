@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {list, head, repeat} from '../../../src';
+import {list, head, repeat} from '../../../src/index.js';
 
 test('repeat', (t) => {
 	const x = function (item, times, expected) {

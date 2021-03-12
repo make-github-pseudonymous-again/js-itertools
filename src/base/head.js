@@ -1,4 +1,4 @@
-import {take} from './take';
+import {take} from './take.js';
 
 /**
  * Same as {@link take}.

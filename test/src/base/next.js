@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {range, next, StopIteration} from '../../../src';
+import {range, next, StopIteration} from '../../../src/index.js';
 
 test('next', (t) => {
 	const dflt = {};

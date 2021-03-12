@@ -1,4 +1,4 @@
-import {_zip2} from '..';
+import {_zip2} from '../index.js';
 
 /**
  * Filters the first input iterable according to truthy and flasy values from a

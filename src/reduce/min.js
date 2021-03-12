@@ -1,4 +1,4 @@
-import {iter} from '../base/iter';
+import {iter} from '../base/iter.js';
 
 /**
  * Returns the smallest element of the input iterable according

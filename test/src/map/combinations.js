@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {list, range, combinations} from '../../../src';
+import {list, range, combinations} from '../../../src/index.js';
 
 test('combinations', (t) => {
 	const x = (iterable, r, expected) => {

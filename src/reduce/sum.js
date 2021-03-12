@@ -1,4 +1,4 @@
-import {_sum} from './_sum';
+import {_sum} from './_sum.js';
 
 /**
  * Sums the elements of the input iterable. An optional initializer parameter

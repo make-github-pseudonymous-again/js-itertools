@@ -1,4 +1,4 @@
-import {StopIteration} from './StopIteration';
+import {StopIteration} from './StopIteration.js';
 
 /**
  * Returns the next value of the input iterator. If the iterator is exhausted,

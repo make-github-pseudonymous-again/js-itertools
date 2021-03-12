@@ -1,4 +1,4 @@
-import {iter} from '..';
+import {iter} from '../index.js';
 
 /**
  * Drop elements of the input iterable while the current element satisfies the

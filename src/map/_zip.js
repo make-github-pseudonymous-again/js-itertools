@@ -1,4 +1,4 @@
-import {list, map, iter, _next} from '..';
+import {list, map, iter, _next} from '../index.js';
 
 /**
  * Zips iterables together. Yields a tuple containing the first element of each

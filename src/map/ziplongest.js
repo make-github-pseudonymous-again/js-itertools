@@ -1,4 +1,4 @@
-import {_ziplongest} from './_ziplongest';
+import {_ziplongest} from './_ziplongest.js';
 
 /**
  * Same as zip, but continues to yield zipped tuples until the last iterable is

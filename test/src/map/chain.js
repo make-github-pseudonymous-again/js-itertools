@@ -1,5 +1,5 @@
 import test from 'ava';
-import {list, chain} from '../../../src';
+import {list, chain} from '../../../src/index.js';
 
 test('chain', (t) => {
 	const x = (iterables, out) => {

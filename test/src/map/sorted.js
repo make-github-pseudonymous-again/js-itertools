@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {reduce, sorted} from '../../../src';
+import {reduce, sorted} from '../../../src/index.js';
 import {increasing, decreasing} from '@aureooms/js-compare';
 import {contains} from '@aureooms/js-operator';
 

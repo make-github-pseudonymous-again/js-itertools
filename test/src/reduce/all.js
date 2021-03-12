@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {all} from '../../../src';
+import {all} from '../../../src/index.js';
 
 test('all', (t) => {
 	const x = (object, value) => t.deepEqual(all(object), value);

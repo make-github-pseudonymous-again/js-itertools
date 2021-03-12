@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {range, head, exhaust, list} from '../../../src';
+import {range, head, exhaust, list} from '../../../src/index.js';
 
 test('exhaust', (t) => {
 	const iterator = range(0, 100, 1);

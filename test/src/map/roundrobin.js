@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {list, roundrobin} from '../../../src';
+import {list, roundrobin} from '../../../src/index.js';
 
 test('roundrobin', (t) => {
 	const x = function (iterables, expected) {

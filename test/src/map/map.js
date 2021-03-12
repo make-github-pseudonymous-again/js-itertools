@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {list, map} from '../../../src';
+import {list, map} from '../../../src/index.js';
 
 test('map', (t) => {
 	const x = function (callable, iterable, out) {

@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {range, tail, list, count} from '../../../src';
+import {range, tail, list, count} from '../../../src/index.js';
 
 test('tail', (t) => {
 	t.deepEqual(list(tail(range(100), -37)), list(range(37, 100)));

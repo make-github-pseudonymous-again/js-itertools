@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {list, range, combinationswithrepetition} from '../../../src';
+import {list, range, combinationswithrepetition} from '../../../src/index.js';
 
 test('combinationswithrepetition', (t) => {
 	const x = (iterable, r, expected) => {

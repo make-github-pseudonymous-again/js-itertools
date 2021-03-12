@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {some} from '../../../src';
+import {some} from '../../../src/index.js';
 
 test('some', (t) => {
 	const x = (iterable, n, expected) => {

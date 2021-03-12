@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {list, range, dropwhile} from '../../../src';
+import {list, range, dropwhile} from '../../../src/index.js';
 import {lt} from '@aureooms/js-predicate';
 
 test('dropwhile', (t) => {

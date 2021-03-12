@@ -1,6 +1,14 @@
 import test from 'ava';
 
-import {list, map, group, repeat, ncycle, next, range} from '../../../src';
+import {
+	list,
+	map,
+	group,
+	repeat,
+	ncycle,
+	next,
+	range
+} from '../../../src/index.js';
 import {identity} from '@aureooms/js-operator';
 
 test('group', (t) => {

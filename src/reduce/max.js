@@ -1,4 +1,4 @@
-import {iter} from '../base/iter';
+import {iter} from '../base/iter.js';
 
 /**
  * Returns the largest element of the input iterable according

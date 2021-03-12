@@ -1,4 +1,4 @@
-import {_zip} from './_zip';
+import {_zip} from './_zip.js';
 
 /**
  * Zips iterables together. Yields a tuple containing the first element of each

@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {list, nrepeat} from '../../../src';
+import {list, nrepeat} from '../../../src/index.js';
 
 test('nrepeat', (t) => {
 	const x = function (item, times, expected) {

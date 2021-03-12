@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {cycle, next} from '../../../src';
+import {cycle, next} from '../../../src/index.js';
 
 test('cycle (empty)', (t) => {
 	// The empty use case is very important

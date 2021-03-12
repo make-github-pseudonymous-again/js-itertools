@@ -1,6 +1,14 @@
 import test from 'ava';
 
-import {len, list, map, ziplongest, max, chain, nrepeat} from '../../../src';
+import {
+	len,
+	list,
+	map,
+	ziplongest,
+	max,
+	chain,
+	nrepeat
+} from '../../../src/index.js';
 import {increasing} from '@aureooms/js-compare';
 
 test('ziplongest', (t) => {

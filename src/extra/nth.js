@@ -1,5 +1,5 @@
 import deque from '@aureooms/js-collections-deque';
-import {next, drop, StopIteration} from '../base';
+import {next, drop, StopIteration} from '../base/index.js';
 
 /**
  * Returns the <code>n</code>th value of the input iterable (<code>n</code>

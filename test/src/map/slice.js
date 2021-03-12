@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {list, range, slice} from '../../../src';
+import {list, range, slice} from '../../../src/index.js';
 
 test('slice', (t) => {
 	const x = (start, stop, step) => {

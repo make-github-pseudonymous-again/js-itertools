@@ -1,4 +1,4 @@
-import {list, map, _product, ncycle, reversed} from '..';
+import {list, map, _product, ncycle, reversed} from '../index.js';
 
 /**
  * Computes the product of the iterables given as first parameter. The second

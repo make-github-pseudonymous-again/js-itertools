@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {range, frame, zip, list} from '../../../src';
+import {range, frame, zip, list} from '../../../src/index.js';
 
 test('frame', (t) => {
 	const A = frame(range(100), 2);

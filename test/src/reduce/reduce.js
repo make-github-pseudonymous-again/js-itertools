@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {reduce} from '../../../src';
+import {reduce} from '../../../src/index.js';
 
 test('reduce', (t) => {
 	const x = (callable, iterable, expected) => {

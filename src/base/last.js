@@ -1,5 +1,5 @@
-import {next} from './next';
-import {tail} from './tail';
+import {next} from './next.js';
+import {tail} from './tail.js';
 
 /**
  * Returns the last value of the input iterable. If the iterable is

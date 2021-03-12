@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {list, map, count, range, head, tee} from '../../../src';
+import {list, map, count, range, head, tee} from '../../../src/index.js';
 
 test('tee', (t) => {
 	const x = (iterable, n, expected) => {

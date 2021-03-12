@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {list, compress} from '../../../src';
+import {list, compress} from '../../../src/index.js';
 
 test('compress', (t) => {
 	const x = (iterable, selector, expected) => {

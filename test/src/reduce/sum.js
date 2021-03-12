@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {sum} from '../../../src';
+import {sum} from '../../../src/index.js';
 
 test('sum', (t) => {
 	const x = (iterable, out) => {

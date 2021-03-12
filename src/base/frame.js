@@ -1,5 +1,5 @@
-import {iter} from './iter';
-import {range} from './range';
+import {iter} from './iter.js';
+import {range} from './range.js';
 
 /**
  * Yields tuples that contain the current element of the input iterable and the

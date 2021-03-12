@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {range, by, zip, list, count, head} from '../../../src';
+import {range, by, zip, list, count, head} from '../../../src/index.js';
 
 test('by', (t) => {
 	const A = by(range(100), 2);

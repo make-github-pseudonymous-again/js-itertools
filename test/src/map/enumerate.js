@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {list, enumerate} from '../../../src';
+import {list, enumerate} from '../../../src/index.js';
 
 test('enumerate', (t) => {
 	const x = (iterable, out) => {
