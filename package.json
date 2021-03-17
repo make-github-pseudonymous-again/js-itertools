@@ -33,6 +33,7 @@
   "scripts": {
     "build": "rm -rf lib && babel src -d lib",
     "build-docs": "esdoc",
+    "build-gh-pages": "npm run build-docs",
     "cover": "c8 --all --src src --reporter=lcov npm test",
     "lint-config": "fixpack --dryRun",
     "lint-config-and-fix": "fixpack || fixpack",
