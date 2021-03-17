@@ -2,7 +2,68 @@
   "name": "@aureooms/js-itertools",
   "description": "Iterable and iterator library for JavaScript",
   "version": "4.1.0",
+  "license": "AGPL-3.0",
   "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
+  "homepage": "https://aureooms.github.io/js-itertools",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aureooms/js-itertools"
+  },
+  "bugs": {
+    "url": "https://github.com/aureooms/js-itertools/issues"
+  },
+  "keywords": [
+    "chain",
+    "combinations",
+    "filter",
+    "iter",
+    "iterable",
+    "iterator",
+    "list",
+    "map",
+    "permutations",
+    "product",
+    "reduce"
+  ],
+  "sideEffects": false,
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rm -rf lib && babel src -d lib",
+    "cover": "nyc --reporter=lcov npm test",
+    "esdoc": "esdoc",
+    "lint-config": "fixpack --dryRun",
+    "lint-config-and-fix": "fixpack || fixpack",
+    "prepare": "npm run build",
+    "release": "np",
+    "test": "xo && ava"
+  },
+  "dependencies": {
+    "@aureooms/js-collections-deque": "^4.0.1",
+    "@aureooms/js-error": "^5.0.0"
+  },
+  "devDependencies": {
+    "@aureooms/js-compare": "1.4.8",
+    "@aureooms/js-operator": "1.0.2",
+    "@aureooms/js-predicate": "2.0.2",
+    "@babel/cli": "7.13.10",
+    "@babel/core": "7.13.10",
+    "@babel/preset-env": "7.13.10",
+    "@babel/register": "7.13.8",
+    "ava": "3.15.0",
+    "coveralls": "3.1.0",
+    "esdoc": "1.1.0",
+    "esdoc-inject-script-plugin": "1.0.0",
+    "esdoc-inject-style-plugin": "1.0.0",
+    "esdoc-standard-plugin": "1.0.0",
+    "fixpack": "4.0.0",
+    "np": "7.4.0",
+    "nyc": "15.1.0",
+    "regenerator-runtime": "0.13.7",
+    "xo": "0.38.2"
+  },
   "ava": {
     "files": [
       "test/src/**/*"
@@ -24,67 +85,6 @@
       }
     }
   },
-  "bugs": {
-    "url": "https://github.com/aureooms/js-itertools/issues"
-  },
-  "dependencies": {
-    "@aureooms/js-collections-deque": "^4.0.1",
-    "@aureooms/js-error": "^5.0.0"
-  },
-  "devDependencies": {
-    "@aureooms/js-compare": "1.4.8",
-    "@aureooms/js-operator": "1.0.2",
-    "@aureooms/js-predicate": "2.0.2",
-    "@babel/cli": "7.13.10",
-    "@babel/core": "7.13.10",
-    "@babel/preset-env": "7.13.10",
-    "@babel/register": "7.13.8",
-    "ava": "3.15.0",
-    "coveralls": "3.1.0",
-    "esdoc": "1.1.0",
-    "esdoc-inject-script-plugin": "1.0.0",
-    "esdoc-inject-style-plugin": "1.0.0",
-    "esdoc-standard-plugin": "1.0.0",
-    "np": "7.4.0",
-    "nyc": "15.1.0",
-    "regenerator-runtime": "0.13.7",
-    "xo": "0.38.2",
-    "fixpack": "4.0.0"
-  },
-  "files": [
-    "lib"
-  ],
-  "homepage": "https://aureooms.github.io/js-itertools",
-  "keywords": [
-    "chain",
-    "combinations",
-    "filter",
-    "iter",
-    "iterable",
-    "iterator",
-    "list",
-    "map",
-    "permutations",
-    "product",
-    "reduce"
-  ],
-  "license": "AGPL-3.0",
-  "main": "lib/index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/aureooms/js-itertools"
-  },
-  "scripts": {
-    "build": "rm -rf lib && babel src -d lib",
-    "cover": "nyc --reporter=lcov npm test",
-    "esdoc": "esdoc",
-    "prepare": "npm run build",
-    "release": "np",
-    "test": "xo && ava",
-    "lint-config": "fixpack --dryRun",
-    "lint-config-and-fix": "fixpack || fixpack"
-  },
-  "sideEffects": false,
   "xo": {
     "prettier": true,
     "ignores": [
