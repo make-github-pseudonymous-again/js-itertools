@@ -32,7 +32,7 @@
   ],
   "scripts": {
     "build": "rm -rf lib && babel src -d lib",
-    "cover": "nyc --reporter=lcov npm test",
+    "cover": "c8 --all --src src --reporter=lcov npm test",
     "esdoc": "esdoc",
     "lint-config": "fixpack --dryRun",
     "lint-config-and-fix": "fixpack || fixpack",
@@ -53,6 +53,7 @@
     "@babel/preset-env": "7.13.10",
     "@babel/register": "7.13.8",
     "ava": "3.15.0",
+    "c8": "7.6.0",
     "coveralls": "3.1.0",
     "esdoc": "1.1.0",
     "esdoc-inject-script-plugin": "1.0.0",
@@ -60,7 +61,6 @@
     "esdoc-standard-plugin": "1.0.0",
     "fixpack": "4.0.0",
     "np": "7.4.0",
-    "nyc": "15.1.0",
     "regenerator-runtime": "0.13.7",
     "xo": "0.38.2"
   },
