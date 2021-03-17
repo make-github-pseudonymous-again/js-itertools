@@ -48,6 +48,7 @@
     "build-gh-pages": "npm run build-docs",
     "commit-msg": "commitlint --edit",
     "cover": "c8 --all --src src --reporter=lcov npm test",
+    "debug": "NODE_ENV=debug npm run test -- -st --fail-fast",
     "install-hooks": "husky install",
     "lint-config": "fixpack --dryRun",
     "lint-config-and-fix": "fixpack || fixpack",
@@ -59,8 +60,8 @@
     "test": "xo && ava"
   },
   "dependencies": {
-    "@aureooms/js-collections-deque": "^4.0.1",
-    "@aureooms/js-error": "^5.0.0"
+    "@aureooms/js-collections-deque": "^5.0.0",
+    "@aureooms/js-error": "^5.0.1"
   },
   "devDependencies": {
     "@aureooms/js-compare": "1.4.8",
