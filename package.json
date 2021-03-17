@@ -125,7 +125,29 @@
           "babel-preset-power-assert"
         ]
       },
-      "test": {},
+      "test": {
+        "presets": [
+          [
+            "@babel/preset-env",
+            {
+              "targets": "current node"
+            }
+          ],
+          "babel-preset-power-assert"
+        ],
+        "plugins": [
+          [
+            "transform-remove-console",
+            {
+              "exclude": [
+                "log",
+                "error",
+                "warn"
+              ]
+            }
+          ]
+        ]
+      },
       "development": {
         "sourceMaps": "inline",
         "presets": [
