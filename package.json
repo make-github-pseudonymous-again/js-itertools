@@ -53,6 +53,7 @@
     "@babel/preset-env": "7.13.10",
     "@babel/register": "7.13.8",
     "ava": "3.15.0",
+    "babel-plugin-transform-remove-console": "6.9.4",
     "c8": "7.6.0",
     "coveralls": "3.1.0",
     "esdoc": "1.1.0",
