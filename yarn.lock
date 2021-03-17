@@ -2,24 +2,19 @@
 # yarn lockfile v1
 
 
-"@aureooms/js-collections-deque@^4.0.1":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@aureooms/js-collections-deque/-/js-collections-deque-4.0.1.tgz#bd8b827cdb597d061525c380dd704e338c77bd5f"
-  integrity sha512-dktRVLyep0sUKpqgtG/JseA232KMdlu9t9ePq2wHcng1dZ3+63qW2C+FlKXBktrT1dU92DDxIL6PqnV97kHA1Q==
+"@aureooms/js-collections-deque@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@aureooms/js-collections-deque/-/js-collections-deque-5.0.0.tgz#a574ddc2e53d8e073573f914cec9b130cf5355a8"
+  integrity sha512-28zJhpXGE4D0hQkaZFDYaeA/maUKTTcoHaScbBBzHCu5iy/+sovU7MnSm4URC0EN+R8AH/uVsSS0CFjDMXo6SQ==
   dependencies:
-    "@aureooms/js-error" "^4.0.1"
+    "@aureooms/js-error" "^5.0.1"
 
 "@aureooms/js-compare@1.4.8":
   version "1.4.8"
   resolved "https://registry.yarnpkg.com/@aureooms/js-compare/-/js-compare-1.4.8.tgz#c6bff1091f4a2e211f449299572d9f195146fc59"
   integrity sha512-Z26PU6OmuhS7ZJsELTKImmipF7J+KCOyN70wBhhVIhmqUhXY6C3JpJHAev6wNBkC4ThlQt3zO6p/OmBFIq76Qg==
 
-"@aureooms/js-error@^4.0.1":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@aureooms/js-error/-/js-error-4.0.1.tgz#be2740b3f31a337e0828930c9b70d38113b4dd77"
-  integrity sha512-zsgs6wmnRsKljlusewYiBaFBM/hIJp43b7OwE9ybpLEL4wfXjGP17cJTTAY8gpzALVFwEA5/flxIK0I6gJJLHQ==
-
-"@aureooms/js-error@^5.0.0":
+"@aureooms/js-error@^5.0.0", "@aureooms/js-error@^5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@aureooms/js-error/-/js-error-5.0.1.tgz#474e2f1dd7189f97df770b5cc6f1bda536de262d"
   integrity sha512-BbbpKpp4W8L2x9vL4bas+JtuAe4PMojzTpf21puHPw5p3S+lgKd8SfS9y40pVHi/b3SrQrdpmsaEKjL4xviilQ==
