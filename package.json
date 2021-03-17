@@ -59,7 +59,7 @@
     "prepare": "npm run build",
     "prepublishOnly": "pinst --disable",
     "release": "np",
-    "test": "xo && ava"
+    "test": "ava"
   },
   "dependencies": {
     "@aureooms/js-collections-deque": "^5.0.0",
