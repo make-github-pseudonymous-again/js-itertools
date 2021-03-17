@@ -68,12 +68,12 @@
     "files": [
       "test/src/**/*"
     ],
-    "concurrency": 8,
     "require": [
       "regenerator-runtime/runtime",
       "@babel/register"
     ],
-    "timeout": "2m"
+    "timeout": "2m",
+    "concurrency": 8
   },
   "babel": {
     "presets": [
