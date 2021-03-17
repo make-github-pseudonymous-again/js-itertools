@@ -131,7 +131,21 @@
           "babel-preset-power-assert"
         ]
       },
-      "production": {}
+      "production": {
+        "plugins": [
+          "babel-plugin-unassert",
+          [
+            "transform-remove-console",
+            {
+              "exclude": [
+                "log",
+                "error",
+                "warn"
+              ]
+            }
+          ]
+        ]
+      }
     }
   },
   "xo": {
