@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@aureooms/js-collections-deque": "^4.0.1",
-    "@aureooms/js-error": "^4.0.1"
+    "@aureooms/js-error": "^5.0.0"
   },
   "devDependencies": {
     "@aureooms/js-compare": "1.4.8",
