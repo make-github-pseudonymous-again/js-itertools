@@ -191,9 +191,6 @@
   },
   "xo": {
     "prettier": true,
-    "ignores": [
-      "lib"
-    ],
     "overrides": [
       {
         "files": "src/base/len.js",
