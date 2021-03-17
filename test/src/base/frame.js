@@ -14,9 +14,9 @@ test('frame', (t) => {
 		list(C),
 		[
 			[0, 1, 2],
-			[1, 2, 3]
+			[1, 2, 3],
 		],
-		'n !| N'
+		'n !| N',
 	);
 
 	const D = frame(range(2), 3);

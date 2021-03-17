@@ -6,7 +6,7 @@ test('first', (t) => {
 	t.throws(
 		() => first(range(0)),
 		{instanceOf: StopIteration},
-		'first on empty iterator throws StopIteration'
+		'first on empty iterator throws StopIteration',
 	);
 
 	const it = range(57, 14, -3);

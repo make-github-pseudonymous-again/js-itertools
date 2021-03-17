@@ -8,7 +8,7 @@ test('slice', (t) => {
 
 		t.deepEqual(
 			list(slice(iterable, start, stop, step)),
-			list(range(start, stop, step))
+			list(range(start, stop, step)),
 		);
 	};
 

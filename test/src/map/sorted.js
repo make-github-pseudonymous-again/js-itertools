@@ -23,7 +23,7 @@ test('sorted', (t) => {
 				return y;
 			},
 			b,
-			initializer
+			initializer,
 		);
 	};
 

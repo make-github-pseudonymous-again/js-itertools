@@ -13,7 +13,7 @@ test('combinationswithrepetition', (t) => {
 		['A', 'C'],
 		['B', 'B'],
 		['B', 'C'],
-		['C', 'C']
+		['C', 'C'],
 	]);
 	x(range(0, 3, 1), 2, [
 		[0, 0],
@@ -21,7 +21,7 @@ test('combinationswithrepetition', (t) => {
 		[0, 2],
 		[1, 1],
 		[1, 2],
-		[2, 2]
+		[2, 2],
 	]);
 	x(range(0, 0, 1), 2, []);
 	x(range(0, 4, 1), 0, [[]]);

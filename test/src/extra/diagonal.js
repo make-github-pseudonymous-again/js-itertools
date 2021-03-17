@@ -9,7 +9,7 @@ import {
 	count,
 	take,
 	product,
-	sorted
+	sorted,
 } from '../../../src/index.js';
 
 test('diagonal docstring example', (t) => {
@@ -18,7 +18,7 @@ test('diagonal docstring example', (t) => {
 		[0, 0],
 		[0, 1],
 		[1, 0],
-		[1, 1]
+		[1, 1],
 	];
 
 	t.deepEqual(expected, result);
@@ -35,7 +35,7 @@ test('diagonal finite square', (t) => {
 		[2, 0],
 		[1, 2],
 		[2, 1],
-		[2, 2]
+		[2, 2],
 	];
 
 	t.deepEqual(expected, result);
@@ -55,7 +55,7 @@ test('diagonal finite rectangle (vertical)', (t) => {
 		[3, 0],
 		[2, 2],
 		[3, 1],
-		[3, 2]
+		[3, 2],
 	];
 
 	t.deepEqual(expected, result);
@@ -75,7 +75,7 @@ test('diagonal finite rectangle (horizontal)', (t) => {
 		[2, 1],
 		[1, 3],
 		[2, 2],
-		[2, 3]
+		[2, 3],
 	];
 
 	t.deepEqual(expected, result);
@@ -95,7 +95,7 @@ test('diagonal large but finite', (t) => {
 		[0, 3],
 		[1, 2],
 		[2, 1],
-		[3, 0]
+		[3, 0],
 	];
 
 	t.deepEqual(expected, result);
@@ -114,7 +114,7 @@ test('diagonal infinite', (t) => {
 		[0, 3],
 		[1, 2],
 		[2, 1],
-		[3, 0]
+		[3, 0],
 	];
 
 	t.deepEqual(expected, result);
@@ -166,7 +166,7 @@ test('diagonal finite x infinite', (t) => {
 		[0, 4],
 		[1, 3],
 		[2, 2],
-		[0, 5]
+		[0, 5],
 	];
 
 	t.deepEqual(expected, result);
@@ -188,7 +188,7 @@ test('diagonal infinite x finite', (t) => {
 		[2, 2],
 		[3, 1],
 		[4, 0],
-		[3, 2]
+		[3, 2],
 	];
 
 	t.deepEqual(expected, result);

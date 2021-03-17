@@ -16,7 +16,7 @@ test('nrepeat', (t) => {
 		'ABC',
 		['A'],
 		[0, 1, -1],
-		['A', 'B', 'C']
+		['A', 'B', 'C'],
 	]) {
 		x(item, 0, []);
 		x(item, 1, [item]);

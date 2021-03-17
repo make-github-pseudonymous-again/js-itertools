@@ -8,12 +8,12 @@ test('next', (t) => {
 	t.throws(
 		() => next(range(0)),
 		{instanceOf: StopIteration},
-		'next on empty iterator throws StopIteration'
+		'next on empty iterator throws StopIteration',
 	);
 	t.is(
 		next(range(0), dflt),
 		dflt,
-		'next on empty iterator with default returns default'
+		'next on empty iterator with default returns default',
 	);
 
 	const it = range(57, 14, -3);

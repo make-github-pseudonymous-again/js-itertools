@@ -14,9 +14,9 @@ test('by', (t) => {
 		list(C),
 		[
 			[0, 1, 2],
-			[3, undefined, undefined]
+			[3, undefined, undefined],
 		],
-		'n !| N'
+		'n !| N',
 	);
 
 	const D = by('', 3);
@@ -31,6 +31,6 @@ test('by (infinite sequences)', (t) => {
 	t.deepEqual(
 		list(head(A, 1000)),
 		list(head(B, 1000)),
-		'compare to zip output'
+		'compare to zip output',
 	);
 });

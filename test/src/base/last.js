@@ -6,7 +6,7 @@ test('last', (t) => {
 	t.throws(
 		() => last(range(0)),
 		{instanceOf: StopIteration},
-		'last on empty range throws StopIteration'
+		'last on empty range throws StopIteration',
 	);
 
 	t.is(last(range(57, 14, -3)), 15);
@@ -22,6 +22,6 @@ test('last', (t) => {
 	t.throws(
 		() => last(it),
 		{instanceOf: StopIteration},
-		'last on empty iterator throws StopIteration'
+		'last on empty iterator throws StopIteration',
 	);
 });

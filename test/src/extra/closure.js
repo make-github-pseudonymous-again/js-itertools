@@ -77,7 +77,7 @@ const A006577 = [
 	14,
 	14,
 	102,
-	22
+	22,
 ];
 
 function macro(t, n, a) {
