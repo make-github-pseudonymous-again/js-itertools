@@ -1,6 +1,7 @@
 languages:
   JavaScript: true
 exclude_paths:
-- "doc/**"
-- "lib/**"
-- "test/**"
+  - doc/**
+  - lib/**
+  - test/**
+
