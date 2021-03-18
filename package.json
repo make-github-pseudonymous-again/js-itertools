@@ -65,8 +65,8 @@
     "travis": "npm run lint-config && npm run lint && npm run cover"
   },
   "dependencies": {
-    "@aureooms/js-collections-deque": "^5.0.0",
-    "@aureooms/js-error": "^5.0.1"
+    "@aureooms/js-collections-deque": "^6.0.1",
+    "@aureooms/js-error": "^5.0.2"
   },
   "devDependencies": {
     "@aureooms/js-compare": "1.4.8",
