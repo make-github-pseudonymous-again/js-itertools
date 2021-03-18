@@ -1,4 +1,5 @@
-import {_zip2, _count} from '../index.js';
+import _count from '../base/_count.js';
+import _zip2 from './_zip2.js';
 
 /**
  * Yields (index,element) tuples where the elements are taken from the input
@@ -15,8 +16,8 @@ import {_zip2, _count} from '../index.js';
  *
  * @param {Iterable} iterable - The input iterable.
  * @param {Number} [start=0] - The starting index.
- * @returns {Iterator}
+ * @returns {IterableIterator}
  */
-export function enumerate(iterable, start = 0) {
+export default function enumerate(iterable, start = 0) {
 	return _zip2(_count(start, 1), iterable);
 }

@@ -1,5 +1,8 @@
 import deque from '@aureooms/js-collections-deque';
-import {next, drop, StopIteration} from '../base/index.js';
+
+import drop from '../base/drop.js';
+import next from '../base/next.js';
+import StopIteration from '../base/StopIteration.js';
 
 /**
  * Returns the <code>n</code>th value of the input iterable (<code>n</code>
@@ -16,7 +19,7 @@ import {next, drop, StopIteration} from '../base/index.js';
  * @param {Number} n - The index of the value to output.
  * @returns {Object} The <code>n</code>th value of the input iterable.
  */
-export function nth(iterable, n) {
+export default function nth(iterable, n) {
 	if (n < 0) {
 		const deq = deque(iterable, -n);
 		if (deq.len() < -n) throw new StopIteration();

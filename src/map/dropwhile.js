@@ -1,4 +1,4 @@
-import {iter} from '../index.js';
+import iter from '../base/iter.js';
 
 /**
  * Drop elements of the input iterable while the current element satisfies the
@@ -8,7 +8,7 @@ import {iter} from '../index.js';
  * @param {Iterable} iterable - The input iterable.
  * @returns {Iterator}
  */
-export function* dropwhile(predicate, iterable) {
+export default function* dropwhile(predicate, iterable) {
 	const iterator = iter(iterable);
 
 	for (const item of iterator) {

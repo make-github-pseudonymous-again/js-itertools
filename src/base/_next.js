@@ -4,6 +4,6 @@
  * @param {Iterator} iterator - The input iterator.
  * @returns {{done: Boolean, value: Object}}
  */
-export function _next(iterator) {
+export default function _next(iterator) {
 	return iterator.next();
 }

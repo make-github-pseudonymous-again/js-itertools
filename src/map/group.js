@@ -1,4 +1,4 @@
-import {iter} from '../index.js';
+import iter from '../base/iter.js';
 
 /**
  * Yields elements of the input iterable by grouping them into tuples
@@ -17,7 +17,7 @@ import {iter} from '../index.js';
  * @param {Iterable} iterable - The input iterable.
  * @returns {Iterator}
  */
-export function* group(key, iterable) {
+export default function* group(key, iterable) {
 	const iterator = iter(iterable);
 
 	const first = iterator.next();

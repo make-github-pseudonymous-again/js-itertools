@@ -7,9 +7,9 @@
  *
  * @param {Function} callable - The callable to use.
  * @param {Iterable} iterable - The input iterable.
- * @returns {Iterator}
+ * @returns {IterableIterator}
  */
-export function* map(callable, iterable) {
+export default function* map(callable, iterable) {
 	for (const item of iterable) {
 		yield callable(item);
 	}

@@ -1,4 +1,4 @@
-import {iter} from '../index.js';
+import iter from '../base/iter.js';
 
 /**
  * Same as
@@ -9,9 +9,9 @@ import {iter} from '../index.js';
  * @param {Number} start - Where to start the slice.
  * @param {Number} stop - Where to stop the slice.
  * @param {Number} step - The step of the slice.
- * @returns {Iterator}
+ * @returns {IterableIterator}
  */
-export function* slice(iterable, start, stop, step) {
+export default function* slice(iterable, start, stop, step) {
 	const iterator = iter(iterable);
 
 	while (start > 0) {

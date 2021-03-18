@@ -1,5 +1,5 @@
-import {_reduce} from './_reduce.js';
-import {iter} from '../base/iter.js';
+import _reduce from './_reduce.js';
+import iter from '../base/iter.js';
 
 /**
  * Applies the accumulator function iteratively on the last return value of the
@@ -18,7 +18,7 @@ import {iter} from '../base/iter.js';
  * @param {Object} [initializer=undefined] - The initial value of the reduction.
  * @returns {Object} - The reduction of the elements of <code>iterable</code>.
  */
-export function reduce(accumulator, iterable, initializer = undefined) {
+export default function reduce(accumulator, iterable, initializer = undefined) {
 	if (initializer === undefined) {
 		const iterator = iter(iterable);
 		const first = iterator.next();

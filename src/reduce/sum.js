@@ -1,4 +1,4 @@
-import {_sum} from './_sum.js';
+import _sum from './_sum.js';
 
 /**
  * Sums the elements of the input iterable. An optional initializer parameter
@@ -17,6 +17,6 @@ import {_sum} from './_sum.js';
  * <code>iterable</code>.
  *
  */
-export function sum(iterable, initializer = 0) {
+export default function sum(iterable, initializer = 0) {
 	return _sum(iterable, initializer);
 }

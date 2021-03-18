@@ -11,7 +11,7 @@
  * @returns {Iterator}
  *
  */
-export function* filterfalse(predicate, iterable) {
+export default function* filterfalse(predicate, iterable) {
 	for (const item of iterable) {
 		if (!predicate(item)) {
 			yield item;

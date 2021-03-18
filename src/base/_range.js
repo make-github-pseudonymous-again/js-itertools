@@ -6,9 +6,9 @@
  * @param {Number} start - The starting value.
  * @param {Number} stop - The stopping value.
  * @param {Number} step - The step value.
- * @returns {Iterator}
+ * @returns {IterableIterator}
  */
-export function* _range(start, stop, step) {
+export default function* _range(start, stop, step) {
 	if (step < 0) {
 		for (; start > stop; start += step) {
 			yield start;

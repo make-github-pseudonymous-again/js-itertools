@@ -1,4 +1,7 @@
-import {list, map, iter, _next} from '../index.js';
+import iter from '../base/iter.js';
+import list from '../base/list.js';
+import _next from '../base/_next.js';
+import map from './map.js';
 
 /**
  * Zips iterables together. Yields a tuple containing the first element of each
@@ -10,10 +13,10 @@ import {list, map, iter, _next} from '../index.js';
  * list( _zip( [ 'abcd' , range(3) ] ) ) ;
  *
  * @param {Iterable[]} iterables - The iterables to zip.
- * @returns {Iterator}
+ * @returns {IterableIterator}
  *
  */
-export function* _zip(iterables) {
+export default function* _zip(iterables) {
 	const iterators = list(map(iter, iterables));
 
 	if (iterators.length === 0) {

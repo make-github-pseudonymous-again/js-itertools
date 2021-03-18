@@ -1,4 +1,4 @@
-import {iter} from '../base/iter.js';
+import iter from '../base/iter.js';
 
 /**
  * Returns the largest element of the input iterable according
@@ -20,7 +20,7 @@ import {iter} from '../base/iter.js';
  * @returns {Object} The largest element of <code>iterable</code> according to
  * <code>compare</code>.
  */
-export function max(compare, iterable, dflt = undefined) {
+export default function max(compare, iterable, dflt = undefined) {
 	const iterator = iter(iterable);
 
 	const first = iterator.next();

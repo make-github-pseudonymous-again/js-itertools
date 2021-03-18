@@ -1,7 +1,5 @@
-import deque from '@aureooms/js-collections-deque';
-
-import {iter} from './iter.js';
-import {take} from './take.js';
+import _take from './_take.js';
+import _trunc from './_trunc.js';
 
 /**
  * Yields all elements of the iterable except the last <code>n</code> ones. If
@@ -14,34 +12,8 @@ import {take} from './take.js';
  *
  * @param {Iterable} iterable - The input iterable.
  * @param {Number} n - The number of elements to exclude from the output.
- * @returns {Iterator}
+ * @returns {IterableIterator}
  */
-export function* trunc(iterable, n) {
-	if (n < 0) {
-		yield* take(iterable, -n);
-		return;
-	}
-
-	if (n === 0) {
-		yield* iterable;
-		return;
-	}
-
-	const iterator = iter(iterable);
-
-	const buffer = deque(null, n);
-
-	while (n-- > 0) {
-		const event = iterator.next();
-		if (event.done) {
-			return;
-		}
-
-		buffer.append(event.value);
-	}
-
-	for (const value of iterator) {
-		yield buffer.popleft();
-		buffer.append(value);
-	}
+export default function trunc(iterable, n) {
+	return n < 0 ? _take(iterable, -n) : _trunc(iterable, n);
 }

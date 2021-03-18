@@ -6,7 +6,7 @@
  * @param {Iterable} iterable - The input iterable.
  * @returns {Iterator}
  */
-export function* takewhile(predicate, iterable) {
+export default function* takewhile(predicate, iterable) {
 	for (const item of iterable) {
 		if (!predicate(item)) {
 			return;

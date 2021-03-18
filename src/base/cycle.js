@@ -6,10 +6,10 @@
  * list(head(cycle(range(2)),7)) ;
  *
  * @param {Iterable} iterable - The input iterable.
- * @returns {Iterator}
+ * @returns {IterableIterator}
  *
  */
-export function* cycle(iterable) {
+export default function* cycle(iterable) {
 	const buffer = [];
 
 	for (const item of iterable) {

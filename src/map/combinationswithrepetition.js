@@ -1,4 +1,6 @@
-import {list, nrepeat, pick} from '../index.js';
+import list from '../base/list.js';
+import pick from '../base/pick.js';
+import nrepeat from './nrepeat.js';
 
 /**
  * Yields all combinations, with repetitions, of each possible choice of
@@ -14,10 +16,9 @@ import {list, nrepeat, pick} from '../index.js';
  *
  * @param {Iterable} iterable - The input iterable.
  * @param {Number} r - The size of the combinations to generate.
- * @returns {Iterator}
+ * @returns {IterableIterator}
  */
-
-export function* combinationswithrepetition(iterable, r) {
+export default function* combinationswithrepetition(iterable, r) {
 	const pool = list(iterable);
 	const length = pool.length;
 

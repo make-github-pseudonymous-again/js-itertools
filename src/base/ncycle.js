@@ -10,7 +10,7 @@
  * @returns {Iterator}
  *
  */
-export function* ncycle(iterable, n) {
+export default function* ncycle(iterable, n) {
 	const buffer = [];
 
 	for (const item of iterable) {

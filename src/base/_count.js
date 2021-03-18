@@ -12,9 +12,9 @@
  *
  * @param {Number} start - The starting value.
  * @param {Number} step - The step between the values.
- * @returns {Iterator}
+ * @returns {IterableIterator}
  */
-export function* _count(start, step) {
+export default function* _count(start, step) {
 	while (true) {
 		yield start;
 

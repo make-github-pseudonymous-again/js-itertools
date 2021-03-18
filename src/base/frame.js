@@ -1,5 +1,5 @@
-import {iter} from './iter.js';
-import {range} from './range.js';
+import iter from './iter.js';
+import range from './range.js';
 
 /**
  * Yields tuples that contain the current element of the input iterable and the
@@ -15,7 +15,7 @@ import {range} from './range.js';
  * @returns {Iterator}
  *
  */
-export function* frame(iterable, n) {
+export default function* frame(iterable, n) {
 	// Could have an implementation using a deque
 	// that doesn't slice (and thus allocate a new
 	// vector everytime). Though the yield object

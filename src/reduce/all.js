@@ -14,7 +14,7 @@
  * @returns {Boolean} Returns <code>true</code> if all element of
  * <code>iterable</code> are truthy, <code>false</code> otherwise.
  */
-export function all(iterable) {
+export default function all(iterable) {
 	for (const item of iterable) {
 		if (!item) {
 			return false;

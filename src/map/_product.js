@@ -15,7 +15,7 @@
  * @param {Number} n - Number of pools in total.
  * @returns {Iterator}
  */
-export function* _product(pools, i, n) {
+export default function* _product(pools, i, n) {
 	if (i === n) {
 		yield [];
 		return;

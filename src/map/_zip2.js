@@ -1,4 +1,4 @@
-import {iter} from '../index.js';
+import iter from '../base/iter.js';
 
 /**
  * Zips exactly two iterables together. Yields a tuple containing the first
@@ -11,20 +11,20 @@ import {iter} from '../index.js';
  *
  * @param {Iterable} A - The first iterable.
  * @param {Iterable} B - The second iterable.
- * @returns {Iterator}
+ * @returns {IterableIterator}
  *
  */
-export function* _zip2(A, B) {
-	A = iter(A);
-	B = iter(B);
+export default function* _zip2(A, B) {
+	const iA = iter(A);
+	const iB = iter(B);
 
 	while (true) {
-		const a = A.next();
+		const a = iA.next();
 		if (a.done) {
 			return;
 		}
 
-		const b = B.next();
+		const b = iB.next();
 		if (b.done) {
 			return;
 		}

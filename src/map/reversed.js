@@ -4,7 +4,7 @@
  * @param {Iterable} iterable - The input iterable.
  * @returns {Iterator} - The input iterable, reversed.
  */
-export function* reversed(iterable) {
+export default function* reversed(iterable) {
 	const buffer = [];
 
 	for (const item of iterable) {

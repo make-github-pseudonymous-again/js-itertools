@@ -1,4 +1,6 @@
-import {list, range, pick} from '../index.js';
+import list from '../base/list.js';
+import pick from '../base/pick.js';
+import range from '../base/range.js';
 
 /**
  * Yields all combinations of each possible choice of <code>r</code> elements
@@ -14,9 +16,9 @@ import {list, range, pick} from '../index.js';
  *
  * @param {Iterable} iterable - The input iterable.
  * @param {Number} r - The size of the combinations to generate.
- * @returns {Iterator}
+ * @returns {IterableIterator}
  */
-export function* combinations(iterable, r) {
+export default function* combinations(iterable, r) {
 	const pool = list(iterable);
 	const length = pool.length;
 

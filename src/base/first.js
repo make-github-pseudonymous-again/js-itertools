@@ -1,7 +1,8 @@
-import {next} from './next.js';
+import next from './next.js';
 
 /**
  * Same as {@link next}.
  * @function first
  */
-export const first = next;
+const first = next;
+export default first;

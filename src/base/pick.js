@@ -8,9 +8,9 @@
  *
  * @param {Object} object - The input object.
  * @param {Iterable} iterable - The input iterable.
- * @returns {Iterator}
+ * @returns {IterableIterator}
  */
-export function* pick(object, iterable) {
+export default function* pick(object, iterable) {
 	for (const key of iterable) {
 		yield object[key];
 	}

@@ -15,7 +15,7 @@
  * @param {Object} start The starting element.
  * @returns {Iterator} Iterator over the closure.
  */
-export function* closure(operator, start) {
+export default function* closure(operator, start) {
 	yield start;
 
 	let element = start;

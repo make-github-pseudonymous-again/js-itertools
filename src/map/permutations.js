@@ -1,4 +1,8 @@
-import {list, range, head, pick} from '../index.js';
+import assert from 'assert';
+import _take from '../base/_take.js';
+import list from '../base/list.js';
+import pick from '../base/pick.js';
+import range from '../base/range.js';
 
 /**
  * Yields all permutations of each possible choice of <code>r</code> elements
@@ -14,9 +18,10 @@ import {list, range, head, pick} from '../index.js';
  *
  * @param {Iterable} iterable - The input iterable.
  * @param {Number} r - The size of the permutations to generate.
- * @returns {Iterator}
+ * @returns {IterableIterator}
  */
-export function* permutations(iterable, r) {
+export default function* permutations(iterable, r) {
+	assert(Number.isInteger(r) && r >= 0);
 	const pool = list(iterable);
 
 	const length = pool.length;
@@ -28,7 +33,7 @@ export function* permutations(iterable, r) {
 	const indices = list(range(0, length, 1));
 	const cycles = list(range(length, length - r, -1));
 
-	yield list(pick(pool, head(indices, r)));
+	yield list(pick(pool, _take(indices, r)));
 
 	if (r === 0 || length === 0) {
 		return;
@@ -50,7 +55,7 @@ export function* permutations(iterable, r) {
 
 				[indices[i], indices[length - j]] = [indices[length - j], indices[i]];
 
-				yield list(pick(pool, head(indices, r)));
+				yield list(pick(pool, _take(indices, r)));
 				break;
 			}
 		}

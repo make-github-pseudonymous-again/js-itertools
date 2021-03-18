@@ -1,6 +1,6 @@
-import {iter} from './iter.js';
-import {list} from './list.js';
-import {map} from '../map/map.js';
+import iter from './iter.js';
+import list from './list.js';
+import map from '../map/map.js';
 
 import deque from '@aureooms/js-collections-deque';
 
@@ -13,7 +13,7 @@ import deque from '@aureooms/js-collections-deque';
  * @param {Number} n - The number of copies to make.
  * @returns {Iterator[]}
  */
-export function tee(iterable, n) {
+export default function tee(iterable, n) {
 	const iterator = iter(iterable);
 
 	const copies = [];

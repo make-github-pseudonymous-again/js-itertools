@@ -1,4 +1,9 @@
-import {list, map, iter, _next, repeat, enumerate} from '../index.js';
+import iter from '../base/iter.js';
+import list from '../base/list.js';
+import _next from '../base/_next.js';
+import enumerate from './enumerate.js';
+import map from './map.js';
+import repeat from './repeat.js';
 
 /**
  * Same as _zip, but continues to yield zipped tuples until the last iterable is
@@ -8,12 +13,12 @@ import {list, map, iter, _next, repeat, enumerate} from '../index.js';
  * // returns [['A','x'],['B','y'],['C','-'],['D','-']]
  * list( _ziplongest( '-' , [ 'ABCD', 'xy' ] ) ) ;
  *
- * @param fillvalue - The value to yield for iterators that are exhausted.
+ * @param {any} fillvalue - The value to yield for iterators that are exhausted.
  * @param {Iterable[]} iterables - The iterables to zip.
- * @returns {Iterator}
+ * @returns {IterableIterator}
  *
  */
-export function* _ziplongest(fillvalue, iterables) {
+export default function* _ziplongest(fillvalue, iterables) {
 	let counter = iterables.length;
 
 	if (counter === 0) {

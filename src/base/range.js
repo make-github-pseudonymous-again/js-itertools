@@ -1,4 +1,4 @@
-import {_range} from './_range.js';
+import _range from './_range.js';
 
 /**
  * Yields values in a range, separated by a fixed constant called step. If this
@@ -10,9 +10,9 @@ import {_range} from './_range.js';
  * @param {Number} [start=0] - The starting value.
  * @param {Number} stop - The stopping value.
  * @param {Number} [step=1] - The step value.
- * @returns {Iterator}
+ * @returns {IterableIterator}
  */
-export function range(start, stop, step) {
+export default function range(start, stop, step) {
 	if (stop === undefined) {
 		return _range(0, start, 1);
 	}

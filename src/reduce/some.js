@@ -20,7 +20,7 @@
  * elements of <code>iterable</code> are truthy, <code>false</code> otherwise.
  */
 
-export function some(iterable, n) {
+export default function some(iterable, n) {
 	if (n <= 0) {
 		return true;
 	}

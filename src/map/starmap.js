@@ -9,7 +9,7 @@
  * @param {Iterable} iterable - The input iterable.
  * @returns {Iterator}
  */
-export function* starmap(callable, iterable) {
+export default function* starmap(callable, iterable) {
 	for (const args of iterable) {
 		yield callable(...args);
 	}

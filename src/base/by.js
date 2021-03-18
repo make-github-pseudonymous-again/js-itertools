@@ -1,5 +1,5 @@
-import {iter} from './iter.js';
-import {range} from './range.js';
+import iter from './iter.js';
+import range from './range.js';
 
 /**
  * Yields elements of the input iterable by grouping them into tuples of a
@@ -9,7 +9,7 @@ import {range} from './range.js';
  * @param {Number} n - The size of the yielded tuples.
  * @returns {Iterator}
  */
-export function* by(iterable, n) {
+export default function* by(iterable, n) {
 	const iterator = iter(iterable);
 
 	while (true) {

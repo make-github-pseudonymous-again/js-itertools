@@ -1,4 +1,8 @@
-import {iter, len, cycle, map, slice} from '../index.js';
+import cycle from '../base/cycle.js';
+import iter from '../base/iter.js';
+import len from '../base/len.js';
+import map from './map.js';
+import slice from './slice.js';
 
 /**
  * Yields the first item of the first input iterable, then the first item of
@@ -12,10 +16,10 @@ import {iter, len, cycle, map, slice} from '../index.js';
  * list( roundrobin(['ABC', 'D', 'EF']) )
  *
  * @param {Iterable[]} iterables - The input iterables.
- * @returns {Iterator}
+ * @returns {IterableIterator}
  *
  */
-export function* roundrobin(iterables) {
+export default function* roundrobin(iterables) {
 	let pending = len(iterables);
 
 	let iterators = cycle(map(iter, iterables));

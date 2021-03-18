@@ -1,4 +1,4 @@
-import {_count} from './_count.js';
+import _count from './_count.js';
 
 /**
  * Yields increasing or decreasing sequences of numbers. The starting value
@@ -18,6 +18,6 @@ import {_count} from './_count.js';
  * @param {Number} [step=1] - The step between the values.
  * @returns {Iterator}
  */
-export function count(start = 0, step = 1) {
+export default function count(start = 0, step = 1) {
 	return _count(start, step);
 }

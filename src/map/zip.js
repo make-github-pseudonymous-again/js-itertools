@@ -1,4 +1,4 @@
-import {_zip} from './_zip.js';
+import _zip from './_zip.js';
 
 /**
  * Zips iterables together. Yields a tuple containing the first element of each
@@ -13,6 +13,6 @@ import {_zip} from './_zip.js';
  * @returns {Iterator}
  *
  */
-export function zip(...iterables) {
+export default function zip(...iterables) {
 	return _zip(iterables);
 }

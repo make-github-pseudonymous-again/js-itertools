@@ -1,6 +1,5 @@
-import {iter} from './iter.js';
-import {consume} from './consume.js';
-import {tail} from './tail.js';
+import _drop from './_drop.js';
+import _tail from './_tail.js';
 
 /**
  * Drops the first <code>n</code> values of the input iterable.
@@ -13,15 +12,8 @@ import {tail} from './tail.js';
  *
  * @param {Iterable} iterable - The input iterable.
  * @param {Number} n - The number of values to drop.
- * @returns {Iterator} - The remaining values of the input iterable.
+ * @returns {IterableIterator} - The remaining values of the input iterable.
  */
-export function* drop(iterable, n) {
-	if (n < 0) {
-		yield* tail(iterable, -n);
-		return;
-	}
-
-	const iterator = iter(iterable);
-	consume(iterator, n);
-	yield* iterator;
+export default function drop(iterable, n) {
+	return n < 0 ? _tail(iterable, -n) : _drop(iterable, n);
 }

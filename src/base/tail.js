@@ -1,6 +1,5 @@
-import deque from '@aureooms/js-collections-deque';
-
-import {drop} from './drop.js';
+import _drop from './_drop.js';
+import _tail from './_tail.js';
 
 /**
  * Returns the last <code>n</code> values of the input iterable in an array.
@@ -13,13 +12,8 @@ import {drop} from './drop.js';
  *
  * @param {Iterable} iterable - The input iterable.
  * @param {Number} n - The number of values to include in the output.
- * @returns {Iterator} - The last <code>n</code> values of the input iterable.
+ * @returns {IterableIterator} - The last <code>n</code> values of the input iterable.
  */
-export function* tail(iterable, n) {
-	if (n < 0) {
-		yield* drop(iterable, -n);
-		return;
-	}
-
-	yield* deque(iterable, n);
+export default function tail(iterable, n) {
+	return n < 0 ? _drop(iterable, -n) : _tail(iterable, n);
 }

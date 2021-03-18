@@ -1,4 +1,8 @@
-import {list, map, _product, ncycle, reversed} from '../index.js';
+import list from '../base/list.js';
+import ncycle from '../base/ncycle.js';
+import map from './map.js';
+import reversed from './reversed.js';
+import _product from './_product.js';
 
 /**
  * Computes the product of the iterables given as first parameter. The second
@@ -20,7 +24,7 @@ import {list, map, _product, ncycle, reversed} from '../index.js';
  * @return {Iterator}
  */
 
-export function product(iterables, repeat = 1) {
+export default function product(iterables, repeat = 1) {
 	const pools = list(ncycle(reversed(map(list, iterables)), repeat));
 
 	return map(list, _product(pools, 0, pools.length));

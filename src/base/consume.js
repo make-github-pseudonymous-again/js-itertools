@@ -5,7 +5,7 @@
  * @param {Number} n - The number of iterations to consume.
  *
  */
-export function consume(iterator, n) {
+export default function consume(iterator, n) {
 	// eslint-disable-next-line no-empty
 	while (n-- > 0 && !iterator.next().done) {}
 }

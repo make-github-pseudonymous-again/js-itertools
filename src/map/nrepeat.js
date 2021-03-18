@@ -5,11 +5,11 @@
  * @example
  * list( nrepeat( 6 , 3 ) ) ; // returns [ 6 , 6 , 6 ]
  *
- * @param {Object} item - The input item.
+ * @param {any} item - The input item.
  * @param {Number} times - The number of times to yield <code>item</code>.
- * @returns {Iterator}
+ * @returns {IterableIterator}
  */
-export function* nrepeat(item, times) {
+export default function* nrepeat(item, times) {
 	while (times-- > 0) {
 		yield item;
 	}

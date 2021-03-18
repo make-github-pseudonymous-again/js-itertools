@@ -14,7 +14,7 @@
  * @param {Object} initializer - The initial value of the reduction.
  * @returns {Object} - The reduction of the elements of <code>iterable</code>.
  */
-export function _reduce(accumulator, iterable, initializer) {
+export default function _reduce(accumulator, iterable, initializer) {
 	for (const item of iterable) {
 		initializer = accumulator(initializer, item);
 	}

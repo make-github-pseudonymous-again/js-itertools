@@ -1,6 +1,8 @@
 import deque from '@aureooms/js-collections-deque';
 
-import {iter, _next, count} from '../base/index.js';
+import iter from '../base/iter.js';
+import _next from '../base/_next.js';
+import count from '../base/count.js';
 
 /**
  * Computes the product of two iterables in a way that allows for one or both
@@ -23,7 +25,7 @@ import {iter, _next, count} from '../base/index.js';
  * @returns {Iterator}
  *
  */
-export function* diagonal(A, B) {
+export default function* diagonal(A, B) {
 	const itA = iter(A);
 	const itB = iter(B);
 	const _A = deque();

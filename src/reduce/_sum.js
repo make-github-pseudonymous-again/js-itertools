@@ -14,7 +14,7 @@
  * <code>iterable</code>.
  *
  */
-export function _sum(iterable, initializer) {
+export default function _sum(iterable, initializer) {
 	for (const item of iterable) {
 		initializer += item;
 	}
