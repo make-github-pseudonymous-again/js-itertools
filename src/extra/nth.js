@@ -1,4 +1,4 @@
-import deque from '@aureooms/js-collections-deque';
+import {deque} from '@aureooms/js-collections-deque';
 
 import drop from '../base/drop.js';
 import next from '../base/next.js';

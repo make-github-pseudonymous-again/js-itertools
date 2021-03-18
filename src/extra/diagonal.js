@@ -1,4 +1,4 @@
-import deque from '@aureooms/js-collections-deque';
+import {deque} from '@aureooms/js-collections-deque';
 
 import iter from '../base/iter.js';
 import _next from '../base/_next.js';

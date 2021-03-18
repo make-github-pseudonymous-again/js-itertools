@@ -1,5 +1,5 @@
 import assert from 'assert';
-import deque from '@aureooms/js-collections-deque';
+import {deque} from '@aureooms/js-collections-deque';
 
 /**
  * Returns the last <code>n</code> values of the input iterable in an array.

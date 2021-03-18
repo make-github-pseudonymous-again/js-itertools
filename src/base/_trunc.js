@@ -1,5 +1,5 @@
 import assert from 'assert';
-import deque from '@aureooms/js-collections-deque';
+import {deque} from '@aureooms/js-collections-deque';
 
 import iter from './iter.js';
 

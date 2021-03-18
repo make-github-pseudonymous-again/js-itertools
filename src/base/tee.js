@@ -2,7 +2,7 @@ import iter from './iter.js';
 import list from './list.js';
 import map from '../map/map.js';
 
-import deque from '@aureooms/js-collections-deque';
+import {deque} from '@aureooms/js-collections-deque';
 
 /**
  * Returns <code>n</code> copies of the input iterable. Note that if the input
