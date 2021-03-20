@@ -4,12 +4,17 @@ import {
 	list,
 	map,
 	group,
+	groupby,
 	repeat,
 	ncycle,
 	next,
 	range,
 } from '../../../src/index.js';
 import {identity} from '@aureooms/js-operator';
+
+test('groupby is group', (t) => {
+	t.is(groupby, group);
+});
 
 test('group', (t) => {
 	const x = (key, iterable, expected) => {

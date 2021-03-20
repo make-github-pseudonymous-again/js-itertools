@@ -65,9 +65,3 @@ export default function* group(key, iterable) {
 		}
 	}
 }
-
-/**
- * Same as {@link group}.
- * @function groupby
- */
-export const groupby = group;

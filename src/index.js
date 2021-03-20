@@ -40,6 +40,7 @@ export {default as filter} from './map/filter.js';
 export {default as filterfalse} from './map/filterfalse.js';
 export {default as filtertrue} from './map/filtertrue.js';
 export {default as group} from './map/group.js';
+export {default as groupby} from './map/groupby.js';
 export {default as map} from './map/map.js';
 export {default as nrepeat} from './map/nrepeat.js';
 export {default as permutations} from './map/permutations.js';
