@@ -1,7 +1,11 @@
 export {default as StopIteration} from './base/StopIteration.js';
 export {default as _count} from './base/_count.js';
+export {default as _drop} from './base/_drop.js';
 export {default as _next} from './base/_next.js';
 export {default as _range} from './base/_range.js';
+export {default as _tail} from './base/_tail.js';
+export {default as _take} from './base/_take.js';
+export {default as _trunc} from './base/_trunc.js';
 export {default as by} from './base/by.js';
 export {default as consume} from './base/consume.js';
 export {default as count} from './base/count.js';
