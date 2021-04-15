@@ -1,7 +1,7 @@
 {
   "name": "@aureooms/js-itertools",
   "description": "Iterable and iterator library for JavaScript",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "license": "AGPL-3.0",
   "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
   "homepage": "https://aureooms.github.io/js-itertools",
