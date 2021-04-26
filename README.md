@@ -1,4 +1,4 @@
-# :hammer_and_wrench: [@aureooms/js-itertools](https://aureooms.github.io/js-itertools)
+# :hammer_and_wrench: [@aureooms/js-itertools](https://make-github-pseudonymous-again.github.io/js-itertools)
 
 <p align="center">
 <a href="https://xkcd.com/353">
@@ -8,7 +8,7 @@
 </p>
 
 Python's iterable and iterator library for JavaScript.
-See [docs](https://aureooms.github.io/js-itertools).
+See [docs](https://make-github-pseudonymous-again.github.io/js-itertools).
 Parent is [@aureooms/js-library](https://github.com/aureooms/js-library).
 
 > :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing
@@ -30,7 +30,7 @@ cycle( chain( [ [ 0 , 1 , 2 ] , [ 3 , 4 , 5 ] ] ) ) ; // 0 1 2 3 4 5 0 1 ...
 [![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-itertools.svg)](https://codeclimate.com/github/aureooms/js-itertools/trends/churn)
 [![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-itertools/main.svg)](https://codecov.io/gh/aureooms/js-itertools)
 [![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-itertools.svg)](https://codeclimate.com/github/aureooms/js-itertools/trends/technical_debt)
-[![Documentation](https://aureooms.github.io/js-itertools/badge.svg)](https://aureooms.github.io/js-itertools/source.html)
+[![Documentation](https://make-github-pseudonymous-again.github.io/js-itertools/badge.svg)](https://make-github-pseudonymous-again.github.io/js-itertools/source.html)
 [![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-itertools)](https://bundlephobia.com/result?p=@aureooms/js-itertools)
 
 ## :link: References in Python and JavaScript
