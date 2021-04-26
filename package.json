@@ -7,10 +7,10 @@
   "homepage": "https://make-github-pseudonymous-again.github.io/js-itertools",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aureooms/js-itertools"
+    "url": "https://github.com/make-github-pseudonymous-again/js-itertools"
   },
   "bugs": {
-    "url": "https://github.com/aureooms/js-itertools/issues"
+    "url": "https://github.com/make-github-pseudonymous-again/js-itertools/issues"
   },
   "keywords": [
     "chain",
