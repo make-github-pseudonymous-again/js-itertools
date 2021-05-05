@@ -32,6 +32,7 @@ the following python constructs/idioms/libraries available in JavaScript under t
   - [itertools](https://docs.python.org/3/library/itertools.html)
   - [itertools recipes](https://docs.python.org/3/library/itertools.html#itertools-recipes)
   - [more-itertools](https://pypi.org/project/more-itertools)
+  - [cardinality](https://github.com/wbolster/cardinality)
   - [`reduce`](https://docs.python.org/3/library/functools.html?highlight=reduce#functools.reduce)
 
 The corresponding software library used to be released as a monolith.
@@ -44,6 +45,8 @@ Extra features are marked with a `*`.
 
 ### [`@iterable-iterator`](https://github.com/iterable-iterator)
 
+  - [`@iterable-iterator/cardinality`](https://github.com/iterable-iterator/cardinality):
+    `isEmpty`, `count`, ...
   - [`@iterable-iterator/chain`](https://github.com/iterable-iterator/chain):
     `chain`, `chain.from_iterable` as `_chain`
   - [`@iterable-iterator/consume`](https://github.com/iterable-iterator/consume):
