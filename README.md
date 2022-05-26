@@ -1,5 +1,5 @@
 :hammer_and_wrench:
-[js-itertools](https://make-github-pseudonymous-again.github.io/js-itertools)
+`js-itertools`
 [![License](https://img.shields.io/github/license/make-github-pseudonymous-again/js-itertools.svg)](https://raw.githubusercontent.com/make-github-pseudonymous-again/js-itertools/main/LICENSE)
 ==
 
@@ -27,7 +27,7 @@ cycle( chain( [ 0 , 1 , 2 ] , [ 3 , 4 , 5 ] ) ) ; // 0 1 2 3 4 5 0 1 ...
 
 The goal of this project is to make (the parts that interest me of)
 the following python constructs/idioms/libraries available in JavaScript under the
-[![License](https://img.shields.io/github/license/make-github-pseudonymous-again/js-itertools.svg)](https://raw.githubusercontent.com/make-github-pseudonymous-again/js-itertools/main/LICENSE)
+[![AGPL-3.0 license](https://img.shields.io/github/license/make-github-pseudonymous-again/js-itertools.svg)](https://raw.githubusercontent.com/make-github-pseudonymous-again/js-itertools/main/LICENSE).
   - `iter`, `next`, `StopIteration`, `list`, `sorted`, `map`, `zip`, `filter`, `sum`, `any`, `all`, `min`, `max`
   - [itertools](https://docs.python.org/3/library/itertools.html)
   - [itertools recipes](https://docs.python.org/3/library/itertools.html#itertools-recipes)
